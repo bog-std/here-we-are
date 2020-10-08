@@ -399,22 +399,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layers:
   - currentTrack: {fileID: 0}
-    renderer: {fileID: 0}
+    renderer: {fileID: 2133990776}
     levels:
     - track: {fileID: 0}
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 7c0eefd73a0a8b84bb31a2e39e2d12dc, type: 3}
     - track: {fileID: 0}
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 3d3e1eb330dd1bf4ebe36c0d71667f33, type: 3}
     - track: {fileID: 0}
-      image: {fileID: 0}
+      image: {fileID: 21300000, guid: 97c37516e4476504b94e8437d74c0fe1, type: 3}
     currentLevel: 0
   - currentTrack: {fileID: 0}
-    renderer: {fileID: 0}
-    levels: []
+    renderer: {fileID: 25835566}
+    levels:
+    - track: {fileID: 0}
+      image: {fileID: 21300000, guid: 566e8f74ae0c8f24c8843d4b97fb4032, type: 3}
+    - track: {fileID: 0}
+      image: {fileID: 21300000, guid: fba572a680f215840a002585b2b8400c, type: 3}
+    - track: {fileID: 0}
+      image: {fileID: 21300000, guid: 7b0778511f5fddd4d91366f2ec15fd26, type: 3}
     currentLevel: 0
   - currentTrack: {fileID: 0}
-    renderer: {fileID: 0}
-    levels: []
+    renderer: {fileID: 1871855014}
+    levels:
+    - track: {fileID: 0}
+      image: {fileID: 21300000, guid: ff988fb5e5b7dfc46b2c0637c422908f, type: 3}
+    - track: {fileID: 0}
+      image: {fileID: 21300000, guid: 2810f271e5c45724b8226e0cc0abb169, type: 3}
+    - track: {fileID: 0}
+      image: {fileID: 21300000, guid: e91754ebd8a0c1445bb9f2ef3810983a, type: 3}
     currentLevel: 0
   audio: {fileID: 0}
 --- !u!4 &2006190210
