@@ -1,18 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEditor;
+using System.IO;
 
 public class Test : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public TextAsset textAsset;
+
+    [MenuItem("Tools/Write file")]
+    static void WriteString()
     {
-        
+        string path = "Assets/Resources/test.txt";
+        //Re-import the file to update the reference in the editor
+        AssetDatabase.ImportAsset(path); 
+        TextAsset asset = Resources.Load("test") as TextAsset;
+
+        //Print the text from the file
+        Debug.Log(asset.text);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
