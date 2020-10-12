@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5538911950561593980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5538911950561593982}
+  - component: {fileID: 5538911950561593981}
+  - component: {fileID: 5538911950561593983}
+  m_Layer: 0
+  m_Name: LayeredScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5538911950561593982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5538911950561593980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.25374728, y: 0.18502396, z: -0.16451332}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5538911950561593981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5538911950561593980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f136ba3a81036c4697466c8ab6e0fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fmodEvent: event:/Background Music
+  layerPrefab: {fileID: 6853283405573774218, guid: d021b2d5db457f245ac737f165108b46,
+    type: 3}
+  layers:
+  - renderer: {fileID: 0}
+    levels:
+    - image: {fileID: 21300000, guid: 7c0eefd73a0a8b84bb31a2e39e2d12dc, type: 3}
+      audioParameter: 
+    - image: {fileID: 21300000, guid: 3d3e1eb330dd1bf4ebe36c0d71667f33, type: 3}
+      audioParameter: 
+    - image: {fileID: 21300000, guid: 97c37516e4476504b94e8437d74c0fe1, type: 3}
+      audioParameter: 
+    currentLevel: 0
+  - renderer: {fileID: 0}
+    levels:
+    - image: {fileID: 21300000, guid: 566e8f74ae0c8f24c8843d4b97fb4032, type: 3}
+      audioParameter: 
+    - image: {fileID: 21300000, guid: fba572a680f215840a002585b2b8400c, type: 3}
+      audioParameter: 
+    - image: {fileID: 21300000, guid: 7b0778511f5fddd4d91366f2ec15fd26, type: 3}
+      audioParameter: 
+    currentLevel: 0
+  - renderer: {fileID: 0}
+    levels:
+    - image: {fileID: 21300000, guid: ff988fb5e5b7dfc46b2c0637c422908f, type: 3}
+      audioParameter: 
+    - image: {fileID: 21300000, guid: 2810f271e5c45724b8226e0cc0abb169, type: 3}
+      audioParameter: 
+    - image: {fileID: 21300000, guid: e91754ebd8a0c1445bb9f2ef3810983a, type: 3}
+      audioParameter: 
+    currentLevel: 0
+--- !u!114 &5538911950561593983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5538911950561593980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Background Music
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0

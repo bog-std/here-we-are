@@ -1,48 +1,91 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class LayeredScene : MonoBehaviour
 {
+
+    public GameObject layerPrefab;
+    
+    [FMODUnity.EventRef] 
+    public string fmodEvent;
+    private FMOD.Studio.EventInstance _instance;
+    
+    // Should set Images for each Level of any layers we want manually 
     public List<Layer> layers;
-    public AudioSource audio;
+    
+
+    
     // Start is called before the first frame update
     void Start()
     {
-       Invoke("InitializeSprites", 3.0f);
-
-       audio = GetComponent<AudioSource>();
-       
-       InvokeRepeating("LoopAudio", 0.0f, 10.0f);
+        _instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        _instance.start();
+        
+        InitializeLayers();
     }
-
-    void InitializeSprites()
-    {
-        foreach (var layer in layers)
-            layer.SetCurrentLevel(0);
-    }
-
-    void LoopAudio()
-    {
-        foreach (var layer in layers)
-        {
-            // layer.currentTrack.
-        }
-    }
-
+    
+    
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            layers[0].SetCurrentLevel((layers[0].currentLevel + 1) % 3);
-        
+            UpdateLayer(0, layers[0].currentLevel + 1);
+
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            layers[1].SetCurrentLevel((layers[1].currentLevel + 1) % 3);
-        
+            UpdateLayer(1, layers[1].currentLevel + 1);
+
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            layers[2].SetCurrentLevel((layers[2].currentLevel + 1) % 3);
+            UpdateLayer(2, layers[2].currentLevel + 1);
+
+        foreach (var layer in layers)
+        {
+            if (layer.audioTrack == null) continue;
+            
+            if (Math.Abs(layer.currentAudioLevel- layer.currentLevel) > 10e-8)
+            {
+                layer.currentAudioLevel = FuncLib.FInterpTo(layer.currentAudioLevel, layer.currentLevel, Time.deltaTime, 0.01f);
+                _instance.setParameterByName(layer.audioTrack, layer.currentAudioLevel);
+            }
+        }
+    }
+
+    void InitializeLayers()
+    {
+        if (layers.Count == 0)
+            Debug.LogError("No Layers Set in LayeredScene.");
+
+        if (layerPrefab == null)
+        {
+            Debug.LogError("Layer prefab NOT Set in LayeredScene.");
+            return;
+        }
+        
+        // Instantiate layer objects and levels
+        for (int i = 0; i < layers.Count; i++)
+        {
+            GameObject layerObject = Instantiate(layerPrefab, transform);
+            layerObject.name = "layer" + i;
+            
+            SpriteRenderer spriteRenderer = layerObject.GetComponent<SpriteRenderer>();
+            if (spriteRenderer == null)
+            {
+                Debug.LogError("Error: layerPrefab must have SpriteRenderer component.");
+                return;
+            }
+            
+            spriteRenderer.sortingOrder = layers.Count - i;
+            layers[i].SetRenderer(ref spriteRenderer);
+            layers[i].SetLevel(0);
+        }
     }
     
+    
+    void UpdateLayer(int layer, int level)
+    {
+        layers[layer].SetLevel(level % layers[layer].levels.Count);
+    }
     
 }

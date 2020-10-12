@@ -8,32 +8,28 @@ using UnityEngine.UI;
 [Serializable]
 public class Layer// : MonoBehaviour
 {
+    private SpriteRenderer _spriteRenderer;
+    public string audioTrack;
+    public int currentLevel;
+    public float currentAudioLevel;
+    public List<Sprite> levels;
+
     public Layer()
     {
         currentLevel = 0;
     }
 
-    [Serializable]
-    public class Level
+    public void SetRenderer(ref SpriteRenderer spriteRenderer)
     {
-        public AudioClip track;
-        public Sprite image;
+        _spriteRenderer = spriteRenderer;
     }
     
-    public AudioClip currentTrack;
-    public SpriteRenderer renderer;
-
-    public List<Level> levels;
-    
-    public int currentLevel;
-    
-    public void SetCurrentLevel(int level)
+    public void SetLevel(int level)
     {
         if (level < levels.Count)
         {
             currentLevel = level;
-            renderer.sprite = levels[level].image;
+            _spriteRenderer.sprite = levels[level];
         }
     }
-    
 }
