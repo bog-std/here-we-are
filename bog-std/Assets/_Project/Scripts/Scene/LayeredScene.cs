@@ -40,17 +40,9 @@ public class LayeredScene : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
             UpdateLayer(2, layers[2].currentLevel + 1);
 
-        foreach (var layer in layers)
-        {
-            if (layer.audioTrack == null) continue;
-            
-            if (Math.Abs(layer.currentAudioLevel- layer.currentLevel) > 10e-8)
-            {
-                layer.currentAudioLevel = FuncLib.FInterpTo(layer.currentAudioLevel, layer.currentLevel, Time.deltaTime, 0.01f);
-                _instance.setParameterByName(layer.audioTrack, layer.currentAudioLevel);
-            }
-        }
+        UpdateAudio();
     }
+    
 
     void InitializeLayers()
     {
@@ -86,6 +78,21 @@ public class LayeredScene : MonoBehaviour
     void UpdateLayer(int layer, int level)
     {
         layers[layer].SetLevel(level % layers[layer].levels.Count);
+    }
+    
+    
+    void UpdateAudio()
+    {
+        foreach (var layer in layers)
+        {
+            if (layer.audioTrack == null) continue;
+            
+            if (Math.Abs(layer.currentAudioLevel- layer.currentLevel) > 10e-8)
+            {
+                layer.currentAudioLevel = FuncLib.FInterpConstantTo(layer.currentAudioLevel, layer.currentLevel, Time.deltaTime, 0.5f);
+                _instance.setParameterByName(layer.audioTrack, layer.currentAudioLevel);
+            }
+        }
     }
     
 }

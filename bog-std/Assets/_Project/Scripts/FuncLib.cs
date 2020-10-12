@@ -19,7 +19,7 @@ public class FuncLib
         float dist = target - current;
         
         // If distance is too small, just set the desired location
-        if( Mathf.Pow(dist, 2) < 1e10-8 )
+        if( dist * dist < 1e-8 )
         {
             return target;
         }
@@ -29,4 +29,19 @@ public class FuncLib
 
         return current + deltaMove;
     }
+    
+    public static float FInterpConstantTo( float current, float target, float deltaTime, float interpSpeed )
+    {
+        float dist = target - current;
+ 
+        // If distance is too small, just set the desired location
+        if( dist * dist < 1e-8 )
+        {
+            return target;
+        }
+ 
+        float step = interpSpeed * deltaTime;
+        return current + Mathf.Clamp(dist, -step, step);
+    }
+
 }
