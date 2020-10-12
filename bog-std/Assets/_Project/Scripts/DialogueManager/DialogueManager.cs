@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
                 }
                 else
                 {
-                    // Otherwise try and display the next Dialouge Box
+                    // Otherwise try and display the next DialougeBox
 
                     // If one is already being display, destroy it 
                     if (currDialogueBox != null)
@@ -66,14 +66,14 @@ public class DialogueManager : MonoBehaviour
         }
         catch (Exception e)
         {
-            // ignored
+            Debug.LogError(e);
         }
     }
 
     public void DisplayTextBox()
     {
         if (dialoguePrefab == null) return;
-
+        Debug.Log("Displaying TextBox");
         try
         {
             // Get a copy of the prefab to instantiate
@@ -83,9 +83,15 @@ public class DialogueManager : MonoBehaviour
             // TODO: Calculate position on screen according to who is speaking
 
             // Get the UI Canvas and instantiate it in the scene 
-            var canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
-            currDialogueBox = Instantiate(boxToDisplay, Vector3.zero, Quaternion.identity, canvas);
-            currDialogueBox.transform.position -= new Vector3(0f, 150f, 0f); // Temporary positioning
+            var canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<RectTransform>();
+            currDialogueBox = Instantiate(
+                boxToDisplay, 
+                new Vector3(
+                    (0f * 10f) / (canvas.rect.width), 
+                    (-125f * 10f) / (canvas.rect.height)), 
+                Quaternion.identity, 
+                canvas);
+            Debug.Log(currDialogueBox.transform.position.ToString());
 
             // Get the TextMeshPro Component and start the read text coroutine
             var textMesh = currDialogueBox.GetComponentInChildren<TextMeshProUGUI>();
