@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using TMPro;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
@@ -25,19 +27,29 @@ public class DialogueManager : MonoBehaviour
         
     }
 
-    
     void Update()
     {
         if (Input.GetButtonDown("Jump"))
         {
-            if(currDialogueBox != null)
-                Destroy(currDialogueBox);
+            if (currDialogueBox != null)
+            {
+                try
+                {
+                    Destroy(currDialogueBox);
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError(e);
+                }
+            }
 
             if (line < script.Length)
             {
-                Debug.Log(line + " < " + script.Length);
-                // ++line;
                 DisplayTextBox();
+            }
+            else
+            {
+                line = 0;
             }
 
             // DisplayTextBox();
@@ -46,11 +58,36 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayTextBox()
     {
+        if (dialoguePrefab == null) return;
 
-        var boxToDisplay = dialoguePrefab;
-        boxToDisplay.GetComponentInChildren<TextMeshProUGUI>().SetText(script[line++]);
+        try
+        {
+            var boxToDisplay = dialoguePrefab;
+            boxToDisplay.GetComponentInChildren<TextMeshProUGUI>().SetText(script[line++]);
 
-        var canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
-        currDialogueBox = Instantiate(boxToDisplay, canvas);
+            // var target = GetTextBoxTarget();
+
+            var canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
+            currDialogueBox = Instantiate(boxToDisplay, canvas);
+        }
+        catch (Exception e)
+        {
+            // ignored
+            Debug.LogError(e);
+        }
+
+        // Start text display coroutine 
     }
+
+    public void RequestDialogue()
+    {
+
+    }
+
+    private Vector3 GetTextBoxTarget()
+    {
+
+        return Vector3.zero;
+    }
+
 }
