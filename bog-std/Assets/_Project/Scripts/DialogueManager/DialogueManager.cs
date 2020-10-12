@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using TMPro;
 using UnityEditor.PackageManager.Requests;
@@ -10,49 +11,62 @@ public class DialogueManager : MonoBehaviour
 {
     // Injected from Editor
     [SerializeField] private GameObject dialoguePrefab;
+    [SerializeField] private float textSpeed = 1f;
 
     public bool InDialogue => currDialogueBox != null;
 
     private GameObject currDialogueBox = null;
-    private int line = 0;
+    private bool readingText;
+    private int lineIndex = 0;
+
+    // Temporary script array. Will hold the dialogue received later
     private readonly string[] script =
         {
-            "Formatted string containing a pattern and a value representing the text to be displayed.",
+            "Formatted string containing a pattern and a value representing the <size=120%>text</size> to be displayed.",
             "using UnityEngine;",
             "Note: You may wish to use this function instead of TextMeshPro.text if you need to concatenate a string with values and trying to avoid unnecessary garbage collection."
         };
 
     void Awake()
     {
-        
+        // Unused currently
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        try
         {
-            if (currDialogueBox != null)
+            if (Input.GetButtonDown("Jump"))
             {
-                try
+                // If text is still being read out, complete it
+                if (readingText)
                 {
-                    Destroy(currDialogueBox);
+                    readingText = false;
                 }
-                catch (Exception e)
+                else
                 {
-                    Debug.LogError(e);
+                    // Otherwise try and display the next Dialouge Box
+
+                    // If one is already being display, destroy it 
+                    if (currDialogueBox != null)
+                        Destroy(currDialogueBox);
+
+                    // If we are not at the end of the script
+                    if (lineIndex < script.Length)
+                    {
+                        DisplayTextBox();
+                    }
+                    else
+                    {
+                        // For testing 
+                        lineIndex = 0;
+                    }
                 }
             }
-
-            if (line < script.Length)
-            {
-                DisplayTextBox();
-            }
-            else
-            {
-                line = 0;
-            }
-
-            // DisplayTextBox();
+        }
+        catch (Exception e)
+        {
+            // ignored
         }
     }
 
@@ -62,31 +76,71 @@ public class DialogueManager : MonoBehaviour
 
         try
         {
+            // Get a copy of the prefab to instantiate
             var boxToDisplay = dialoguePrefab;
-            boxToDisplay.GetComponentInChildren<TextMeshProUGUI>().SetText(script[line++]);
+            var str = script[lineIndex++];
+            
+            // TODO: Calculate position on screen according to who is speaking
 
-            // var target = GetTextBoxTarget();
-
+            // Get the UI Canvas and instantiate it in the scene 
             var canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
-            currDialogueBox = Instantiate(boxToDisplay, canvas);
+            currDialogueBox = Instantiate(boxToDisplay, Vector3.zero, Quaternion.identity, canvas);
+            currDialogueBox.transform.position -= new Vector3(0f, 150f, 0f); // Temporary positioning
+
+            // Get the TextMeshPro Component and start the read text coroutine
+            var textMesh = currDialogueBox.GetComponentInChildren<TextMeshProUGUI>();
+            ReadText(textMesh, str);
         }
         catch (Exception e)
         {
-            // ignored
             Debug.LogError(e);
         }
-
-        // Start text display coroutine 
     }
+
+    public void ReadText(TextMeshProUGUI textMesh, string str)
+    {
+        if (textMesh == null) return;
+
+        // Set initial values
+        textMesh.maxVisibleCharacters = 0;
+        textMesh.SetText(str);
+
+        // Start read coroutine
+        int visibleChars = 0;
+        StartCoroutine(Read());
+        IEnumerator Read()
+        {
+            readingText = true;
+
+            while (visibleChars < str.Length)
+            {
+                // If we should stop reading, complete the text
+                if (!readingText)
+                {
+                    textMesh.maxVisibleCharacters = str.Length;
+                    break;
+                }
+
+                // Display 1 more character, wait
+                textMesh.maxVisibleCharacters = ++visibleChars;
+                yield return new WaitForSeconds(1f / textSpeed);
+            }
+
+            // Finished reading text 
+            readingText = false;
+            // TODO: Create 'FinishedReading' Unity Event
+        }
+    }
+    
 
     public void RequestDialogue()
     {
-
+        // Maybe how dialogue is read in from a file..?
     }
 
     private Vector3 GetTextBoxTarget()
     {
-
+        // TODO: Find the location in world space with respect to a target
         return Vector3.zero;
     }
 
