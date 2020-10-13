@@ -26,13 +26,28 @@ public class LayeredScene : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            UpdateLayer(0, layers[0].currentLevel + 1);
+            IncrementLayer(0);
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            UpdateLayer(1, layers[1].currentLevel + 1);
+            IncrementLayer(3);
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            UpdateLayer(2, layers[2].currentLevel + 1);
+            IncrementLayer(1);
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+            IncrementLayer(9);
+        
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+            IncrementLayer(5);
+        
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+            IncrementLayer(8);
+        
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+            IncrementLayer(12);
+        
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+            IncrementLayer(11);
 
         UpdateAudio();
     }
@@ -71,6 +86,11 @@ public class LayeredScene : MonoBehaviour
     void UpdateLayer(int layer, int level)
     {
         layers[layer].SetLevel(level);
+    }
+
+    void IncrementLayer(int layer)
+    {
+        layers[layer].SetLevel(layers[layer].currentLevel + 1);
     }
     
     
