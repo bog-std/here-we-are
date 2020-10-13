@@ -7,12 +7,13 @@ using UnityEngine.UIElements;
 public class LayeredScene : MonoBehaviour
 {
     // Set in editor 
+    public bool animate;
     [FMODUnity.EventRef] public string fmodEvent;
     public GameObject layerPrefab;
     public List<Layer> layers;
     
     private FMOD.Studio.EventInstance fmodEventInstance;
-
+    private List<GameObject> layerObjects;
     
     void Start()
     {
@@ -50,7 +51,18 @@ public class LayeredScene : MonoBehaviour
             IncrementLayer(11);
 
         UpdateAudio();
+
+        if (animate)
+            Animate();
     }
+    
+    void Animate()
+    {
+        layerObjects[5].transform.position = new Vector3( 0.025f * Mathf.Sin(Time.frameCount / 50.0f), 0.0f);
+        layerObjects[11].transform.position = new Vector3( 0.025f * Mathf.Cos(Time.frameCount / 50.0f), 0.0f);
+        layerObjects[3].transform.position = new Vector3( 0.0f, 0.02f + 0.025f * Mathf.Cos(Time.frameCount / 50.0f) );
+    }
+
     
 
     void InitializeLayers()
@@ -64,10 +76,14 @@ public class LayeredScene : MonoBehaviour
             return;
         }
         
+        layerObjects = new List<GameObject>();
+        
         for (int i = 0; i < layers.Count; i++)
         {
             GameObject layerObject = Instantiate(layerPrefab, transform);
             layerObject.name = "layer" + i;
+            
+            layerObjects.Add(layerObject);
             
             SpriteRenderer spriteRenderer = layerObject.GetComponent<SpriteRenderer>();
             if (spriteRenderer == null)
