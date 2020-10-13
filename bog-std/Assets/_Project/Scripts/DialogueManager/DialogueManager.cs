@@ -21,6 +21,7 @@ namespace Assets._Project.Scripts.DialogueManager
         private bool readingText;
         private bool finished;
         private int lineIndex = 0;
+        private bool done = false;
 
         // Temporary script array. Will hold the dialogue received later
         private readonly string[] script =
@@ -61,7 +62,7 @@ namespace Assets._Project.Scripts.DialogueManager
                         {
                             if(dialogueScript.Count == 0 && !finished)
                                 RequestDialogue();
-
+                            if(!done)
                             DisplayTextBox_Parser();
                         }
                         else
@@ -127,7 +128,9 @@ namespace Assets._Project.Scripts.DialogueManager
             {
                 // Get a copy of the prefab to instantiate
                 var boxToDisplay = dialoguePrefab;
+
                 var dialogue = dialogueScript.Dequeue();
+                if(dialogueScript.Count == 0) done = true;
 
                 if (dialogue.hasCommand) return;
             
