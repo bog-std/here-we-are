@@ -153,6 +153,7 @@ MonoBehaviour:
   dialoguePrefab: {fileID: 1550641668321752481, guid: e3677d2f942abef4aace5e873fc80a37,
     type: 3}
   textSpeed: 48
+  useParser: 1
 --- !u!4 &420815192
 Transform:
   m_ObjectHideFlags: 0
