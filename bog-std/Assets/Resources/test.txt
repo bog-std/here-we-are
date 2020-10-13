@@ -1,1 +1,8 @@
-Just testing
+@I say some words
+*
+@I say some words to you
+*
+@what do you want to say back to me?
+	1~1I say no to that
+	2~2I say yes to that
+*
