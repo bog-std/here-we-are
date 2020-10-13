@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Assets._Project.Scripts.DialogueData;
+using UnityEditor;
 using UnityEngine;
 
 //a parser that goes through a text file extracting info
@@ -17,7 +19,7 @@ using UnityEngine;
 
         public static IEnumerable<Dialogue> GetDialogue()
         {
-            var dialogue = ReadString3("Assets/_Project/Resources/test.txt");
+            var dialogue = ReadStringNEW("Assets/_Project/Resources/sample.txt");
             Debug.Log(dialogue);
 
             return dialogue;
@@ -235,6 +237,78 @@ using UnityEngine;
 
 
             return script;
+        }
+
+        public static IEnumerable<Dialogue> ReadStringNEW(string path)
+        {
+            // Read the text directly from the test.txt file
+            var reader = new StreamReader(path);
+
+            var script = new List<Dialogue>();
+
+            while (!reader.EndOfStream)
+            {
+                var str = reader.ReadLine();
+                
+                var dialogue = new Dialogue();
+                var split = str.Split(':');
+                Debug.Log(str + " " + split.Length);
+
+                if (split.Length != 2)
+                {
+                    var splitCmd = split[0]
+                        .Replace("<<", string.Empty)
+                        .Replace(">>", string.Empty)
+                        .Split(' ');
+                    if (splitCmd[0] == "wait")
+                    {
+                        dialogue.hasCommand = true;
+                        dialogue.commandValue = Convert.ToInt32(splitCmd[1]);
+                    }
+                    continue;
+                }
+                else
+                {
+                    var name = split[0];
+                    var line = split[1];
+
+                    dialogue.line = line.TrimStart();
+                    if (name[0] == '?')
+                    {
+                        // Choice
+                        dialogue.hasChoice = true;
+                        dialogue.name = name.Substring(2); // Truncate the "? "
+
+                        AddChoices(dialogue, reader);
+                    }
+                    else
+                    {
+                        // Dialogue
+                        dialogue.hasChoice = false;
+                        dialogue.name = name;
+                    }
+                }
+
+                
+
+                script.Add(dialogue);
+            }
+
+            return script;
+        }
+
+        private static void AddChoices(Dialogue dialogue, StreamReader reader)
+        {
+            while (reader.Peek() == '\t')
+            {
+                var splitLine = reader.ReadLine().Substring(3).Split(':');
+                var choice = new Choice()
+                {
+                    choiceOption = splitLine[0],
+                    choiceResponse = splitLine[1].TrimStart()
+                };
+                dialogue.choices.Add(choice);
+            }
         }
 
     }

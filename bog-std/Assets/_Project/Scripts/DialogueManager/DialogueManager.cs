@@ -19,6 +19,7 @@ namespace Assets._Project.Scripts.DialogueManager
 
         private GameObject currDialogueBox = null;
         private bool readingText;
+        private bool finished;
         private int lineIndex = 0;
 
         // Temporary script array. Will hold the dialogue received later
@@ -58,7 +59,7 @@ namespace Assets._Project.Scripts.DialogueManager
                         // If we are not at the end of the script
                         if (useParser)
                         {
-                            if(dialogueScript.Count == 0)
+                            if(dialogueScript.Count == 0 && !finished)
                                 RequestDialogue();
 
                             DisplayTextBox_Parser();
@@ -110,6 +111,7 @@ namespace Assets._Project.Scripts.DialogueManager
                 // Get the TextMeshPro Component and start the read text coroutine
                 var textMesh = currDialogueBox.GetComponentInChildren<TextMeshProUGUI>();
                 ReadText(textMesh, str);
+                finished = true;
             }
             catch (Exception e)
             {
@@ -127,7 +129,7 @@ namespace Assets._Project.Scripts.DialogueManager
                 var boxToDisplay = dialoguePrefab;
                 var dialogue = dialogueScript.Dequeue();
 
-                if (dialogue.hasChoice) return;
+                if (dialogue.hasCommand) return;
             
                 // TODO: Calculate position on screen according to who is speaking
 
@@ -144,6 +146,15 @@ namespace Assets._Project.Scripts.DialogueManager
 
                 // Get the TextMeshPro Component and start the read text coroutine
                 var textMesh = currDialogueBox.GetComponentInChildren<TextMeshProUGUI>();
+                switch (dialogue.name) 
+                {
+                    case "Jordan":
+                        textMesh.color = Color.cyan;
+                        break;
+                    default:
+                        textMesh.color = Color.yellow;
+                        break;
+                }
                 ReadText(textMesh, dialogue.line);
             }
             catch (Exception e)
@@ -176,13 +187,32 @@ namespace Assets._Project.Scripts.DialogueManager
                         break;
                     }
 
+                    // If a command
+                    if (visibleChars > 0 && str[visibleChars] == '[')
+                    {
+                        var endbrack = str.IndexOf(']', visibleChars);
+                        var diff = endbrack - visibleChars - 1;
+                        var cmd = str.Substring(visibleChars + 1, diff).Split(' ');
+                        if (cmd[0] == "wait")
+                        {
+                            Debug.Log(cmd[1]);
+                            var sec = Convert.ToInt32(cmd[1]);
+                            str = str.Remove(visibleChars, endbrack + 1);
+                            textMesh.SetText(str);
+                            yield return new WaitForSeconds(sec);
+                        }
+                    }
+                    
                     // Display 1 more character, wait
                     textMesh.maxVisibleCharacters = ++visibleChars;
+                    
+
                     yield return new WaitForSeconds(1f / textSpeed);
                 }
 
                 // Finished reading text 
                 readingText = false;
+
                 // TODO: Create 'FinishedReading' Unity Event
             }
         }

@@ -9,10 +9,13 @@ namespace Assets._Project.Scripts.DialogueData
             choices = new List<Choice>();
         }
 
-        public string name; // name of the speaker
+        public string name = string.Empty; // name of the speaker
         public string line = string.Empty; // the dialog message
-        
+
         public bool hasChoice; //if True == choice if False == dialog no choices
         public List<Choice> choices;
+
+        public bool hasCommand;
+        public int commandValue;
     }
 }
