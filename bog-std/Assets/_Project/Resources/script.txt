@@ -1,0 +1,35 @@
+D:Jordan: Took you long enough.
+D:Player: Sorry about that. 
+D:Jordan: It’s fine, it’s fine. 
+D:Jordan: I managed to grab a cup of coffee before you got here.
+?:Player: That's good.
+	0:You mind if I order something?
+	0:Need another cup? I was thinking about ordering something.
+D:Jordan: By all means.
+?:Waiter: What can I get for you today?
+	0:Just a cup of coffee thanks.
+	1:A cup of coffee for me, and a refill for her if you would be so kind.
+D:Jordan:And a refill for me please.
+D:Waiter:Sure thing, I'll be back with a pot.
+>:5
+?:Waiter: Sure thing, is there anything else I can get for you at the moment?:1
+	0:No that should be it.
+	1:What's on special for today?
+D:Waiter: Alright then, I'll be back with a pot.
+>:5
+?:Waiter: The potato hash is currently on special if you’re looking for something to feast on. Otherwise, I can suggest anything off the pastry board for something sweeter and smaller.:1
+	0:I'll take the daily special, I'm feeling pretty hungry if I'm being honest.
+	1:If it’s not too much trouble, I’d like a couple croissants with the coffee.
+	2:On second thought, I'll just take the coffee.
+D:Waiter: All right one daily special. And I’ll be right back with your cup of coffee.
+D:Player: Thank you very much.
+D:Jordan: Feeling peckish, are we?
+D:Player: Always.
+>:5
+D:Waiter: No trouble at all. I’ll be right back with your coffee and croissants.:1
+>:5
+D: Waiter: Sure thing. Just let me know if you change your mind.:2
+D: Player: Of course.
+D: Jordan: Not hungry?
+D: Player: Just didn't want to bother them is all.
+D:Waiter: Here’s your order. If you need anything, just call me over.:5

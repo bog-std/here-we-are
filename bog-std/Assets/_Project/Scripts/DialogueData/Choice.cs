@@ -12,5 +12,6 @@
 
         public string choice;
         public int layerIndex; // This could be migrated to Enum later
+        public int target;
     }
 }
