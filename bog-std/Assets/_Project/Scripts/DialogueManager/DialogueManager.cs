@@ -194,7 +194,7 @@ namespace Assets._Project.Scripts.DialogueManager
             }
         }
         
-        // Similar to read text, but takes dialogue and prints options after dialogue if there is any.
+        // Same as ReadText, but takes dialogue and prints options after dialogue if there is any.
         public void ReadDialogue(TextMeshProUGUI textMesh, ref Dialogue dialogue)
         {
             if (textMesh == null) return;
@@ -202,17 +202,21 @@ namespace Assets._Project.Scripts.DialogueManager
             var str = dialogue.line;
             List<Choice> choices = dialogue.choices;
             
+            // TODO not sure how to have this wait for ReadText coroutine finishes before displaying choices - could replace following code with these 2 lines
+            // ReadText(textMesh, dialogue.line);
+            // if (choices.Count > 0) ShowChoices(choices);
+            
             // Set initial values
             textMesh.maxVisibleCharacters = 0;
             textMesh.SetText(str);
-
+            
             // Start read coroutine
             int visibleChars = 0;
             StartCoroutine(Read());
             IEnumerator Read()
             {
                 readingText = true;
-
+            
                 while (visibleChars < str.Length)
                 {
                     // If we should stop reading, complete the text
@@ -221,33 +225,36 @@ namespace Assets._Project.Scripts.DialogueManager
                         textMesh.maxVisibleCharacters = str.Length;
                         break;
                     }
-
+            
                     // If a command
                     if (visibleChars > 0 && str[visibleChars] == '[')
                     {
-                        var endbrack = str.IndexOf(']', visibleChars);
-                        var diff = endbrack - visibleChars - 1;
-                        var cmd = str.Substring(visibleChars + 1, diff).Split(' ');
-                        if (cmd[0] == "wait")
+                        var cmdLength = str.IndexOf(']', visibleChars) - visibleChars;
+                        var cmd = str.Substring(visibleChars + 1, cmdLength - 1).Split(' ');
+
+                        switch (cmd[0])
                         {
-                            Debug.Log(cmd[1]);
-                            var sec = Convert.ToInt32(cmd[1]);
-                            str = str.Remove(visibleChars, endbrack + 1);
-                            textMesh.SetText(str);
-                            yield return new WaitForSeconds(sec);
+                            case "wait":
+                                Debug.Log("Wait " + cmd[1]);
+                                var sec = Convert.ToInt32(cmd[1]);
+                                yield return new WaitForSeconds(sec);
+                                break;
                         }
+                        
+                        str = str.Remove(visibleChars, cmdLength + 1);
+                        textMesh.SetText(str);
                     }
                     
                     // Display 1 more character, wait
                     textMesh.maxVisibleCharacters = ++visibleChars;
                     
-
+            
                     yield return new WaitForSeconds(1f / textSpeed);
                 }
-
+            
                 // Finished reading text 
                 readingText = false;
-
+            
                 if (choices.Count > 0) ShowChoices(choices);
                 
                 // TODO: Create 'FinishedReading' Unity Event
@@ -282,67 +289,7 @@ namespace Assets._Project.Scripts.DialogueManager
                 textMesh.color = Color.red;
      
                 ReadText(textMesh, choice.choiceOption);
-
-                if (textMesh == null) return;
-
-                if (choice.choiceOption == null)
-                {
-                    Debug.LogError("Choice.choiceOption was null");
-                    return;
-                }
-                
-                var str = choice.choiceOption;
-                
-                // Set initial values
-                textMesh.maxVisibleCharacters = 0;
-                textMesh.SetText(str);
-
-                // Start read coroutine
-                int visibleChars = 0;
-                StartCoroutine(Read());
-                IEnumerator Read()
-                {
-                    readingText = true;
-
-                    while (visibleChars < str.Length)
-                    {
-                        // If we should stop reading, complete the text
-                        if (!readingText)
-                        {
-                            textMesh.maxVisibleCharacters = str.Length;
-                            break;
-                        }
-
-                        // If a command
-                        if (visibleChars > 0 && str[visibleChars] == '[')
-                        {
-                            var endbrack = str.IndexOf(']', visibleChars);
-                            var diff = endbrack - visibleChars - 1;
-                            var cmd = str.Substring(visibleChars + 1, diff).Split(' ');
-                            if (cmd[0] == "wait")
-                            {
-                                Debug.Log(cmd[1]);
-                                var sec = Convert.ToInt32(cmd[1]);
-                                str = str.Remove(visibleChars, endbrack + 1);
-                                textMesh.SetText(str);
-                                yield return new WaitForSeconds(sec);
-                            }
-                        }
-                        
-                        // Display 1 more character, wait
-                        textMesh.maxVisibleCharacters = ++visibleChars;
-                        
-
-                        yield return new WaitForSeconds(1f / textSpeed);
-                    }
-
-                    // Finished reading text 
-                    readingText = false;
-
-                    // TODO: Create 'FinishedReading' Unity Event
-                }
             }
-            
         }
         
         public void ReadText(TextMeshProUGUI textMesh, string str)
@@ -372,17 +319,20 @@ namespace Assets._Project.Scripts.DialogueManager
                     // If a command
                     if (visibleChars > 0 && str[visibleChars] == '[')
                     {
-                        var endbrack = str.IndexOf(']', visibleChars);
-                        var diff = endbrack - visibleChars - 1;
-                        var cmd = str.Substring(visibleChars + 1, diff).Split(' ');
-                        if (cmd[0] == "wait")
+                        var cmdLength = str.IndexOf(']', visibleChars) - visibleChars;
+                        var cmd = str.Substring(visibleChars + 1, cmdLength - 1).Split(' ');
+
+                        switch (cmd[0])
                         {
-                            Debug.Log(cmd[1]);
-                            var sec = Convert.ToInt32(cmd[1]);
-                            str = str.Remove(visibleChars, endbrack + 1);
-                            textMesh.SetText(str);
-                            yield return new WaitForSeconds(sec);
+                            case "wait":
+                                Debug.Log("Wait " + cmd[1]);
+                                var sec = Convert.ToInt32(cmd[1]);
+                                yield return new WaitForSeconds(sec);
+                                break;
                         }
+                        
+                        str = str.Remove(visibleChars, cmdLength + 1);
+                        textMesh.SetText(str);
                     }
                     
                     // Display 1 more character, wait
@@ -439,6 +389,7 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             foreach (var option in currChoices)
                 Destroy(option);
+            
             currChoices.Clear();
         }
 

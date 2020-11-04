@@ -1,8 +1,7 @@
 D:Jordan: Took you long enough.
 D:Player: Sorry about that. 
-D:Jordan: It’s fine, it’s fine. 
-D:Jordan: I managed to grab a cup of coffee before you got here.
-?:Player: That's good.
+D:Jordan: It’s fine, it’s fine.[wait 1] I managed to grab a cup of coffee before you got here.
+?:Player: That's good.[wait 1]
 	0:You mind if I order something?
 	0:Need another cup? I was thinking about ordering something.
 D:Jordan: By all means.
@@ -17,7 +16,7 @@ D:Waiter:Sure thing, I'll be back with a pot.
 	1:What's on special for today?
 D:Waiter: Alright then, I'll be back with a pot.
 >:5
-?:Waiter: The potato hash is currently on special if you’re looking for something to feast on. Otherwise, I can suggest anything off the pastry board for something sweeter and smaller.:1
+?:Waiter: The potato hash is currently on special if you’re looking for something to feast on.[wait 1] Otherwise, I can suggest anything off the pastry board for something sweeter and smaller.:1
 	0:I'll take the daily special, I'm feeling pretty hungry if I'm being honest.
 	1:If it’s not too much trouble, I’d like a couple croissants with the coffee.
 	2:On second thought, I'll just take the coffee.
