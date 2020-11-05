@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001AC3281AC18 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001D5B1EE0DE8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,6 +18,22 @@
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SoundI::release                          :  (000001D65AA02348)
+[LOG] SoundI::release                          :     VelvetLoungeClav (000001D5B1FEED68)
+[LOG] SoundI::release                          :  (000001D65AA02D58)
+[LOG] SoundI::release                          :     VelvetLoungeGuitar (000001D5B1FF0288)
+[LOG] SoundI::release                          :  (000001D65AA00688)
+[LOG] SoundI::release                          :     VelvetLoungeElectricPiano (000001D5B1FEFF48)
+[LOG] SoundI::release                          :  (000001D65A9FF828)
+[LOG] SoundI::release                          :     LandingInLASynth03 (000001D5B1FEFDA8)
+[LOG] SoundI::release                          :  (000001D65AA024B8)
+[LOG] SoundI::release                          :     4thDimension1 (000001D5B1FEE6E8)
+[LOG] SoundI::release                          :  (000001D65A9FFF58)
+[LOG] SoundI::release                          :     LandingInLASynth01 (000001D5B1FEE888)
+[LOG] SoundI::release                          :  (000001D65AA00238)
+[LOG] SoundI::release                          :     LandingInLASynth02 (000001D5B1FF05C8)
+[LOG] SoundI::release                          :  (000001D65AA02798)
+[LOG] SoundI::release                          :     4thDimension2 (000001D5B1FED6A8)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
