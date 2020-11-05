@@ -24,6 +24,7 @@ namespace Assets._Project.Scripts.DialogueManager
         private bool finished;
         private int lineIndex = 0;
         private bool done = false;
+        public LayeredScene scene;
         
 
         // Temporary script array. Will hold the dialogue received later
@@ -40,6 +41,12 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             dialogueScript = new Queue<Dialogue>();
             currChoices = new List<GameObject>();
+            
+        }
+
+        void Start()
+        {
+            scene = FindObjectOfType<LayeredScene>();
         }
 
         void Update()
@@ -50,9 +57,7 @@ namespace Assets._Project.Scripts.DialogueManager
                 {
                     if (currChoices.Count > 0)
                     {
-                        // foreach (var option in options)
-                        //     Destroy(option);
-                        // options.Clear();
+   
                     }
                     else
                     {
@@ -85,8 +90,12 @@ namespace Assets._Project.Scripts.DialogueManager
                 // If we are not at the end of the script
                 if (useParser)
                 {
-                    if(dialogueScript.Count == 0 && !finished)
+                    Debug.Log("Count: " + dialogueScript.Count);
+                    if (dialogueScript.Count == 0 && !finished)
+                    {
                         RequestDialogue();
+                    }
+                        
                     if(!done)
                         DisplayTextBox_Parser();
                 }
@@ -373,16 +382,27 @@ namespace Assets._Project.Scripts.DialogueManager
             {
                 case Command.Skip:
                     Seek(dialogue.tag);
-                    DisplayNext();
+                    break;
+                case Command.Increment:
+                    UpdateLayers(dialogue.layers, dialogue.magnitude);
                     break;
             }
+            
+            DisplayNext();
         }
         
         public void ProcessChoice(Choice choice)
         {
+            UpdateLayers(choice.layers, choice.magnitude);
             Seek(choice.target);
             ClearChoices();
             DisplayNext();
+        }
+
+        private void UpdateLayers(List<LayerName> layers, int magnitude)
+        {
+            foreach(var layer in layers)
+                scene.IncrementLayer(layer, magnitude);
         }
 
         public void ClearChoices()
@@ -393,11 +413,20 @@ namespace Assets._Project.Scripts.DialogueManager
             currChoices.Clear();
         }
 
-        public void Seek(int target)
+        public void Seek(string target)
         {
-            if (target != 0)
+            if (target != string.Empty && dialogueScript.Count > 0)
+            {
                 while (dialogueScript.Peek().tag != target)
+                {
+                    
                     dialogueScript.Dequeue();
+
+                    if (dialogueScript.Count == 0)
+                        RequestDialogue();
+
+                }
+            }
         }
     }
 }

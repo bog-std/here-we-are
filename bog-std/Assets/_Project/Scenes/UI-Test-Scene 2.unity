@@ -156,6 +156,7 @@ MonoBehaviour:
     type: 3}
   textSpeed: 48
   useParser: 1
+  scene: {fileID: 0}
 --- !u!4 &420815192
 Transform:
   m_ObjectHideFlags: 0
@@ -1161,6 +1162,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 210dc7702c2edaf4485607e419e60f0e,
         type: 3}
+    - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
+        type: 3}
+      propertyPath: layers.Array.data[0].name
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
+        type: 3}
+      propertyPath: layers.Array.data[1].name
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593982, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: m_LocalPosition.x

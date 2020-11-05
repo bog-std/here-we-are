@@ -1,34 +1,126 @@
-D:Jordan: Took you long enough.
-D:Player: Sorry about that. 
-D:Jordan: It’s fine, it’s fine.[wait 1] I managed to grab a cup of coffee before you got here.
-?:Player: That's good.[wait 1]
-	0:You mind if I order something?
-	0:Need another cup? I was thinking about ordering something.
-D:Jordan: By all means.
-?:Waiter: What can I get for you today?
-	0:Just a cup of coffee thanks.
-	1:A cup of coffee for me, and a refill for her if you would be so kind.
-D:Jordan:And a refill for me please.
-D:Waiter:Sure thing, I'll be back with a pot.
->:5
-?:Waiter: Sure thing, is there anything else I can get for you at the moment?:1
-	0:No that should be it.
-	1:What's on special for today?
-D:Waiter: Alright then, I'll be back with a pot.
->:5
-?:Waiter: The potato hash is currently on special if you’re looking for something to feast on.[wait 1] Otherwise, I can suggest anything off the pastry board for something sweeter and smaller.:1
-	0:I'll take the daily special, I'm feeling pretty hungry if I'm being honest.
-	1:If it’s not too much trouble, I’d like a couple croissants with the coffee.
-	2:On second thought, I'll just take the coffee.
-D:Waiter: All right one daily special. And I’ll be right back with your cup of coffee.
-D:Player: Thank you very much.
-D:Jordan: Feeling peckish, are we?
-D:Player: Always.
->:5
-D:Waiter: No trouble at all. I’ll be right back with your coffee and croissants.:1
->:5
-D: Waiter: Sure thing. Just let me know if you change your mind.:2
-D: Player: Of course.
-D: Jordan: Not hungry?
-D: Player: Just didn't want to bother them is all.
-D:Waiter: Here’s your order. If you need anything, just call me over.:5
+:D:Jordan: Took you long enough.
+:D:Player: Sorry about that. 
+:D:Jordan: It’s fine, it’s fine.[wait 1] I managed to grab a cup of coffee before you got here.
+:?:Player: That's good.[wait 1]
+	You mind if I order something?
+	Need another cup? I was thinking about ordering something.::R:1
+:D:Jordan: By all means.
+:?:Waiter: What can I get for you today?
+	Just a cup of coffee thanks.::r:1
+	A cup of coffee for me, and a refill for her if you would be so kind.:Refill:R:1
+:D:Jordan:And a refill for me please.
+:D:Waiter:Sure thing, I'll be back with a pot.
+:>:Continue
+Refill:?:Waiter: Sure thing, is there anything else I can get for you at the moment?
+	No that should be it.
+	What's on special for today?:Special
+:D:Waiter: Alright then, I'll be back with a pot.
+:>:Continue
+Special:?:Waiter: The potato hash is currently on special if you’re looking for something to feast on.[wait 1] Otherwise, I can suggest anything off the pastry board for something sweeter and smaller.
+	I'll take the daily special, I'm feeling pretty hungry if I'm being honest.
+	If it’s not too much trouble, I’d like a couple croissants with the coffee.:Croissants
+	On second thought, I'll just take the coffee.:Coffee
+:D:Waiter: All right one daily special. And I’ll be right back with your cup of coffee.
+:D:Player: Thank you very much.
+:D:Jordan: Feeling peckish, are we?
+:D:Player: Always.
+:D:Waiter: Here’s your order. If you need anything, just call me over.
+:D:Player: You know I was going to eat that.
+:D:Jordan: Hmurph hefdf.  
+:D:Player: what?
+:D:Jordan: (swallows) I thought we were friends.
+:D:Player: Of course we are.
+:?:Jordan: Then surely you’ll share some food with your friend.
+	You've shared enough. Give me my food.::r:1
+	You know what, take it.:TakeIt:R:1
+:D:Player: Goddamn that was good.
+:D:Jordan: It sure was.
+:>:Continue
+TakeIt:D:Jordan: You sure?
+:D:Player: Yeah. You’re eating it like we’re about to go into a famine.
+:D:Jordan: Well I’m glad you noticed. But if you want a couple bites or so, take it. You’re paying for this after all.
+:D:Player: I know.
+:>:Continue2
+Croissants:D:Waiter: No trouble at all. I’ll be right back with your coffee and croissants.
+:>:Continue
+Coffee:D:Waiter: Sure thing. Just let me know if you change your mind.:
+:D:Player: Of course.
+:D:Jordan: Not hungry?
+:D:Player: Just didn't want to bother them is all.
+Continue:D:Waiter: Here’s your order. If you need anything, just call me over.
+Continue2:?:Jordan: So how’ve you been lately?[wait 1] Feels like it’s been forever since I last saw you.
+	I'm doing pretty good, all things considered. I sent out resumes and I'm hoping for a response pretty soon.::E:1
+	I'm all right, I guess, I wish things were better.:Better:e:1
+:D:Jordan: Still looking for a job?
+:D:Player: Yeah. Something wrong with that?
+:D:Jordan: No, of course not. It’s a good thing to get a job. It’s normal, y’know?
+:D:Player: Yeah. Normal.
+:>:Continue
+Better:D:Jordan: What’s going on?
+:D:Player: I’m behind on my rent this month and I haven’t had the time to properly form my resumes.
+:D:Jordan: Doesn’t sound like you’re all right.
+:D:Player: Like I said, I wish things were better.
+Continue:D:Player: What about you? How’ve you been?
+:D:Jordan: Oh, I could be better. I’m just glad to be here.
+:D:Player: Aww did you miss me that much?
+:?:Jordan: Y’know, I kinda did.
+	Only a little bit?::r:1
+	Kinda?::r:1
+	I'm sorry I haven't been in touch as of late. Things have just been a rollercoaster.:Sorry:R:1
+:D:Jordan: (slightly giggles to herself.) Yes, only kinda. It’s what you get for barely calling or texting.
+:D:Player: I guess birthday messages have gone out of style, haven’t they?
+:D:Jordan: They did. Ten years ago.
+:>:Continue
+Sorry:D:Jordan: Hey, don’t apologize. Life’s a complete shitstorm, so don’t worry too much about it.
+:D:Player: I mean there were times I wanted to call or text, but it never felt like the right time.
+:D:Jordan: Would’ve been nice to hear from you though.
+Continue:D:Jordan: We should’ve chatted more. Or hung out or something.
+:D:Player: Like the old days?
+:?:Jordan: Yeah! God, I need a vacation.
+	I feel you on that one. But we can’t stop now can we?::Er:1
+	Y’know, a vacation would be really nice.:Vacation:er:1
+	What you mean like the time we went to the beach?:Beach
+:D:Jordan: We should though. At least, you ought to.
+:D:Player: Need to get the ducks in a row before that happens now though. I can’t just up and leave my responsibilities when I’m still looking for work.
+:D:Jordan: You’re right. That does sound kind of rash. Just promise me you’ll get some rest?
+:D:Player: I will, once everything gets better.
+:>:Continue
+Vacation:D:Jordan: Right? I’d love to go to the mountains this time. Find a nice camping spot and watch the stars.
+:D:Player: I’d just love to go for a drive. Put on Scott’s mixtape and just hit the road.
+:D:Jordan: Scott makes mixtapes? Huh. Wild.
+:>:Continue
+:D:Jordan: Yeah! Exactly like that. (INSERT BEACH SCENE)
+:D:Jordan: I wish we could go back to the beach.
+:D:Player: The one we went to during the summer of our college years? That brings me back.
+:D:Jordan: Right? It was so hot, but that day was so much fun.
+:D:Player: If I recall correctly, you hated every second of that day.
+:D:Jordan: Maybe so, but the fireworks off the beach were fantastic.
+:D:Player: Yes, they were. Yes, they were.
+Continue:D:Jordan: I wish we could go back to the good ol’ days.
+:D:Player: The days when we could get away with not doing anything?
+:D:Jordan: Just the better ones.
+:D:Player: The days when our problems revolved around test scores and not unemployment.
+:?:Jordan: Would you go back to those days?
+	Of course I would. God, I had so much less fear back then. Stress I had plenty of, but not fear.::e:1
+	I don’t know. I don’t think so. Probably not.:ProbablyNot:E:1
+:D:Jordan: They call that ‘anxiety’ my friend.
+:D:Player: I know what it’s called Jo. I just never thought I’d be in this situation.
+:D:Jordan: I don’t think anyone did.
+:>:Continue
+:D:Jordan: Really?
+:D:Player: Feels kind of immature to ignore my problems.
+:D:Jordan: Not even for a day?
+:D:Player: Maybe a few hours at a time, but I have responsibilities I can’t just leave alone.
+:D:Jordan: Fair.
+Continue:D:Jordan: I mean things should be easier, right? I’m not crazy for thinking that life shouldn’t be this hard, am I?
+:D:Player: Of course not. Life is hard. But we should be able to live in it.
+:D:Jordan: Good. For a while, I thought I was going crazy.
+:+:Ee:1
+:?:Jordan: How’re your parents?
+	They’re all right.::R:1
+	They were all right last time I checked.:LastTime
+Jordan: Yeah?
+Player: Yeah. They took a trip to the Bahamas last year and sent me lots of pictures. Seemed like a lot of
+fun.
+Jordan: What you didn’t go with them?
+:+:R:1
