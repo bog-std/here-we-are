@@ -5,6 +5,7 @@ using System.Linq;
 using Assets._Project.Scripts.DialogueData;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets._Project.Scripts.DialogueManager
 {
@@ -179,23 +180,32 @@ namespace Assets._Project.Scripts.DialogueManager
                     canvas);
                 Debug.Log(currDialogueBox.transform.position.ToString());
 
-                // Get the TextMeshPro Component and start the read text coroutine
-                var textMesh = currDialogueBox.GetComponentInChildren<TextMeshProUGUI>();
+                // Get the TextMeshPro Components and start the read text coroutine
+                var textMeshes = currDialogueBox.GetComponentsInChildren<TextMeshProUGUI>();
+                var mainTextMesh = textMeshes[0];
+                var nameTextMesh = textMeshes[1];
+
+                // Set initial values
+                mainTextMesh.maxVisibleCharacters = 0;
+                mainTextMesh.SetText(dialogue.line);
+
+                CalculateUI();
+
+                nameTextMesh.text = dialogue.name;
                 switch (dialogue.name) 
                 {
                     case "Jordan":
-                        textMesh.color = Color.cyan;
+                        nameTextMesh.color = Color.cyan;
                         break;
                     case "Waiter":
-                        textMesh.color = Color.magenta;
+                        nameTextMesh.color = Color.magenta;
                         break;
                     default:
-                        textMesh.color = Color.yellow;
+                        nameTextMesh.color = Color.yellow;
                         break;
                 }
-                // ReadText(textMesh, dialogue.line);
-                ReadDialogue(textMesh, ref dialogue);
-
+                
+                ReadText(mainTextMesh, dialogue);
             }
             catch (Exception e)
             {
@@ -214,11 +224,7 @@ namespace Assets._Project.Scripts.DialogueManager
             // TODO not sure how to have this wait for ReadText coroutine finishes before displaying choices - could replace following code with these 2 lines
             // ReadText(textMesh, dialogue.line);
             // if (choices.Count > 0) ShowChoices(choices);
-            
-            // Set initial values
-            textMesh.maxVisibleCharacters = 0;
-            textMesh.SetText(str);
-            
+
             // Start read coroutine
             int visibleChars = 0;
             StartCoroutine(Read());
@@ -263,13 +269,82 @@ namespace Assets._Project.Scripts.DialogueManager
             
                 // Finished reading text 
                 readingText = false;
-            
-                if (choices.Count > 0) ShowChoices(choices);
-                
+                FinishedReadingText();
+
                 // TODO: Create 'FinishedReading' Unity Event
             }
         }
+
+        public void ReadText(TextMeshProUGUI textMesh, Dialogue dialogue) =>
+            ReadText(textMesh, dialogue.line, dialogue);
+
+        public void ReadText(TextMeshProUGUI textMesh, string str, Dialogue dialogue = null)
+        {
+            if (textMesh == null) return;
+
+            var choices = dialogue == null ? new List<Choice>() : dialogue.choices;
+
+            // Set initial values
+            textMesh.maxVisibleCharacters = 0;
+            textMesh.SetText(str);
         
+            // Start read coroutine
+            int visibleChars = 0;
+            StartCoroutine(Read());
+            IEnumerator Read()
+            {
+                readingText = true;
+        
+                while (visibleChars < str.Length)
+                {
+                    // If we should stop reading, complete the text
+                    if (!readingText)
+                    {
+                        textMesh.maxVisibleCharacters = str.Length;
+                        break;
+                    }
+        
+                    // If a command
+                    if (visibleChars > 0 && str[visibleChars] == '[')
+                    {
+                        var cmdLength = str.IndexOf(']', visibleChars) - visibleChars;
+                        var cmd = str.Substring(visibleChars + 1, cmdLength - 1).Split(' ');
+
+                        switch (cmd[0])
+                        {
+                            case "wait":
+                                Debug.Log("Wait " + cmd[1]);
+                                var sec = Convert.ToInt32(cmd[1]);
+                                yield return new WaitForSeconds(sec);
+                                break;
+                        }
+                        
+                        str = str.Remove(visibleChars, cmdLength + 1);
+                        textMesh.SetText(str);
+                    }
+                    
+                    // Display 1 more character, wait
+                    textMesh.maxVisibleCharacters = ++visibleChars;
+                    
+                    yield return new WaitForSeconds(1f / textSpeed);
+                }
+
+                // Do post-dialogue operations
+                readingText = false;
+                if (choices.Count > 0) ShowChoices(choices);
+
+                // Call back
+                FinishedReadingText();
+            }
+        }
+
+        public void FinishedReadingText()
+        {
+            // Make the chevron visible 
+            var chevron = currDialogueBox.GetComponentsInChildren<Image>();
+            chevron[2].enabled = true;
+        }
+
         public void ShowChoices(List<Choice> choices)
         {
             if (choices.Count == 0) return;
@@ -281,80 +356,31 @@ namespace Assets._Project.Scripts.DialogueManager
             {
                 Choice choice = choices[i];
                 
-                GameObject choiceObject = Instantiate(optionPrefab, new Vector3(-173f, i * 50 + 35), Quaternion.identity, canvas);
-                RectTransform t = choiceObject.GetComponent<RectTransform>();
-                t.anchorMin = new Vector2(1, 0);
-                t.anchorMax = new Vector2(1, 0);
-                t.anchoredPosition = new Vector2(0, 35 + 50 * i);
+                GameObject choiceObject = Instantiate(optionPrefab, new Vector3((canvas.rect.width / 2), i * 50 + 15), Quaternion.identity, canvas);
+
+                // Get the TextMeshPro Component 
+                var textMesh = choiceObject.GetComponentInChildren<TextMeshProUGUI>();
+                textMesh.color = Color.white;
+                textMesh.text = choice.choiceOption;
+
+                // Adjust the RectTranforms 
+                var rects = choiceObject.GetComponentsInChildren<RectTransform>();
+                var backgroundBox = rects[1];
+                var textBox = rects[2];
                 
+                LayoutRebuilder.ForceRebuildLayoutImmediate(textBox);
+                LayoutRebuilder.ForceRebuildLayoutImmediate(backgroundBox);
+
+                Debug.Log("BRUH: " + backgroundBox.rect.width + " " + backgroundBox.rect.height);
+                rects[0].anchoredPosition = new Vector2((canvas.rect.width / 2) - (backgroundBox.rect.width / 2), (i * (backgroundBox.rect.height + 5) - 70));
+
                 ChoiceScript choiceScript = choiceObject.GetComponentInChildren<ChoiceScript>();
                 choiceScript.dialogueManager = this;
                 choiceScript.choice = choice;
                 
                 currChoices.Add(choiceObject);
 
-                // Get the TextMeshPro Component and start the read text coroutine
-                var textMesh = choiceObject.GetComponentInChildren<TextMeshProUGUI>();
-                textMesh.color = Color.red;
-     
                 ReadText(textMesh, choice.choiceOption);
-            }
-        }
-        
-        public void ReadText(TextMeshProUGUI textMesh, string str)
-        {
-            if (textMesh == null) return;
-        
-            // Set initial values
-            textMesh.maxVisibleCharacters = 0;
-            textMesh.SetText(str);
-        
-            // Start read coroutine
-            int visibleChars = 0;
-            StartCoroutine(Read());
-            IEnumerator Read()
-            {
-                readingText = true;
-        
-                while (visibleChars < str.Length)
-                {
-                    // If we should stop reading, complete the text
-                    if (!readingText)
-                    {
-                        textMesh.maxVisibleCharacters = str.Length;
-                        break;
-                    }
-        
-                    // If a command
-                    if (visibleChars > 0 && str[visibleChars] == '[')
-                    {
-                        var cmdLength = str.IndexOf(']', visibleChars) - visibleChars;
-                        var cmd = str.Substring(visibleChars + 1, cmdLength - 1).Split(' ');
-
-                        switch (cmd[0])
-                        {
-                            case "wait":
-                                Debug.Log("Wait " + cmd[1]);
-                                var sec = Convert.ToInt32(cmd[1]);
-                                yield return new WaitForSeconds(sec);
-                                break;
-                        }
-                        
-                        str = str.Remove(visibleChars, cmdLength + 1);
-                        textMesh.SetText(str);
-                    }
-                    
-                    // Display 1 more character, wait
-                    textMesh.maxVisibleCharacters = ++visibleChars;
-                    
-        
-                    yield return new WaitForSeconds(1f / textSpeed);
-                }
-        
-                // Finished reading text 
-                readingText = false;
-        
-                // TODO: Create 'FinishedReading' Unity Event
             }
         }
 
@@ -364,6 +390,26 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             // TODO: Find the location in world space with respect to a target
             return Vector3.zero;
+        }
+
+        private void CalculateUI()
+        {
+            // Calculate name box's y position
+            var rectTransforms = currDialogueBox.GetComponentsInChildren<RectTransform>();
+            var mainBox = rectTransforms[1];
+            var mainTextBox = rectTransforms[2];
+            var nameBox = rectTransforms[3];
+            var nameTextBox = rectTransforms[4];
+            var chevron = rectTransforms[5];
+
+            // Calculate height by forcing layout rebuild
+            LayoutRebuilder.ForceRebuildLayoutImmediate(nameTextBox);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(nameBox);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(mainTextBox);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(mainBox);
+
+            nameBox.anchoredPosition = new Vector2((mainBox.rect.width / -2) + (nameBox.rect.width / 2) + 5, (mainBox.rect.height / 2) + 5);
+            chevron.anchoredPosition = new Vector2((mainBox.rect.width / 2) - (chevron.rect.width / 2) - 8, (mainBox.rect.height / -2) + (chevron.rect.height / 2) + 2);
         }
 
         private void EnqueueAll(IEnumerable<Dialogue> list)
