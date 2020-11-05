@@ -15,6 +15,7 @@ public class LayeredScene : MonoBehaviour
     private FMOD.Studio.EventInstance fmodEventInstance;
     private List<GameObject> layerObjects;
     
+    
     void Start()
     {
         fmodEventInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
@@ -53,9 +54,9 @@ public class LayeredScene : MonoBehaviour
 
         UpdateAudio();
 
-        if (animate)
-            Animate();
+        if (animate) Animate();
     }
+    
     
     void Animate()
     {
@@ -65,7 +66,6 @@ public class LayeredScene : MonoBehaviour
     }
 
     
-
     void InitializeLayers()
     {
         if (layers.Count == 0)
@@ -110,12 +110,15 @@ public class LayeredScene : MonoBehaviour
         layers[layer].SetLevel(layers[layer].currentLevel + 1);
     }
 
-    public void IncrementLayer(LayerName layer, int amount)
+    
+    public void IncrementLayer(LayerName layerName, int amount)
     {
-        Debug.Log("Increment Layer:" + layer + " by " + amount);
-        int layerIndex = layers.FindIndex(l => l.name == layer);
-        if (layerIndex >= 0) layers[layerIndex].SetLevel(layers[layerIndex].currentLevel + amount);
+        if (layerName == LayerName.None) return;
+        
+        foreach (Layer layer in layers.FindAll(layer => layer.name == layerName))
+            layer.SetLevel(layer.currentLevel + amount);
     }
+    
     
     // Interpolates audio when level changes
     void UpdateAudio()
