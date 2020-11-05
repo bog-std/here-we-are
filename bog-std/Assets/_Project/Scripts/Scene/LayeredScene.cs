@@ -26,6 +26,7 @@ public class LayeredScene : MonoBehaviour
     
     void Update()
     {
+        // For testing
         if (Input.GetKeyDown(KeyCode.Alpha1))
             IncrementLayer(0);
 
@@ -108,8 +109,15 @@ public class LayeredScene : MonoBehaviour
     {
         layers[layer].SetLevel(layers[layer].currentLevel + 1);
     }
+
+    public void IncrementLayer(LayerName layer, int amount)
+    {
+        Debug.Log("Increment Layer:" + layer + " by " + amount);
+        int layerIndex = layers.FindIndex(l => l.name == layer);
+        if (layerIndex >= 0) layers[layerIndex].SetLevel(layers[layerIndex].currentLevel + amount);
+    }
     
-    
+    // Interpolates audio when level changes
     void UpdateAudio()
     {
         foreach (var layer in layers)
@@ -123,23 +131,35 @@ public class LayeredScene : MonoBehaviour
             }
         }
     }
-    
-    
-    [Serializable]
-    public class Layer
+}
+
+[Serializable]
+public class Layer
+{
+    [HideInInspector] public SpriteRenderer spriteRenderer;
+    [HideInInspector] public int currentLevel;
+    public LayerName name;
+    public string audioTrack;
+    public float currentAudioLevel;
+    public List<Sprite> levels;
+
+    public void SetLevel(int level)
     {
-        public string audioTrack;
-        public int currentLevel;
-        public float currentAudioLevel;
-        public List<Sprite> levels;
-        [HideInInspector] public SpriteRenderer spriteRenderer;
+        level %= levels.Count;
 
-        public void SetLevel(int level)
-        {
-            level %= levels.Count;
-
-            currentLevel = level; 
-            spriteRenderer.sprite = levels[level];
-        }
+        currentLevel = level; 
+        spriteRenderer.sprite = levels[level];
     }
+}
+
+[Serializable]
+public enum LayerName
+{
+    None,
+    RelationshipSelfish,
+    RelationshipSelfless,
+    ExistentialismSelfish,
+    ExistentialismSelfless,
+    GriefSelfish,
+    GriefSelfless
 }

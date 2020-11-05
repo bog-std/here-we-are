@@ -152,8 +152,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePrefab: {fileID: 1550641668321752481, guid: e3677d2f942abef4aace5e873fc80a37,
     type: 3}
+  optionPrefab: {fileID: 1550641668321752481, guid: 39b9ea5e6a6365140985ac0762af5c4a,
+    type: 3}
   textSpeed: 48
   useParser: 1
+  scene: {fileID: 0}
 --- !u!4 &420815192
 Transform:
   m_ObjectHideFlags: 0
@@ -492,7 +495,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 736.00006, y: 414}
+  m_SizeDelta: {x: 550, y: 414}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1321215005
 GameObject:
@@ -1159,6 +1162,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 210dc7702c2edaf4485607e419e60f0e,
         type: 3}
+    - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
+        type: 3}
+      propertyPath: layers.Array.data[0].name
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
+        type: 3}
+      propertyPath: layers.Array.data[1].name
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593982, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: m_LocalPosition.x
