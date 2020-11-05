@@ -6,7 +6,7 @@ namespace Assets._Project.Scripts.DialogueData
     {
         public Choice()
         {
-        
+            layers = new List<LayerName>();
         }
 
         public string choiceOption = string.Empty;

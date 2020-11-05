@@ -100,9 +100,6 @@ using UnityEngine;
                 var split = reader.ReadLine().Split(':');
                 var choice = new Choice();
 
-                Debug.Log("Split Len:" + split.Length + layerMap.Count);
-                
-                
                 switch (split.Length)
                 {
                     case 5:

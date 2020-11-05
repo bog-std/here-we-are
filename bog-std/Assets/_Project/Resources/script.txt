@@ -119,8 +119,7 @@ Continue:D:Jordan: I mean things should be easier, right? I’m not crazy for th
 :?:Jordan: How’re your parents?
 	They’re all right.::R:1
 	They were all right last time I checked.:LastTime
-Jordan: Yeah?
-Player: Yeah. They took a trip to the Bahamas last year and sent me lots of pictures. Seemed like a lot of
-fun.
-Jordan: What you didn’t go with them?
+:D:Jordan: Yeah?
+:D:Player: Yeah. They took a trip to the Bahamas last year and sent me lots of pictures. Seemed like a lot of fun.
+:D:Jordan: What you didn’t go with them?
 :+:R:1
