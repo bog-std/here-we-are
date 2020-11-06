@@ -18,6 +18,7 @@ namespace Assets._Project.Scripts.DialogueManager
         [SerializeField] private GameObject optionPrefab;
         [SerializeField] private float textSpeed = 1f;
         [SerializeField] private bool useParser = false;
+        [SerializeField] private TextAsset txt;
 
         public bool InDialogue => currDialogueBox != null;
 
@@ -28,15 +29,6 @@ namespace Assets._Project.Scripts.DialogueManager
         private int lineIndex = 0;
         private bool done = false;
         public LayeredScene scene;
-        
-
-        // Temporary script array. Will hold the dialogue received later
-        private readonly string[] script =
-        {
-            "Formatted string containing a pattern and a value representing the <size=120%>text</size> to be displayed.",
-            "using UnityEngine;",
-            "Note: You may wish to use this function instead of TextMeshPro.text if you need to concatenate a string with values and trying to avoid unnecessary garbage collection."
-        };
 
         private Queue<Dialogue> dialogueScript;
 
@@ -67,6 +59,14 @@ namespace Assets._Project.Scripts.DialogueManager
                         DisplayNext();
                     }
                 }
+                else if (Input.GetKeyDown(KeyCode.F11))
+                {
+                    Screen.fullScreen = !Screen.fullScreen;
+                }
+                else if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    Application.Quit();
+                }
                 
                 
             }
@@ -93,67 +93,18 @@ namespace Assets._Project.Scripts.DialogueManager
                     Destroy(currDialogueBox);
 
                 // If we are not at the end of the script
-                if (useParser)
+                Debug.Log("Count: " + dialogueScript.Count);
+                if (dialogueScript.Count == 0 && !finished)
                 {
-                    Debug.Log("Count: " + dialogueScript.Count);
-                    if (dialogueScript.Count == 0 && !finished)
-                    {
-                        RequestDialogue();
-                    }
+                    RequestDialogue(txt);
+                }
                         
-                    if(!done)
-                        DisplayTextBox_Parser();
+                if(!done)
+                    DisplayTextBox();
                 }
-                else
-                {
-                    if (lineIndex < script.Length)
-                    {
-                        DisplayTextBox();
-                    }
-                    else
-                    {
-                        // For testing 
-                        lineIndex = 0;
-                    }
-                }
-            }
         }
 
         public void DisplayTextBox()
-        {
-            if (dialoguePrefab == null) return;
-            Debug.Log("Displaying TextBox");
-            try
-            {
-                // Get a copy of the prefab to instantiate
-                var boxToDisplay = dialoguePrefab;
-                var str = script[lineIndex++];
-            
-                // TODO: Calculate position on screen according to who is speaking
-
-                // Get the UI Canvas and instantiate it in the scene 
-                var canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<RectTransform>();
-                currDialogueBox = Instantiate(
-                    boxToDisplay, 
-                    new Vector3(
-                        (0f * 10f) / (canvas.rect.width), 
-                        (-125f * 10f) / (canvas.rect.height)), 
-                    Quaternion.identity, 
-                    canvas);
-                Debug.Log(currDialogueBox.transform.position.ToString());
-
-                // Get the TextMeshPro Component and start the read text coroutine
-                var textMesh = currDialogueBox.GetComponentInChildren<TextMeshProUGUI>();
-                ReadText(textMesh, str);
-                finished = true;
-            }
-            catch (Exception e)
-            {
-                Debug.LogError(e);
-            }
-        }
-
-        public void DisplayTextBox_Parser()
         {
             if (dialoguePrefab == null || dialogueScript.Count == 0) return;
             
@@ -324,7 +275,7 @@ namespace Assets._Project.Scripts.DialogueManager
             }
         }
 
-        private void RequestDialogue() => EnqueueAll(DialogueParser.GetDialogue());
+        private void RequestDialogue(TextAsset script) => EnqueueAll(DialogueParser.GetDialogue(script));
 
         private Vector3 GetTextBoxTarget()
         {
@@ -375,6 +326,7 @@ namespace Assets._Project.Scripts.DialogueManager
                 case Command.Scene:
                     var resource = Resources.Load(Lookup.File(dialogue.tag), typeof(Texture2D));
                     // Display resource in the layer 
+
                     break;
             }
             
@@ -413,7 +365,7 @@ namespace Assets._Project.Scripts.DialogueManager
                     dialogueScript.Dequeue();
 
                     if (dialogueScript.Count == 0)
-                        RequestDialogue();
+                        RequestDialogue(txt);
 
                 }
             }

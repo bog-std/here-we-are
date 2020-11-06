@@ -17,9 +17,9 @@ using UnityEngine;
     {
         //private static readonly char[] charsToTrim = { '*', '~', '@', '(', ')','1','2','3','4','5','6','7','8','9'};
 
-        public static IEnumerable<Dialogue> GetDialogue()
+        public static IEnumerable<Dialogue> GetDialogue(TextAsset script)
         {
-            var dialogue = ReadStringNEW2("Assets/Resources/script.txt");
+            var dialogue = ReadStringNEW2(script);
             // Debug.Log(dialogue);
 
             return dialogue;
@@ -36,17 +36,19 @@ using UnityEngine;
             {'g', LayerName.GriefSelfish}
         };
 
-        public static IEnumerable<Dialogue> ReadStringNEW2(string path)
+        public static IEnumerable<Dialogue> ReadStringNEW2(TextAsset txt)
         {
             // Read the text directly from the test.txt file
-            var reader = new StreamReader(path);
+            var reader = new StringReader(txt.ToString());
 
             var script = new List<Dialogue>();
 
-            while (!reader.EndOfStream)
+            while (true)
             {
                 var dialogue = new Dialogue();
                 var line = reader.ReadLine();
+
+                if (line == null) break;
 
                 // skip empty lines 
                 if (line == string.Empty) continue;
@@ -102,7 +104,7 @@ using UnityEngine;
         }
 
            
-        private static void AddChoices2(ref Dialogue dialogue, StreamReader reader)
+        private static void AddChoices2(ref Dialogue dialogue, StringReader reader)
         {
             while (reader.Peek() == '\t')
             {
