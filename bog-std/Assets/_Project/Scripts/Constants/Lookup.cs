@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public static class Lookup
 {
@@ -8,8 +9,8 @@ public static class Lookup
         switch (key.ToUpper())
         {
             case "PLAYER": return Color.yellow;
-            case "JORDAN": return Color.cyan;
-            case "WAITER": return Color.magenta;
+            case "JORDAN": return FuncLib.GetColour(51, 214, 255); // cyan
+            case "WAITER": return FuncLib.GetColour(204, 51, 153); // pink
             default: return Color.white;
         }
     }
