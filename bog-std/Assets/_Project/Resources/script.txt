@@ -216,7 +216,7 @@ Continue:D:Jordan: You seen Scott in a while?
 :D:Player: I’m proud of him.
 :+:R:1
 :>:Continue
-Jelly:Player: Goddamn am I jealous.
+Jelly:D:Player: Goddamn am I jealous.
 :D:Jordan: I mean he’s worked hard for it.
 :D:Player: Still. Can’t help but be jealous.
 :+:e:1
