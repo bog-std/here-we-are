@@ -176,6 +176,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-7413601601021995821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DemoTrack/Drums
+  m_EditorClassIdentifier: 
+  Name: Drums
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &-7204193183969514499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +210,23 @@ MonoBehaviour:
   lastModified: 637400192905335181
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &-7161597099563388193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DemoTrack/Piano
+  m_EditorClassIdentifier: 
+  Name: Piano
+  Min: 0
+  Max: 2
+  Default: 0
   Exists: 1
 --- !u!114 &-6962001158248369162
 MonoBehaviour:
@@ -846,6 +880,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 19800
+--- !u!114 &-873117049908307617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/DemoTrack3/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637400334558966668
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-789485511046266261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,14 +933,14 @@ MonoBehaviour:
   Banks:
   - {fileID: -1770053229873723830}
   - {fileID: -265952715653211125}
-  - {fileID: -7204193183969514499}
+  - {fileID: -873117049908307617}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 1358397564188733987}
-  - {fileID: -2295164027128839811}
-  - {fileID: -4083435374626903185}
+  - {fileID: -7161597099563388193}
+  - {fileID: 6114842408688165101}
+  - {fileID: -7413601601021995821}
   MinDistance: 0
   MaxDistance: 0
   Length: 4800
@@ -924,15 +976,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 2120641358334568182}
-  - {fileID: -7204193183969514499}
+  - {fileID: -873117049908307617}
   EditorEvents:
   - {fileID: -300966181439957215}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -7204193183969514499}
+  - {fileID: -873117049908307617}
   StringsBanks:
   - {fileID: 2120641358334568182}
-  stringsBankWriteTime: 637400192905404988
+  stringsBankWriteTime: 637400334559026504
   cacheVersion: 3
 --- !u!114 &301257610061720163
 MonoBehaviour:
@@ -1122,7 +1174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMOD/DemoTrack3/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637400192905404988
+  lastModified: 637400334559026504
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1474,6 +1526,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &6114842408688165101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DemoTrack/Synth
+  m_EditorClassIdentifier: 
+  Name: Synth
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &6197552864754003470
 MonoBehaviour:
   m_ObjectHideFlags: 0

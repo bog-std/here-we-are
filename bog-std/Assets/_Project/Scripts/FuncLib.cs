@@ -44,4 +44,9 @@ public class FuncLib
         return current + Mathf.Clamp(dist, -step, step);
     }
 
+    public static Color GetColour(int r, int g, int b, int a = 255)
+    {
+        return new Color(r / 255.0f, g / 255.0f, b / 255.0f, a / 255.0f);
+    }
+
 }
