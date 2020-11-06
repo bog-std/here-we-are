@@ -30,7 +30,11 @@ namespace Assets._Project.Scripts.DialogueManager
         private bool done = false;
         public LayeredScene scene;
 
+        private bool autocompleteToggle = false;
+
         private Queue<Dialogue> dialogueScript;
+
+        private bool hasStarted = false;
 
         public void Awake()
         {
@@ -48,7 +52,16 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             try
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (!hasStarted && Input.GetKey(KeyCode.Mouse0))
+                {
+                    if (currChoices.Count > 0) { }
+                    else
+                    {
+                        DisplayNext();
+                        hasStarted = true;
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.Space))
                 {
                     if (currChoices.Count > 0)
                     {
@@ -67,6 +80,10 @@ namespace Assets._Project.Scripts.DialogueManager
                 {
                     Application.Quit();
                 }
+                else if (Input.GetKeyDown(KeyCode.T))
+                {
+                    autocompleteToggle = !autocompleteToggle;
+                }
                 
                 
             }
@@ -80,11 +97,11 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             if (currChoices != null && currChoices.Count > 0) return;
 
-            if (readingText)
+            if (autocompleteToggle && readingText)
             {
                 readingText = false;
             }
-            else
+            else if (!readingText)
             {
                 // Otherwise try and display the next DialougeBox
 
@@ -98,10 +115,10 @@ namespace Assets._Project.Scripts.DialogueManager
                 {
                     RequestDialogue(txt);
                 }
-                        
-                if(!done)
+
+                if (!done)
                     DisplayTextBox();
-                }
+            }
         }
 
         public void DisplayTextBox()
