@@ -1473,5 +1473,10 @@ PrefabInstance:
       propertyPath: Event
       value: event:/ProgressDemo
       objectReference: {fileID: 0}
+    - target: {fileID: 5538911950561593983, guid: fff24d14152ce8f41911c1399a6db47f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fff24d14152ce8f41911c1399a6db47f, type: 3}
