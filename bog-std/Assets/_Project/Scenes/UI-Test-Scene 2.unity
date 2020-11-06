@@ -186,6 +186,7 @@ MonoBehaviour:
     type: 3}
   textSpeed: 48
   useParser: 1
+  txt: {fileID: 4900000, guid: c449a25860e63d64f9f1c2bf2ace5dee, type: 3}
   scene: {fileID: 0}
 --- !u!4 &420815192
 Transform:
