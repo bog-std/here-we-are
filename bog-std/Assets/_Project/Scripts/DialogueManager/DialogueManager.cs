@@ -56,7 +56,7 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             try
             {
-                if (Input.GetButtonDown("Jump"))
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     if (currChoices.Count > 0)
                     {
@@ -371,6 +371,10 @@ namespace Assets._Project.Scripts.DialogueManager
                     break;
                 case Command.Increment:
                     UpdateLayers(dialogue.layers, dialogue.magnitude);
+                    break;
+                case Command.Scene:
+                    var resource = Resources.Load(Lookup.File(dialogue.tag), typeof(Texture2D));
+                    // Display resource in the layer 
                     break;
             }
             

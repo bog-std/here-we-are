@@ -15,4 +15,13 @@ public static class Lookup
         }
     }
 
+    public static string File(string key)
+    {
+        switch (key.ToUpper())
+        {
+            case "BLACK": return "Assets/_Project/Art/Background/black.jpg";
+            default: return string.Empty;
+        }
+    }
+
 }

@@ -19,7 +19,7 @@ using UnityEngine;
 
         public static IEnumerable<Dialogue> GetDialogue()
         {
-            var dialogue = ReadStringNEW2("Assets/_Project/Resources/script.txt");
+            var dialogue = ReadStringNEW2("Assets/Resources/script.txt");
             // Debug.Log(dialogue);
 
             return dialogue;
@@ -88,6 +88,10 @@ using UnityEngine;
                             if (layerMap.ContainsKey(layer))
                                 dialogue.layers.Add(layerMap[layer]);
                         dialogue.magnitude = Int32.Parse(split[3]);
+                        break;
+                    case "@":
+                        dialogue.command = Command.Scene;
+                        dialogue.tag = split[2];
                         break;
                 }
 
