@@ -6,7 +6,8 @@ public enum Command : ushort
     None,
     Skip,
     Wait,
-    Increment
+    Increment,
+    Scene
 };
 
 namespace Assets._Project.Scripts.DialogueData
