@@ -46,8 +46,13 @@ using UnityEngine;
             while (!reader.EndOfStream)
             {
                 var dialogue = new Dialogue();
-                var split = reader.ReadLine().Split(':');
-                
+                var line = reader.ReadLine();
+
+                // skip empty lines 
+                if (line == string.Empty) continue;
+
+                var split = line.Split(':');
+
                 Debug.Log(split.Length);
                 
                 switch (split[1])
