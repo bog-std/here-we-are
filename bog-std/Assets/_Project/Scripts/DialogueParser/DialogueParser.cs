@@ -93,6 +93,10 @@ using UnityEngine;
                         dialogue.command = Command.Scene;
                         dialogue.tag = split[2];
                         break;
+                    case "A":
+                        dialogue.command = Command.SetAudio;
+                        dialogue.magnitude = Int32.Parse(split[3]);
+                        break;
                 }
 
                 script.Add(dialogue);

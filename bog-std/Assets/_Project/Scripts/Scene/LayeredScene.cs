@@ -11,7 +11,6 @@ public class LayeredScene : MonoBehaviour
     [FMODUnity.EventRef] public string fmodEvent;
     public GameObject layerPrefab;
     public List<Layer> layers;
-    
     private FMOD.Studio.EventInstance fmodEventInstance;
     private List<GameObject> layerObjects;
     
@@ -22,6 +21,27 @@ public class LayeredScene : MonoBehaviour
         fmodEventInstance.start();
         
         InitializeLayers();
+
+        InitializeScenes();
+    }
+
+    void InitializeScenes()
+    {
+        GameObject layerObject = Instantiate(layerPrefab, transform);
+        layerObject.name = "layer";
+            
+        layerObjects.Add(layerObject);
+            
+        SpriteRenderer spriteRenderer = layerObject.GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("Error: layerPrefab must have SpriteRenderer component.");
+            return;
+        }
+            
+        // spriteRenderer.sortingOrder = layers.Count - i;
+        // layers[i].spriteRenderer = spriteRenderer;
+        // layers[i].SetLevel(0);
     }
     
     
@@ -66,6 +86,7 @@ public class LayeredScene : MonoBehaviour
     }
 
     
+    
     void InitializeLayers()
     {
         if (layers.Count == 0)
@@ -100,9 +121,12 @@ public class LayeredScene : MonoBehaviour
     }
     
     
-    void UpdateLayer(int layer, int level)
+    public void SetLayer(LayerName layerName, int level)
     {
-        layers[layer].SetLevel(level);
+        if (layerName == LayerName.None) return;
+        
+        foreach (Layer layer in layers.FindAll(layer => layer.name == layerName))
+            layer.SetLevel(level);
     }
 
     void IncrementLayer(int layer)
@@ -151,7 +175,7 @@ public class Layer
         level %= levels.Count;
 
         currentLevel = level; 
-        spriteRenderer.sprite = levels[level];
+        spriteRenderer.sprite = levels[level/3];
     }
 }
 
@@ -164,5 +188,8 @@ public enum LayerName
     ExistentialismSelfish,
     ExistentialismSelfless,
     GriefSelfish,
-    GriefSelfless
+    GriefSelfless,
+    Audio,
+    Scene,
+    Jordan
 }

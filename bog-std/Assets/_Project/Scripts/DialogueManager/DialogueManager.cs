@@ -376,6 +376,12 @@ namespace Assets._Project.Scripts.DialogueManager
                     var resource = Resources.Load(Lookup.File(dialogue.tag), typeof(Texture2D));
                     // Display resource in the layer 
                     break;
+                case Command.SetAudio:
+                    scene.SetLayer(LayerName.Audio, dialogue.magnitude);
+                    break;
+                case Command.SetEmotion:
+                    scene.SetLayer(LayerName.Jordan, dialogue.magnitude);
+                    break;
             }
             
             DisplayNext();
@@ -409,12 +415,10 @@ namespace Assets._Project.Scripts.DialogueManager
             {
                 while (dialogueScript.Peek().tag != target)
                 {
-                    
                     dialogueScript.Dequeue();
 
                     if (dialogueScript.Count == 0)
                         RequestDialogue();
-
                 }
             }
         }
