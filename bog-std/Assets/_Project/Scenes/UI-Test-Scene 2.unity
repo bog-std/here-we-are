@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c91583e66a0ded4ebd2c273bb0a5fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePrefab: {fileID: 1550641668321752481, guid: e3677d2f942abef4aace5e873fc80a37,
+  dialoguePrefab: {fileID: 1550641668321752481, guid: 661931f7aec4d524490abf6c34eb2220,
     type: 3}
   optionPrefab: {fileID: 1550641668321752481, guid: 39b9ea5e6a6365140985ac0762af5c4a,
     type: 3}
