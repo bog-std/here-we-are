@@ -324,9 +324,9 @@ namespace Assets._Project.Scripts.DialogueManager
                     UpdateLayers(dialogue.layers, dialogue.magnitude);
                     break;
                 case Command.Scene:
-                    var resource = Resources.Load(Lookup.File(dialogue.tag), typeof(Texture2D));
+                    // var resource = Resources.Load(Lookup.File(dialogue.tag), typeof(Texture2D));
                     // Display resource in the layer 
-
+                    scene.SetLayer(LayerName.Scene, dialogue.magnitude);
                     break;
                 case Command.SetAudio:
                     scene.SetLayer(LayerName.Audio, dialogue.magnitude);
