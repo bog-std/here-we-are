@@ -243,7 +243,7 @@ HeSay:D:Player: What did he say when he asked you out?
 :D:Jordan: Yup. Didn’t even open with a smooth or tacky pick-up line. Just went straight for it.
 :D:Player: But could you really expect him to do anything else?
 :D:Jordan: Not at all. (chuckles to herself and takes a sip of coffee.)
-Glad:D: I'm just glad you said no.
+Glad:D:Player: I'm just glad you said no.
 :D:Jordan: What do you mean by that?
 :D:Player: You saw how Sarah and I turned out. Scott and I are barely hanging on to our friendship as is. 
 :D:Jordan: Ah.
@@ -405,11 +405,11 @@ Here:D:Player: Are you here?
 Meet:D:Player: We were supposed to meet up.
 :D:Jordan: We were. 
 :D:Player: I was waiting for you.
-Continue:D:(The sound of screeching tires echoes as the scene briefly shifts to the hospital scene.)
+Continue:D:Jordan: (The sound of screeching tires echoes as the scene briefly shifts to the hospital scene.)
 :D:Voice 1: It’s not looking good.
 :D:Voice 2: TA with failing organs. Were they a donor?
 :D:Voice 1: Doesn’t matter. Almost nothing is useable. Except maybe the heart. 
-:D:(Return to the café)
+:D:Player: (Return to the café)
 :?:Jordan: I’m so sorry. (tears form at the corners of Jordan’s eyes.)
 	No. No, no, no..
 	You're not going to be okay..:NotOkay
