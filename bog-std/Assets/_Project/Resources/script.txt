@@ -118,6 +118,7 @@ Beach:D:Player: What you mean like the time we went to the beach?
 :D:Jordan: Maybe so, but the fireworks off the beach were fantastic.
 :D:Player: Yes, they were. Yes, they were.
 Continue:D:Jordan: I wish we could go back to the good ol’ days.
+:A:1
 :D:Player: The days when we could get away with not doing anything?
 :D:Jordan: Just the better ones.
 :D:Player: The days when our problems revolved around test scores and not unemployment.
@@ -360,6 +361,7 @@ Worse:D:Player: Is it worse than when you first told me?]
 :D:Jordan: Better, but not by much.
 :D:Player: (Begin THE GARDEN scene)
 Continue:D:Jordan: Look things aren’t easy right now okay?
+:A:2
 :D:Player: I know they aren't. But you’re still here. 
 :?:Jordan: Am I?
 	What do you mean?
