@@ -2,24 +2,32 @@
 :D:Player: Sorry about that. 
 :D:Jordan: It’s fine, it’s fine.[wait 1] I managed to grab a cup of coffee before you got here.
 :?:Player: That's good.[wait 1]
-	You mind if I order something?
-	Need another cup? I was thinking about ordering something.::R:1
-:D:Jordan: By all means.
-:?:Waiter: What can I get for you today?
-	Just a cup of coffee thanks.::r:1
-	A cup of coffee for me, and a refill for her if you would be so kind.:Refill:R:1
-:D:Jordan:And a refill for me please.
-:D:Waiter:Sure thing, I'll be back with a pot.
+	Mind if I order?
+	Need another cup?:Another:R:1
+:D:Player: You mind if I order something?
 :>:Continue
-Refill:?:Waiter: Sure thing, is there anything else I can get for you at the moment?
-	No that should be it.
-	What's on special for today?:Special
+Another:D:Player: Need another cup? I was thinking about ordering something.
+Continue:D:Jordan: By all means.
+:?:Waiter: What can I get for you today?
+	A cup of coffee.::r:1
+	Coffee and a refill.:Refill:R:1
+:D:Player: Just a cup of coffee thanks.
+:D:Jordan: And a refill for me please.
+:D:Waiter: Sure thing, I'll be back with a pot.
+:>:Continue
+Refill:D:Player: A cup of coffee for me, and a refill for her if you would be so kind.
+:?:Waiter: Sure thing, is there anything else I can get for you at the moment?
+	No thanks.
+	What's on special?:Special
+:D:Player: No that should be it.
 :D:Waiter: Alright then, I'll be back with a pot.
 :>:Continue
-Special:?:Waiter: The potato hash is currently on special if you’re looking for something to feast on.[wait 1] Otherwise, I can suggest anything off the pastry board for something sweeter and smaller.
-	I'll take the daily special, I'm feeling pretty hungry if I'm being honest.
-	If it’s not too much trouble, I’d like a couple croissants with the coffee.:Croissants
-	On second thought, I'll just take the coffee.:Coffee
+Special:D:Player: Whats on special for today?
+:?:Waiter: The potato hash is currently on special if you’re looking for something to feast on.[wait 1] Otherwise, I can suggest anything off the pastry board for something sweeter and smaller.
+	I'll take the special.
+	A couple croissants.:Croissants
+	Just the coffee.:Coffee
+:D:Player: I'll take the daily special, I'm feeling pretty hungry if I'm being honest.
 :D:Waiter: All right one daily special. And I’ll be right back with your cup of coffee.
 :D:Player: Thank you very much.
 :D:Jordan: Feeling peckish, are we?
@@ -31,32 +39,38 @@ Special:?:Waiter: The potato hash is currently on special if you’re looking fo
 :D:Jordan: (swallows) I thought we were friends.
 :D:Player: Of course we are.
 :?:Jordan: Then surely you’ll share some food with your friend.
-	You've shared enough. Give me my food.::r:1
-	You know what, take it.:TakeIt:R:1
+	Give me my food.::r:1
+	Take it.:TakeIt:R:1
+:D:Player: You've shared enough. Give me my food.
 :D:Player: Goddamn that was good.
 :D:Jordan: It sure was.
 :>:Continue
-TakeIt:D:Jordan: You sure?
+TakeIt:D:Player: You know what, take it.
+:D:Jordan: You sure?
 :D:Player: Yeah. You’re eating it like we’re about to go into a famine.
 :D:Jordan: Well I’m glad you noticed. But if you want a couple bites or so, take it. You’re paying for this after all.
 :D:Player: I know.
 :>:Continue2
-Croissants:D:Waiter: No trouble at all. I’ll be right back with your coffee and croissants.
+Croissants:D:Player: If it’s not too much trouble, I’d like a couple croissants with the coffee.
+:D:Waiter: No trouble at all. I’ll be right back with your coffee and croissants.
 :>:Continue
+Coffee:D:Player: On second thought, I'll just take the coffee.
 Coffee:D:Waiter: Sure thing. Just let me know if you change your mind.:
 :D:Player: Of course.
 :D:Jordan: Not hungry?
 :D:Player: Just didn't want to bother them is all.
 Continue:D:Waiter: Here’s your order. If you need anything, just call me over.
 Continue2:?:Jordan: So how’ve you been lately?[wait 1] Feels like it’s been forever since I last saw you.
-	I'm doing pretty good, all things considered. I sent out resumes and I'm hoping for a response pretty soon.::E:1
-	I'm all right, I guess, I wish things were better.:Better:e:1
+	Pretty good.::E:1
+	I'm all right.:Better:e:1
+:D:Player: I'm doing pretty good, all things considered. I sent out resumes and I'm hoping for a response pretty soon.
 :D:Jordan: Still looking for a job?
 :D:Player: Yeah. Something wrong with that?
 :D:Jordan: No, of course not. It’s a good thing to get a job. It’s normal, y’know?
 :D:Player: Yeah. Normal.
 :>:Continue
-Better:D:Jordan: What’s going on?
+Better:D:Player: I'm all right, I guess, I wish things were better.
+:D:Jordan: What’s going on?
 :D:Player: I’m behind on my rent this month and I haven’t had the time to properly form my resumes.
 :D:Jordan: Doesn’t sound like you’re all right.
 :D:Player: Like I said, I wish things were better.
@@ -65,30 +79,37 @@ Continue:D:Player: What about you? How’ve you been?
 :D:Player: Aww did you miss me that much?
 :?:Jordan: Y’know, I kinda did.
 	Only a little bit?::r:1
-	Kinda?::r:1
-	I'm sorry I haven't been in touch as of late. Things have just been a rollercoaster.:Sorry:R:1
-:D:Jordan: (slightly giggles to herself.) Yes, only kinda. It’s what you get for barely calling or texting.
+	Kinda?:Kinda:r:1
+	I'm sorry...:Sorry:R:1
+:D:Player: Only a little bit?
+:>:Skip
+Kinda:D:Player: Kinda?
+Skip:D:Jordan: (slightly giggles to herself.) Yes, only kinda. It’s what you get for barely calling or texting.
 :D:Player: I guess birthday messages have gone out of style, haven’t they?
 :D:Jordan: They did. Ten years ago.
 :>:Continue
-Sorry:D:Jordan: Hey, don’t apologize. Life’s a complete shitstorm, so don’t worry too much about it.
+Sorry:D:Player: I'm sorry I haven't been in touch as of late. Things have just been a rollercoaster.
+:D:Jordan: Hey, don’t apologize. Life’s a complete shitstorm, so don’t worry too much about it.
 :D:Player: I mean there were times I wanted to call or text, but it never felt like the right time.
 :D:Jordan: Would’ve been nice to hear from you though.
 Continue:D:Jordan: We should’ve chatted more. Or hung out or something.
 :D:Player: Like the old days?
 :?:Jordan: Yeah! God, I need a vacation.
-	I feel you on that one. But we can’t stop now can we?::Er:1
-	Y’know, a vacation would be really nice.:Vacation:er:1
-	What you mean like the time we went to the beach?:Beach
+	I feel you.::Er:1
+	That'd be nice.:Vacation:er:1
+	Like the beach?:Beach
+:D:Player: I feel you on that one. But we can’t stop now can we?
 :D:Jordan: We should though. At least, you ought to.
 :D:Player: Need to get the ducks in a row before that happens now though. I can’t just up and leave my responsibilities when I’m still looking for work.
 :D:Jordan: You’re right. That does sound kind of rash. Just promise me you’ll get some rest?
 :D:Player: I will, once everything gets better.
 :>:Continue
+:D:Player: Y’know, a vacation would be really nice.
 Vacation:D:Jordan: Right? I’d love to go to the mountains this time. Find a nice camping spot and watch the stars.
 :D:Player: I’d just love to go for a drive. Put on Scott’s mixtape and just hit the road.
 :D:Jordan: Scott makes mixtapes? Huh. Wild.
 :>:Continue
+Beach:D:Player: What you mean like the time we went to the beach?
 :D:Jordan: Yeah! Exactly like that. (INSERT BEACH SCENE)
 :D:Jordan: I wish we could go back to the beach.
 :D:Player: The one we went to during the summer of our college years? That brings me back.
@@ -101,12 +122,14 @@ Continue:D:Jordan: I wish we could go back to the good ol’ days.
 :D:Jordan: Just the better ones.
 :D:Player: The days when our problems revolved around test scores and not unemployment.
 :?:Jordan: Would you go back to those days?
-	Of course I would. God, I had so much less fear back then. Stress I had plenty of, but not fear.::e:1
-	I don’t know. I don’t think so. Probably not.:ProbablyNot:E:1
+	Yes.::e:1
+	Probably not.:ProbablyNot:E:1
+:D:Player: Of course I would. God, I had so much less fear back then. Stress I had plenty of, but not fear.
 :D:Jordan: They call that ‘anxiety’ my friend.
 :D:Player: I know what it’s called Jo. I just never thought I’d be in this situation.
 :D:Jordan: I don’t think anyone did.
 :>:Continue
+ProbablyNot:D: Player: I don’t know. I don’t think so. Probably not.
 :D:Jordan: Really?
 :D:Player: Feels kind of immature to ignore my problems.
 :D:Jordan: Not even for a day?
@@ -121,5 +144,43 @@ Continue:D:Jordan: I mean things should be easier, right? I’m not crazy for th
 	They were all right last time I checked.:LastTime
 :D:Jordan: Yeah?
 :D:Player: Yeah. They took a trip to the Bahamas last year and sent me lots of pictures. Seemed like a lot of fun.
-:D:Jordan: What you didn’t go with them?
-:+:R:1
+:?:Jordan: What you didn't go with them?
+	I was busy.
+	Didn't want to.:Didnt
+:D:Player: I was busy with work at the time.
+:D:Jordan: Work eh?
+:D:Player: You know how busy I was trying to make ends meet. Student debt is a killer.
+:D:Jordan: Your parents didn't want to help you out?
+:D:Player: I didn't want them to.
+:+:Re:1
+:>:Continue
+Didnt:D:Player: Didn't want to. They invited me, but I’m still chasing dreams and all that.
+:+:re:1
+:?:Jordan: And what is your dream anyways? Certainly isn’t accounting.
+	To be rich.
+	To be famous.:Famous
+	To be happy.:Happy
+:D:Player: I’ve always wanted to be rich. Like, filthy rich.
+:D:Jordan: And roll around in a big money pile?
+:D:Player: Have so much money that I could do whatever I want.
+:D:Jordan: Like what?
+:D:Player: Anything.
+:+:e:1
+:>:Continue
+Famous:D:Player: I'd like to try and be famous.
+:D:Jordan: Then why in God’s name did you go into accounting?
+:D:Player: I was naïve. Tried to go into a field where I could be loaded and be famous or being rich.
+:D:Jordan: Some plan.
+:D:Player: Stupid plan if you ask me.
+:+:e:1
+:>:Continue
+Happy:D:Player: I just want to be happy in life.
+:D:Jordan: (Chuckles, takes a sip of coffee.) Don’t we all.
+:>:Continue
+LastTime:D:Player: They were all right last time I checked.
+:D:Jordan: What? You haven’t called them?
+:D:Player: Not since last year.
+:+:r:1
+:D:Jordan: Why not? They’re your parents. You should call them every once in a while, no?
+
+
