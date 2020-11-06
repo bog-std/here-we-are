@@ -405,11 +405,11 @@ Here:D:Player: Are you here?
 Meet:D:Player: We were supposed to meet up.
 :D:Jordan: We were. 
 :D:Player: I was waiting for you.
-Continue:D:(The sound of screeching tires echoes as the scene briefly shifts to the hospital scene.)
+Continue:D:Jordan: (The sound of screeching tires echoes as the scene briefly shifts to the hospital scene.)
 :D:Voice 1: It’s not looking good.
 :D:Voice 2: TA with failing organs. Were they a donor?
 :D:Voice 1: Doesn’t matter. Almost nothing is useable. Except maybe the heart. 
-:D:(Return to the café)
+:D:Player: (Return to the café)
 :?:Jordan: I’m so sorry. (tears form at the corners of Jordan’s eyes.)
 	No. No, no, no..
 	You're not going to be okay..:NotOkay
