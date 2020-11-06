@@ -93,7 +93,13 @@ using UnityEngine;
                         break;
                     case "@":
                         dialogue.command = Command.Scene;
-                        dialogue.tag = split[2];
+                        dialogue.tag = split[0];
+                        dialogue.magnitude = Int32.Parse(split[2]);
+                        break;
+                    case "A":
+                        dialogue.tag = split[0];
+                        dialogue.command = Command.SetAudio;
+                        dialogue.magnitude = Int32.Parse(split[2]);
                         break;
                 }
 

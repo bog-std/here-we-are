@@ -11,7 +11,6 @@ public class LayeredScene : MonoBehaviour
     [FMODUnity.EventRef] public string fmodEvent;
     public GameObject layerPrefab;
     public List<Layer> layers;
-    
     private FMOD.Studio.EventInstance fmodEventInstance;
     private List<GameObject> layerObjects;
     
@@ -22,6 +21,27 @@ public class LayeredScene : MonoBehaviour
         fmodEventInstance.start();
         
         InitializeLayers();
+
+        InitializeScenes();
+    }
+
+    void InitializeScenes()
+    {
+        GameObject layerObject = Instantiate(layerPrefab, transform);
+        layerObject.name = "layer";
+            
+        layerObjects.Add(layerObject);
+            
+        SpriteRenderer spriteRenderer = layerObject.GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("Error: layerPrefab must have SpriteRenderer component.");
+            return;
+        }
+            
+        // spriteRenderer.sortingOrder = layers.Count - i;
+        // layers[i].spriteRenderer = spriteRenderer;
+        // layers[i].SetLevel(0);
     }
     
     
@@ -66,6 +86,7 @@ public class LayeredScene : MonoBehaviour
     }
 
     
+    
     void InitializeLayers()
     {
         if (layers.Count == 0)
@@ -95,19 +116,23 @@ public class LayeredScene : MonoBehaviour
             
             spriteRenderer.sortingOrder = layers.Count - i;
             layers[i].spriteRenderer = spriteRenderer;
-            layers[i].SetLevel(0);
+            layers[i].SetLevel(0, 1);
         }
     }
     
     
-    void UpdateLayer(int layer, int level)
+    public void SetLayer(LayerName layerName, int level)
     {
-        layers[layer].SetLevel(level);
+        Debug.Log("Set Layer");
+        if (layerName == LayerName.None) return;
+        
+        foreach (Layer layer in layers.FindAll(layer => layer.name == layerName))
+            layer.SetLevel(level,1);
     }
 
     void IncrementLayer(int layer)
     {
-        layers[layer].SetLevel(layers[layer].currentLevel + 1);
+        layers[layer].SetLevel(layers[layer].currentLevel + 1, 3);
     }
 
     
@@ -116,7 +141,7 @@ public class LayeredScene : MonoBehaviour
         if (layerName == LayerName.None) return;
         
         foreach (Layer layer in layers.FindAll(layer => layer.name == layerName))
-            layer.SetLevel(layer.currentLevel + amount);
+            layer.SetLevel(layer.currentLevel + amount, 3);
     }
     
     
@@ -140,18 +165,20 @@ public class LayeredScene : MonoBehaviour
 public class Layer
 {
     [HideInInspector] public SpriteRenderer spriteRenderer;
-    [HideInInspector] public int currentLevel;
+    public int currentLevel;
     public LayerName name;
     public string audioTrack;
     public float currentAudioLevel;
     public List<Sprite> levels;
 
-    public void SetLevel(int level)
+    public void SetLevel(int level, int factor)
     {
-        level %= levels.Count;
+        Debug.Log("SetLevel: " + level + factor);
+        level %= levels.Count * factor;
 
         currentLevel = level; 
-        spriteRenderer.sprite = levels[level];
+        spriteRenderer.sprite = levels[level / factor];
+        Debug.Log("Set level to " + level / factor);
     }
 }
 
@@ -164,5 +191,8 @@ public enum LayerName
     ExistentialismSelfish,
     ExistentialismSelfless,
     GriefSelfish,
-    GriefSelfless
+    GriefSelfless,
+    Audio,
+    Scene,
+    Jordan
 }

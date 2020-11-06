@@ -1,3 +1,7 @@
+:@:1
+:?:Player: Here We Are - Progress Demo
+	Start
+:@:0
 :D:Jordan: Took you long enough.
 :D:Player: Sorry about that. 
 :D:Jordan: It’s fine, it’s fine.[wait 1] I managed to grab a cup of coffee before you got here.
@@ -111,13 +115,16 @@ Vacation:D:Jordan: Right? I’d love to go to the mountains this time. Find a ni
 :>:Continue
 Beach:D:Player: What you mean like the time we went to the beach?
 :D:Jordan: Yeah! Exactly like that. (INSERT BEACH SCENE)
+:@:2
 :D:Jordan: I wish we could go back to the beach.
 :D:Player: The one we went to during the summer of our college years? That brings me back.
 :D:Jordan: Right? It was so hot, but that day was so much fun.
 :D:Player: If I recall correctly, you hated every second of that day.
 :D:Jordan: Maybe so, but the fireworks off the beach were fantastic.
 :D:Player: Yes, they were. Yes, they were.
+:@:0
 Continue:D:Jordan: I wish we could go back to the good ol’ days.
+:A:1
 :D:Player: The days when we could get away with not doing anything?
 :D:Jordan: Just the better ones.
 :D:Player: The days when our problems revolved around test scores and not unemployment.
@@ -360,6 +367,7 @@ Worse:D:Player: Is it worse than when you first told me?]
 :D:Jordan: Better, but not by much.
 :D:Player: (Begin THE GARDEN scene)
 Continue:D:Jordan: Look things aren’t easy right now okay?
+:A:2
 :D:Player: I know they aren't. But you’re still here. 
 :?:Jordan: Am I?
 	What do you mean?

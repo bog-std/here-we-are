@@ -7,7 +7,9 @@ public enum Command : ushort
     Skip,
     Wait,
     Increment,
-    Scene
+    Scene,
+    SetAudio,
+    SetEmotion
 };
 
 namespace Assets._Project.Scripts.DialogueData
