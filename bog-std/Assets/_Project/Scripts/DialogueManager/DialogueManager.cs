@@ -34,6 +34,8 @@ namespace Assets._Project.Scripts.DialogueManager
 
         private Queue<Dialogue> dialogueScript;
 
+        private bool hasStarted = false;
+
         public void Awake()
         {
             dialogueScript = new Queue<Dialogue>();
@@ -50,7 +52,16 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             try
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (!hasStarted && Input.GetKey(KeyCode.Mouse0))
+                {
+                    if (currChoices.Count > 0) { }
+                    else
+                    {
+                        DisplayNext();
+                        hasStarted = true;
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.Space))
                 {
                     if (currChoices.Count > 0)
                     {
