@@ -9,7 +9,8 @@ public enum Command : ushort
     Increment,
     Scene,
     SetAudio,
-    SetEmotion
+    SetEmotion,
+    Set
 };
 
 namespace Assets._Project.Scripts.DialogueData
@@ -29,14 +30,6 @@ namespace Assets._Project.Scripts.DialogueData
         public Command command;
         public List<LayerName> layers;
         public int magnitude;
-
-        // public bool hasChoice; //if True == choice if False == dialog no choices
-
-        // public bool hasCommand;
-        // public int commandValue;
-
-
-
-
+        
     }
 }

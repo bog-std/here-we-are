@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -49,28 +50,28 @@ public class LayeredScene : MonoBehaviour
     {
         // For testing
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            IncrementLayer(0);
+            IncrementLayer(LayerName.Jordan, 1);
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            IncrementLayer(3);
+            IncrementLayer(LayerName.ExistentialismSelfish, 1);
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            IncrementLayer(1);
+            IncrementLayer(LayerName.ExistentialismSelfless,1);
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
-            IncrementLayer(9);
+            IncrementLayer(LayerName.RelationshipSelfish,1);
         
         if (Input.GetKeyDown(KeyCode.Alpha5))
-            IncrementLayer(5);
+            IncrementLayer(LayerName.RelationshipSelfless,1);
         
         if (Input.GetKeyDown(KeyCode.Alpha6))
-            IncrementLayer(8);
+            IncrementLayer(LayerName.GriefSelfish,1);
         
         if (Input.GetKeyDown(KeyCode.Alpha7))
-            IncrementLayer(12);
+            IncrementLayer(LayerName.GriefSelfless,1);
         
         if (Input.GetKeyDown(KeyCode.Alpha8))
-            IncrementLayer(11);
+            IncrementLayer(LayerName.Scene,1);
 
         UpdateAudio();
 
@@ -116,32 +117,46 @@ public class LayeredScene : MonoBehaviour
             
             spriteRenderer.sortingOrder = layers.Count - i;
             layers[i].spriteRenderer = spriteRenderer;
-            layers[i].SetLevel(0, 1);
+            layers[i].SetLevel(0);
         }
     }
     
-    
+    // Sets layer to level index
     public void SetLayer(LayerName layerName, int level)
     {
         Debug.Log("Set Layer");
         if (layerName == LayerName.None) return;
         
         foreach (Layer layer in layers.FindAll(layer => layer.name == layerName))
-            layer.SetLevel(level,1);
+            layer.SetLevel(level);
+    }
+    
+    // Sets layer to level string name
+    public void SetLayer(LayerName layerName, string layerTag)
+    {
+        Debug.Log("Set " + layerName + " by String " + layerTag);
+        if (layerName == LayerName.None) return;
+
+        foreach (Layer layer in layers.FindAll(layer => layer.name == layerName))
+        {
+            int index = layer.levelsNames.FindIndex(s => s == layerTag);
+            if (index != -1) layer.spriteRenderer.sprite = layer.levels[index];
+        }
     }
 
+    // For debug, attached to num keys
     void IncrementLayer(int layer)
     {
-        layers[layer].SetLevel(layers[layer].currentLevel + 1, 3);
+        layers[layer].IncrementLevel(1);
     }
 
     
     public void IncrementLayer(LayerName layerName, int amount)
     {
         if (layerName == LayerName.None) return;
-        
+
         foreach (Layer layer in layers.FindAll(layer => layer.name == layerName))
-            layer.SetLevel(layer.currentLevel + amount, 3);
+            layer.IncrementLevel(amount);
     }
     
     
@@ -169,16 +184,22 @@ public class Layer
     public LayerName name;
     public string audioTrack;
     public float currentAudioLevel;
+    [Min(1)] public int levelScale = 1;
     public List<Sprite> levels;
-
-    public void SetLevel(int level, int factor)
+    public List<string> levelsNames;
+    public void SetLevel(int level)
     {
-        Debug.Log("SetLevel: " + level + factor);
-        level %= levels.Count * factor;
+        Debug.Log("SetLevel: " + level + " Scale: " + levelScale);
+        level %= levels.Count * levelScale;
 
         currentLevel = level; 
-        spriteRenderer.sprite = levels[level / factor];
-        Debug.Log("Set level to " + level / factor);
+        spriteRenderer.sprite = levels[level / levelScale];
+        Debug.Log("Set level to " + level + ", Image to " + level / levelScale);
+    }
+
+    public void IncrementLevel(int amount = 1)
+    {
+        SetLevel(currentLevel + amount);
     }
 }
 
@@ -194,5 +215,6 @@ public enum LayerName
     GriefSelfless,
     Audio,
     Scene,
-    Jordan
+    Jordan,
+    JordanRoof
 }
