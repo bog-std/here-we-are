@@ -348,8 +348,9 @@ namespace Assets._Project.Scripts.DialogueManager
                 case Command.SetAudio:
                     scene.SetLayer(LayerName.Audio, dialogue.magnitude);
                     break;
-                case Command.SetEmotion:
-                    scene.SetLayer(LayerName.Jordan, dialogue.magnitude);
+                case Command.Set:
+                    //scene.SetLayer(LayerName.Jordan, dialogue.magnitude);
+                    scene.SetLayer(dialogue.layers[0], dialogue.name);
                     break;
             }
             

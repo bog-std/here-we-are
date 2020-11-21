@@ -5,23 +5,30 @@ using Assets._Project.Scripts.DialogueData;
 using UnityEditor;
 using UnityEngine;
 
-//a parser that goes through a text file extracting info
-//special chars used so far are :
-// (Dx) (Cx) where x is an int
-// ~x where x is a number indicating the layer to be increased
-// ~~xy where x is the layer and y is the score
-// /n and /t are used but just for readability purposes
-
+// Parser that reads through text file and converts it to dialogue objects
+// Splits lines on ':'
+// split[0] is a tag for the line -> use to branch to this line
+// split[1] is the type token, with the following possible symbols
+//    D - dialogue line - speaker name = split[2], dialogue = split[3]
+//    ? - dialogue line with choices - speaker name = split[2], dialogue = split[3]
+//            choices are tabbed
+//            choices have format dialogue = split[0], branch target = split[1], DEPRECIATED split[2] and split[3] (work the same as '+' below)
+//            not setting a branch target causes branch to go first line following the choices
+//    > - skip lines -> will skip ahead to line tagged with split[2]
+//    + - increments layers listed in split[2] (E, ReG, eg, etc..) by magnitude in split[3]
+//    = - sets layer in split[2][0] (J) (S) (*J = Jordan*, *S = scene*) to layer level name split[3]
+//    @ - sets scene to level split[2], DEPRECIATED -> use '=' for this instead to change scene by level name
+//    A - sets audio to level split[2]
+//
+// NOTE: the parser now supports empty lines, so we can separate blocks of dialogue,
+//       and we can make comments by beginning the line with '#' that will not be parsed
 
     public class DialogueParser : MonoBehaviour
     {
-        //private static readonly char[] charsToTrim = { '*', '~', '@', '(', ')','1','2','3','4','5','6','7','8','9'};
-
         public static IEnumerable<Dialogue> GetDialogue(TextAsset script)
         {
-            var dialogue = ReadStringNEW2(script);
+            var dialogue = ReadString(script);
             // Debug.Log(dialogue);
-
             return dialogue;
         }
 
@@ -33,10 +40,12 @@ using UnityEngine;
             {'E', LayerName.ExistentialismSelfless},
             {'e', LayerName.ExistentialismSelfish},
             {'G', LayerName.GriefSelfless},
-            {'g', LayerName.GriefSelfish}
+            {'g', LayerName.GriefSelfish},
+            {'J', LayerName.Jordan},
+            {'S', LayerName.Scene}
         };
 
-        public static IEnumerable<Dialogue> ReadStringNEW2(TextAsset txt)
+        public static IEnumerable<Dialogue> ReadString(TextAsset txt)
         {
             // Read the text directly from the test.txt file
             var reader = new StringReader(txt.ToString());
@@ -50,12 +59,18 @@ using UnityEngine;
 
                 if (line == null) break;
 
-                // skip empty lines 
-                if (line == string.Empty) continue;
+                // skip empty lines and comments
+                if (line == string.Empty || line[0] == '#') continue;
 
                 var split = line.Split(':');
 
                 Debug.Log(split.Length);
+
+                if (split.Length == 1)
+                {
+                    Debug.Log("Length 1: " + split[0]);
+                    continue;
+                }
                 
                 switch (split[1])
                 {
@@ -90,6 +105,14 @@ using UnityEngine;
                             if (layerMap.ContainsKey(layer))
                                 dialogue.layers.Add(layerMap[layer]);
                         dialogue.magnitude = Int32.Parse(split[3]);
+                        break;
+                    case "=":
+                        dialogue.command = Command.Set;
+                        dialogue.tag = split[0];
+                        foreach (char layer in split[2])
+                            if (layerMap.ContainsKey(layer))
+                                dialogue.layers.Add(layerMap[layer]);
+                        dialogue.name = split[3];
                         break;
                     case "@":
                         dialogue.command = Command.Scene;
