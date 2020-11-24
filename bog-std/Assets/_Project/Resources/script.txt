@@ -34,7 +34,7 @@ Refill:D:Player: A cup of coffee for me, and a refill for her if you would be so
 :D:Player: No that should be it.
 :D:Waiter: Alright then, I'll be back with a pot.
 :>:Continue
-Special:D:Player: Whats on special for today?
+Special:D:Player: What's on special for today?
 :?:Waiter: The potato hash is currently on special if you’re looking for something to feast on.[wait 1] Otherwise, I can suggest anything off the pastry board for something sweeter and smaller.
 	I'll take the special.
 	A couple croissants.:Croissants
@@ -42,12 +42,14 @@ Special:D:Player: Whats on special for today?
 :D:Player: I'll take the daily special, I'm feeling pretty hungry if I'm being honest.
 :D:Waiter: All right one daily special. And I’ll be right back with your cup of coffee.
 :D:Player: Thank you very much.
+:=:J:certain
 :D:Jordan: Feeling peckish, are we?
 :D:Player: Always.
 :D:Waiter: Here’s your order. If you need anything, just call me over.
 :D:Player: You know I was going to eat that.
 :D:Jordan: Hmurph hefdf.  
 :D:Player: what?
+:=:J:blush
 :D:Jordan: (swallows) I thought we were friends.
 :D:Player: Of course we are.
 
@@ -72,6 +74,7 @@ Croissants:D:Player: If it’s not too much trouble, I’d like a couple croissa
 Coffee:D:Player: On second thought, I'll just take the coffee.
 Coffee:D:Waiter: Sure thing. Just let me know if you change your mind.:
 :D:Player: Of course.
+:=:J:snicker
 :D:Jordan: Not hungry?
 :D:Player: Just didn't want to bother them is all.
 Continue:D:Waiter: Here’s your order. If you need anything, just call me over.
@@ -94,6 +97,7 @@ Better:D:Player: I'm all right, I guess, I wish things were better.
 :+:e:1
 
 Continue:D:Player: What about you? How’ve you been?
+:=:J:shy
 :D:Jordan: Oh, I could be better. I’m just glad to be here.
 :D:Player: Aww did you miss me that much?
 
@@ -123,6 +127,7 @@ Continue:D:Jordan: We should’ve chatted more. Or hung out or something.
 	That'd be nice.:Vacation
 	Like the beach?:Beach
 :D:Player: I feel you on that one. But we can’t stop now can we?
+:=:J:neutral
 :D:Jordan: We should though. At least, you ought to.
 :D:Player: Need to get the ducks in a row before that happens now though. I can’t just up and leave my responsibilities when I’m still looking for work.
 :D:Jordan: You’re right. That does sound kind of rash. Just promise me you’ll get some rest?
@@ -218,13 +223,15 @@ Happy:D:Player: I just want to be happy in life.
 :D:Jordan: (Chuckles, takes a sip of coffee.) Don’t we all.
 :>:Continue
 LastTime:D:Player: They were all right last time I checked.
-:D:Jordan: What? You haven’t called them?
+:=:J:doubt
+:D:Jordan: What? You haven't called them?
 :D:Player: Not since last year.
 :+:r:1
 :?:Jordan: Why not? They’re your parents. You should call them every once in a while, no?
 	I don't like phone calls.
 	Haven't gotten around to it.:Around
 :D:Player: I hate being interrogated over the phone. “What’re you up to? When are you bringing someone home for Christmas?” I’d rather be hit by a car.
+:=:J:angry
 :D:Jordan: Be careful what you wish for. They’re your parents, and they just want to know that you’re okay. 
 :D:Player: If they just listened to me, they’d know I’m all right. 
 :D:Jordan: Even sitting here, I know that’s total crap. 
@@ -232,6 +239,7 @@ LastTime:D:Player: They were all right last time I checked.
 :+:r:2
 :>:Continue
 Around:D:Player: I just haven’t gotten around to it.
+:=:J:worried
 :D:Jordan: Okay well make sure you call them soon yeah? 
 :D:Player: Of course, I will. Promise. 
 :+:R:2
@@ -260,8 +268,10 @@ Good:D:Player: Good for him.
 :D:Player: It’s not easy to be happy for someone who’s doing better than you.
 :+:re:1
 
-Continue:D:Jordan: Did you know he asked me out?
+Continue:=:J:shy
+:D:Jordan: Did you know he asked me out?
 :D:Player: Seriously? When?
+:=:J:neutral
 :?:Jordan: Last month. He asked me if I wanted to go for dinner and a movie. 
 	What did you say?
 	What did he say?:HeSay
@@ -287,7 +297,7 @@ Glad:D:Player: I'm just glad you said no.
 :D:Player: I wouldn't know.
 
 Continue:D:Player: What about you? How’re your parents?
-
+:=:J:reminiscent
 :?:Jordan: You ever dreamed of flying?
 	Like a plan?
 	I've thought about it.:Thought
@@ -303,11 +313,13 @@ Thought:D:Player: I’ve thought about it once or twice.
 :+:e:1
 :>:Continue
 Never:D:Player: Never in a million years. Can’t help but look down.
+:=:J:snicker
 :D:Jordan: You’re still scared of heights?
 :D:Player: You still aren't?
 :D:Jordan: Nope. Never was.
 
 Continue:D:Player: Haven’t we talked about this before?
+:=:J:neutral
 :D:Jordan: The rooftop of Jun’s apartment. 
 :D:Player: The graduation party?
 :?:Jordan: Yeah. Don’t you remember anything about it?
@@ -325,21 +337,26 @@ Continue:D:Player: Haven’t we talked about this before?
 :=:S:Cafe
 
 :>:Continue
+
 Drank:D:Player: Just how much I drank.
+:=:J:reminiscent
 :D:Jordan: You didn't get blackout drunk by the end, did you?
 :D:Player: No, but I definitely drank enough to barely remember it.
 :+:r:3
-Continue:D:Player: You never answered my question. 
+Continue:D:Player: You never answered my question.
+:=:J:neutral
 :D:Jordan: What question?
 :D:Player: About your parents. How are they?
 :?:Jordan: Oh. My dad’s fine now. He’s been in and out of the hospital for a couple years, but he’s all right. 
 	What about your mom?
 	Have you talked to him?:Talked
 :D:Player: What about your mom?
+:=:J:sarcasm
 :D:Jordan: I don’t have one remember? She died when I was young?
 :D:Player: I’m so sorry. I can’t believe I forgot.
-:D:Jordan: It’s fine. I was over it a long time ago. Sometimes I can’t even remember what she looks like. 
+:D:Jordan: It’s fine. It was a long time ago. Sometimes I can’t even remember what she looks like. 
 :D:Player: At least you have your dad.
+:=:J:hesitate
 :D:Jordan: If that.
 :+:rg:1
 :>:Continue
@@ -348,27 +365,33 @@ Talked:D:Player: It’s good to hear your dad’s okay. Have you talked to him a
 :D:Player: But have you talked to him?
 :D:Jordan: …
 :D:Player: Right. Sorry.
+:=:J:sarcasm
 :D:Jordan: It’s fine.
 
 Continue:D:Player: I’m sorry if I pinched a nerve there. 
 
+:=:J:neutral
 :?:Jordan: I told you it’s fine. We’re adults. I’ve got it handled. 
 	Do you?
 	I trust you.:Trust
 :D:Player: Do you?
+:=:J:hesitate
 :D:Jordan: I just said I did.
 :D:Player: Yeah but I don’t believe you. There’s no way you’re okay. After all we’ve been through, there’s no way you’re okay even in the slightest.
 :+:RG:1
+:=:J:whistle
 :?:Jordan: (sadly chuckles.) Well I don’t want to unload my bullshit on you.
 	You don't trust me?
 	I'm not going anywhere.:NotGoing
 :D:Player: We’ve been friends for so long, and you still don’t trust me to give advice?
+:=:J:neutral
 :D:Jordan: It’s just not something that needs advising. 
 :D:Player: It may not be. But I can’t stand seeing someone I care about being really miserable. I want to help. 
 :D:Jordan: I appreciate it, but you gotta trust me on this. I’m okay. 
 :+:re:1
 :>:Continue
 NotGoing:D:Player: I’m here aren't I? I’m not going anywhere.
+:=:J:hesitate
 :D:Jordan: I mean I’ve been the other side, listening to people rant. It sucks. I'll just say it. It sucks listening to people rant all the time. 
 :D:Player: Maybe. But I’d be willing to listen. 
 :D:Jordan: Seriously?
@@ -376,24 +399,29 @@ NotGoing:D:Player: I’m here aren't I? I’m not going anywhere.
 :+:R:2
 :>:Continue
 Trust:D:Player: All right. I trust you.
+:=:J:neutral
 :D:Jordan: Thanks.
 :D:Player: But you can if you want.
 
-Continue:?:Jordan: I just get really pissed off with Margaret most of the time. 
+Continue:=:J:hesitate
+:?:Jordan: I just get really pissed off with Margaret most of the time. 
 	Who is Margaret?
 	Your aunt?:Aunt
 :D:Player: Remind me who Margaret is?
+:=:J:angry
 :D:Jordan: My dad’s girlfriend? The one who’s been nothing but a bitch since she came into my life?
 :D:Player: Right, I remember. 
 :+:r:1
 :>:Continue
 Aunt:D:Player: Your aunt?
+:=:J:neutral
 :D:Jordan: Good try. It’s my dad’s new girlfriend. 
 :D:Player: Right. 
 :D:Jordan: At least you tried. 
 :+:R:1
 
-Continue:D:Jordan: Anyways, she’s been the only way I’ve been able to talk to my dad. Because of his condition, the doctors want to minimize the amount of people he interacts with. 
+Continue:=:J:angry
+:D:Jordan: Anyways, she’s been the only way I’ve been able to talk to my dad. Because of his condition, the doctors want to minimize the amount of people he interacts with. 
 :D:Player: You’re not allowed to see him?
 :D:Jordan: Just his doctor, a designated nurse, and her. 
 :D:Player: But you’re his family!
@@ -405,6 +433,7 @@ Continue:D:Jordan: Anyways, she’s been the only way I’ve been able to talk t
 :D:Player: That’s bullshit!
 :D:Jordan: I know.
 :D:Player: And there’s nothing you can do?
+:=:J:worried
 :D:Jordan: Seems that way.
 :>:Continue
 You:D:Player: If I were you, I’d do everything I could do to see him.
@@ -422,6 +451,7 @@ Worse:D:Player: Is it worse than when you first told me?
 
 :D:Jordan: You know, there are times I think that God just hates me. Maybe it’s because I’m not religious or whatever. 
 :D:Player: How do you mean?
+:=:J:worried
 :D:Jordan: Like I know bad things happen to people, and I really shouldn’t be complaining, but I wish things were better.
 :?:Player: You’re right you know.
     They happen to everyone.
@@ -433,26 +463,29 @@ Worse:D:Player: Is it worse than when you first told me?
     I wish.
     So what?:What
 :D:Player: I wish things were fair for everyone. But that’s not up to us.
+:=:J:hesitate
 :D:Jordan: No one deserves to be unhappy, do they?
 :+:E:1
 :>:Continue
 What:D:Player: So what it’s unfair? What are you going to do about it?
+:=:J:angry
 :D:Jordan: I’m going to take it up with God.
 :D:Player: If you do, put in a good word for all of us.
 :+:e:2
 :+:g:1
 :>:Continue
 Deal:D:Player: You really shouldn’t be complaining. Yeah things should be better, but they’re not. You just gotta deal with it.
+:=:J:hesitate
 :D:Jordan: I shouldn’t have said anything. 
 :D:Player: Maybe not. But at least you made your voice heard. 
 :+:s:1
-
 
 :=:S:Cafe
 
 Continue:D:Jordan: Look things aren't easy right now okay?
 :A:2
 :D:Player: I know they aren't. But you’re still here. 
+:=:J:worried
 :?:Jordan: Am I?
 	What do you mean?
 	Are we really here?:Here
@@ -464,11 +497,13 @@ Continue:D:Jordan: Look things aren't easy right now okay?
 :>:Continue
 Here:D:Player: Are we really here?
 :D:Jordan: That’s what I’m asking you.  
-:D:Player: I didn't think you meant it seriously. I can clearly see you. You’re right there.
+:D:Player: Oh, I didn't think you meant it seriously. I can clearly see you. You’re right there.
 :+:er:1
 :+:g:2
 Continue:D:Jordan: Are you sure about that?
-:D:Player:(A flashback a hospital bed. Someone is in the bed, with a heart monitor slowly beeping. IV drips stand at the side of the bed, and sunlight drifts through the window. Nurses pass in and out of the memory.)
+:=:S:Hospital
+:D::(A flashback a hospital bed. Someone is in the bed, with a heart monitor slowly beeping. IV drips stand at the side of the bed, and sunlight drifts through the window. Nurses pass in and out of the memory.)
+:=:S:Cafe
 :?:Jordan: I meant to call. I really did. (shift back to the café)
 	But you're still here.
 	We were supposed to meet up.:Meet
@@ -529,7 +564,7 @@ Save:D:Player: That’s a pile of bullshit and you know it. You can save her wit
 :D:Player: I don't want to believe it.
 :D:Jordan: There was nothing you could’ve done. Nothing you can do.
 :D:Player: No that’s not fair!
-:D:Jordan: We've talked about this. It’s not supposed to be.
+:D:Jordan: We've talked about this. It's not supposed to be.
 :+:rge:1
 :>:Continue
 NotOkay:D:Player: You’re not going to be okay, are you?
@@ -542,6 +577,7 @@ Continue:D:Player: Don’t leave me.
 	We really don't, do we?:Dont
 :D:Player: We always have a choice.
 :+:e:1
+:=:J:neutral
 :?:Jordan: Not this one.
 	Not this one.
 	Why not?:WhyNot
