@@ -5,10 +5,10 @@
 	
 :=:S:Cafe
 
+:=:J:neutral
 :D:Jordan: Took you long enough.
 :D:Player: Sorry about that. 
 :D:Jordan: It’s fine, it’s fine.[wait 1] I managed to grab a cup of coffee before you got here.
-
 :?:Player: That's good.[wait 1]
 	Mind if I order?
 	Need another cup?:Another
@@ -17,7 +17,6 @@
 Another:D:Player: Need another cup? I was thinking about ordering something.
 :+:R:1
 Continue:D:Jordan: By all means.
-
 :?:Waiter: What can I get for you today?
 	A cup of coffee.
 	Coffee and a refill.:Refill
@@ -50,7 +49,8 @@ Special:D:Player: What's on special for today?
 :D:Jordan: Hmurph hefdf.  
 :D:Player: what?
 :=:J:blush
-:D:Jordan: (swallows) I thought we were friends.
+:D::(Jordan swallows)
+:D:Jordan: I thought we were friends.
 :D:Player: Of course we are.
 
 :?:Jordan: Then surely you’ll share some food with your friend.
@@ -155,7 +155,9 @@ Beach:D:Player: What you mean like the time we went to the beach?
 :=:S:Cafe
 
 Continue:D:Jordan: I wish we could go back to the good ol’ days.
-:A:1
+
+# Audio Change
+
 :D:Player: The days when we could get away with not doing anything?
 :D:Jordan: Just the better ones.
 :D:Player: The days when our problems revolved around test scores and not unemployment.
@@ -328,14 +330,14 @@ Continue:D:Player: Haven’t we talked about this before?
 :D:Player: I remember quite a bit of it.
 
 :=:S:Rooftop
-:=:J:RoofAway
+:=:J:roof_away
 
 :D:P:# Need to insert rooftop scene here
 :D:: Rooftop Scene.
 
-:=:J:ExtraOff
+:=:J:none
 :=:S:Cafe
-
+:=:J:neutral
 :>:Continue
 
 Drank:D:Player: Just how much I drank.
@@ -483,7 +485,9 @@ Deal:D:Player: You really shouldn’t be complaining. Yeah things should be bett
 :=:S:Cafe
 
 Continue:D:Jordan: Look things aren't easy right now okay?
-:A:2
+
+# Audio Change
+
 :D:Player: I know they aren't. But you’re still here. 
 :=:J:worried
 :?:Jordan: Am I?
