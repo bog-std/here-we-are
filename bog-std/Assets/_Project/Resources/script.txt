@@ -1,5 +1,7 @@
-:=:S:Logo
-
+:=:S:Logo:2
+:=:S:Title:2
+:=:S:Party:2
+:=:S:Beach:2
 :?:Player: Here We Are - Progress Demo
 	Start
 	
