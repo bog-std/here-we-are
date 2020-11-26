@@ -36,11 +36,14 @@ namespace Assets._Project.Scripts.DialogueManager
 
         private bool hasStarted = false;
 
+        private PhoneHubController _phoneHub; // Reference to the scenes Phone
+
         public void Awake()
         {
             dialogueScript = new Queue<Dialogue>();
             currChoices = new List<GameObject>();
-            
+
+            _phoneHub = FindObjectOfType<PhoneHubController>();
         }
 
         public void Start()
@@ -52,7 +55,7 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             try
             {
-                if (!hasStarted && Input.GetKey(KeyCode.Mouse0))
+                if (false && !hasStarted && Input.GetKey(KeyCode.Mouse0))
                 {
                     if (currChoices.Count > 0) { }
                     else
