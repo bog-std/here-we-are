@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PhoneHubController : MonoBehaviour
 {
+
+    #region Scene Fact Variables
+
     public bool BeachSceneVisited { get; set; }
     public bool GardenSceneVisited { get; set; }
     public bool RooftopSceneVisited { get; set; }
@@ -12,6 +15,7 @@ public class PhoneHubController : MonoBehaviour
     public bool GardenSceneUnlocked { get; set; }
     public bool RooftopSceneUnlocked { get; set; }
 
+    #endregion
 
     private Animator _animator;
 
@@ -34,15 +38,12 @@ public class PhoneHubController : MonoBehaviour
         }
     }
 
-    public void DisplayPhone()
-    {
-        _animator.SetBool("IsOpen", true);
-    }
+    public void DisplayPhone() => _animator.SetBool("IsOpen", true);
+    
+    public void HidePhone() => _animator.SetBool("IsOpen", false);
+    
 
-    public void HidePhone()
-    {
-        _animator.SetBool("IsOpen", false);
-    }
+    #region On Click Events
 
     public void FeaturedScene_Clicked()
     {
@@ -79,6 +80,6 @@ public class PhoneHubController : MonoBehaviour
         }
     }
 
-
+    #endregion
 
 }
