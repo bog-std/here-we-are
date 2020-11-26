@@ -519,7 +519,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.024154589, y: 0.024154589, z: 0.024154589}
-  m_Children: []
+  m_Children:
+  - {fileID: 2015603689}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -600,6 +601,135 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2052914913}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1797491775
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 974144690}
+    m_Modifications:
+    - target: {fileID: 2964943356109860377, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964943356109860377, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3367685530446990895, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_Name
+      value: PhoneHub
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 185
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -380
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9c8a928fa35c43f4c928101ea5b85567, type: 3}
 --- !u!1 &1844428397
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +792,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &2015603689 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7441724395514236875, guid: 9c8a928fa35c43f4c928101ea5b85567,
+    type: 3}
+  m_PrefabInstance: {fileID: 1797491775}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2052914913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -677,38 +813,22 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.size
-<<<<<<< Updated upstream
-      value: 16
-=======
       value: 20
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[3].levels.Array.size
-<<<<<<< Updated upstream
-      value: 3
-=======
       value: 6
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[4].levels.Array.size
-<<<<<<< Updated upstream
-      value: 4
-=======
       value: 1
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[5].levels.Array.size
-<<<<<<< Updated upstream
-      value: 3
-=======
       value: 8
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -718,20 +838,12 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[7].levels.Array.size
-<<<<<<< Updated upstream
-      value: 1
-=======
       value: 3
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[8].levels.Array.size
-<<<<<<< Updated upstream
-      value: 1
-=======
       value: 4
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -766,11 +878,7 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[0].levels.Array.size
-<<<<<<< Updated upstream
-      value: 4
-=======
       value: 8
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -790,11 +898,7 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[0].levelsNames.Array.size
-<<<<<<< Updated upstream
-      value: 4
-=======
       value: 8
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -808,8 +912,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
-<<<<<<< Updated upstream
-=======
       propertyPath: layers.Array.data[3].levelsNames.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -850,7 +952,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
->>>>>>> Stashed changes
       propertyPath: layers.Array.data[3].levels.Array.data[0].image
       value: 
       objectReference: {fileID: 21300000, guid: 98a3a6ba6cd342a4ebaa0fcde2d948f1,
@@ -1120,11 +1221,7 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[1].levels.Array.data[1]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 210dc7702c2edaf4485607e419e60f0e,
-=======
       objectReference: {fileID: 21300000, guid: 6a10474155eb4134ca3db65664ca3b7a,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1136,11 +1233,7 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[2].levels.Array.data[1]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: b497c3e98c3f1d345ba5a2151308a2e9,
-=======
       objectReference: {fileID: 21300000, guid: 8ac549b6c6dad7b4ea8ad8a3d19e8f64,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1152,21 +1245,13 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[3].levels.Array.data[1]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 5f607aa93172eeb46ad34623762d778f,
-=======
       objectReference: {fileID: 21300000, guid: cf57e9df2f34d59419805ba60b2263f6,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[4].levels.Array.data[0]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 0203c7f45bb7b9740a54672602224ace,
-=======
       objectReference: {fileID: 21300000, guid: 210dc7702c2edaf4485607e419e60f0e,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1178,101 +1263,61 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[5].levels.Array.data[0]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: c5da0b0abfd6a2545ae71da443a2a96e,
-=======
       objectReference: {fileID: 21300000, guid: b98ce5eded553f5429f3252ab647b0dc,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[5].levels.Array.data[1]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: c5da0b0abfd6a2545ae71da443a2a96e,
-=======
       objectReference: {fileID: 21300000, guid: 210dc7702c2edaf4485607e419e60f0e,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[6].levels.Array.data[0]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: b4ad4a3f5e841354986d545d8ff470a7,
-=======
       objectReference: {fileID: 21300000, guid: 210dc7702c2edaf4485607e419e60f0e,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[6].levels.Array.data[1]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 4f3b21c60b4192e4c829e060c4cac984,
-=======
       objectReference: {fileID: 21300000, guid: 704d75bb280f2214d9d8979806ca2e60,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[7].levels.Array.data[0]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: a6a6ce7db71b311409caacf5134b3bd5,
-=======
       objectReference: {fileID: 21300000, guid: 7dd90c034db620640b09aff7679d0f20,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[7].levels.Array.data[1]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 769b0c27f37737e45855b053add9ac44,
-=======
       objectReference: {fileID: 21300000, guid: 5f607aa93172eeb46ad34623762d778f,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[8].levels.Array.data[0]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 49d4e3577f7803f4db9cd7452095922d,
-=======
       objectReference: {fileID: 21300000, guid: 0203c7f45bb7b9740a54672602224ace,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[8].levels.Array.data[1]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 769b0c27f37737e45855b053add9ac44,
-=======
       objectReference: {fileID: 21300000, guid: 8766a34783ca84641ba8b3eb9c9a8414,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[9].levels.Array.data[0]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 769b0c27f37737e45855b053add9ac44,
-=======
       objectReference: {fileID: 21300000, guid: c5da0b0abfd6a2545ae71da443a2a96e,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[9].levels.Array.data[1]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 49d4e3577f7803f4db9cd7452095922d,
-=======
       objectReference: {fileID: 21300000, guid: c5da0b0abfd6a2545ae71da443a2a96e,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1284,21 +1329,13 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[10].levels.Array.data[0]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 49d4e3577f7803f4db9cd7452095922d,
-=======
       objectReference: {fileID: 21300000, guid: b4ad4a3f5e841354986d545d8ff470a7,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[11].levels.Array.data[0]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 3922b2775113d324b82b072803ea544f,
-=======
       objectReference: {fileID: 21300000, guid: a6a6ce7db71b311409caacf5134b3bd5,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1310,11 +1347,7 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[13].levels.Array.data[0]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 03967d3d05308e64d979ad13f34f7b60,
-=======
       objectReference: {fileID: 21300000, guid: 769b0c27f37737e45855b053add9ac44,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1344,11 +1377,7 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[14].levels.Array.data[0]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 58fa2696f1417924db6943e63aed28b7,
-=======
       objectReference: {fileID: 21300000, guid: 49d4e3577f7803f4db9cd7452095922d,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1380,21 +1409,13 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[1].levels.Array.data[2]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: da05985f3b01b6c429ebcc7f4882555d,
-=======
       objectReference: {fileID: 21300000, guid: d8c7f691e5a7e5b478aa1d95f2d16971,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[2].levels.Array.data[2]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: fc84ce9059a39e94fa30c4377d2d5b6d,
-=======
       objectReference: {fileID: 21300000, guid: 8648b8642ed5e7a409851c638dee872b,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1416,31 +1437,19 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[0].levels.Array.data[4]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: d618c2be18d817b4d932f724dc3588e2,
-=======
       objectReference: {fileID: 21300000, guid: e96233dfb2f662c4089a9895cdd6270e,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[0].levels.Array.data[5]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 9c1660929f635d84f8bdcaac03fcca48,
-=======
       objectReference: {fileID: 21300000, guid: b6f1e6dcdd34e8e4d8fb295842111d69,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[3].levels.Array.data[2]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: b0d074106cb626b4f806f5f5ee350d2e,
-=======
       objectReference: {fileID: 21300000, guid: 935c418bdf19b5643a4ebc73abe9ce11,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1450,48 +1459,28 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[1].name
-<<<<<<< Updated upstream
-      value: 8
-=======
       value: 9
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[2].name
-<<<<<<< Updated upstream
-      value: 9
-=======
       value: 10
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[7].levels.Array.data[2]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 769b0c27f37737e45855b053add9ac44,
-=======
       objectReference: {fileID: 21300000, guid: b0d074106cb626b4f806f5f5ee350d2e,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[7].name
-<<<<<<< Updated upstream
-      value: 0
-=======
       value: 5
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[6].name
-<<<<<<< Updated upstream
-      value: 3
-=======
       value: 9
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1502,78 +1491,46 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[4].name
-<<<<<<< Updated upstream
-      value: 6
-=======
       value: 12
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[6].levels.Array.data[2]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 58f2939f9167ee24faf816986449e044,
-=======
       objectReference: {fileID: 21300000, guid: b497c3e98c3f1d345ba5a2151308a2e9,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[3].name
-<<<<<<< Updated upstream
-      value: 5
-=======
       value: 11
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[5].levels.Array.data[2]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 7ff46f77899701643b39f80f388fe11e,
-=======
       objectReference: {fileID: 21300000, guid: 0f9b915698ea56542afd456e10381efe,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[8].name
-<<<<<<< Updated upstream
-      value: 0
-=======
       value: 6
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[8].levels.Array.data[2]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 769b0c27f37737e45855b053add9ac44,
-=======
       objectReference: {fileID: 21300000, guid: dc5f15faaf92f7d4794649989c93a5d0,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[9].name
-<<<<<<< Updated upstream
-      value: 0
-=======
       value: 2
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[9].levels.Array.data[2]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 49d4e3577f7803f4db9cd7452095922d,
-=======
       objectReference: {fileID: 21300000, guid: 7ff46f77899701643b39f80f388fe11e,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1590,31 +1547,19 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[1].levels.Array.data[3]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 06fdd617ce39beb4e9113acba83713c1,
-=======
       objectReference: {fileID: 21300000, guid: f3e7639f84a3df54da772db434394fbc,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[1].levels.Array.data[4]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: d618c2be18d817b4d932f724dc3588e2,
-=======
       objectReference: {fileID: 21300000, guid: ba53e140beb7bf6458a4996124804bd5,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[1].levels.Array.data[5]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 9c1660929f635d84f8bdcaac03fcca48,
-=======
       objectReference: {fileID: 21300000, guid: b26e18ddc71d995429e063220387090c,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1624,11 +1569,7 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[5].name
-<<<<<<< Updated upstream
-      value: 2
-=======
       value: 8
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1645,22 +1586,14 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[3].levels.Array.data[3]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 69cfc362091297a4bb0252046b54bed1,
-=======
       objectReference: {fileID: 21300000, guid: e8f61f8163948604990bea231211b420,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[3].levels.Array.data[4]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 0}
-=======
       objectReference: {fileID: 21300000, guid: 241ab59d57ba92e488d9838f7d1b0a51,
         type: 3}
->>>>>>> Stashed changes
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[12].name
@@ -1717,47 +1650,27 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[1].levelsNames.Array.data[1]
-<<<<<<< Updated upstream
-      value: Cafe
-=======
       value: roof_away
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[1].levelsNames.Array.data[2]
-<<<<<<< Updated upstream
-      value: Beach
-=======
       value: roof_side
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[1].levelsNames.Array.data[3]
-<<<<<<< Updated upstream
-      value: Rooftop
-=======
       value: roof_forward
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[1].levelsNames.Array.data[4]
-<<<<<<< Updated upstream
-      value: Garden
-=======
       value: beach_anger
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[1].levelsNames.Array.data[5]
-<<<<<<< Updated upstream
-      value: Hospital
-=======
       value: beach_annoyed
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1767,20 +1680,12 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[0].levelsNames.Array.data[1]
-<<<<<<< Updated upstream
-      value: RoofAway
-=======
       value: beach_anger
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[0].levelsNames.Array.data[2]
-<<<<<<< Updated upstream
-      value: RoofSide
-=======
       value: beach_annoyed
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1850,59 +1755,35 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[0].levelsNames.Array.data[3]
-<<<<<<< Updated upstream
-      value: RoofForward
-=======
       value: beach_eyeroll
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[0].levelsNames.Array.data[4]
-<<<<<<< Updated upstream
-      value: Garden
-=======
       value: beach_happy
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[0].levelsNames.Array.data[5]
-<<<<<<< Updated upstream
-      value: Hospital
-=======
       value: beach_laughing
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[2].levels.Array.data[3]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 9c6ead4446b8f8c45b0a4d5ae0f88e0f,
-=======
       objectReference: {fileID: 21300000, guid: d47708b3be191d04e9f67772c10708a2,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[2].levels.Array.data[4]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: f6f7815706636264d8693f7f7ad910f6,
-=======
       objectReference: {fileID: 21300000, guid: c57e124f5f3512442ae9b7faf3549fc5,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[2].levels.Array.data[5]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 27dc3dc292813af4facef86268bcc24a,
-=======
       objectReference: {fileID: 21300000, guid: 91162ab4c5907f145bceb403e179700c,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1912,47 +1793,27 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[2].levelsNames.Array.data[1]
-<<<<<<< Updated upstream
-      value: angry
-=======
       value: beach_annoyed
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[2].levelsNames.Array.data[2]
-<<<<<<< Updated upstream
-      value: blush
-=======
       value: beach_giggle
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[2].levelsNames.Array.data[3]
-<<<<<<< Updated upstream
-      value: certain
-=======
       value: beach_left
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[2].levelsNames.Array.data[4]
-<<<<<<< Updated upstream
-      value: doubt
-=======
       value: beach_neutral
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[2].levelsNames.Array.data[5]
-<<<<<<< Updated upstream
-      value: haha
-=======
       value: beach_right
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1968,11 +1829,7 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[15].name
-<<<<<<< Updated upstream
-      value: 7
-=======
       value: 0
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1988,11 +1845,7 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[15].levels.Array.data[0]
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 21300000, guid: 58fa2696f1417924db6943e63aed28b7,
-=======
       objectReference: {fileID: 21300000, guid: 3922b2775113d324b82b072803ea544f,
->>>>>>> Stashed changes
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -2091,11 +1944,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
-<<<<<<< Updated upstream
-      propertyPath: layers.Array.data[2].levelsNames.Array.data[13]
-      value: worried
-      objectReference: {fileID: 0}
-=======
       propertyPath: layers.Array.data[14].fadeMode
       value: 0
       objectReference: {fileID: 0}
@@ -3129,7 +2977,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: b4701b9a73cbcd44db841b91fc8ef412,
         type: 3}
->>>>>>> Stashed changes
+    - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593982, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: m_LocalPosition.x
