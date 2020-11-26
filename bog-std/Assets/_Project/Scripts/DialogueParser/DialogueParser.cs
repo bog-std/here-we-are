@@ -41,8 +41,11 @@ using UnityEngine;
             {'e', LayerName.ExistentialismSelfish},
             {'G', LayerName.GriefSelfless},
             {'g', LayerName.GriefSelfish},
+            {'S', LayerName.Scene},
             {'J', LayerName.Jordan},
-            {'S', LayerName.Scene}
+            {'1', LayerName.Extra1},
+            {'2', LayerName.Extra2},
+            {'3', LayerName.Extra3},
         };
 
         public static IEnumerable<Dialogue> ReadString(TextAsset txt)
@@ -98,32 +101,33 @@ using UnityEngine;
                         dialogue.command = Command.Skip;
                         dialogue.tag = split[2];
                         break;
-                    case "+":
-                        dialogue.command = Command.Increment;
-                        dialogue.tag = split[0];
-                        foreach (char layer in split[2])
-                            if (layerMap.ContainsKey(layer))
-                                dialogue.layers.Add(layerMap[layer]);
-                        dialogue.magnitude = Int32.Parse(split[3]);
-                        break;
+                    
                     case "=":
-                        dialogue.command = Command.Set;
+                        goto case "+";
+                    case "+":
                         dialogue.tag = split[0];
                         foreach (char layer in split[2])
                             if (layerMap.ContainsKey(layer))
                                 dialogue.layers.Add(layerMap[layer]);
-                        dialogue.name = split[3];
+                        if (split[1] == "+")
+                        {
+                            dialogue.magnitude = Int32.Parse(split[3]);
+                            dialogue.command = Command.Increment;
+                        }
+                        else
+                        {
+                            dialogue.command = Command.Set;
+                            dialogue.name = split[3];
+                        }
                         break;
-                    case "@":
-                        dialogue.command = Command.Scene;
-                        dialogue.tag = split[0];
-                        dialogue.magnitude = Int32.Parse(split[2]);
-                        break;
-                    case "A":
-                        dialogue.tag = split[0];
-                        dialogue.command = Command.SetAudio;
-                        dialogue.magnitude = Int32.Parse(split[2]);
-                        break;
+                    // case "=":
+                    //     dialogue.command = Command.Set;
+                    //     dialogue.tag = split[0];
+                    //     foreach (char layer in split[2])
+                    //         if (layerMap.ContainsKey(layer))
+                    //             dialogue.layers.Add(layerMap[layer]);
+                    //     dialogue.name = split[3];
+                    //     break;
                 }
 
                 script.Add(dialogue);
