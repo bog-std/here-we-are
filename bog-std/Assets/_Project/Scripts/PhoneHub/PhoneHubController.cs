@@ -27,11 +27,21 @@ public class PhoneHubController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
-            _animator.SetBool("IsOpen", true);
+            DisplayPhone();
         } else if (Input.GetKeyDown(KeyCode.H))
         {
-            _animator.SetBool("IsOpen", false);
+            HidePhone();
         }
+    }
+
+    public void DisplayPhone()
+    {
+        _animator.SetBool("IsOpen", true);
+    }
+
+    public void HidePhone()
+    {
+        _animator.SetBool("IsOpen", false);
     }
 
     public void FeaturedScene_Clicked()
