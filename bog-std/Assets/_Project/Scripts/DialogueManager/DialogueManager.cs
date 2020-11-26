@@ -52,7 +52,7 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             try
             {
-                if (false && !hasStarted && Input.GetKey(KeyCode.Mouse0))
+                if (!hasStarted && Input.GetKey(KeyCode.Mouse0))
                 {
                     if (currChoices.Count > 0) { }
                     else
