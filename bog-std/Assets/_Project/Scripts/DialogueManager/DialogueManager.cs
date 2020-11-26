@@ -338,10 +338,19 @@ namespace Assets._Project.Scripts.DialogueManager
                     Seek(dialogue.tag);
                     break;
                 case Command.Increment:
-                    IncrementLayers(dialogue.layers, dialogue.magnitude);
+                    UpdateLayers(dialogue.layers, dialogue.magnitude);
+                    break;
+                case Command.Scene:
+                    // var resource = Resources.Load(Lookup.File(dialogue.tag), typeof(Texture2D));
+                    // Display resource in the layer 
+                    scene.SetLayer(LayerName.Scene, dialogue.magnitude);
+                    break;
+                case Command.SetAudio:
+                    scene.SetLayer(LayerName.Audio, dialogue.magnitude);
                     break;
                 case Command.Set:
-                    SetLayers(dialogue.layers, dialogue.name);
+                    //scene.SetLayer(LayerName.Jordan, dialogue.magnitude);
+                    scene.SetLayer(dialogue.layers[0], dialogue.name);
                     break;
             }
             
@@ -350,22 +359,16 @@ namespace Assets._Project.Scripts.DialogueManager
         
         public void ProcessChoice(Choice choice)
         {
-            IncrementLayers(choice.layers, choice.magnitude);
+            UpdateLayers(choice.layers, choice.magnitude);
             Seek(choice.target);
             ClearChoices();
             DisplayNext();
         }
 
-        private void IncrementLayers(List<LayerName> layers, int magnitude)
+        private void UpdateLayers(List<LayerName> layers, int magnitude)
         {
             foreach(var layer in layers)
                 scene.IncrementLayer(layer, magnitude);
-        }
-        
-        private void SetLayers(List<LayerName> layers, string layerTag)
-        {
-            foreach (var layer in layers)
-                scene.SetLayer(layer, layerTag);
         }
 
         public void ClearChoices()
@@ -386,6 +389,7 @@ namespace Assets._Project.Scripts.DialogueManager
 
                     if (dialogueScript.Count == 0)
                         RequestDialogue(txt);
+
                 }
             }
         }
