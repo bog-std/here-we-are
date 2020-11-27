@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using Assets._Project.Scripts.DialogueData;
 using FMOD;
@@ -336,18 +337,43 @@ namespace Assets._Project.Scripts.DialogueManager
             {
                 case Command.Skip:
                     Seek(dialogue.tag);
+                    DisplayNext();
                     break;
                 case Command.Increment:
                     IncrementLayers(dialogue.layers, dialogue.magnitude);
+                    DisplayNext();
                     break;
                 case Command.Set:
                     SetLayers(dialogue.layers, dialogue.name);
+                    DisplayNext();
+                    if (dialogue.name != string.Empty)
+                    {
+                        Debug.Log("Processing delay: " + dialogue.name);
+                        int result;
+                        if (Int32.TryParse(dialogue.name,  out result)) Invoke("DisplayNext", result);
+                    }
+                        
+                    break;
+                case Command.Wait:
+                    Debug.Log("Wait" + dialogue.magnitude);
+                    Invoke("DisplayNext", dialogue.magnitude);
+                    // StartCoroutine(Wait(dialogue.magnitude));
+                    // StopCoroutine(Wait(dialogue.magnitude));
                     break;
             }
-            
-            DisplayNext();
         }
-        
+
+        private bool isWaiting = false;
+        IEnumerator Wait(int seconds)
+        {
+            Debug.Log("Waiting " + seconds + ".");
+            isWaiting = true;
+            yield return new WaitForSeconds(seconds);
+            isWaiting = false;
+            DisplayNext();
+            Debug.Log("Waiting Complete");
+        }
+
         public void ProcessChoice(Choice choice)
         {
             IncrementLayers(choice.layers, choice.magnitude);
@@ -360,6 +386,7 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             foreach(var layer in layers)
                 scene.IncrementLayer(layer, magnitude);
+            
         }
         
         private void SetLayers(List<LayerName> layers, string layerTag)

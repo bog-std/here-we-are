@@ -17,8 +17,6 @@ using UnityEngine;
 //    > - skip lines -> will skip ahead to line tagged with split[2]
 //    + - increments layers listed in split[2] (E, ReG, eg, etc..) by magnitude in split[3]
 //    = - sets layer in split[2][0] (J) (S) (*J = Jordan*, *S = scene*) to layer level name split[3]
-//    @ - sets scene to level split[2], DEPRECIATED -> use '=' for this instead to change scene by level name
-//    A - sets audio to level split[2]
 //
 // NOTE: the parser now supports empty lines, so we can separate blocks of dialogue,
 //       and we can make comments by beginning the line with '#' that will not be parsed
@@ -42,6 +40,7 @@ using UnityEngine;
             {'G', LayerName.GriefSelfless},
             {'g', LayerName.GriefSelfish},
             {'S', LayerName.Scene},
+            {'A', LayerName.Audio},
             {'J', LayerName.Jordan},
             {'1', LayerName.Extra1},
             {'2', LayerName.Extra2},
@@ -120,14 +119,12 @@ using UnityEngine;
                             dialogue.name = split[3];
                         }
                         break;
-                    // case "=":
-                    //     dialogue.command = Command.Set;
-                    //     dialogue.tag = split[0];
-                    //     foreach (char layer in split[2])
-                    //         if (layerMap.ContainsKey(layer))
-                    //             dialogue.layers.Add(layerMap[layer]);
-                    //     dialogue.name = split[3];
-                    //     break;
+                    case "W":
+                        dialogue.tag = split[0];
+                        dialogue.magnitude = Int32.Parse(split[2]);
+                        dialogue.command = Command.Wait;
+                        if (split.Length > 3) dialogue.name = split[3];
+                        break;
                 }
 
                 script.Add(dialogue);
