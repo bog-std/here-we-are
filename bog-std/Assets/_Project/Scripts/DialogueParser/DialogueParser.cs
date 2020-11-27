@@ -26,7 +26,7 @@ using UnityEngine;
         public static IEnumerable<Dialogue> GetDialogue(TextAsset script)
         {
             var dialogue = ReadString(script);
-            // Debug.Log(dialogue);
+            //Debug.Log(dialogue);
             return dialogue;
         }
 
@@ -65,9 +65,9 @@ using UnityEngine;
                 if (line == string.Empty || line[0] == '#') continue;
 
                 var split = line.Split(':');
-
-                Debug.Log(split.Length);
-
+                
+                Debug.Log( "SplitLength: " +split.Length + " Line: " + line);
+                
                 if (split.Length == 1)
                 {
                     Debug.Log("Length 1: " + split[0]);
