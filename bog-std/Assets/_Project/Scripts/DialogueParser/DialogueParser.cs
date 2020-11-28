@@ -66,11 +66,11 @@ using UnityEngine;
 
                 var split = line.Split(':');
 
-                Debug.Log(split.Length);
+               // Debug.Log(split.Length);
 
                 if (split.Length == 1)
                 {
-                    Debug.Log("Length 1: " + split[0]);
+                    // Debug.Log("Length 1: " + split[0]);
                     continue;
                 }
                 
@@ -125,10 +125,17 @@ using UnityEngine;
                         dialogue.command = Command.Wait;
                         if (split.Length > 3) dialogue.name = split[3];
                         break;
+                    case "@":
+                        dialogue.tag = split[0];
+                        dialogue.command = Command.LoadScript;
+                        dialogue.name = split[2];
+                        break;
                 }
 
                 script.Add(dialogue);
             }
+            
+            
 
             return script;
         }
@@ -162,7 +169,7 @@ using UnityEngine;
                 }
                 
                 
-                Debug.Log("Adding choice " + choice.choiceOption);
+               // Debug.Log("Adding choice " + choice.choiceOption);
                 dialogue.choices.Add(choice);
             }
         }        

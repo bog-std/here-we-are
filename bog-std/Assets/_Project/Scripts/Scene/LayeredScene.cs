@@ -116,7 +116,7 @@ public class LayeredScene : MonoBehaviour
     // Sets layer to level index
     public void SetLayer(LayerName layerName, int level)
     {
-        Debug.Log("Set Layer: " + layerName + " to " + level + ".");
+        // Debug.Log("Set Layer: " + layerName + " to " + level + ".");
         
         if (layerName == LayerName.None) return;
         
@@ -127,7 +127,7 @@ public class LayeredScene : MonoBehaviour
     // Sets layer to level string name
     public void SetLayer(LayerName layerName, string layerTag)
     {
-        Debug.Log("Set Layer: " + layerName + " to " + layerTag + ".");
+        // Debug.Log("Set Layer: " + layerName + " to " + layerTag + ".");
         
         if (layerName == LayerName.None) return;
         
@@ -138,7 +138,7 @@ public class LayeredScene : MonoBehaviour
     // Increment layer level by amount
     public void IncrementLayer(LayerName layerName, int amount)
     {
-        Debug.Log("Increment Layer: " + layerName + " by " + amount + ".");
+        // Debug.Log("Increment Layer: " + layerName + " by " + amount + ".");
         
         if (layerName == LayerName.None) return;
 
@@ -210,7 +210,7 @@ public class Layer
 
     [Min(1)] public int levelScale = 1;
     public List<Sprite> levels;
-    public List<string> levelsNames;
+    // public List<string> levelsNames;
     
     public void SetLevel(int level)
     {
@@ -234,7 +234,7 @@ public class Layer
 
     public void SetLevel(string layerTag)
     {
-        int index = levelsNames.FindIndex(s => s == layerTag);
+        int index = levels.FindIndex(level => level.name == layerTag);
         if (index != -1) SetLevel(index);
     }
 
@@ -258,6 +258,7 @@ public enum LayerName
     GriefSelfless,
     Audio,
     Scene,
+    Coffee,
     Jordan,
     Extra1,
     Extra2,

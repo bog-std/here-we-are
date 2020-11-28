@@ -1,8 +1,13 @@
-@I say some words
-*
-@I say some words to you
-*
-@what do you want to say back to me?
-	1~1I say no to that
-	2~2I say yes to that
-*
+Start:D:: Here We Are
+:?::Which script to test?
+	caffee
+	beach:beach
+	roof:roof
+	graden:garden
+Start:@:script
+beach:+:E:0
+Start:@:beach
+roof:+:E:0
+Start:@:roof
+garden:+:E:0
+Start:@:garden

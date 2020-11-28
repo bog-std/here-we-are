@@ -10,6 +10,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
+
+
 namespace Assets._Project.Scripts.DialogueManager
 {
     public class DialogueManager : MonoBehaviour
@@ -19,7 +21,9 @@ namespace Assets._Project.Scripts.DialogueManager
         [SerializeField] private GameObject optionPrefab;
         [SerializeField] private float textSpeed = 1f;
         [SerializeField] private bool useParser = false;
+        [SerializeField] private List<TextAsset> txtFiles;
         [SerializeField] private TextAsset txt;
+        [SerializeField] private Stack<TextStackItem> txtStack;
 
         public bool InDialogue => currDialogueBox != null;
 
@@ -40,6 +44,7 @@ namespace Assets._Project.Scripts.DialogueManager
         public void Awake()
         {
             dialogueScript = new Queue<Dialogue>();
+            txtStack = new Stack<TextStackItem>();
             currChoices = new List<GameObject>();
             
         }
@@ -66,7 +71,7 @@ namespace Assets._Project.Scripts.DialogueManager
                 {
                     if (currChoices.Count > 0)
                     {
-   
+                        DisplayNext();
                     }
                     else
                     {
@@ -110,17 +115,32 @@ namespace Assets._Project.Scripts.DialogueManager
                 if (currDialogueBox != null)
                     Destroy(currDialogueBox);
 
-                // If we are not at the end of the script
-                Debug.Log("Count: " + dialogueScript.Count);
-                if (dialogueScript.Count == 0 && !finished)
+                
+                if (txtStack.Count == 0) PushDialogue("", txtFiles[0]);
+                
+                // TODO Present phone interface, load script based on input when dialogueScript == 0 and txtStack.Count == 0
+                // Reload most recent script if we hit end of file and stack size is 1
+                if (dialogueScript.Count == 0)
                 {
-                    RequestDialogue(txt);
+                    Debug.Log("End of script");
+                    if (txtStack.Count > 1)
+                    {
+                        PopDialogue();
+                    }
+                    else if (txtStack.Count == 1)
+                    {
+                        Debug.Log("RequestingDialogue");
+                        RequestDialogue(txtStack.Peek().textAsset);
+                    }
+                        
                 }
 
-                if (!done)
-                    DisplayTextBox();
+                //if (!done)
+                DisplayTextBox();
             }
         }
+
+       
 
         public void DisplayTextBox()
         {
@@ -128,17 +148,23 @@ namespace Assets._Project.Scripts.DialogueManager
             
             try
             {
-                // Get a copy of the prefab to instantiate
-                var boxToDisplay = dialoguePrefab;
-
+                if (dialogueScript.Count == 0)
+                {
+                    Debug.Log("Queue empty.");
+                    return;
+                }
+                
                 var dialogue = dialogueScript.Dequeue();
-                if(dialogueScript.Count == 0) done = true;
+                //if(dialogueScript.Count == 0) done = true;
                 
                 if (dialogue.command != Command.None)
                 {
                     ProcessCommand(dialogue);
                     return;
                 }
+                
+                // Get a copy of the prefab to instantiate
+                var boxToDisplay = dialoguePrefab;
             
                 // TODO: Calculate position on screen according to who is speaking
 
@@ -293,7 +319,30 @@ namespace Assets._Project.Scripts.DialogueManager
             }
         }
 
+        private void PopDialogue()
+        {
+            if (txtStack.Count == 0)
+            {
+                Debug.LogError("Tried popping empty stack.");
+                return;
+            }
+            
+            dialogueScript.Clear();
+            TextStackItem item = txtStack.Pop();
+            RequestDialogue(txtStack.Peek().textAsset);
+            Seek(item.returnAddress, 1);
+        }
+        
+        
+        private void PushDialogue(string returnAddress, TextAsset script)
+        {
+            dialogueScript.Clear();
+            RequestDialogue(script);
+            txtStack.Push(new TextStackItem(returnAddress, script));
+        }
+        
         private void RequestDialogue(TextAsset script) => EnqueueAll(DialogueParser.GetDialogue(script));
+        
 
         private Vector3 GetTextBoxTarget()
         {
@@ -325,7 +374,7 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             foreach (var item in list)
             {
-                // Debug.Log(item.line);
+                //Debug.Log(item.line);
                 dialogueScript.Enqueue(item);
             }
         }
@@ -352,8 +401,19 @@ namespace Assets._Project.Scripts.DialogueManager
                         int result;
                         if (Int32.TryParse(dialogue.name,  out result)) Invoke("DisplayNext", result);
                     }
-                        
                     break;
+                case Command.LoadScript:
+                    if (dialogue.name == "pop")
+                    {
+                        PopDialogue();
+                    }
+                    else
+                    {
+                        PushDialogue(dialogue.tag, txtFiles.Find(a => a.name == dialogue.name));
+                    }
+                    DisplayNext();
+                    break;
+                
                 case Command.Wait:
                     Debug.Log("Wait" + dialogue.magnitude);
                     Invoke("DisplayNext", dialogue.magnitude);
@@ -386,7 +446,6 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             foreach(var layer in layers)
                 scene.IncrementLayer(layer, magnitude);
-            
         }
         
         private void SetLayers(List<LayerName> layers, string layerTag)
@@ -403,7 +462,7 @@ namespace Assets._Project.Scripts.DialogueManager
             currChoices.Clear();
         }
 
-        public void Seek(string target)
+        public void Seek(string target, int offset = 0)
         {
             if (target != string.Empty && dialogueScript.Count > 0)
             {
@@ -411,10 +470,34 @@ namespace Assets._Project.Scripts.DialogueManager
                 {
                     dialogueScript.Dequeue();
 
-                    if (dialogueScript.Count == 0)
-                        RequestDialogue(txt);
+                    // if (dialogueScript.Count == 0)
+                    // {
+                    //     RequestDialogue(txt);
+                    //     Debug.Log("Seek hit end");
+                    // }
+                        
+                }
+
+                while (offset-- > 0)
+                {
+                    dialogueScript.Dequeue();
                 }
             }
         }
     }
+}
+
+
+
+[Serializable]
+struct TextStackItem
+{
+    public TextStackItem(string returnAddress, TextAsset textAsset)
+    {
+        this.returnAddress = returnAddress;
+        this.textAsset = textAsset;
+    }
+
+    public string returnAddress;
+    public TextAsset textAsset;
 }
