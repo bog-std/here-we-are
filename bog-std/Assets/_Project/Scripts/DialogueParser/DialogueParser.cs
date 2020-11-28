@@ -18,7 +18,7 @@ using UnityEngine;
 //    + - increments layers listed in split[2] (E, ReG, eg, etc..) by magnitude in split[3]
 //    = - sets layer in split[2][0] (J) (S) (*J = Jordan*, *S = scene*) to layer level name split[3]
 //    @ - clears script and loads new script
-//            split[0] = tag to return to after script finishes, no argument returns to beginning of previous script at end of script
+//            split[0] = tag to return to after script finishes(MUST BE UNIQUE - use random letters if necessary, name not important), no argument returns to beginning of previous script when script finishes
 //            split[2] = name of new script, or "pop" if we want to return to previous script
 //
 // NOTE: the parser now supports empty lines, so we can separate blocks of dialogue,

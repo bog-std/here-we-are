@@ -26,9 +26,7 @@ namespace Assets._Project.Scripts.DialogueManager
         
         [SerializeField] private TextAsset currentTxt;
         [SerializeField] private Stack<TextStackItem> txtStack;
-
         
-
         private GameObject currDialogueBox = null;
         private List<GameObject> currChoices;
         private bool readingText;
@@ -139,7 +137,7 @@ namespace Assets._Project.Scripts.DialogueManager
                     {
                         // TODO Load phone/memory interface
                         
-                        // Placeholder behavior
+                        // Placeholder behavior - reload script
                         Debug.Log("RequestingDialogue");
                         RequestDialogue(txtStack.Peek().textAsset);
                     }
@@ -323,8 +321,12 @@ namespace Assets._Project.Scripts.DialogueManager
         }
         
 
-        private void RequestDialogue(TextAsset script) => EnqueueAll(DialogueParser.GetDialogue(script));
-        
+        private void RequestDialogue(TextAsset script)
+        {
+            currentTxt = script;
+            EnqueueAll(DialogueParser.GetDialogue(script));
+        }
+
 
         private Vector3 GetTextBoxTarget()
         {
@@ -386,14 +388,8 @@ namespace Assets._Project.Scripts.DialogueManager
                     break;
                 
                 case Command.LoadScript:
-                    if (dialogue.name == "pop")
-                    {
-                        PopDialogue();
-                    }
-                    else
-                    {
-                        PushDialogue(dialogue.tag, txtFiles.Find(a => a.name == dialogue.name));
-                    }
+                    if (dialogue.name == "pop") PopDialogue();
+                    else PushDialogue(dialogue.tag, txtFiles.Find(a => a.name == dialogue.name));
                     break;
                 
                 // TODO Fix Wait functionality
@@ -431,7 +427,8 @@ namespace Assets._Project.Scripts.DialogueManager
             txtStack.Push(new TextStackItem(returnAddress, script));
         }
         
-    // TODO Fix Wait functionality
+        
+        // TODO Fix Wait functionality
         private bool isWaiting = false;
         IEnumerator Wait(int seconds)
         {

@@ -1,14 +1,14 @@
-:=:S:logo:2
-:=:S:title:2
-:?:: Here We Are
-	Start
-	
+:=:S:none
+#:=:S:logo:2
+#:=:S:title:2
+#:?:: Here We Are
+#	Start
+
 :=:S:none
 :=:3:mug_empty
 :=:J:jordan_neutral
 :D:Jordan: Took you long enough.
 :D:Player: Sorry about that.
-:=:3:none
 :D:Jordan: It’s fine, it’s fine.[wait 1] I managed to grab a cup of coffee before you got here.
 :?:Player: That's good.[wait 1]
 	Mind if I order?
@@ -457,14 +457,14 @@ Worse:D:Player: Is it worse than when you first told me?
 :=:J:jordan_worried
 :D:Jordan: Like I know bad things happen to people, and I really shouldn’t be complaining, but I wish things were better.
 :?:Player: You’re right you know.
-    They happen to everyone.
-    You just gotta deal with it.:Deal
+	They happen to everyone.
+	You just gotta deal with it.:Deal
 :D:Player: Bad things happen to everyone. Some have it really bad, and others don’t.
 :D:Player: You can’t be responsible for things that happen to you. 
 :+:R:1
 :?:Jordan: But it’s unfair.
-    I wish.
-    So what?:What
+	I wish.
+	So what?:What
 :D:Player: I wish things were fair for everyone. But that’s not up to us.
 :=:J:jordan_hesitate
 :D:Jordan: No one deserves to be unhappy, do they?
