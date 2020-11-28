@@ -17,6 +17,9 @@ using UnityEngine;
 //    > - skip lines -> will skip ahead to line tagged with split[2]
 //    + - increments layers listed in split[2] (E, ReG, eg, etc..) by magnitude in split[3]
 //    = - sets layer in split[2][0] (J) (S) (*J = Jordan*, *S = scene*) to layer level name split[3]
+//    @ - clears script and loads new script
+//            split[0] = tag to return to after script finishes(MUST BE UNIQUE - use random letters if necessary, name not important), no argument returns to beginning of previous script when script finishes
+//            split[2] = name of new script, or "pop" if we want to return to previous script
 //
 // NOTE: the parser now supports empty lines, so we can separate blocks of dialogue,
 //       and we can make comments by beginning the line with '#' that will not be parsed
@@ -26,7 +29,7 @@ using UnityEngine;
         public static IEnumerable<Dialogue> GetDialogue(TextAsset script)
         {
             var dialogue = ReadString(script);
-            //Debug.Log(dialogue);
+            // Debug.Log(dialogue);
             return dialogue;
         }
 
@@ -54,80 +57,93 @@ using UnityEngine;
 
             var script = new List<Dialogue>();
 
-            while (true)
+            string line = String.Empty;
+
+            try
             {
-                var dialogue = new Dialogue();
-                var line = reader.ReadLine();
-
-                if (line == null) break;
-
-                // skip empty lines and comments
-                if (line == string.Empty || line[0] == '#') continue;
-
-                var split = line.Split(':');
-                
-                Debug.Log( "SplitLength: " +split.Length + " Line: " + line);
-                
-                if (split.Length == 1)
+                while (true)
                 {
-                    Debug.Log("Length 1: " + split[0]);
-                    continue;
-                }
-                
-                switch (split[1])
-                {
-                    case "?":
-                        goto case "D";
-                    case "D":
-                        switch (split.Length)
-                        {
-                            case 5:
-                                goto case 4;
-                            case 4:
-                                dialogue.line = split[3].Trim();
-                                goto case 3;
-                            case 3:
-                                dialogue.name = split[2];
-                                goto case 2;
-                            case 2:
-                                dialogue.tag = split[0];
-                                break;
-                        }
-                        if (split[1] == "?") AddChoices2(ref dialogue, reader);
-                        break;
-                        
-                    case ">":
-                        dialogue.command = Command.Skip;
-                        dialogue.tag = split[2];
-                        break;
+                    var dialogue = new Dialogue();
+                    line = reader.ReadLine();
+
+                    if (line == null) break;
+
+                    // skip empty lines and comments
+                    if (line == string.Empty || line[0] == '#') continue;
+
+                    var split = line.Split(':');
                     
-                    case "=":
-                        goto case "+";
-                    case "+":
-                        dialogue.tag = split[0];
-                        foreach (char layer in split[2])
-                            if (layerMap.ContainsKey(layer))
-                                dialogue.layers.Add(layerMap[layer]);
-                        if (split[1] == "+")
-                        {
-                            dialogue.magnitude = Int32.Parse(split[3]);
-                            dialogue.command = Command.Increment;
-                        }
-                        else
-                        {
-                            dialogue.command = Command.Set;
-                            dialogue.name = split[3];
-                        }
-                        break;
-                    case "W":
-                        dialogue.tag = split[0];
-                        dialogue.magnitude = Int32.Parse(split[2]);
-                        dialogue.command = Command.Wait;
-                        if (split.Length > 3) dialogue.name = split[3];
-                        break;
-                }
+                    switch (split[1])
+                    {
+                        case "?":
+                            goto case "D";
+                        case "D":
+                            switch (split.Length)
+                            {
+                                case 5:
+                                    goto case 4;
+                                case 4:
+                                    dialogue.line = split[3].Trim();
+                                    goto case 3;
+                                case 3:
+                                    dialogue.name = split[2];
+                                    goto case 2;
+                                case 2:
+                                    dialogue.tag = split[0];
+                                    break;
+                            }
+                            if (split[1] == "?") AddChoices2(ref dialogue, reader);
+                            break;
 
-                script.Add(dialogue);
+                        case ">":
+                            dialogue.command = Command.Skip;
+                            dialogue.tag = split[2];
+                            break;
+
+                        case "=":
+                            dialogue.command = Command.Set;
+                            dialogue.tag = split[0];
+                            if (split[2].Length > 0) foreach (char layer in split[2])
+                                if (layerMap.ContainsKey(layer))
+                                    dialogue.layers.Add(layerMap[layer]);
+                            else throw new Exception("No layers ");
+                            dialogue.name = split[3];
+                            break;
+                        
+                        case "+":
+                            dialogue.command = Command.Increment;
+                            dialogue.tag = split[0];
+                            if (split[2].Length > 0) foreach (char layer in split[2])
+                                if (layerMap.ContainsKey(layer))
+                                    dialogue.layers.Add(layerMap[layer]);
+                            else throw new Exception("No layers");
+                            dialogue.magnitude = Int32.Parse(split[3]);
+                            break;
+                        
+                        case "W":
+                            dialogue.command = Command.Wait;
+                            dialogue.tag = split[0];
+                            dialogue.magnitude = Int32.Parse(split[2]);
+                            if (split.Length > 3) dialogue.name = split[3];
+                            break;
+                        
+                        case "@":
+                            dialogue.command = Command.LoadScript;
+                            dialogue.tag = split[0];
+                            dialogue.name = split[2];
+                            break;
+                        
+                        default:
+                            throw new Exception("Bad Token");
+                    }
+                    
+                    script.Add(dialogue);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("Failed to parse line: " + line);
+                Debug.LogException(e);
             }
 
             return script;
@@ -136,35 +152,40 @@ using UnityEngine;
            
         private static void AddChoices2(ref Dialogue dialogue, StringReader reader)
         {
-            while (reader.Peek() == '\t')
+            try
             {
-                var split = reader.ReadLine().Split(':');
-                var choice = new Choice();
-
-                switch (split.Length)
+                while (reader.Peek() == '\t')
                 {
-                    case 5:
-                        goto case 4;
-                    case 4:
-                        choice.magnitude = Int32.Parse(split[3]);
-                        goto case 3;
-                    case 3:
-                        foreach (char layer in split[2])
-                            if (layerMap.ContainsKey(layer))
-                                choice.layers.Add(layerMap[layer]);
-                        goto case 2;
-                    case 2:
-                        choice.target = split[1];
-                        goto case 1;
-                    case 1:
-                        choice.choiceOption = split[0].Trim();
-                        break;
-                }
-                
-                
-                Debug.Log("Adding choice " + choice.choiceOption);
-                dialogue.choices.Add(choice);
-            }
-        }        
+                    var split = reader.ReadLine().Split(':');
+                    var choice = new Choice();
 
+                    switch (split.Length)
+                    {
+                        case 5:
+                            goto case 4;
+                        case 4:
+                            choice.magnitude = Int32.Parse(split[3]);
+                            goto case 3;
+                        case 3:
+                            foreach (char layer in split[2])
+                                if (layerMap.ContainsKey(layer))
+                                    choice.layers.Add(layerMap[layer]);
+                            goto case 2;
+                        case 2:
+                            choice.target = split[1];
+                            goto case 1;
+                        case 1:
+                            choice.choiceOption = split[0].Trim();
+                            break;
+                    }
+
+                    dialogue.choices.Add(choice);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Choice parsing error");
+            }
+        }
     }
+    

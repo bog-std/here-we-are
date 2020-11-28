@@ -2,7 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class LayeredScene : MonoBehaviour
@@ -10,14 +13,21 @@ public class LayeredScene : MonoBehaviour
     // Set in editor 
     public bool animate;
     [FMODUnity.EventRef] public string fmodEvent;
+    public Text debugText;
+    [FormerlySerializedAs("debugChangeText")] public Text debugHistoryText;
+    private Queue<string> changeHistory;
     public GameObject layerPrefab;
     public List<Layer> layers;
     private FMOD.Studio.EventInstance fmodEventInstance;
     private List<GameObject> layerObjects;
+
+    private bool showDebugText;
     
-    
+
     void Start()
     {
+        changeHistory = new Queue<string>();
+        
         fmodEventInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
         fmodEventInstance.start();
         
@@ -29,34 +39,29 @@ public class LayeredScene : MonoBehaviour
     {
         UpdateAudio();
         UpdateLayers();
+        UpdateDebugInfo();
         if (animate) Animate();
         
         // For testing
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            IncrementLayer(LayerName.Jordan, 1);
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-            IncrementLayer(LayerName.ExistentialismSelfish, 1);
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-            IncrementLayer(LayerName.ExistentialismSelfless,1);
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-            IncrementLayer(LayerName.RelationshipSelfish,1);
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-            IncrementLayer(LayerName.RelationshipSelfless,1);
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-            IncrementLayer(LayerName.GriefSelfish,1);
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-            IncrementLayer(LayerName.GriefSelfless,1);
-        if (Input.GetKeyDown(KeyCode.Alpha8))
-            IncrementLayer(LayerName.Scene,1);
-        if (Input.GetKeyDown(KeyCode.Alpha9))
-            IncrementLayer(LayerName.Extra1,1);
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-            IncrementLayer(LayerName.Extra2,1);
-        if (Input.GetKeyDown(KeyCode.Minus))
-            IncrementLayer(LayerName.Extra3,1);
+        if (Input.GetKeyDown(KeyCode.Alpha1)) IncrementLayer(LayerName.Jordan, 1);
+        if (Input.GetKeyDown(KeyCode.Alpha2)) IncrementLayer(LayerName.ExistentialismSelfish, 1);
+        if (Input.GetKeyDown(KeyCode.Alpha3)) IncrementLayer(LayerName.ExistentialismSelfless,1);
+        if (Input.GetKeyDown(KeyCode.Alpha4)) IncrementLayer(LayerName.RelationshipSelfish,1);
+        if (Input.GetKeyDown(KeyCode.Alpha5)) IncrementLayer(LayerName.RelationshipSelfless,1);
+        if (Input.GetKeyDown(KeyCode.Alpha6)) IncrementLayer(LayerName.GriefSelfish,1);
+        if (Input.GetKeyDown(KeyCode.Alpha7)) IncrementLayer(LayerName.GriefSelfless,1);
+        if (Input.GetKeyDown(KeyCode.Alpha8)) IncrementLayer(LayerName.Scene,1);
+        if (Input.GetKeyDown(KeyCode.Alpha9)) IncrementLayer(LayerName.Extra1,1);
+        if (Input.GetKeyDown(KeyCode.Alpha0)) IncrementLayer(LayerName.Extra2,1);
+        if (Input.GetKeyDown(KeyCode.Minus)) IncrementLayer(LayerName.Extra3,1);
+
+        if (Input.GetKeyDown(KeyCode.I)) ToggleDebug();
+        
         
     }
-    
+
+
+  
     
     void Animate()
     {
@@ -116,34 +121,40 @@ public class LayeredScene : MonoBehaviour
     // Sets layer to level index
     public void SetLayer(LayerName layerName, int level)
     {
-        Debug.Log("Set Layer: " + layerName + " to " + level + ".");
+        // Debug.Log("Set Layer: " + layerName + " to " + level + ".");
         
         if (layerName == LayerName.None) return;
         
         foreach (Layer layer in layers.FindAll(layer => layer.name == layerName))
             layer.SetLevel(level);
+        
+        AddHistory(layerName + " = " + level);
     }
     
     // Sets layer to level string name
     public void SetLayer(LayerName layerName, string layerTag)
     {
-        Debug.Log("Set Layer: " + layerName + " to " + layerTag + ".");
+        // Debug.Log("Set Layer: " + layerName + " to " + layerTag + ".");
         
         if (layerName == LayerName.None) return;
         
         foreach (Layer layer in layers.FindAll(layer => layer.name == layerName))
             layer.SetLevel(layerTag);
+        
+        AddHistory(layerName + " = " + layerTag);
     }
     
     // Increment layer level by amount
     public void IncrementLayer(LayerName layerName, int amount)
     {
-        Debug.Log("Increment Layer: " + layerName + " by " + amount + ".");
+        // Debug.Log("Increment Layer: " + layerName + " by " + amount + ".");
         
         if (layerName == LayerName.None) return;
 
         foreach (Layer layer in layers.FindAll(layer => layer.name == layerName))
             layer.IncrementLevel(amount);
+        
+        AddHistory(layerName + " + " + amount);
     }
 
 
@@ -188,6 +199,58 @@ public class LayeredScene : MonoBehaviour
         }
     }
     
+    string GetLayerDebugInfo()
+    {
+        string result = String.Empty;
+        foreach (Layer layer in layers)
+        {
+            if (layer.name == LayerName.None) continue;
+            result += layer.name + "\n  Level: " + layer.currentLevel + ", Scale: " + layer.levelScale + "\n  Image: " + layer.currentLevel / layer.levelScale + " (" + layer.spriteBuffer.sprite.name + ")\n";
+        }
+
+        return result;
+    }
+
+    void AddHistory(string history)
+    {
+        if (changeHistory.Count == 10) changeHistory.Dequeue();
+        changeHistory.Enqueue(history);
+    }
+    
+    
+    void ToggleDebug()
+    {
+        showDebugText = !showDebugText;
+        var camera = GameObject.FindWithTag("MainCamera");
+        if (showDebugText)
+        {
+            camera.GetComponent<Camera>().orthographicSize = 7;
+            camera.transform.position += new Vector3(-2.5f, -1.9f, 0);
+        }
+        else
+        {
+            debugText.text = String.Empty;
+            debugHistoryText.text = String.Empty;
+            camera.GetComponent<Camera>().orthographicSize = 5;
+            camera.transform.position = new Vector3(0, 0, -1);
+        }
+    }
+
+    void UpdateDebugInfo()
+    {
+        if (showDebugText)
+        {
+            debugText.text = GetLayerDebugInfo();
+
+            var historyText = "History: (Most recent at top)\n";
+            foreach (var str in changeHistory.Reverse())
+            {
+                historyText += str + "\n";
+            }
+            debugHistoryText.text = historyText;
+        }
+    }
+
 }
 
 
@@ -195,23 +258,25 @@ public class LayeredScene : MonoBehaviour
 [Serializable]
 public class Layer
 {
-    [HideInInspector] public SpriteRenderer spriteRenderer;
-    [HideInInspector] public SpriteRenderer spriteBuffer;
-    public int currentLevel;
+    // Inject from editor
     public LayerName name;
+    [Min(1)] public int levelScale = 1;
+    public List<Sprite> levels;
+    
+    // For debug
+    public int currentLevel;
     public string audioTrack;
     public float currentAudioLevel;
-
+    
+    [HideInInspector] public SpriteRenderer spriteRenderer;
+    [HideInInspector] public SpriteRenderer spriteBuffer;
+    
     // Fade animation
     public FadeMode fadeMode;
     [Min(0.5f)] public float fadeSpeed;
     [HideInInspector] public float bufferState;
     [HideInInspector] public bool buffering = true;
 
-    [Min(1)] public int levelScale = 1;
-    public List<Sprite> levels;
-    public List<string> levelsNames;
-    
     public void SetLevel(int level)
     {
         level %= levels.Count * levelScale;
@@ -229,12 +294,12 @@ public class Layer
             bufferState = 0.0f;
         }
 
-        Debug.Log("Set level to " + level + ", Image to " + level / levelScale);
+        //Debug.Log("Set level to " + level + ", Image to " + level / levelScale);
     }
 
     public void SetLevel(string layerTag)
     {
-        int index = levelsNames.FindIndex(s => s == layerTag);
+        int index = levels.FindIndex(level => level.name == layerTag);
         if (index != -1) SetLevel(index);
     }
 
@@ -258,6 +323,7 @@ public enum LayerName
     GriefSelfless,
     Audio,
     Scene,
+    Coffee,
     Jordan,
     Extra1,
     Extra2,
