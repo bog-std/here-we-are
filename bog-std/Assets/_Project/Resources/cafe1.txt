@@ -14,7 +14,6 @@
 	Mind if I order?
 	Need another cup?:Another
 :D:Player: You mind if I order something?
-
 :>:Continue
 Another:D:Player: Need another cup? I was thinking about ordering something.
 :+:R:1

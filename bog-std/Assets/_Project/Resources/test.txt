@@ -1,10 +1,11 @@
 Start:D:: Here We Are
+:=:S:title
 :?::Which script to test?
-	caffee
+	cafe
 	beach:beach
 	roof:roof
 	graden:garden
-Start:@:script
+Start:@:cafe1
 beach:+:E:0
 Start:@:beach
 roof:+:E:0

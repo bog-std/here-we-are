@@ -7,6 +7,7 @@ using Assets._Project.Scripts.DialogueData;
 using FMOD;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
@@ -22,10 +23,11 @@ namespace Assets._Project.Scripts.DialogueManager
         [SerializeField] private float textSpeed = 1f;
         [SerializeField] private bool useParser = false;
         [SerializeField] private List<TextAsset> txtFiles;
-        [SerializeField] private TextAsset txt;
+        
+        [SerializeField] private TextAsset currentTxt;
         [SerializeField] private Stack<TextStackItem> txtStack;
 
-        public bool InDialogue => currDialogueBox != null;
+        
 
         private GameObject currDialogueBox = null;
         private List<GameObject> currChoices;
@@ -41,6 +43,8 @@ namespace Assets._Project.Scripts.DialogueManager
 
         private bool hasStarted = false;
 
+        public bool InDialogue => currDialogueBox != null;
+        
         public void Awake()
         {
             dialogueScript = new Queue<Dialogue>();
@@ -98,6 +102,8 @@ namespace Assets._Project.Scripts.DialogueManager
                 Debug.LogError(e);
             }
         }
+        
+        
 
         public void DisplayNext()
         {
@@ -115,27 +121,31 @@ namespace Assets._Project.Scripts.DialogueManager
                 if (currDialogueBox != null)
                     Destroy(currDialogueBox);
 
-                
+                // Initialize first script in txtFiles
                 if (txtStack.Count == 0) PushDialogue("", txtFiles[0]);
                 
-                // TODO Present phone interface, load script based on input when dialogueScript == 0 and txtStack.Count == 0
-                // Reload most recent script if we hit end of file and stack size is 1
+                // If at end of current script
                 if (dialogueScript.Count == 0)
                 {
+                    
                     Debug.Log("End of script");
+                    
                     if (txtStack.Count > 1)
                     {
+                        // Pop and load previous script
                         PopDialogue();
                     }
                     else if (txtStack.Count == 1)
                     {
+                        // TODO Load phone/memory interface
+                        
+                        // Placeholder behavior
                         Debug.Log("RequestingDialogue");
                         RequestDialogue(txtStack.Peek().textAsset);
                     }
                         
                 }
-
-                //if (!done)
+                
                 DisplayTextBox();
             }
         }
@@ -148,15 +158,8 @@ namespace Assets._Project.Scripts.DialogueManager
             
             try
             {
-                if (dialogueScript.Count == 0)
-                {
-                    Debug.Log("Queue empty.");
-                    return;
-                }
-                
                 var dialogue = dialogueScript.Dequeue();
-                //if(dialogueScript.Count == 0) done = true;
-                
+
                 if (dialogue.command != Command.None)
                 {
                     ProcessCommand(dialogue);
@@ -318,29 +321,8 @@ namespace Assets._Project.Scripts.DialogueManager
                 ReadText(textMesh, choice.choiceOption);
             }
         }
+        
 
-        private void PopDialogue()
-        {
-            if (txtStack.Count == 0)
-            {
-                Debug.LogError("Tried popping empty stack.");
-                return;
-            }
-            
-            dialogueScript.Clear();
-            TextStackItem item = txtStack.Pop();
-            RequestDialogue(txtStack.Peek().textAsset);
-            Seek(item.returnAddress, 1);
-        }
-        
-        
-        private void PushDialogue(string returnAddress, TextAsset script)
-        {
-            dialogueScript.Clear();
-            RequestDialogue(script);
-            txtStack.Push(new TextStackItem(returnAddress, script));
-        }
-        
         private void RequestDialogue(TextAsset script) => EnqueueAll(DialogueParser.GetDialogue(script));
         
 
@@ -386,22 +368,23 @@ namespace Assets._Project.Scripts.DialogueManager
             {
                 case Command.Skip:
                     Seek(dialogue.tag);
-                    DisplayNext();
                     break;
+                
                 case Command.Increment:
                     IncrementLayers(dialogue.layers, dialogue.magnitude);
-                    DisplayNext();
                     break;
+                
                 case Command.Set:
                     SetLayers(dialogue.layers, dialogue.name);
-                    DisplayNext();
+                    
+                    // TODO Fix Wait functionality
                     if (dialogue.name != string.Empty)
                     {
                         Debug.Log("Processing delay: " + dialogue.name);
-                        int result;
-                        if (Int32.TryParse(dialogue.name,  out result)) Invoke("DisplayNext", result);
+                        if (Int32.TryParse(dialogue.name,  out var result)) Invoke("DisplayNext", result);
                     }
                     break;
+                
                 case Command.LoadScript:
                     if (dialogue.name == "pop")
                     {
@@ -411,9 +394,9 @@ namespace Assets._Project.Scripts.DialogueManager
                     {
                         PushDialogue(dialogue.tag, txtFiles.Find(a => a.name == dialogue.name));
                     }
-                    DisplayNext();
                     break;
                 
+                // TODO Fix Wait functionality
                 case Command.Wait:
                     Debug.Log("Wait" + dialogue.magnitude);
                     Invoke("DisplayNext", dialogue.magnitude);
@@ -421,8 +404,34 @@ namespace Assets._Project.Scripts.DialogueManager
                     // StopCoroutine(Wait(dialogue.magnitude));
                     break;
             }
+            
+            DisplayNext();
         }
-
+        
+        
+        private void PopDialogue()
+        {
+            if (txtStack.Count == 0)
+            {
+                Debug.LogError("Tried popping empty stack.");
+                return;
+            }
+            
+            dialogueScript.Clear();
+            TextStackItem item = txtStack.Pop();
+            RequestDialogue(txtStack.Peek().textAsset);
+            if (item.returnAddress != String.Empty) Seek(item.returnAddress, 1);
+        }
+        
+        
+        private void PushDialogue(string returnAddress, TextAsset script)
+        {
+            dialogueScript.Clear();
+            RequestDialogue(script);
+            txtStack.Push(new TextStackItem(returnAddress, script));
+        }
+        
+    // TODO Fix Wait functionality
         private bool isWaiting = false;
         IEnumerator Wait(int seconds)
         {
@@ -450,8 +459,18 @@ namespace Assets._Project.Scripts.DialogueManager
         
         private void SetLayers(List<LayerName> layers, string layerTag)
         {
-            foreach (var layer in layers)
-                scene.SetLayer(layer, layerTag);
+            if (Int32.TryParse(layerTag, out var layerIndex))
+            {
+                // Set by index
+                foreach (var layer in layers)
+                    scene.SetLayer(layer, layerIndex);
+            }
+            else
+            {
+                // Set by tag
+                foreach (var layer in layers)
+                    scene.SetLayer(layer, layerTag);
+            }
         }
 
         public void ClearChoices()
@@ -464,24 +483,13 @@ namespace Assets._Project.Scripts.DialogueManager
 
         public void Seek(string target, int offset = 0)
         {
-            if (target != string.Empty && dialogueScript.Count > 0)
+            if (target != string.Empty && dialogueScript.Count > 1)
             {
-                while (dialogueScript.Peek().tag != target)
-                {
+                while (dialogueScript.Count > 0 && dialogueScript.Peek().tag != target)
                     dialogueScript.Dequeue();
-
-                    // if (dialogueScript.Count == 0)
-                    // {
-                    //     RequestDialogue(txt);
-                    //     Debug.Log("Seek hit end");
-                    // }
-                        
-                }
-
-                while (offset-- > 0)
-                {
+                
+                if (dialogueScript.Count > 1) while (offset-- > 0)
                     dialogueScript.Dequeue();
-                }
             }
         }
     }
