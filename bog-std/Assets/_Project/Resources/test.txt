@@ -1,5 +1,4 @@
-:W:3
-Start:D:: Here We Are
+:W:2
 :=:S:title
 :?::Which script to test?
 	cafe
