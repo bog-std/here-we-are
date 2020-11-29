@@ -1,1 +1,213 @@
-:D:: Add roof scene to txtAssets in DialogueManager
+:D:Player: Did you invite everyone to this party?
+:D:Scott: Just some friends.
+:D:Player: Some? 
+:?:Scott: All right, maybe a few more than I intended, but they’re all good people. There’s drinks in the kitchen, and any food in the fridge without a label is off limits. If you need me, you know where to find me.
+    Being an alcoholic?
+    Maybe later.:later
+
+:D:Player: Probably enjoying a keg all to yourself.
+:D:Scott: As if!
+:>:Continue
+
+:later:D:Player: I’ll find you later.
+:D:Scott: You better. We still need to shotgun a beer together.
+Continue:D:Player: (Thinking) Ugh I hate these late night parties. I should have just stayed home.
+
+:?:Jordan: Over Here!! What took you so long?? I thought you were dead when you didn’t pick up your phone. 
+    Unfortunately not, I'm here aren't I?
+    Sorry. I was using the GPS to find this place!!:GPS
+
+:D:Jordan: Yeah, better late than never I guess.
+:+:r:1
+:>:Continue
+
+GPS:D:Jordan: Well I’m glad you found the place. Better late than never!
+:+:R:1
+
+Continue:D:Jordan: I was hoping you’d come since I know you don’t really care for these types of things, so it means a lot!
+:D:Player: This is the part where you drink right?
+:D:Jordan: Yup.
+:D:Player: What’re you drinking? 
+:?:Jordan: Something Sarah whipped up. Didn’t see what she put in it before she got me playing. Wanna take my drinks for me?
+    What makes you think I’d drink for you?
+    Fine.:Fine
+
+:+:r:1
+:?:Jordan: Please? 
+    All right fine.
+    Drink it yourself. You’re the one who lost.:Lost
+
+:D:Jordan: Thank you. (She smiles in gratitude. Somehow, it feels like she’s using the player to test the drink for poison.) 
+:D:Player: (thinking) Oh god. This is bad. Like, really bad. 
+:D:Jordan: (Winks) You’re the best.
+:+:R:1
+:>:Continue
+
+Lost:D:Jordan: Aw you’re no fun.
+:D:Jordan:Note to self: Peach juice, vodka, and whatever the hell else is in here, does not mix well together. 
+:+:r:1
+:>:Continue
+
+Fine:D:Player: Yeah sure. I’ll drink it for you.
+:D:Jordan: You’re the sweetest. How is it?
+:D:Player:...
+:D:Jordan: Well?
+:D:Player: Never let Sarah be a bartender.
+:+:R:2
+
+Continue:D:Jordan: Wanna grab some air?
+:D:Player: What? I can barely hear you, it's too loud in here.
+:D:Jordan: Follow me, I know a quiet place!
+:D:Player: That’s better. Where are we anyways? I didn’t recognize anyone at the party.
+:D:Jordan: Oh, quit trying to be funny! Did you really get tipsy from one drink? (Jordan: Side) 
+:D:Player: I have a low tolerance ok?
+:D:Jordan: Surely this place didn’t escape from your memories. (Jordan: Away)
+:D:Player: Maybe one of Scott’s friends spiked my drink.
+:D:Jordan: I think you must have smacked your head while we were climbing up here. How can you not remember this rooftop? (Jordan: Facing)
+:D:Jordan: This is still my favourite part of the building. I don’t think I’ve ever seen anyone else up here…Remember all the late nights we used to spend staring out into the distance? (Jordan: Away)
+:D:Player: It feels so long ago. I miss those nights. 
+:?:Jordan: Do you think our memories mean anything? Like: what does it mean to live? Why are we here or, why do we remember things?
+    What’re you talking about?
+    You tell me.:Tell
+
+:D:Player: Aren’t you a little young to be having an existential crisis?
+:+:E:2
+:?:Jordan: Is anyone too young to have an existential crisis? (Jordan: Side)
+    Yes
+    No:No
+
+:D:Player: If they’re under the age of fifty then yeah, they are.
+Jordan: Says you, how old are you anyway, eight? (Jordan: Side)
+:>:Continue
+
+No:D:Player: Maybe not. As long as they’re mature enough to think about it, then they can be any age.
+:D:Jordan: Wanna join my crisis? (Jordan: Facing)
+:+:E:1
+:>:Continue
+
+Tell:D:Player: How should I know the answer to that? It’s not everyday you question the reason you’re alive or whatever.
+:D:Jordan: Dang, I thought you out of all people would have some insight into this. Nevermind then I guess. (Jordan: Side)
+:D:Player: I just wanted your take on it, that’s all. Plus, why me out of all people?
+:D:Jordan: I trust your opinion. (Jordan: Away)
+:+:e:1
+
+:D:Player: But while we’re on the subject, why not talk about the fact we’re all going to die so what does it matter if we do anything?.
+
+:?:Jordan: Aww, it sounds like you missed me and my quasi-philosophy! (Jordan: Side)
+    Not exactly
+    I did.:Did
+
+:D:Player: Let’s not get ahead of ourselves.
+:+:e:1
+:>:Continue
+
+Did:D:Player: I just think you are an insightful person…
+:+:E:1
+
+:D:Jordan: Did you have something on your mind? (Jordan: Facing)
+:D:Player: Yeah.
+:D:Jordan: Can you hash that out a bit more? What exactly are you asking me?
+:D:Player: I just find myself confused. I barely recognized anyone inside. These last few years have just flashed by. I feel like I don’t know where I am. I feel like I don't have a purpose... 
+:D:Jordan: Maybe you should do something about it…(Jordan: Side)
+:D:Player: like what? It seems like everything I do ends in failure.
+:D:Jordan: Oh boo hoo. Stop being so dramatic. You need to realize you have the power to make your life what you want it to be. I don’t have everything I want, but I control what I can. (Jordan: Away)
+:D:Player: Hmmm. I do have an attitude problem now that you mention it.
+:?:Jordan: “Life is nothing until it is lived, it is we who give it meaning, and value is nothing more than the meaning that we give it.” 
+    Seriously...?
+    Impressive:Imp
+
+:D:Player: That is the stupidest thing I have ever heard. Where did you hear that nonsense?
+:D:Jordan: What’s up with you tonight? When did you become a critic? (Jordan: Side)
+:+:e:1
+:>:Continue
+
+Imp:D:Player: You clearly know more than I do.
+:D:Jordan: Awww thanks. (Jordan: Facing)
+:+:RE:1
+
+Continue:D:Jordan: I learned that from our old pal Jean-Paul Sartre.
+:D:Player: See this is what I am talking about! I don’t remember him at all…
+:D:Jordan: You are way too anxious right now. Relax, he’s some old coot from France. You all right? You look like you’ve seen a ghost. (Jordan: Facing)
+:D:Player: I guess I have been antsy lately. Maybe I do need to relax. Surely there’s more to life than school, work and paying off a mortgage?
+:?:Jordan: You really are gloomy tonight sheesh. I think you have a purpose in life. You make me and your friends happy, that’s reason enough! (Jordan: Facing)
+    I agree
+    I disagree:Dis
+
+:D:Player: When you put it that way, life does have a lot of purpose, I guess.
+:D:Jordan: You guess? (Jordan: Facing)
+:D:Player: I can see the value of living for other people, and it feels good having people rely on me.
+:D:Jordan: Just don’t go dying out in the middle of nowhere because you think your life is an obligation to us. We’re not superheroes. Just people. (Jordan: Side)
+:+:R:2
+:+:E:1
+:>:Continue
+
+Dis:D:Player: That hardly seems like a purpose.
+:D:Jordan: Why not? (Jordan: Side)
+:D:Player: I’m not Mother Theresa, and not everyone’s got a decent enough upbringing to be entirely selfless. I can also see how it would be taxing on me if I kept doing it. I love you guys, but I need to live for me.
+:+:r:2
+:+:e:1
+
+Continue:D:Jordan: Can we agree that you’re responsible for your own path in life? Including purpose? (Jordan: Away)
+:D:Player: All right, fine. But what about you? Have you found your purpose in life? 
+:D:Jordan: I don’t think life has purpose. (Jordan: Away)
+:D:Player: What? You just asked me to agree with you about the purpose of life!
+:?:Jordan: No, I asked if you would agree that you are responsible for your purpose.
+    Huh?
+    Go off on a tangent:Tangent
+
+:D:Player: Do you honestly think that's true?
+:D:Jordan: I’m not sure. (Jordan: Side)
+:-:R:1
+:+:E:1
+:>:Continue
+
+Tangent:D:Player: A lot of things that happened to me weren’t my fault! My purpose would be a lot different if I called all the shots.
+:D:Jordan: … (Jordan: Side)
+:+:e:1
+:+:g:2
+
+Jordan: All that I ask is you are open to the idea. (Jordan: Facing)
+    I can do that.
+    I don't think so.:NO
+
+:D:Player: I’ll try and keep an open mind.
+:D:Jordan: Thanks, I appreciate the effort. (Jordan: Facing)
+:+:R:2
+:-:g:1
+:+:E:2
+:>:Continue
+
+
+NO:D:Player: I think I am going to pass on your French friend's ideas. I have a few of my own.
+:D:Jordan: Suit yourself. (Jordan: Away)
+:+:re:1
+
+:?:Jordan: Soooo...What do you believe then? (Jordan: Side)
+    I don’t know.
+    It’s me against the world.:World
+
+:D:Player: I haven't thought about it.
+:D:Player: I mean I’ve toyed with the idea that there is a God, or something, up there, but then I get caught in a loop of wondering when the misery ends.
+:D:Jordan: And now? (Jordan: Side)
+:D:Player: Now I don’t know.
+:+:R:1
+:>:Continue
+
+
+World:D:Player:I don’t believe in anything. Everything bad that happened in my life is someone else's fault.
+:D:Jordan: That’s one way to look at it. (Jordan: Away)
+:+:r:1
+:+:g:3
+:-:E:1
+
+Continue:?:Jordan: I think everyone needs something to believe in. I think we’re all alone, but I find it comforting. (Jordan: Away)
+    I don't understand
+    That’s my problem!:problem
+
+:D:Player: Alone? I'm right here!?
+:D:Jordan: Let me rephrase.
+:+:R:1
+:>:Continue
+
+
+
