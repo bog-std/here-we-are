@@ -1,0 +1,311 @@
+:D::The transition to a memory of a beach. What beach? Good question.
+:D::A lot of beaches look the same. The sand is golden brown and white,
+:D::and the waves come in lazily. It’s a good day to be at the beach.
+:D::Hundreds of other people thought the same thing,
+:D::and the day the four friends were supposed to be hanging out together is constantly interrupted by screaming children,
+:D::or a bunch of overly rambunctious dudes. Is it spring break? Fuck if I know. During the day,
+:D::the sky is dappled with fluffy and wispy clouds floating gently on a breeze,
+:D::and the smell of salt wafts off the sea as the foamy surf creeps up and down the sand. 
+:D::Jordan sits in front of the player. It’s years ago, and Jordan’s hair is a bit longer with some questionable coloured highlights.
+:D::But it’s her hair, so if she’s happy with it, that’s all that matters. They’re sitting under a beach umbrella,
+:D::watching the sailboats and the occasional surfer together.
+
+:D:Player: Good day to be at the beach.
+:?:Jordan: Totally. Love the feeling of hot sand and blistering heat.
+	At least you’re here with friends.
+	I’m not really one for beaches either. I’m just happy to be invited.:Invited
+:D:Jordan: I said we should take a road trip to San Fran, and instead I get brought here.
+:D:Player: The beach was the majority vote.
+:D:: (Jordan gives a side glance before putting on sunglasses and staring off at the beach people.)
+:+:R:1
+:>:Continue
+Invited:D:Jordan: You voted to go to the beach!
+:D:Player: Because I also didn’t want to sit in a stuffy car for several days. Not there’s anything wrong with that, I just have a weak bladder.
+:D:Jordan: Riiiight.
+:D:: (Jordan rolls her eyes and puts on a pair of sunglasses.)
+:+:r:1
+
+Continue:D:Player: You know where the twins went?
+:D:Jordan: I think they’re off getting ice cream. 
+:D:Player: We don’t have any in the cooler?
+:D:Jordan: It’s a cooler, not a portable freezer.
+:D:Player: But it’s insulated no?
+:?:: (The player opens the cooler, and there’s a vast collection of things inside. None of which is any form of ice cream.)
+	You want something?
+	Ooooh…:Cider
+
+:D:Jordan: We packed some juice, right? Pass me one.
+:D:Player: Here you go.
+:+:R:1
+:>:Continue
+
+Cider:D:Jordan: What?
+:D:Player: Someone packed ciders.
+:?:Jordan: We’re at a public beach! You can’t drink here.
+	Drink the Cider
+	Drink Juice:Juice
+	Take Nothing:Nothing
+:D::(Jordan looks at the player with a very disapproving look. Clearly, she is unhappy.)
+:+:r:3
+:>:Continue
+Juice:?::(Jordan puts a hand out, as if asking for a juice.)
+	Yes #had to improvise
+	No:No
+:D:Player: There you go
+:D:Jordan: Thanks
+:+:R:1
+:>:Continue
+No:D:Player: Sorry #No Idea what to say here
+:+:r:1
+:>:Continue
+Nothing:D:: (The Player returns to their previous spot, sad they didn’t find any ice cream. sad)
+
+Continue:D:: (Two people walk up to the umbrella; Scott and Sarah. They’ve got ice cream!)
+:D:Scott: Told you we’d find them here. 
+:D:Sarah: You guys picked a great spot. 
+:D:Player: Did you buy us some ice cream?
+:D:Scott: Sure did. Two vanilla cones with extra sprinkles for you two.
+:D:Sarah: Although we can always eat everything on our own if you don’t ask nicely.
+:D::(Sarah gives a cheeky smile.)
+:D:Jordan: Hey
+:D::(Jordan looks at Player, puppy eyes hidden behind the shades.)
+:?:Jordan: Please ask nicely.[wait 1] For me?
+	Ask Nicely
+	Demand :Demand
+Player: Would you kindly bestow unto us the iced creams?
+:D:Sarah: Oh my. Scott, I think we have a genuine gentleman on our hands.
+:D:: (Scott Hands over the ice creams)
+:D:Scott: Here you go, sir. Two vanilla cones, with plenty of sprinkles.
+:+:R:3
+:>:Continue
+
+Demand:D:Player: Would you just hand them over? Else it’ll melt in your hands.
+:D:Scott: Yeah, whatever. Here ya go. Plenty of sprinkles that you don’t deserve. (Smiles.) That was a joke. 
+:D::(Scott hands Player and Jordan their ice cream cones.)
+:+:R:2
+
+Continue:D:: (Sarah and Scott sit down in front of Jordan and Player. Together, the four enjoy their ice creams. Scott’s got a popsicle because he’s lactose intolerant, but he’s happy it’s blue raspberry flavoured.)
+:D:Scott: We sure picked a hell of a time to come to the beach, didn’t we?
+:D:Player: I’m just glad we got here before the afternoon. Place started crowding up as soon as we put up the umbrella. 
+:D:Jordan: You should’ve stuck around to see it. A near empty beach, and then BAM! Filled up in the blink of an eye. 
+:D:Sarah: Well it is beach season. Perfect weather to hit the waves too. I’d be surprised if the beach was empty. 
+:D:Scott: Speaking of which, wanna hit the waves?
+:D:Jordan: I don’t see why not. 
+:D:Sarah: Just watch for the rip tide and don’t get pulled out to sea. 
+:D:Scott: There wasn’t a sign up, so I don’t think that’ll be a problem.
+:D:Player: Let’s finish our ice creams first before we do anything. What’re our plans for tonight?
+:D:Jordan: I hear they put on a firework show every Friday from the boardwalk. We can swing by after dinner and watch.
+:D:Scott: Sounds like a plan to me. (finishes his popsicle in a single bite.) Last one in the water’s paying for dinner!
+:D:: (The crew finishes their ice cream and wade into the water. It’s nice. The salt water tide is refreshingly cool and a great break from the heat of the summer day.)
+:D:: (Player and crew skip the splashy-splashy and go straight for submerging themselves. Only Scott was the dumbass who didn’t wear waterproof sunscreen before entering the waves, and he’ll pay for it later.)
+:D:: (Beneath the waves is the ever smooth sandy bottom, and each step taken kicks up a watery cloud of yellow sand and dust that is pulled further into the ocean with every pull of the tide.)
+:D:Scott: Don’t swim too far out Jordan.
+:D:Jordan: (Is pretty far out) It’s fine! There’s no one out here!
+:D:Player: Just don’t get caught by a wave!
+:D:Sarah: I’ll go half way, make sure she doesn’t get her stupid head drowned. 
+:D:: (Sarah swims out further into the water, and several surfers are riding an incoming wave.)
+:?:Scott: They’ll be okay. Right?
+	Yeah, they’ll be fine.
+	I’m worried about that wave.:Worried
+
+:D:Scott: You think?
+:D:Player: Definitely. Jordan and Sarah can swim, so I wouldn’t worry.
+:D:Scott: Yeah, you’re probably right. 
+:+:r:1
+:>:Continue
+
+Worried:D:Scott: Really? It’s not even that big. Look there’re surfers sitting on their boards and going over it.
+:D:Player: And there’re some facing this way. They’re getting ready to ride it.
+:D:Scott: So? We’ll be fine. 
+:+:R:1
+
+Continue:D:: The wave comes closer, and the water darkens as it surges forward.
+:D:: The surfers facing the beach start standing on their boards as the crest of the wave approaches.
+:D:: Jordan rides the wave like a seal, just a head that travels up the side and over the crest, and Sarah makes the decision to dive under it.
+:D:: As the wave approaches Scott and the Player, the wave changes form, and starts to fall on itself.
+:D:: It’s almost mesmerizing when the wave curls over their heads, until something collides with Player’s head, and they’re pushed under the wave.
+:D:: Cut to black as the Player was just laid out by a fuckin’ surfer bro.
+:D:: Not on purpose, but Player just happened to be in the way as a surfer’s board clipped Player’s head. 
+:D:: It’s a strange thing to black out from a head injury.
+:D:: Your brain just sort of forgets what time is, and when Player wakes up, it’s like not even a second passed.
+:D:: Scott and Jordan are above him, both wearing a frantic expression. Surfer bro enters Player vision on Jordan’s side.
+
+:D:Surfer: You okay man? Didn’t mean to clip you tryin’ to catch that wave.
+:D:Jordan: YOU need to watch where you’re going.
+:D:Surfer: Whoa little lady, cool your jets. I said I was sorry.
+:D:Scott: “Sorry” won’t cut it if they have a concussion you jackass.
+:?:Surfer: Look, what do you want me to do?
+	Guys, it’s fine. I’m okay.
+	Guys, am I dead? Am I dying? What happened?:Dying
+
+:D:Jordan: No, you aren’t. You got a surfboard to the back of the head! You are in no way ‘okay’.
+:D:Scott: You probably have a concussion, or internal bleeding or something.
+:D:Player: I told you, I’m okay. 
+:+:r:1
+:>:Continue
+
+
+Dying:D:Jordan: You’re going to be okay. Sarah’s getting the lifeguard. You’re going to be okay.
+:D:Scott: Don’t you die on me now. 
+:D:Player: If this is the end, tell my mom I love her.
+:D:Jordan: (Expression changes from worried to angry.) He’s fine guys. Only this jackass would crack jokes at a time like this.
+:+:Rg:1
+
+Continue:D:Surfer: You sure you’re okay bro?
+:D:Player: Yeah, I’m all right. Just watch where you’re going with that board of yours.
+:D:Surfer: (Laughs) You bet. Take care now.
+
+:D:: As the surfer leaves, Sarah arrives with a lifeguard, who checks over the Player.
+:D:: After a thorough check, the lifeguard says it’s probably best to stay on land for the day, and not go back into the water.
+:D:: “Wouldn’t want to drown out there if you pass out,” he says.
+:D:: For the a few more hours, the crew stays at the beach, and despite wanting to tan, Scott instead gives himself a full-back sunburn that is incredibly painful. (obviously)
+:D:: Fast forward to later in the evening. The crew is having a good time eating at a on the boardwalk. Burgers and fries for the most part, but Sarah’s opted for a salad.
+
+:D:Player: What’s with the salad?
+:D:Sarah: Gotta watch my figure. A body like this takes work.
+:D:Scott: That’s not what you said when you ate a pint of ice cream all by yourself.
+:?:: (Sarah laughs and slaps her brother really hard on the back. His body arcs forward, in pain.)
+	Wait you had a whole pint to yourself?
+	I’d be careful what I’d say Mr. Crispy.:Crispy
+
+
+:D:Scott: Oh yeah. Caught her in the kitchen after she came home late. Shovelled that pint in her face with a spoon like madman. 
+:D:Sarah: (Slaps her brother again) You ought to learn to shut your trap, brother. 
+:D:Jordan: What flavour?
+:D:Sarah: Rocky road. Took me ages to work off those calories.
+:+:r:1
+:>:Continue
+
+
+Crispy:D:Scott: Hey don’t give the devil more ammo!
+:D:Sarah: (Slaps her brother again) You ought to learn to shut your trap, brother. 
+:D:Jordan: You’re right about that girl. Boys just never know when to stop talking.
+:D:Scott: I’m right here you know. 
+:D:Player: I think it’s less about boys, and just about you man. Know when you’re beat. 
+:+:R:1
+
+Continue:D:Player: So, you know when that fireworks show is supposed to start? 
+:D:Jordan: Sometime around 10, I think?
+:D:Player: You think? 
+:D:Jordan: I just heard they do a show on Fridays. I didn’t get a timetable or anything from anybody. 
+:D:Sarah: But it hasn’t happened yet right? Then we’ll just take a walk after dinner and see if we can catch it. 
+:D:Jordan: I knew there was a reason I loved you the most between you and Scott.
+:D:Sarah: Oh, I love you too girl. 
+:D:Scott: What about us?
+:D:Jordan: Well I love you both too. Just love Sarah more. 
+:D:: The crew finishes dinner and stroll down the boardwalk to the end.
+:D:: Sarah manages to nab Jordan and they start snapping photos for Instagram or whatever against the sunset sky. Mostly it’s Jordan taking pictures of Sarah.
+:D:Scott: What do you think about Jordan?
+:D:Player: What do you mean by that?
+:D:Scott: She’s cute don’t you think? I heard she turns down guys left, right and center, and that her standards are super high. That’s what Sarah tells me anyways. 
+:D:Player: (Looks to Scott) What exactly are you getting at?
+:?:Scott: I’m thinking of asking her out. 
+	You sure you want to do that?
+	I’d support you.:Support
+
+:D:Scott: I’m pretty sure.
+:D:Player: On a scale of 1 to 10, how sure are you? With 1 being “really unsure”, and 10 being you “know for certain”?
+:D:Scott: .[wait 1].[wait 1].
+:D:Player: Scott?
+:+:r:1
+:?:Scott: I don’t know. Probably a 7.5, or an 8?
+	Sounds pretty high. You really want to go for it?
+	That’s a big score. But I hate to break it to you, your heart’s gonna get shattered.:Shattered
+	
+:?:Scott: Yeah. “Shoot your shot” right? #no idea what to do here (Relationships: 
+	I mean, you could.
+	Probably not the best idea.:Idea
+
+:+:R:1 #I don't like the fact that there is no followup
+:>:Continue
+
+Idea:D:Scott: Why not?
+:D:Player: Just trust me, when I say, it’s probably not the best idea.
+:+:r:1
+:>:Continue
+
+Shattered:D:Scott: … 
+:+:R:1
+:?:Scott: How do you know that?
+	Like you said, she’s turned down a bunch of guys already. What do you have that they don’t?
+	Because she and I are already together.:Together
+
+:D:Scott: I-
+:D:Player: It ain’t money. It certainly isn’t charisma.
+:D:Scott: I can make her laugh though.
+:D:Player: Yeah, but is a fish able to breathe in water? 
+:D:Scott: … Point taken.
+:+:R:1
+:>:Continue
+
+Together:D:Scott: You are? Uh, forget I said anything then.
+:+:r:3
+:>:Continue
+
+
+Support:D:Scott: What?
+:?:Scott: Really?
+	Yeah, why not? Like you said, you never know until you try, and what’s the worse she could say?
+	No! Dude, imagine me asking out Sarah. How would you feel about that?:Ask
+
+:D:Scott: Probably ‘no’. 
+:D:Player: Probably?
+:D:Scott: Probably. 
+:+:R:2
+:>:Continue
+
+
+Ask:D:Scott: I mean I’d be fine with it.
+:D:Player: Okay, sure. But then what if you break up? What if something stupid happens and your relationship just falls apart?
+:D:Player: I know I’m not supposed to be saying this to you, but if I don’t now, then you’ll be asking yourself later. Or worse, Jordan asks you. 
+:D:Scott: .[wait 1].[wait 1].
+:D:Scott: Fuck.
+:D:Player: Right? I don’t think either of us want to not be friends. For the sake of the friendship between all of us, bad idea.
+:+:R:1
+:+:r:3
+:>:Continue
+
+Continue:D::(Sarah and Jordan rejoin the Player and Scott at the end of the boardwalk.)
+:D:Sarah: It’s beautiful isn’t it?
+:D:Player: Beautiful enough to put on Instagram four hundred times? 
+:D:Sarah: Better than that. Not as pretty as you though.
+:D:Player: Aww thanks Sarah.
+:D:Jordan: What about me?
+:D:Scott: I think you’re pretty.
+:D:Jordan: You’d think a rock could be pretty if it talked to you first.
+:D:Scott: Damn, that’s cold.
+:D:Player: Forget roasting him Jo. You just immolated him.
+:D:Scott: Naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah, it’s fine. It’s like when you have to melt the sugar on crème brulee. Just better in every way. 
+:D:Jordan: You know I’m not a big fan of sweets Scotty boy. 
+:D:(For a little while, the four just watch the sunset together. Despite the events that happened in the morning, the four are still great friends, and the true acknowledgement to that friendship is the ability to stare at the setting sun together.)
+:D:Player: This is nice, isn’t it?
+:D:All: Oh yeah. Yeah.
+:D:Player: Times like this I forget life isn’t all about cramming for exams.
+:?:Jordan: Certainly feels like that though.
+	Only a few years left though.
+	The present is the only thing that matters:Present
+
+:D:Sarah: Got a long way to go that’s for sure. But we’ll make it. 
+:D:Jordan: It just feels so daunting, know what I mean? When we’re done, that piece of paper will decide how we’ll live for the rest of our lives.
+:D:Scott: We’re young. That’s what matters. We can afford a few mistakes here and there. As long as we’re alive, that’s all that matters.
+:+:E:1
+:>:Continue
+
+
+Present:D:Scott: Yeah. Just live for the moment.
+:D:Jordan: Isn’t that an irresponsible way to think? 
+:D:Player: Only if you want it to be. 
+:D:Jordan: You know that’s not what I’m asking.
+:D:Sarah: They’re right though Jordan. The present is always a surprise. That’s why it’s called the present. Right now, we’re four friends on a great stretch of summer vacation, having the time of our lives before the next school year happens. And until then, we should be allowed to have as much fun as we want.
+:D:Player: Amen to that. 
+:+:e:1
+
+Continue:D:Scott: Is that a boat out there?
+:D::During the friends’ discussion, a steamboat paddled out into the water and parked itself gently amidst the calm tide.
+:D::Without warning, a streak of light rockets from the highest deck, and explodes into a shower of blue sparks.
+:D::Before long, dozens of fireworks are bursting in the air, and there are even fireworks being launched from the beach on either side of the boardwalk.
+
+:D:Jordan: No matter what happens, we’ll stay friends right?
+
+:D:Player: Of course we will. 
+:+:R:1
