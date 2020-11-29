@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap");
+@viewport {
+    width: device-width;
+    zoom: 1;
+}
+
+:root {
+    /* bd3937 */
+    /* 1c25e6 */
+    --whiteColor: #eeeeee;
+    --accentColor: #3399ff;
+    --highlightColor: #443737;
+    --backgroundColor: #000000;
+    --textColor: #000000;
+}
+
+html {    
+    min-height: 100%;
+
+    background-color: var(--whiteColor);
+    color: var(--textColor);
+    font-family: "Open Sans", sans-serif;
+}
+
+body {    
+    position: relative;    
+        
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    text-align: center;
+    
+    max-width: 900px;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+    margin-bottom: 125px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--textColor);
+}
+
+h1 {
+    color: var(--textColor);
+    /* font-size: 6vw; */
+}
+
+h2 {
+    color: var(--textColor);
+}
+
+.content h2 {
+    text-align: center;
+}
+
+.content p {
+    text-align: center;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+/* --------------------------------------------------------------------------------- */
+/* BANNER */
+
+
+.banner2 {
+    background: #000000;
+    width: 100%;
+    height: auto;
+}
+
+
+/* --------------------------------------------------------------------------------- */
+/* SCREENSHOT SECTION */
+
+.screenshots {
+    display: block;    
+    padding: 0px;
+}
+
+.thumbnails {
+    display: block;
+    padding: 0;
+}
+
+.thumbnails ul {    
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;    
+}
+
+.screenshots .thumbnails li {
+    margin: 0;
+    padding: 0;
+    
+    display: inline-block;
+    width: 47%;
+    margin-bottom: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+    list-style: none;    
+}
+
+.screenshots .thumbnails li img {
+    width: 100%;
+    height: auto;    
+}
+
+.screenshots .thumbnails li:nth-child(odd) {
+    margin-right: 5.5%;        
+}
+
+@media (max-width: 912px) {
+    .screenshots .thumbnails li {
+        width: 100%; height: auto;
+    }
+    .screenshots .thumbnails li:nth-child(odd) {
+        margin-right: 0px;        
+    }
+}
+
+/* --------------------------------------------------------------------------------- */

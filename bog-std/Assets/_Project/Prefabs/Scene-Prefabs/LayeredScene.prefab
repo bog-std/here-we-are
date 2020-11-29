@@ -44,31 +44,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f136ba3a81036c4697466c8ab6e0fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animate: 0
   fmodEvent: event:/DemoTrack
   layerPrefab: {fileID: 6853283405573774218, guid: d021b2d5db457f245ac737f165108b46,
     type: 3}
   layers:
-  - audioTrack: 
-    currentLevel: 0
-    currentAudioLevel: 0
+  - name: 0
+    levelScale: 1
     levels:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-  - audioTrack: 
     currentLevel: 0
+    audioTrack: 
     currentAudioLevel: 0
+    spriteRenderer: {fileID: 0}
+    spriteBuffer: {fileID: 0}
+    fadeMode: 0
+    fadeSpeed: 0
+    bufferState: 0
+    buffering: 1
+  - name: 0
+    levelScale: 1
     levels:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-  - audioTrack: 
     currentLevel: 0
+    audioTrack: 
     currentAudioLevel: 0
+    spriteRenderer: {fileID: 0}
+    spriteBuffer: {fileID: 0}
+    fadeMode: 0
+    fadeSpeed: 0
+    bufferState: 0
+    buffering: 1
+  - name: 0
+    levelScale: 1
     levels:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    currentLevel: 0
+    audioTrack: 
+    currentAudioLevel: 0
+    spriteRenderer: {fileID: 0}
+    spriteBuffer: {fileID: 0}
+    fadeMode: 0
+    fadeSpeed: 0
+    bufferState: 0
+    buffering: 1
+  debugText: {fileID: 0}
 --- !u!114 &5538911950561593983
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,251 @@
+:=:S:garden
+:=:J:garden_neutral
+
+:D:Jordan: I was wondering when you’d get here.
+:D:Player: Took some time to smell the flowers on the way. Did you see the pagoda on the way in?
+:D:Jordan: I think they had that same one on the other end of the garden last year. Still pretty though.
+:D:Player: That we can agree on. So what happened? You okay?
+:=:J:garden_sad_smile
+:?:Jordan: Yeah, I’m fine. Just wanted to enjoy a day at the gardens with a friend. Is that not allowed?
+	It’s not the strangest thing I’ve been asked to do.
+	The invitation was sort of out of the blue.:invitation
+
+:D:Jordan: Well I’m glad you came out and joined me. 
+:D:Player: I didn’t even know about this garden until you told me to come out here.
+:=:J:garden_neutral
+:D:Jordan: It’s pretty, isn’t it?
+:+:R:1
+:>:Continue
+
+invitation:D:Jordan: It was, wasn’t it?
+:=:J:garden_sad_smile
+:D:Player: I’m just not the type to want to go out and do something suddenly. I like plans, even if it was a day in advance.
+:=:J:garden_annoyed
+:D:Jordan: You don’t need to make excuses. It’s all right. I’m just glad you’re here now.
+:+:r:1
+
+Continue:D:Jordan: It gets lonely being at a botanical garden by yourself y’know. It’s nice to have company every once in a while.
+:=:J:garden_empty
+:D:Player: I bet you say that to all the guys. 
+:=:J:garden_sad_smile
+:?:Jordan: Just the ones I like. 
+	You want to go into that more?
+	What’s really going on Jordan?:Really
+
+:=:J:garden_empty
+:?:Jordan: What’s there to say? 
+	It just sounds like there’s something you’re trying to say but you won’t say it.
+	Never mind. I thought you were trying to say something else but I got what you mean.:Nevermind
+
+:=:J:garden_neutral
+:D:Jordan: Ah, forget it. It sounds like we’re in some poorly constructed visual novel or something.
+:D:Player: You said it, not me.
+:+:r:1
+:>:Continue
+
+Really:D:Jordan: What’re you talking about?
+:=:J:garden_neutral
+:D:Player: You asked me to come out here. Why?
+:?:Jordan: I told you why. 
+	I’m just not convinced is all. You’ve never invited someone out the day of and several hours before the meeting.
+	You know you can talk to me, right? I’m just worried you’re trying to hide something and don’t want to talk about it.:Talk
+
+:D:Jordan: I can’t just jump into it suddenly. At least let me be comfortable.
+:=:J:garden_sad_smile
+:D:Player: All right. Just, talk to me, okay? 
+:+:re:1
+:>:Continue
+
+Talk:D:Jordan: Well it’s not like that. Really.
+:=:J:garden_annoyed
+:D:Player: Just, remember I’m here for you. If you want to talk, just talk. 
+:+:RE:1
+:>:Continue
+
+Nevermind:D:Jordan: Thanks. I’m glad you at least know me enough to understand me.
+:=:J:garden_sad_smile
+:D:Player: I’d be a shame to not after all these years.
+:+:R:1
+
+Continue:D:Jordan: I always love it out here.
+:=:J:garden_empty
+:?:Jordan: It’s so…
+	Quiet?
+	Peaceful?
+	Boring?
+
+:=:J:garden_neutral
+:D:Jordan: I was going to say serene. It’s just a place that’s easy for me to relax in. 
+:D:Player: I can see that. It really is peaceful.
+:D:Jordan: It’s hard to unwind anywhere else. 
+:D:Player: Not even at home?
+:=:J:garden_anxious
+:?:Jordan: Not even at home. Dad’s gotten sick, and home just sounds like his respirator.
+	What do you mean?
+	What happened?:What
+
+:D:Player: What do you mean “sick”? He was fine last time I saw him.
+:D:Jordan: That’s the thing. The doctors don’t know what it is either. 
+:D:Player: That’s awful.
+:+:G:2
+:=:J:garden_angry
+:?:Jordan: And the best part? They’re making me isolate from him because they don’t know where he got infected from.
+	What?!
+	It’s more for you than him.:More
+
+:D:Player: That’s really stupid. You’re his daughter, there’s no way you’d be the one to infect him.	
+:=:J:garden_angry
+:D:Jordan: I know right? Like, I didn’t go anywhere infectious, so I don’t have the first clue as to where he picked it up from.
+:D:Player: Shouldn’t the doctors be more worried about how to treat him?
+:D:Jordan: They are. They’re working on it.
+:=:J:garden_anxious
+:+:R:1
+:+:g:2
+:>:Continue
+
+What:D:Player: What’s wrong with him?
+:+:G:1
+:=:J:garden_anxious
+:?:Jordan: Don’t know. He’s infected with something, but the doctors don’t know, and he’s looking worse by the day. 
+	Are you okay?
+	Will you be okay?:Will
+
+:D:Player: You doing all right?
+:=:J:garden_empty
+:D:Jordan: Yeah? No. I don’t know. 
+:+:RE:2
+
+Will:D:Player: I’m sure your dad will get better.
+:=:J:garden_sad_smile
+:D:Jordan: Eventually, yeah. 
+:+:GE:2
+:>:Continue
+
+More:D:Player: I’m sure they’re only thinking about your safety when they say that.
+:=:J:garden_angry
+:D:Jordan: MY safety?
+:D:Player: What if you catch whatever your father has? 
+:D:Jordan: I can’t leave my father like that.
+:D:Player: Then who’s going to take care of you? Me? Your dad?
+:+:R:1
+:+:G:2
+
+Continue:D:Jordan: Want to go for a walk? Take in more of the scenery?
+:D:Player: Sure. 
+:D::The player and Jordan arrive on a wooden arch bridge that goes over a small manmade stream that flows underneath.
+:D::There are a lot of clouds in the sky, and waving in the breeze are assortments of different coloured flowers.
+:D:Player: Besides your dad getting sick, how’s he been doing? I know having to raise you was a tough job in and of itself.
+:=:J:garden_annoyed
+:?:Jordan: He got himself a girlfriend.
+	Sly old dog!
+
+:D:Player: Good for him! Is she a keeper?
+:D:Jordan: She sure seems to think so. 
+:D:Player: Is she really that bad? 
+:+:r:1
+:+:e:2
+:?:Jordan: She’s like a leech, or a tapeworm. I keep trying to tell him, but he just doesn’t see it.
+	No one deserves to be called a parasite Jordan.
+	If she’s as bad as you say, she really should leave.:Leave
+
+:=:J:garden_neutral
+:D:Jordan: Some people do.
+:D:Player: I don’t-
+:+:E:2
+:=:J:garden_annoyed
+:?:Jordan: Especially if they start splitting your household and alienate your father.
+	You’re imagining things.
+	People are the worst.:Worst
+
+:D:Player: There’s no way anyone intentionally decides to do something like that.
+:D:Jordan: You let yourself be naïve like that and tragedy will strike you soon I swear. People are evil creatures. Behind every nice smelling perfume and pearly white smiles, is a soul as evil as they come. 
+:=:J:garden_neutral
+:D:Player: Not all people are like that. Look at us, or Scott or Sarah. We’re not evil.
+:+:E:2
+:>:Continue
+
+Worst:D:Player: I can’t say I disagree with that statement though. No one likes a homewrecker.
+:=:J:garden_angry
+:D:Jordan: Exactly! I wish she’d never come into our lives. 
+:D:Player: What does she try to do usually? 
+:=:J:garden_annoyed
+:D:Jordan: Picks out things to argue about, or makes comments on the way I dress and act. 
+:+:r:2
+:+:E:1
+:>:Continue
+
+Leave:D:Jordan: Thank you.
+:=:J:garden_angry
+:D:Jordan: Finally, someone gets it. 
+:D:Player: Granted, I don’t know anything about her, other than what you’re saying. 
+:+:R:1
+:+:e:2
+:?:Jordan: I’m not one to lie about this kind of thing.
+	I would hope not.
+	I believe you.:Believe
+
+:D:Player: If you are, I’d be incredibly disappointed.
+:+:r:1
+:>:Continue
+
+Believe:D:Player: I know you wouldn’t. It’d be a scummy thing to do.
+:+:R:1
+
+Continue:D:Jordan: Worst thing is, is she’s trying to prevent me from even being in contact with my dad. 
+:=:J:garden_neutral
+:D:Player: WHAT?!
+:D:Jordan: Shitty, right?
+:=:J:garden_sad_smile
+:D:Player: How is she even getting away with that?
+:=:J:garden_anxious
+:D:Jordan: I’m not home a lot, and she’s used that as an excuse to further distance the two of us. 
+:D:Player: I can see how that would work as an excuse. 
+:?:Jordan: What if he dies and I can’t see him anymore? 
+	Don’t think like that!
+	It’ll be alright:Alright
+
+:D:Player: That’s a really morbid thing to say.
+:+:eg:2
+:>:Continue
+
+Alright:D:Player: I’m sure it won’t come to that.
+:+:EG:2
+
+
+Continue:D:Jordan: But I can’t afford to not think about it.
+:D:Jordan:You’re not in my house, listening to him hack and cough up a lung every night.
+:D:Jordan:What if he dies in the middle of the night when Margaret and I are asleep?
+:D:Jordan:What if he dies when I’m out at work, or getting groceries?
+:D:Jordan:What if he gets hospitalized and dies when the doctors don’t let anyone see him?! 
+:D:Player: Jordan.
+:=:J:garden_angry
+:?:Jordan: What?!
+	You need to take a breath
+	Everything’s going to be fine.:Fine
+
+:D:Player: I know you’re stressed out, but you really ought to think about everything logically.
+:D:Player: Your dad is just sick, and as much as you think he’s not doing well, or as distant as he may be, you’re still his daughter.
+:D:Player:Nothing’s going to change that, not even some toxic lady who’s walked into your life. 
+:=:J:garden_anxious
+:D:Jordan: Then what should I do?
+:D:Player: Get some PPE, take every precaution, and don’t let your dad’s girlfriend dictate how you, his own flesh and blood, can interact with your own damn father. 
+:+:G:3
+:>:Continue
+
+Fine:D:Player: I know it doesn’t seem like it now, but things will get better.
+:D:Player: The doctors will figure out what is wrong with your dad, and he’ll get better.
+:D:Player: The important thing here is to stay as close as you can to your dad.
+:D:Player: Take every precaution you can, but just be there for him. Make sure he knows you love him, and that’s all that matters. 
+:=:J:garden_sad_smile
+:D:Jordan: Glass half full, huh?
+:D:Player: Glass half full. That’s what you need to do. 
+:+:G:3
+
+Continue:D:Jordan: I’m glad you came out here.
+:=:J:garden_neutral
+:D:Player: You weren’t kidding when you said the flowers here were pretty.
+:D:Jordan: You know I don’t lie.
+:D:Player: You really don’t.
+:D:: The Player and Jordan simply stare out into the garden, watching the clouds roll through and the flowers sway in the breeze for the rest of the day.
+
+:=:SJ:none

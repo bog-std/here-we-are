@@ -7,9 +7,7 @@ public enum Command : ushort
     Skip,
     Wait,
     Increment,
-    Scene,
-    SetAudio,
-    SetEmotion,
+    LoadScript,
     Set
 };
 
