@@ -41,6 +41,12 @@ namespace Assets._Project.Scripts.DialogueManager
 
         private bool hasStarted = false;
 
+        public bool NotificationOrPhoneOpen = false;
+
+        private PhoneHubController _phoneHub; // Reference to the scenes Phone
+        private NotificationController _notification;
+
+
         public bool InDialogue => currDialogueBox != null;
         
         public void Awake()
@@ -48,19 +54,23 @@ namespace Assets._Project.Scripts.DialogueManager
             dialogueScript = new Queue<Dialogue>();
             txtStack = new Stack<TextStackItem>();
             currChoices = new List<GameObject>();
-            
         }
 
         public void Start()
         {
             scene = FindObjectOfType<LayeredScene>();
+
+            _phoneHub = FindObjectOfType<PhoneHubController>();
+            _notification = FindObjectOfType<NotificationController>();
+
+            _notification.HideNotification();
         }
 
         public void Update()
         {
             try
             {
-                if (!hasStarted && Input.GetKey(KeyCode.Mouse0))
+                if (!NotificationOrPhoneOpen && !hasStarted && Input.GetKey(KeyCode.Mouse0))
                 {
                     if (currChoices.Count > 0) { }
                     else
