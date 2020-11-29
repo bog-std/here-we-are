@@ -38,7 +38,7 @@ namespace Assets._Project.Scripts.DialogueManager
         private bool autocompleteToggle = false;
 
         private Queue<Dialogue> dialogueScript;
-
+        private int dialogueDistance = 0;
         private bool hasStarted = false;
 
         public bool InDialogue => currDialogueBox != null;
@@ -485,9 +485,20 @@ namespace Assets._Project.Scripts.DialogueManager
                 while (dialogueScript.Count > 0 && dialogueScript.Peek().tag != target)
                     dialogueScript.Dequeue();
                 
-                if (dialogueScript.Count > 1) while (offset-- > 0)
-                    dialogueScript.Dequeue();
+                Seek(offset);
             }
+        }
+
+        public void Seek(int offset)
+        {
+            if (dialogueScript.Count > 1) while (offset-- > 0)
+                dialogueScript.Dequeue();
+        }
+
+        public Dialogue DequeueScript()
+        {
+            dialogueDistance++;
+            return dialogueScript.Dequeue();
         }
     }
 }

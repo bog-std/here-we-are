@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Canvas
   - Actor
+  - LayeredScene
   layers:
   - Default
   - TransparentFX
