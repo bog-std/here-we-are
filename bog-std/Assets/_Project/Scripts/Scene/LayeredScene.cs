@@ -12,13 +12,13 @@ public class LayeredScene : MonoBehaviour
 {
     // Set in editor 
     public bool animate;
-    [FMODUnity.EventRef] public string fmodEvent;
+    // [FMODUnity.EventRef] public string fmodEvent;
     public Text debugText;
     [FormerlySerializedAs("debugChangeText")] public Text debugHistoryText;
     private Queue<string> changeHistory;
     public GameObject layerPrefab;
     public List<Layer> layers;
-    private FMOD.Studio.EventInstance fmodEventInstance;
+    // private FMOD.Studio.EventInstance fmodEventInstance;
     private List<GameObject> layerObjects;
 
     private bool showDebugText;
@@ -28,8 +28,8 @@ public class LayeredScene : MonoBehaviour
     {
         changeHistory = new Queue<string>();
         
-        fmodEventInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
-        fmodEventInstance.start();
+        // fmodEventInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        // fmodEventInstance.start();
         
         InitializeLayers();
     }
@@ -168,7 +168,7 @@ public class LayeredScene : MonoBehaviour
             if (layer.currentAudioLevel - layer.currentLevel != 0.0f)
             {
                 layer.currentAudioLevel = FuncLib.FInterpConstantTo(layer.currentAudioLevel, layer.currentLevel, Time.deltaTime, 0.5f);
-                fmodEventInstance.setParameterByName(layer.audioTrack, layer.currentAudioLevel);
+                // fmodEventInstance.setParameterByName(layer.audioTrack, layer.currentAudioLevel);
             }
         }
     }
