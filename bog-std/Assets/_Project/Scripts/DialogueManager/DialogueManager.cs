@@ -36,26 +36,32 @@ namespace Assets._Project.Scripts.DialogueManager
 
         private bool hasStarted = false;
 
+        private bool NotificationOrPhoneOpen = false;
+
         private PhoneHubController _phoneHub; // Reference to the scenes Phone
+        private NotificationController _notification;
 
         public void Awake()
         {
             dialogueScript = new Queue<Dialogue>();
             currChoices = new List<GameObject>();
-
-            _phoneHub = FindObjectOfType<PhoneHubController>();
         }
 
         public void Start()
         {
             scene = FindObjectOfType<LayeredScene>();
+
+            _phoneHub = FindObjectOfType<PhoneHubController>();
+            _notification = FindObjectOfType<NotificationController>();
+
+            _notification.HideNotification();
         }
 
         public void Update()
         {
             try
             {
-                if (false && !hasStarted && Input.GetKey(KeyCode.Mouse0))
+                if (NotificationOrPhoneOpen && !hasStarted && Input.GetKey(KeyCode.Mouse0))
                 {
                     if (currChoices.Count > 0) { }
                     else
