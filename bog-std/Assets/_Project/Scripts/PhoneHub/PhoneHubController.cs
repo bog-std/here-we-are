@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using FMOD;
 using TMPro;
+using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
@@ -11,13 +13,21 @@ public class PhoneHubController : MonoBehaviour
 
     #region Scene Fact Variables
 
-    public bool BeachSceneVisited { get; set; }
-    public bool GardenSceneVisited { get; set; }
-    public bool RooftopSceneVisited { get; set; }
 
-    public bool BeachSceneUnlocked { get; set; }
-    public bool GardenSceneUnlocked { get; set; }
-    public bool RooftopSceneUnlocked { get; set; }
+    private int currMessageIndex = 0;
+    private Scene currFeatured = Scene.Beach;
+
+    private SceneState BeachState = SceneState.Unlocked;
+    private SceneState GardenState = SceneState.Locked;
+    private SceneState RooftopState = SceneState.Locked;
+
+    [SerializeField] public Sprite[] featuredImages;
+    [SerializeField] public string[] featuredText;
+    [SerializeField] public Sprite[] beachImages;
+    [SerializeField] public Sprite[] gardenImages;
+    [SerializeField] public Sprite[] rooftopImages;
+    [SerializeField] public List<Sprite> sceneImages;
+    [SerializeField] public List<Sprite> messageImages;
 
     #endregion
 
@@ -57,7 +67,16 @@ public class PhoneHubController : MonoBehaviour
 
     #endregion
 
-    // Start is called before the first frame update
+    #region Message Screen UI
+
+    private GameObject _grpMessageScreen;
+
+    private Image _imgMessageScreen;
+
+    private Button _btnAdvanceMessage;
+
+    #endregion
+
     void Start()
     {
         _animator = GetComponent<Animator>();
@@ -65,6 +84,7 @@ public class PhoneHubController : MonoBehaviour
         // Set Group References;
         _grpMemorySelection = transform.Find("Memory-Selection").gameObject;
         _grpMemoryEntrance = transform.Find("Memory-Entrance").gameObject;
+        _grpMessageScreen = transform.Find("Messages").gameObject;
 
         // Get TextMeshPro Component References
         var textMeshes = GetComponentsInChildren<TextMeshProUGUI>();
@@ -72,12 +92,13 @@ public class PhoneHubController : MonoBehaviour
 
         // Set Image Component References
         var images = GetComponentsInChildren<Image>();
-        _imgFeatured = images[0];
-        _imgScene1 = images[1];
-        _imgScene2 = images[2];
-        _imgScene3 = images[3];
-        _imgScreenOverlay = images[4];
-        _imgMemoryDisplay = images[5];
+        _imgFeatured = images[1];
+        _imgScene1 = images[2];
+        _imgScene2 = images[3];
+        _imgScene3 = images[4];
+        _imgScreenOverlay = images[5];
+        _imgMemoryDisplay = images[6];
+        _imgMessageScreen = images[9];
 
         // Set Button Component References
         var buttons = GetComponentsInChildren<Button>();
@@ -88,44 +109,65 @@ public class PhoneHubController : MonoBehaviour
         _btnScene3 = buttons[4];
         _btnReturnToSelection = buttons[5];
         _btnEnterMemory = buttons[6];
+        _btnAdvanceMessage = buttons[7];
 
          // Set up initial state
-         _grpMemorySelection.SetActive(true);
+         _grpMemorySelection.SetActive(false);
          _grpMemoryEntrance.SetActive(false);
+         _grpMessageScreen.SetActive(true);
+
+         UpdateDisplay();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.D)) { DisplayPhone(); } 
         else if (Input.GetKeyDown(KeyCode.H)) { HidePhone(); }
-        else if (Input.GetKeyDown(KeyCode.F)) { GoToMemory(0); }
-        else if (Input.GetKeyDown(KeyCode.G)) { ReturnToSelection(); }
+        else if (Input.GetKeyDown(KeyCode.F)) { DisplayEnterMemoryScene(Scene.Beach); }
+        else if (Input.GetKeyDown(KeyCode.G)) { DisplayMemorySelectionScreen(); }
+        else if (Input.GetKeyDown(KeyCode.R)) { UpdateDisplay(); }
     }
 
     #region Updating Phone Display
 
-    public void DisplayPhone() => _animator.SetBool("IsOpen", true);
-    public void HidePhone() => _animator.SetBool("IsOpen", false);
-
-    public void GoToMemory(int mem)
-    {
-        _grpMemorySelection.SetActive(false);
-        _grpMemoryEntrance.SetActive(true);
-    }
-
-    public void ReturnToSelection()
-    {
-        _grpMemoryEntrance.SetActive(false);
-        _grpMemorySelection.SetActive(true);
-    }
-
     // Update the display according to the facts 
     public void UpdateDisplay()
     {
+        // Set featured image
+        _imgFeatured.sprite = featuredImages[(int) currFeatured];
+        _txtFeatured.text = "Memory from\n" + featuredText[(int) currFeatured];
 
+        // Update the bottom memory images
+        _imgScene1.sprite = beachImages[(int) BeachState];
+        _btnScene1.enabled = BeachState == SceneState.Unlocked;
+
+        _imgScene2.sprite = gardenImages[(int) GardenState];
+        _btnScene2.enabled = GardenState == SceneState.Unlocked;
+
+        _imgScene3.sprite = rooftopImages[(int) RooftopState];
+        _btnScene3.enabled = GardenState == SceneState.Unlocked;
+        
     }
-    
+
+    public void DisplayPhone() => _animator.SetBool("IsOpen", true);
+    public void HidePhone() => _animator.SetBool("IsOpen", false);
+
+    public void DisplayMemorySelectionScreen()
+    {
+        _grpMemoryEntrance.SetActive(false);
+        _grpMessageScreen.SetActive(false);
+        _grpMemorySelection.SetActive(true);
+    }
+
+    public void DisplayEnterMemoryScene(Scene memory)
+    {
+        _grpMemorySelection.SetActive(false);
+        _grpMessageScreen.SetActive(false);
+        _grpMemoryEntrance.SetActive(true);
+
+        _imgMemoryDisplay.sprite = sceneImages[(int) memory];
+    }
+
     #endregion
 
     #region On Click Events
@@ -133,52 +175,100 @@ public class PhoneHubController : MonoBehaviour
     public void HomeButton_Clicked()
     {
         // Hide phone and continue the dialogue
+        Debug.Log("Home Button Clicked!");
         HidePhone();
+        
+        // TODO: Tell DialogueManager to continue
     }
 
     public void FeaturedScene_Clicked()
     {
         Debug.Log("Featured scene clicked!");
+        
+        // Transition to curr features scene
+        DisplayEnterMemoryScene(currFeatured);
     }
 
     public void Scene1_Clicked()
     {
         Debug.Log("Scene 1 clicked!");
 
-        if (BeachSceneUnlocked && !BeachSceneVisited)
-        {
-            // Transition to beach scene
-        }
+        // Transition to beach scene
+        DisplayEnterMemoryScene(Scene.Beach);
     }
 
     public void Scene2_Clicked()
     {
         Debug.Log("Scene 2 clicked!");
 
-        if (GardenSceneUnlocked && !GardenSceneVisited)
-        {
-            // Transition to garden scene
-        }
+        // Transition to garden scene
+        DisplayEnterMemoryScene(Scene.Garden);
     }
 
     public void Scene3_Clicked()
     {
         Debug.Log("Scene 3 clicked!");
 
-        if (RooftopSceneUnlocked && !RooftopSceneVisited)
-        {
-            // Transition to rooftop scene
-        }
+        // Transition to rooftop scene
+        DisplayEnterMemoryScene(Scene.Rooftop);
     }
 
     public void ReturnToSelection_Clicked()
     {
         Debug.Log("Return to Selection clicked!");
+
+        DisplayMemorySelectionScreen();
     }
 
     public void EnterMemory_Clicked()
     {
         Debug.Log("Enter Memory clicked!");
+
+        // TODO: Start the memory sequence 
+    }
+
+    public void AdvanceMessage_Clicked()
+    {
+        Debug.Log("Advance Message Clicked!");
+        ++currMessageIndex;
+        if (currMessageIndex >= messageImages.Count)
+        {
+            HidePhone();
+
+            // TODO: Start the dialogue sequence
+        }
+        else
+        {
+            // Advance the image 
+            _imgMessageScreen.sprite = messageImages[currMessageIndex];
+        }
+    }
+
+    #endregion
+
+    #region Enums
+
+    public enum Scene
+    {
+        Beach,
+        Garden,
+        Rooftop
+    }
+
+    private enum SceneState
+    {
+        Unlocked = 0,
+        Locked = 1,
+        Visited = 2
+    }
+
+    public enum PhoneScreen
+    {
+        Messages,
+        Selection,
+        EnterBeach,
+        EnterGarden,
+        EnterRooftop,
     }
 
     #endregion
