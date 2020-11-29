@@ -33,6 +33,21 @@ public class LayeredScene : MonoBehaviour
         
         InitializeLayers();
     }
+
+    public Dictionary<LayerName, List<string>> GetImageOptions()
+    {
+        Dictionary<LayerName, List<string>> result = new Dictionary<LayerName, List<string>>();
+        foreach (var layer in layers)
+        {
+            for (int i = 0; i < layer.levels.Count; i++)
+            {
+                if (!result.ContainsKey(layer.name)) result.Add(layer.name, new List<string>());
+                result[layer.name].Add(layer.levels[i].name);
+            }
+        }
+
+        return result;
+    }
     
     
     void Update()

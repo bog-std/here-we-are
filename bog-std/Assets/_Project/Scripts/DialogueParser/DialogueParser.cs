@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using Assets._Project.Scripts.DialogueData;
 using UnityEditor;
@@ -28,9 +29,22 @@ using UnityEngine;
     {
         public static IEnumerable<Dialogue> GetDialogue(TextAsset script)
         {
+            if (imageOptions.Count == 0)
+                imageOptions = FindObjectOfType<LayeredScene>().GetComponent<LayeredScene>().GetImageOptions();
+            
             var dialogue = ReadString(script);
             // Debug.Log(dialogue);
             return dialogue;
+        }
+
+        static private Dictionary<LayerName, List<string>> imageOptions = new Dictionary<LayerName, List<string>>();
+
+        static private bool CheckImage(LayerName layerName, string levelName)
+        {
+            bool hasImage = imageOptions[layerName].Contains(levelName);
+            if (!hasImage)
+                Debug.LogError(layerName + " does not contain image " + levelName);
+            return hasImage;
         }
 
         static private Dictionary<char, LayerName> layerMap = new Dictionary<char, LayerName>()
@@ -103,11 +117,19 @@ using UnityEngine;
                         case "=":
                             dialogue.command = Command.Set;
                             dialogue.tag = split[0];
-                            if (split[2].Length > 0) foreach (char layer in split[2])
-                                if (layerMap.ContainsKey(layer))
-                                    dialogue.layers.Add(layerMap[layer]);
+                            if (split[2].Length > 0)
+                                foreach (char layer in split[2])
+                                {
+                                    if (layerMap.ContainsKey(layer))
+                                    {
+                                        dialogue.layers.Add(layerMap[layer]);
+                                        CheckImage(layerMap[layer], split[3]);
+                                    }
+                                }
+                                
                             else throw new Exception("No layers ");
                             dialogue.name = split[3];
+                            
                             break;
                         
                         case "+":

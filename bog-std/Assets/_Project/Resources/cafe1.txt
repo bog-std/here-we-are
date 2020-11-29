@@ -144,16 +144,18 @@ Vacation:D:Player: Y’know, a vacation would be really nice.
 Beach:D:Player: What you mean like the time we went to the beach?
 :D:Jordan: Yeah! Exactly like that.
 
-:=:S:Beach
+# TEST
+:D::Should go to beach scene after this line (let us know if it doesnt)
+asfdds:@:beach
 
-:D:Jordan: I wish we could go back to the beach.
-:D:Player: The one we went to during the summer of our college years? That brings me back.
-:D:Jordan: Right? It was so hot, but that day was so much fun.
-:D:Player: If I recall correctly, you hated every second of that day.
-:D:Jordan: Maybe so, but the fireworks off the beach were fantastic.
-:D:Player: Yes, they were. Yes, they were.
+:=:J:jordan_neutral
+#:D:Jordan: I wish we could go back to the beach.
+#:D:Player: The one we went to during the summer of our college years? That brings me back.
+#:D:Jordan: Right? It was so hot, but that day was so much fun.
+#:D:Player: If I recall correctly, you hated every second of that day.
+#:D:Jordan: Maybe so, but the fireworks off the beach were fantastic.
+#:D:Player: Yes, they were. Yes, they were.
 
-:=:S:Cafe
 
 Continue:D:Jordan: I wish we could go back to the good ol’ days.
 
@@ -330,14 +332,10 @@ Continue:D:Player: Haven’t we talked about this before?
 	Just how much I drank.:Drank
 :D:Player: I remember quite a bit of it.
 
-:=:S:Rooftop
-:=:J:city_jordan_away
+# TEST
+:D:: Should go to roof scene after this line (let us know if it doesnt)
+sfdbh:@:roof
 
-:D:P:# Need to insert rooftop scene here
-:D:: Rooftop Scene.
-
-:=:J:none
-:=:S:Cafe
 :=:J:jordan_neutral
 :>:Continue
 
@@ -450,8 +448,11 @@ You:D:Player: If I were you, I’d do everything I could do to see him.
 Worse:D:Player: Is it worse than when you first told me?
 :D:Jordan: Better, but not by much.
 
-:=:S:garden
+# TEST
+:D::Should go to garden scene after this line (let us know if it doesnt)
+hjgfk:@:garden
 
+:=:J:jordan_neutral
 :D:Jordan: You know, there are times I think that God just hates me. Maybe it’s because I’m not religious or whatever. 
 :D:Player: How do you mean?
 :=:J:jordan_worried
@@ -481,9 +482,8 @@ Deal:D:Player: You really shouldn’t be complaining. Yeah things should be bett
 :=:J:jordan_hesitate
 :D:Jordan: I shouldn’t have said anything. 
 :D:Player: Maybe not. But at least you made your voice heard. 
-:+:s:1
+:+:r:1
 
-:=:S:Cafe
 
 Continue:D:Jordan: Look things aren't easy right now okay?
 
@@ -506,9 +506,9 @@ Here:D:Player: Are we really here?
 :+:er:1
 :+:g:2
 Continue:D:Jordan: Are you sure about that?
-:=:S:Hospital
+:=:S:hospital
 :D::(A flashback a hospital bed. Someone is in the bed, with a heart monitor slowly beeping. IV drips stand at the side of the bed, and sunlight drifts through the window. Nurses pass in and out of the memory.)
-:=:S:Cafe
+:=:S:none
 :?:Jordan: I meant to call. I really did. (shift back to the café)
 	But you're still here.
 	We were supposed to meet up.:Meet
@@ -525,14 +525,14 @@ Continue:D:Jordan: Are you sure about that?
 Here:D:Player: Are you here?
 :D:Jordan: Are you getting it now?
 :+:G:1
-:>Continue
+:>:Continue
 Meet:D:Player: We were supposed to meet up.
 :D:Jordan: We were. 
 :D:Player: I was waiting for you.
 
 Continue:D:: (The sound of screeching tires echoes)
 
-:=:S:Hospital
+:=:S:hospital
 
 :D:Voice 1: It’s not looking good.
 :D:Voice 2: TA with failing organs. Were they a donor?
@@ -541,12 +541,12 @@ Continue:D:: (The sound of screeching tires echoes)
 # (A nurse approaches the player(camera))
 
 :?:Voice 1: I’m sorry. But it’s not looking good.
-    Are there organ donors?
-    Bullshit. You can save her.:Save
+	Are there organ donors?
+	Bullshit. You can save her.:Save
 :D:Player: Aren’t there organ donors who can save her?
 :?:Voice 1: I need to be honest with you. Your friend doesn’t have a lot of time left. Does she have family close by?
-    Her dad.
-    I'm all she has.:AllSheHas
+	Her dad.
+	I'm all she has.:AllSheHas
 :D:Player: Her dad. You can try calling him, but I don’t know if he’ll be able to come.
 :D:Voice 1: We still need a guardian to fill out paper work. 
 :+:RG:2
@@ -561,7 +561,7 @@ Save:D:Player: That’s a pile of bullshit and you know it. You can save her wit
 :D:Voice 1: (takes a deep breath) We will do everything we can. I can promise you that.
 :+:Rg:3
 
-:=:S:Cafe
+:=:S:none
 
 :?:Jordan: I’m so sorry. (tears form at the corners of Jordan’s eyes.)
 	No. No, no, no..
@@ -589,7 +589,7 @@ Continue:D:Player: Don’t leave me.
 :+:EG:1
 :D:Jordan: (smiles quietly.)
 :>:Continue
-WhyNot:Player: Why not? There's always a choice!
+WhyNot:D:Player: Why not? There's always a choice!
 :+:eg:1
 :D:: (Jordan shakes her head, and smiles quietly.)
 :>:Continue
