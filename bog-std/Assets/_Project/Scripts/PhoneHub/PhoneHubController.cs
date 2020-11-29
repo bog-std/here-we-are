@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets._Project.Scripts.DialogueManager;
 using FMOD;
 using TMPro;
 using UnityEditor.VersionControl;
@@ -10,6 +11,8 @@ using Debug = UnityEngine.Debug;
 
 public class PhoneHubController : MonoBehaviour
 {
+
+    private DialogueManager _dialogueManager;
 
     #region Scene Fact Variables
 
@@ -79,6 +82,7 @@ public class PhoneHubController : MonoBehaviour
 
     void Start()
     {
+        _dialogueManager = FindObjectOfType<DialogueManager>();
         _animator = GetComponent<Animator>();
 
         // Set Group References;
@@ -149,8 +153,17 @@ public class PhoneHubController : MonoBehaviour
         
     }
 
-    public void DisplayPhone() => _animator.SetBool("IsOpen", true);
-    public void HidePhone() => _animator.SetBool("IsOpen", false);
+    public void DisplayPhone()
+    {
+        _animator.SetBool("IsOpen", true);
+        _dialogueManager.NotificationOrPhoneOpen = true;
+    }
+
+    public void HidePhone()
+    {
+        _animator.SetBool("IsOpen", false);
+        _dialogueManager.NotificationOrPhoneOpen = false;
+    }
 
     public void DisplayMemorySelectionScreen()
     {

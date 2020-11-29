@@ -36,7 +36,7 @@ namespace Assets._Project.Scripts.DialogueManager
 
         private bool hasStarted = false;
 
-        private bool NotificationOrPhoneOpen = false;
+        public bool NotificationOrPhoneOpen = false;
 
         private PhoneHubController _phoneHub; // Reference to the scenes Phone
         private NotificationController _notification;
@@ -61,7 +61,7 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             try
             {
-                if (NotificationOrPhoneOpen && !hasStarted && Input.GetKey(KeyCode.Mouse0))
+                if (!NotificationOrPhoneOpen && !hasStarted && Input.GetKey(KeyCode.Mouse0))
                 {
                     if (currChoices.Count > 0) { }
                     else

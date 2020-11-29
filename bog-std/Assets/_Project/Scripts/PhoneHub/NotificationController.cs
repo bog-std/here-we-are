@@ -14,8 +14,17 @@ public class NotificationController : MonoBehaviour
         _phoneHub = FindObjectOfType<PhoneHubController>();
     }
 
-    public void DisplayNotification() => gameObject.SetActive(true);
-    public void HideNotification() => gameObject.SetActive(false);
+    public void DisplayNotification()
+    {
+        gameObject.SetActive(true);
+        _dialogueManager.NotificationOrPhoneOpen = true;    
+    }
+
+    public void HideNotification()
+    {
+        gameObject.SetActive(false);
+        _dialogueManager.NotificationOrPhoneOpen = false;
+    }
 
     public void ViewPhone_OnClick()
     {
