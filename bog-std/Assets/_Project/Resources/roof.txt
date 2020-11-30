@@ -1,21 +1,23 @@
+:=:S:party
+:=:1:party_scott
 :D:Player: Did you invite everyone to this party?
 :D:Scott: Just some friends.
 :D:Player: Some? 
 :?:Scott: All right, maybe a few more than I intended, but they’re all good people. There’s drinks in the kitchen, and any food in the fridge without a label is off limits. If you need me, you know where to find me.
-    Being an alcoholic?
-    Maybe later.:later
+	Being an alcoholic?
+	Maybe later.:later
 
 :D:Player: Probably enjoying a keg all to yourself.
 :D:Scott: As if!
 :>:Continue
 
-:later:D:Player: I’ll find you later.
+later:D:Player: I’ll find you later.
 :D:Scott: You better. We still need to shotgun a beer together.
 Continue:D:Player: (Thinking) Ugh I hate these late night parties. I should have just stayed home.
 
 :?:Jordan: Over Here!! What took you so long?? I thought you were dead when you didn’t pick up your phone. 
-    Unfortunately not, I'm here aren't I?
-    Sorry. I was using the GPS to find this place!!:GPS
+	Unfortunately not, I'm here aren't I?
+	Sorry. I was using the GPS to find this place!!:GPS
 
 :D:Jordan: Yeah, better late than never I guess.
 :+:r:1
@@ -29,13 +31,13 @@ Continue:D:Jordan: I was hoping you’d come since I know you don’t really car
 :D:Jordan: Yup.
 :D:Player: What’re you drinking? 
 :?:Jordan: Something Sarah whipped up. Didn’t see what she put in it before she got me playing. Wanna take my drinks for me?
-    What makes you think I’d drink for you?
-    Fine.:Fine
+	What makes you think I’d drink for you?
+	Fine.:Fine
 
 :+:r:1
 :?:Jordan: Please? 
-    All right fine.
-    Drink it yourself. You’re the one who lost.:Lost
+	All right fine.
+	Drink it yourself. You’re the one who lost.:Lost
 
 :D:Jordan: Thank you. (She smiles in gratitude. Somehow, it feels like she’s using the player to test the drink for poison.) 
 :D:Player: (thinking) Oh god. This is bad. Like, really bad. 
@@ -67,14 +69,14 @@ Continue:D:Jordan: Wanna grab some air?
 :D:Jordan: This is still my favourite part of the building. I don’t think I’ve ever seen anyone else up here…Remember all the late nights we used to spend staring out into the distance? (Jordan: Away)
 :D:Player: It feels so long ago. I miss those nights. 
 :?:Jordan: Do you think our memories mean anything? Like: what does it mean to live? Why are we here or, why do we remember things?
-    What’re you talking about?
-    You tell me.:Tell
+	What’re you talking about?
+	You tell me.:Tell
 
 :D:Player: Aren’t you a little young to be having an existential crisis?
 :+:E:2
 :?:Jordan: Is anyone too young to have an existential crisis? (Jordan: Side)
-    Yes
-    No:No
+	Yes
+	No:No
 
 :D:Player: If they’re under the age of fifty then yeah, they are.
 Jordan: Says you, how old are you anyway, eight? (Jordan: Side)
@@ -94,8 +96,8 @@ Tell:D:Player: How should I know the answer to that? It’s not everyday you que
 :D:Player: But while we’re on the subject, why not talk about the fact we’re all going to die so what does it matter if we do anything?.
 
 :?:Jordan: Aww, it sounds like you missed me and my quasi-philosophy! (Jordan: Side)
-    Not exactly
-    I did.:Did
+	Not exactly
+	I did.:Did
 
 :D:Player: Let’s not get ahead of ourselves.
 :+:e:1
@@ -113,8 +115,8 @@ Did:D:Player: I just think you are an insightful person…
 :D:Jordan: Oh boo hoo. Stop being so dramatic. You need to realize you have the power to make your life what you want it to be. I don’t have everything I want, but I control what I can. (Jordan: Away)
 :D:Player: Hmmm. I do have an attitude problem now that you mention it.
 :?:Jordan: “Life is nothing until it is lived, it is we who give it meaning, and value is nothing more than the meaning that we give it.” 
-    Seriously...?
-    Impressive:Imp
+	Seriously...?
+	Impressive:Imp
 
 :D:Player: That is the stupidest thing I have ever heard. Where did you hear that nonsense?
 :D:Jordan: What’s up with you tonight? When did you become a critic? (Jordan: Side)
@@ -130,8 +132,8 @@ Continue:D:Jordan: I learned that from our old pal Jean-Paul Sartre.
 :D:Jordan: You are way too anxious right now. Relax, he’s some old coot from France. You all right? You look like you’ve seen a ghost. (Jordan: Facing)
 :D:Player: I guess I have been antsy lately. Maybe I do need to relax. Surely there’s more to life than school, work and paying off a mortgage?
 :?:Jordan: You really are gloomy tonight sheesh. I think you have a purpose in life. You make me and your friends happy, that’s reason enough! (Jordan: Facing)
-    I agree
-    I disagree:Dis
+	I agree
+	I disagree:Dis
 
 :D:Player: When you put it that way, life does have a lot of purpose, I guess.
 :D:Jordan: You guess? (Jordan: Facing)
@@ -152,8 +154,8 @@ Continue:D:Jordan: Can we agree that you’re responsible for your own path in l
 :D:Jordan: I don’t think life has purpose. (Jordan: Away)
 :D:Player: What? You just asked me to agree with you about the purpose of life!
 :?:Jordan: No, I asked if you would agree that you are responsible for your purpose.
-    Huh?
-    Go off on a tangent:Tangent
+	Huh?
+	Go off on a tangent:Tangent
 
 :D:Player: Do you honestly think that's true?
 :D:Jordan: I’m not sure. (Jordan: Side)
@@ -167,8 +169,8 @@ Tangent:D:Player: A lot of things that happened to me weren’t my fault! My pur
 :+:g:2
 
 Jordan: All that I ask is you are open to the idea. (Jordan: Facing)
-    I can do that.
-    I don't think so.:NO
+	I can do that.
+	I don't think so.:NO
 
 :D:Player: I’ll try and keep an open mind.
 :D:Jordan: Thanks, I appreciate the effort. (Jordan: Facing)
@@ -183,8 +185,8 @@ NO:D:Player: I think I am going to pass on your French friend's ideas. I have a 
 :+:re:1
 
 :?:Jordan: Soooo...What do you believe then? (Jordan: Side)
-    I don’t know.
-    It’s me against the world.:World
+	I don’t know.
+	It’s me against the world.:World
 
 :D:Player: I haven't thought about it.
 :D:Player: I mean I’ve toyed with the idea that there is a God, or something, up there, but then I get caught in a loop of wondering when the misery ends.
@@ -201,8 +203,8 @@ World:D:Player:I don’t believe in anything. Everything bad that happened in my
 :-:E:1
 
 Continue:?:Jordan: I think everyone needs something to believe in. I think we’re all alone, but I find it comforting. (Jordan: Away)
-    I don't understand
-    That’s my problem!:problem
+	I don't understand
+	That’s my problem!:problem
 
 :D:Player: Alone? I'm right here!?
 :D:Jordan: Let me rephrase.
@@ -210,4 +212,82 @@ Continue:?:Jordan: I think everyone needs something to believe in. I think we’
 :>:Continue
 
 
+problem:D:Player: How is that comforting? Can’t you tell that my problem is that I feel alone?
+Jordan: I’m sorry that you feel that way, but that’s not what I meant.
+(Jordan: Side)
 
+Continue:D:Jordan: What I mean is that freedom comes from being independent.
+Jordan:You control your actions, where you go, and who you talk to.
+(Jordan: Away)
+:?:Jordan:You can’t blame everything on everyone else when you took initiative to seek them out in the first place.
+	Defend
+	Agree:Agree
+
+Player: Why does it sound like you’re attacking me? Everything bad that’s happened to me was because someone else decided to be a dick!
+Jordan: Not everything, just most things. (Jordan: Away)
+(Relationship:selfish +1) (Grief selfish +1) (existentialism selfish +1)
+:>:Continue
+
+Agree:D:Player: Maybe you’re right. I could’ve avoided so much pain if I just thought about what I was doing. But you didn’t have to be mean about it.
+Jordan: I’m sorry.
+(Jordan: Side)
+(Relationship selfless +2) (Grief selfless: +1) (existentialism selfless +1) 
+
+
+
+Continue:D:Jordan: I didn’t mean to be harsh, I was just trying to get my point across. (Jordan: Side)
+Player:  So what do you think I should do? 
+(Jordan: Away)
+:?:Jordan: Descartes said, “ Conquer yourself rather than the world.” 
+	I disagree
+	I agree:Agreed
+
+Player: [Don’t you have any original ideas? Or do you only listen to old and bizarre French men?]
+Jordan: I don’t see what’s wrong with old French men? 
+(Jordan: Side)
+(Relationship selfish +1, existentialism selfish +1)
+:>:Continue
+
+Agreed:D:Player: It looks like someone’s been reading!
+(Jordan: Facing)
+Jordan: It’s cute that you noticed.
+(relationship selfless +1, existentialism selfless +1)
+
+Continue:D:Jordan: I have been trying to read a little bit more
+(Jordan: Facing)
+:?:Jordan: since I have had so much free time.
+	Really?
+	Oh, really?:OH
+
+Player: You have free time? You never answer me when I try and get a hold of you. I was starting to get worried!
+(Relationship selfless +1)
+:>:Continue
+
+OH:D:Player: [I thought all you had was free time? What do you do all day besides ignore my messages?
+(Relationship selfish +1)
+
+Continue:D:Jordan: Sorry, I was super busy… 
+(Jordan: Side)
+:?:Jordan:My family life has been chaotic but things have calmed down.
+	It’s OK.
+	Who cares?:Cares
+
+Player: I know you had your reasons. I almost forgot about your dad… Reading is a good outlet.
+:>:Continue
+
+Cares:D:Player: Why fret over those people when they don’t seem to care much about you?
+ (Relationship selfish +2, Grief selfish +2)
+
+Continue:D:Jordan: I wish I had the answer. Books are a nice escape though.
+(Jordan: Away)
+:?:Jordan:Helps me forget about the shitty stuff. 
+	You are nuts
+	How?
+
+Player: Your problems are still there though. You can’t run from them.
+(Relationship selfish +1, grief selfish +1, existentialism selfish +1)
+:>:Continue
+
+
+
+Continue:D:
