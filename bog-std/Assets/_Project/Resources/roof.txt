@@ -213,45 +213,45 @@ Continue:?:Jordan: I think everyone needs something to believe in. I think we’
 
 
 problem:D:Player: How is that comforting? Can’t you tell that my problem is that I feel alone?
-Jordan: I’m sorry that you feel that way, but that’s not what I meant.
+:D:Jordan: I’m sorry that you feel that way, but that’s not what I meant.
 (Jordan: Side)
 
 Continue:D:Jordan: What I mean is that freedom comes from being independent.
-Jordan:You control your actions, where you go, and who you talk to.
+:D:Jordan:You control your actions, where you go, and who you talk to.
 (Jordan: Away)
 :?:Jordan:You can’t blame everything on everyone else when you took initiative to seek them out in the first place.
 	Defend
 	Agree:Agree
 
-Player: Why does it sound like you’re attacking me? Everything bad that’s happened to me was because someone else decided to be a dick!
-Jordan: Not everything, just most things. (Jordan: Away)
+:D:Player: Why does it sound like you’re attacking me? Everything bad that’s happened to me was because someone else decided to be a dick!
+:D:Jordan: Not everything, just most things. (Jordan: Away)
 (Relationship:selfish +1) (Grief selfish +1) (existentialism selfish +1)
 :>:Continue
 
 Agree:D:Player: Maybe you’re right. I could’ve avoided so much pain if I just thought about what I was doing. But you didn’t have to be mean about it.
-Jordan: I’m sorry.
+:D:Jordan: I’m sorry.
 (Jordan: Side)
-(Relationship selfless +2) (Grief selfless: +1) (existentialism selfless +1) 
-
-
+:+:G:2
+:+:R:2
+:+:E:1
 
 Continue:D:Jordan: I didn’t mean to be harsh, I was just trying to get my point across. (Jordan: Side)
-Player:  So what do you think I should do? 
+:D:Player:  So what do you think I should do? 
 (Jordan: Away)
 :?:Jordan: Descartes said, “ Conquer yourself rather than the world.” 
 	I disagree
 	I agree:Agreed
 
-Player: [Don’t you have any original ideas? Or do you only listen to old and bizarre French men?]
-Jordan: I don’t see what’s wrong with old French men? 
+:D:Player: [Don’t you have any original ideas? Or do you only listen to old and bizarre French men?]
+:D:Jordan: I don’t see what’s wrong with old French men? 
 (Jordan: Side)
-(Relationship selfish +1, existentialism selfish +1)
+:+:re:1
 :>:Continue
 
 Agreed:D:Player: It looks like someone’s been reading!
 (Jordan: Facing)
-Jordan: It’s cute that you noticed.
-(relationship selfless +1, existentialism selfless +1)
+:D:Jordan: It’s cute that you noticed.
+:+:RE:1
 
 Continue:D:Jordan: I have been trying to read a little bit more
 (Jordan: Facing)
@@ -259,12 +259,12 @@ Continue:D:Jordan: I have been trying to read a little bit more
 	Really?
 	Oh, really?:OH
 
-Player: You have free time? You never answer me when I try and get a hold of you. I was starting to get worried!
-(Relationship selfless +1)
+:D:Player: You have free time? You never answer me when I try and get a hold of you. I was starting to get worried!
+:+:R:1
 :>:Continue
 
 OH:D:Player: [I thought all you had was free time? What do you do all day besides ignore my messages?
-(Relationship selfish +1)
+:+:r:1
 
 Continue:D:Jordan: Sorry, I was super busy… 
 (Jordan: Side)
@@ -272,22 +272,58 @@ Continue:D:Jordan: Sorry, I was super busy…
 	It’s OK.
 	Who cares?:Cares
 
-Player: I know you had your reasons. I almost forgot about your dad… Reading is a good outlet.
+:D:Player: I know you had your reasons. I almost forgot about your dad… Reading is a good outlet.
 :>:Continue
 
 Cares:D:Player: Why fret over those people when they don’t seem to care much about you?
- (Relationship selfish +2, Grief selfish +2)
+:+:rg:2
 
 Continue:D:Jordan: I wish I had the answer. Books are a nice escape though.
 (Jordan: Away)
 :?:Jordan:Helps me forget about the shitty stuff. 
 	You are nuts
-	How?
+	How?:How
 
-Player: Your problems are still there though. You can’t run from them.
-(Relationship selfish +1, grief selfish +1, existentialism selfish +1)
+:D:Player: Your problems are still there though. You can’t run from them.
+:+:rge:1
 :>:Continue
 
+How:D:Player: I think we could all use an escape. Does reading help you cope?
 
+Continue:D:Jordan: I know reading doesn’t solve any of my problems
+(Jordan: Side)  
+:?:Jordan:but it makes them more manageable.
+	Thanks
+	No thanks.:NO
 
-Continue:D:
+:D:Player:Maybe it’ll help me
+:+:RE:1
+:>:Continue
+
+NO:D:Reading wasn’t really ever my thing.
+:+:re:1
+
+Continue:D:Jordan: Are you really that bent out of shape about purpose?
+(Jordan: Facing)
+:?:Jordan: ...
+	Yes
+	Not anymore.:Anymore
+
+:D:Player: Yeah. I feel like I lived my life already. I just want a reason to keep going.
+:+:e:1
+:>:Continue
+
+Anymore:D:Player: I just learned to roll with the punches. There’s not a lot I can do at this point.
+
+Continue:D:Jordan:Jordan: You need an attitude adjustment and you'll be fine.
+(Jordan: Facing)
+:D:Player: I’m just confused as to how you are so calm about everything. Last time I talked to you it seemed like your head was about to explode from stress and anxiety. 
+
+(Jordan: Facing)
+:D:Jordan: Things change.
+(Jordan: Side)
+:D:Jordan: People change.
+(Jordan: Away)
+:D:Jordan: Perceptions change.
+
+:D:: *both are now staring out into the night sky in silence*
