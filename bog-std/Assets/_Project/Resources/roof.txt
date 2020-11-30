@@ -1,1 +1,382 @@
-:D:: Add roof scene to txtAssets in DialogueManager
+:=:S:party
+:=:1:party_scott
+:D:Player: Did you invite everyone to this party?
+:D:Scott: Just some friends.
+:D:Player: Some? 
+:D:Scott: All right, maybe a few more than I intended, but they’re all good people.
+:D:Scott:There are drinks in the kitchen, and any food in the fridge without a label is off limits.
+:?:Scott:If you need me, you know where to find me.
+	Being an alcoholic?
+	Maybe later.:later
+
+:D:Player: Probably enjoying a keg all to yourself.
+:D:Scott: As if!
+:>:Continue
+
+later:D:Player: I’ll find you later.
+:D:Scott: You better. We still need to shotgun a beer together.
+:=:1:none
+Continue:D:Player: (Thinking) Ugh I hate these late night parties. I should have just stayed home.
+
+:=:J:party_jordan
+
+:?:Jordan: Over Here!! What took you so long?? I thought you were dead when you didn’t pick up your phone. 
+	Unfortunately not, I'm here aren't I?
+	Sorry. I was using the GPS to find this place!!:GPS
+
+:D:Jordan: Yeah, better late than never I guess.
+:+:r:1
+:>:Continue
+
+GPS:D:Jordan: Well I’m glad you found the place. Better late than never!
+:+:R:1
+
+Continue:D:Jordan: I was hoping you’d come since I know you don’t really care for these types of things, so it means a lot!
+:D:Player: This is the part where you drink right?
+:D:Jordan: Yup.
+:D:Player: What’re you drinking? 
+:?:Jordan: Something Sarah whipped up. Didn’t see what she put in it before she got me playing. Wanna take my drinks for me?
+	What makes you think I’d drink for you?
+	Fine.:Fine
+
+:+:r:1
+:?:Jordan: Please? 
+	All right fine.
+	Drink it yourself. You’re the one who lost.:Lost
+
+:D:Jordan: Thank you. (She smiles in gratitude. Somehow, it feels like she’s using the player to test the drink for poison.) 
+:D:Player: (thinking) Oh god. This is bad. Like, really bad. 
+:D:Jordan: (Winks) You’re the best.
+:+:R:1
+:>:Continue
+
+Lost:D:Jordan: Aw you’re no fun.
+:D:Jordan:Note to self: Peach juice, vodka, and whatever the hell else is in here, does not mix well together. 
+:+:r:1
+:>:Continue
+
+Fine:D:Player: Yeah sure. I’ll drink it for you.
+:D:Jordan: You’re the sweetest. How is it?
+:D:Player:...
+:D:Jordan: Well?
+:D:Player: Never let Sarah be a bartender.
+:+:R:2
+
+Continue:D:Jordan: Wanna grab some air?
+:D:Player: What? I can barely hear you, it's too loud in here.
+:=:J:none
+:D:Jordan: Follow me, I know a quiet place!
+:=:S:rooftop
+:D:Player: That’s better. Where are we anyways? I didn’t recognize anyone at the party.
+:=:J:city_jordan_side
+:D:Jordan: Oh, quit trying to be funny! Did you really get tipsy from one drink?
+:D:Player: I have a low tolerance ok?
+:=:J:city_jordan_away
+:D:Jordan: Surely this place didn’t escape from your memories.
+:D:Player: Maybe one of Scott’s friends spiked my drink.
+:=:J:city_jordan_facing
+:D:Jordan: I think you must have smacked your head while we were climbing up here.
+:?:Jordan: How can you not remember this rooftop?
+	Give me a break
+	Just Kidding:Kidding
+
+:D:Player: Give me a break, it's been a while since you have dragged me up here
+:=:J:city_jordan_away
+:+:r:1
+:>:Continue
+
+Kidding:D:Player: I’m kidding! You know how much I love being up here..
+:+:R:1
+
+Continue:D:Jordan: This is still my favourite part of the building.
+:=:J:city_jordan_away
+:D:Jordan: I don’t think I’ve ever seen anyone else up here…Remember all the late nights we used to spend staring out into the distance?
+:D:Player: It feels so long ago. I miss those nights. 
+:?:Jordan: Do you think our memories mean anything? Like: what does it mean to live? Why are we here or, why do we remember things?
+	What’re you talking about?
+	You tell me.:Tell
+
+:D:Player: Aren’t you a little young to be having an existential crisis?
+:+:E:2
+:=:J:city_jordan_side
+:?:Jordan: Is anyone too young to have an existential crisis?
+	Yes
+	No:No
+
+:D:Player: If they’re under the age of fifty then yeah, they are.
+:=:J:city_jordan_side
+:D:Jordan: Says you, how old are you anyway, eight?
+:>:Continue
+
+No:D:Player: Maybe not. As long as they’re mature enough to think about it, then they can be any age.
+:=:J:city_jordan_facing
+:D:Jordan: Wanna join my crisis?
+:+:E:1
+:>:Continue
+
+Tell:D:Player: How should I know the answer to that? It’s not everyday you question the reason you’re alive or whatever.
+:=:J:city_jordan_side
+:D:Jordan: Dang, I thought you out of all people would have some insight into this. Nevermind then I guess.
+:D:Player: I just wanted your take on it, that’s all. Plus, why me out of all people?
+:=:J:city_jordan_away
+:D:Jordan: I trust your opinion.
+:+:e:1
+
+:D:Player: But while we’re on the subject, why not talk about the fact we’re all going to die so what does it matter if we do anything?.
+
+:=:J:city_jordan_side
+:?:Jordan: Aww, it sounds like you missed me and my quasi-philosophy!
+	Not exactly
+	I did.:Did
+
+:D:Player: Let’s not get ahead of ourselves.
+:+:e:1
+:>:Continue
+
+Did:D:Player: I just think you are an insightful person…
+:+:E:1
+
+Continue:D:Jordan: Did you have something on your mind?
+:=:J:city_jordan_facing
+:D:Player: Yeah.
+:D:Jordan: Can you hash that out a bit more? What exactly are you asking me?
+:D:Player: I just find myself confused. I barely recognized anyone inside. These last few years have just flashed by. I feel like I don’t know where I am. I feel like I don't have a purpose... 
+:=:J:city_jordan_side
+:D:Jordan: Maybe you should do something about it…
+:D:Player: like what? It seems like everything I do ends in failure.
+:=:J:city_jordan_facing
+:D:Jordan: Oh boo hoo. Stop being so dramatic. You need to realize you have the power to make your life what you want it to be. I don’t have everything I want, but I control what I can.
+:D:Player: Hmmm. I do have an attitude problem now that you mention it.
+:?:Jordan: “Life is nothing until it is lived, it is we who give it meaning, and value is nothing more than the meaning that we give it.” 
+	Seriously...?
+	Impressive:Imp
+
+:D:Player: That is the stupidest thing I have ever heard. Where did you hear that nonsense?
+:=:J:city_jordan_side
+:D:Jordan: What’s up with you tonight? When did you become a critic?
+:+:e:1
+:>:Continue
+
+Imp:D:Player: You clearly know more than I do.
+:=:J:city_jordan_facing
+:D:Jordan: Awww thanks.
+:+:RE:1
+
+Continue:D:Jordan: I learned that from our old pal Jean-Paul Sartre.
+:D:Player: See this is what I am talking about! I don’t remember him at all…
+:=:J:city_jordan_facing
+:D:Jordan: You are way too anxious right now. Relax, he’s some old coot from France. You all right? You look like you’ve seen a ghost.
+:D:Player: I guess I have been antsy lately. Maybe I do need to relax. Surely there’s more to life than school, work and paying off a mortgage?
+:?:Jordan: You really are gloomy tonight sheesh. I think you have a purpose in life. You make me and your friends happy, that’s reason enough!
+	I agree
+	I disagree:Dis
+
+:D:Player: When you put it that way, life does have a lot of purpose, I guess.
+:D:Jordan: You guess?
+:D:Player: I can see the value of living for other people, and it feels good having people rely on me.
+:=:J:city_jordan_side
+:D:Jordan: Just don’t go dying out in the middle of nowhere because you think your life is an obligation to us. We’re not superheroes. Just people.
+:+:R:2
+:+:E:1
+:>:Continue
+
+Dis:D:Player: That hardly seems like a purpose.
+:=:J:city_jordan_side
+:D:Jordan: Why not?
+:D:Player: I’m not Mother Theresa, and not everyone’s got a decent enough upbringing to be entirely selfless. I can also see how it would be taxing on me if I kept doing it. I love you guys, but I need to live for me.
+:+:r:2
+:+:e:1
+
+Continue:D:Jordan: Can we agree that you’re responsible for your own path in life? Including purpose?
+:=:J:city_jordan_away
+:D:Player: All right, fine. But what about you? Have you found your purpose in life?
+:D:Jordan: I don’t think life has purpose.
+:D:Player: What? You just asked me to agree with you about the purpose of life!
+:?:Jordan: No, I asked if you would agree that you are responsible for your purpose.
+	Huh?
+	Go off on a tangent:Tangent
+
+:D:Player: Do you honestly think that's true?
+:=:J:city_jordan_side
+:D:Jordan: I’m not sure.
+#:-:R:1
+:+:E:1
+:>:Continue
+
+Tangent:D:Player: A lot of things that happened to me weren’t my fault! My purpose would be a lot different if I called all the shots.
+:=:J:city_jordan_side
+:D:Jordan: …
+:+:e:1
+:+:g:2
+
+Continue:D:Jordan: All that I ask
+:=:J:city_jordan_facing
+:?:Jordan: is you are open to the idea.
+	I can do that.
+	I don't think so.:NO
+
+:D:Player: I’ll try and keep an open mind.
+:D:Jordan: Thanks, I appreciate the effort.
+:+:R:2
+#:-:g:1
+:+:E:2
+:>:Continue
+
+
+NO:D:Player: I think I am going to pass on your French friend's ideas. I have a few of my own.
+:=:J:city_jordan_away
+:D:Jordan: Suit yourself.
+:+:re:1
+
+:D:Jordan: Soooo...
+:=:J:city_jordan_side
+:?:Jordan: What do you believe then?
+	I don’t know.
+	It’s me against the world.:World
+
+:D:Player: I haven't thought about it.
+:D:Player: I mean I’ve toyed with the idea that there is a God, or something, up there, but then I get caught in a loop of wondering when the misery ends.
+:=:J:city_jordan_side
+:D:Jordan: And now?
+:D:Player: Now I don’t know.
+:+:R:1
+:>:Continue
+
+
+World:D:Player:I don’t believe in anything. Everything bad that happened in my life is someone else's fault.
+:=:J:city_jordan_away
+:D:Jordan: That’s one way to look at it.
+:+:r:1
+:+:g:3
+#:-:E:1
+
+Continue:D:Jordan: I think everyone needs something to believe in
+:=:J:city_jordan_away
+:?:Jordan: I think we’re all alone, but I find it comforting.
+	I don't understand
+	That’s my problem!:problem
+
+:D:Player: Alone? I'm right here!?
+:D:Jordan: Let me rephrase.
+:+:R:1
+:>:Continue
+
+
+problem:D:Player: How is that comforting? Can’t you tell that my problem is that I feel alone?
+:=:J:city_jordan_side
+:D:Jordan: I’m sorry that you feel that way, but that’s not what I meant.
+
+Continue:D:Jordan: What I mean is that freedom comes from being independent.
+:D:Jordan:You control your actions, where you go, and who you talk to.
+:=:J:city_jordan_away
+:?:Jordan:You can’t blame everything on everyone else when you took initiative to seek them out in the first place.
+	Defend
+	Agree:Agree
+
+:D:Player: Why does it sound like you’re attacking me? Everything bad that’s happened to me was because someone else decided to be a dick!
+:=:J:city_jordan_away
+:D:Jordan: Not everything, just most things.
+:+:rge:1
+:>:Continue
+
+Agree:D:Player: Maybe you’re right. I could’ve avoided so much pain if I just thought about what I was doing. But you didn’t have to be mean about it.
+:=:J:city_jordan_side
+:D:Jordan: I’m sorry.
+:+:G:2
+:+:R:2
+:+:E:1
+
+Continue:D:Jordan: I didn’t mean to be harsh
+:=:J:city_jordan_side
+:D:Jordan: I was just trying to get my point across
+:D:Player:  So what do you think I should do? 
+:=:J:city_jordan_away
+:?:Jordan: Descartes said, “ Conquer yourself rather than the world.” 
+	I disagree
+	I agree:Agreed
+
+:D:Player: Don’t you have any original ideas? Or do you only listen to old and bizarre French men?
+:=:J:city_jordan_side
+:D:Jordan: I don’t see what’s wrong with old French men? 
+:+:re:1
+:>:Continue
+
+Agreed:D:Player: It looks like someone’s been reading!
+:=:J:city_jordan_facing
+:D:Jordan: It’s cute that you noticed.
+:+:RE:1
+
+Continue:D:Jordan: I have been trying to read a little bit more
+:=:J:city_jordan_facing
+:?:Jordan: since I have had so much free time.
+	Really?
+	Oh, really?:OH
+
+:D:Player: You have free time? You never answer me when I try and get a hold of you. I was starting to get worried!
+:+:R:1
+:>:Continue
+
+OH:D:Player: [I thought all you had was free time? What do you do all day besides ignore my messages?
+:+:r:1
+
+Continue:D:Jordan: Sorry, I was super busy… 
+:=:J:city_jordan_side
+:?:Jordan:My family life has been chaotic but things have calmed down.
+	It’s OK.
+	Who cares?:Cares
+
+:D:Player: I know you had your reasons. I almost forgot about your dad… Reading is a good outlet.
+:>:Continue
+
+Cares:D:Player: Why fret over those people when they don’t seem to care much about you?
+:+:rg:2
+
+Continue:D:Jordan: I wish I had the answer. Books are a nice escape though.
+:=:J:city_jordan_away
+:?:Jordan:Helps me forget about the shitty stuff. 
+	You are nuts
+	How?:How
+
+:D:Player: Your problems are still there though. You can’t run from them.
+:+:rge:1
+:>:Continue
+
+How:D:Player: I think we could all use an escape. Does reading help you cope?
+
+Continue:D:Jordan: I know reading doesn’t solve any of my problems
+:=:J:city_jordan_side
+:?:Jordan:but it makes them more manageable.
+	Thanks
+	No thanks.:NO
+
+:D:Player:Maybe it’ll help me
+:+:RE:1
+:>:Continue
+
+NO:D:Reading wasn’t really ever my thing.
+:+:re:1
+
+Continue:D:Jordan: Are you really that bent out of shape about purpose?
+:=:J:city_jordan_facing
+:?:Jordan: ...
+	Yes
+	Not anymore.:Anymore
+
+:D:Player: Yeah. I feel like I lived my life already. I just want a reason to keep going.
+:+:e:1
+:>:Continue
+
+Anymore:D:Player: I just learned to roll with the punches. There’s not a lot I can do at this point.
+
+Continue:D:Jordan:Jordan: You need an attitude adjustment and you'll be fine.
+:=:J:city_jordan_facing
+:D:Player: I’m just confused as to how you are so calm about everything. Last time I talked to you it seemed like your head was about to explode from stress and anxiety. 
+
+:=:J:city_jordan_facing
+:D:Jordan: Things change.
+:=:J:city_jordan_side
+:D:Jordan: People change.
+:=:J:city_jordan_away
+:D:Jordan: Perceptions change.
+
+:D:: *both are now staring out into the night sky in silence*
