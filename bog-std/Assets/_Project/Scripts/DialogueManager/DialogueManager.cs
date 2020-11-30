@@ -40,6 +40,13 @@ namespace Assets._Project.Scripts.DialogueManager
         private Queue<Dialogue> dialogueScript;
         private int dialogueDistance = 0;
         private bool hasStarted = false;
+        private bool isWaiting = false;
+
+        public bool NotificationOrPhoneOpen = false;
+
+        private PhoneHubController _phoneHub; // Reference to the scenes Phone
+        private NotificationController _notification;
+
 
         public bool InDialogue => currDialogueBox != null;
         
@@ -48,46 +55,43 @@ namespace Assets._Project.Scripts.DialogueManager
             dialogueScript = new Queue<Dialogue>();
             txtStack = new Stack<TextStackItem>();
             currChoices = new List<GameObject>();
-            
+
+            DisplayNext();
         }
 
         public void Start()
         {
             scene = FindObjectOfType<LayeredScene>();
+
+            _phoneHub = FindObjectOfType<PhoneHubController>();
+            _notification = FindObjectOfType<NotificationController>();
+
+            _notification.HideNotification();
         }
 
         public void Update()
         {
             try
             {
-                if (!hasStarted && Input.GetKey(KeyCode.Mouse0))
+                if (!NotificationOrPhoneOpen && !hasStarted && !isWaiting && (Input.GetKey(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)))
                 {
-                    if (currChoices.Count > 0) { }
-                    else
+                    if (currChoices.Count == 0)
                     {
                         DisplayNext();
                         hasStarted = true;
                     }
                 }
-                else if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    if (currChoices.Count > 0)
-                    {
-                        DisplayNext();
-                    }
-                    else
-                    {
-                        DisplayNext();
-                    }
-                }
+                // Toggle Fullscreen
                 else if (Input.GetKeyDown(KeyCode.F11))
                 {
                     Screen.fullScreen = !Screen.fullScreen;
                 }
+                // Quit
                 else if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     Application.Quit();
                 }
+                // Toggle fast reading 
                 else if (Input.GetKeyDown(KeyCode.T))
                 {
                     autocompleteToggle = !autocompleteToggle;
@@ -107,13 +111,15 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             if (currChoices != null && currChoices.Count > 0) return;
 
+            isWaiting = false;
+
             if (autocompleteToggle && readingText)
             {
                 readingText = false;
             }
             else if (!readingText)
             {
-                // Otherwise try and display the next DialougeBox
+                // Otherwise try and display the next DialogueBox
 
                 // If one is already being display, destroy it 
                 if (currDialogueBox != null)
@@ -392,13 +398,12 @@ namespace Assets._Project.Scripts.DialogueManager
                     else PushDialogue(dialogue.tag, txtFiles.Find(a => a.name == dialogue.name));
                     break;
                 
-                // TODO Fix Wait functionality
                 case Command.Wait:
-                    Debug.Log("Wait" + dialogue.magnitude);
+                    Debug.Log("Wait " + dialogue.magnitude);
+                    
                     Invoke("DisplayNext", dialogue.magnitude);
-                    // StartCoroutine(Wait(dialogue.magnitude));
-                    // StopCoroutine(Wait(dialogue.magnitude));
-                    break;
+                    isWaiting = true;
+                    return;
             }
             
             DisplayNext();
@@ -426,19 +431,7 @@ namespace Assets._Project.Scripts.DialogueManager
             RequestDialogue(script);
             txtStack.Push(new TextStackItem(returnAddress, script));
         }
-        
-        
-        // TODO Fix Wait functionality
-        private bool isWaiting = false;
-        IEnumerator Wait(int seconds)
-        {
-            Debug.Log("Waiting " + seconds + ".");
-            isWaiting = true;
-            yield return new WaitForSeconds(seconds);
-            isWaiting = false;
-            DisplayNext();
-            Debug.Log("Waiting Complete");
-        }
+
 
         public void ProcessChoice(Choice choice)
         {
