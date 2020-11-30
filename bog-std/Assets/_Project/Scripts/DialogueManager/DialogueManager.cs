@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using _Project.Scripts.DialogueParser;
 using Assets._Project.Scripts.DialogueData;
 using FMOD;
 using TMPro;
@@ -38,7 +39,7 @@ namespace Assets._Project.Scripts.DialogueManager
         private bool autocompleteToggle = false;
 
         private Queue<Dialogue> dialogueScript;
-
+        private int dialogueDistance = 0;
         private bool hasStarted = false;
         private bool isWaiting = false;
 
@@ -126,7 +127,7 @@ namespace Assets._Project.Scripts.DialogueManager
                     Destroy(currDialogueBox);
 
                 // Initialize first script in txtFiles
-                if (txtStack.Count == 0) PushDialogue("", txtFiles[0]);
+                if (txtStack.Count == 0) PushDialogue(txtFiles[0]);
                 
                 // If at end of current script
                 if (dialogueScript.Count == 0)
@@ -141,7 +142,7 @@ namespace Assets._Project.Scripts.DialogueManager
                     }
                     else if (txtStack.Count == 1)
                     {
-                        // TODO Load phone/memory interface
+                        OpenPhone();
                         
                         // Placeholder behavior - reload script
                         Debug.Log("RequestingDialogue");
@@ -154,15 +155,19 @@ namespace Assets._Project.Scripts.DialogueManager
             }
         }
 
-       
 
+        public void OpenPhone()
+        {
+            // TODO Load phone/memory interface
+        }
+        
         public void DisplayTextBox()
         {
             if (dialoguePrefab == null || dialogueScript.Count == 0) return;
             
             try
             {
-                var dialogue = dialogueScript.Dequeue();
+                var dialogue = DequeueScript();
 
                 if (dialogue.command != Command.None)
                 {
@@ -246,7 +251,7 @@ namespace Assets._Project.Scripts.DialogueManager
                         {
                             case "wait":
                                 Debug.Log("Wait " + cmd[1]);
-                                var sec = Convert.ToInt32(cmd[1]);
+                                var sec = Convert.ToSingle(cmd[1]);
                                 yield return new WaitForSeconds(sec);
                                 break;
                         }
@@ -280,6 +285,7 @@ namespace Assets._Project.Scripts.DialogueManager
         public void ShowChoices(List<Choice> choices)
         {
             if (choices.Count == 0) return;
+            choices.Reverse();    
             
             int count = choices.Count;
             var canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<RectTransform>();
@@ -379,23 +385,17 @@ namespace Assets._Project.Scripts.DialogueManager
                     break;
                 
                 case Command.Increment:
-                    IncrementLayers(dialogue.layers, dialogue.magnitude);
+                    IncrementLayers(dialogue.layers, (int) dialogue.magnitude);
                     break;
                 
                 case Command.Set:
                     SetLayers(dialogue.layers, dialogue.name);
-                    
-                    // TODO Fix Wait functionality
-                    if (dialogue.name != string.Empty)
-                    {
-                        Debug.Log("Processing delay: " + dialogue.name);
-                        if (Int32.TryParse(dialogue.name,  out var result)) Invoke("DisplayNext", result);
-                    }
+                    if (dialogue.magnitude > 0) goto case Command.Wait;
                     break;
                 
-                case Command.LoadScript:
+                case Command.Script:
                     if (dialogue.name == "pop") PopDialogue();
-                    else PushDialogue(dialogue.tag, txtFiles.Find(a => a.name == dialogue.name));
+                    else PushDialogue(txtFiles.Find(a => a.name == dialogue.name), (int) dialogue.magnitude);
                     break;
                 
                 case Command.Wait:
@@ -404,11 +404,20 @@ namespace Assets._Project.Scripts.DialogueManager
                     Invoke("DisplayNext", dialogue.magnitude);
                     isWaiting = true;
                     return;
+                
+                case Command.Phone:
+                    OpenPhone();
+                    return;
             }
             
             DisplayNext();
         }
         
+        private Dialogue DequeueScript()
+        {
+            dialogueDistance++;
+            return dialogueScript.Dequeue();
+        }
         
         private void PopDialogue()
         {
@@ -421,15 +430,17 @@ namespace Assets._Project.Scripts.DialogueManager
             dialogueScript.Clear();
             TextStackItem item = txtStack.Pop();
             RequestDialogue(txtStack.Peek().textAsset);
-            if (item.returnAddress != String.Empty) Seek(item.returnAddress, 1);
+            dialogueDistance = 0;
+            Forward(item.returnOffset);
         }
         
         
-        private void PushDialogue(string returnAddress, TextAsset script)
+        public void PushDialogue(TextAsset script, int returnOffset = -1)
         {
             dialogueScript.Clear();
             RequestDialogue(script);
-            txtStack.Push(new TextStackItem(returnAddress, script));
+            txtStack.Push(new TextStackItem(returnOffset >= 0 ? returnOffset : dialogueDistance, script));
+            dialogueDistance = 0;
         }
 
 
@@ -441,11 +452,13 @@ namespace Assets._Project.Scripts.DialogueManager
             DisplayNext();
         }
 
+        
         private void IncrementLayers(List<LayerName> layers, int magnitude)
         {
             foreach(var layer in layers)
                 scene.IncrementLayer(layer, magnitude);
         }
+        
         
         private void SetLayers(List<LayerName> layers, string layerTag)
         {
@@ -463,7 +476,8 @@ namespace Assets._Project.Scripts.DialogueManager
             }
         }
 
-        public void ClearChoices()
+        
+        private void ClearChoices()
         {
             foreach (var option in currChoices)
                 Destroy(option);
@@ -471,17 +485,26 @@ namespace Assets._Project.Scripts.DialogueManager
             currChoices.Clear();
         }
 
-        public void Seek(string target, int offset = 0)
+        
+        private void Seek(string target, int offset = 0)
         {
             if (target != string.Empty && dialogueScript.Count > 1)
             {
                 while (dialogueScript.Count > 0 && dialogueScript.Peek().tag != target)
-                    dialogueScript.Dequeue();
+                    DequeueScript();
                 
-                if (dialogueScript.Count > 1) while (offset-- > 0)
-                    dialogueScript.Dequeue();
+                Forward(offset);
             }
         }
+
+        
+        private void Forward(int offset)
+        {
+            if (dialogueScript.Count > 1) while (offset-- > 0)
+                DequeueScript();
+        }
+        
+        
     }
 }
 
@@ -490,12 +513,12 @@ namespace Assets._Project.Scripts.DialogueManager
 [Serializable]
 struct TextStackItem
 {
-    public TextStackItem(string returnAddress, TextAsset textAsset)
+    public TextStackItem(int returnOffset, TextAsset textAsset)
     {
-        this.returnAddress = returnAddress;
+        this.returnOffset = returnOffset;
         this.textAsset = textAsset;
     }
 
-    public string returnAddress;
+    public int returnOffset;
     public TextAsset textAsset;
 }

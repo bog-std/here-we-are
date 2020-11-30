@@ -71,8 +71,6 @@ public class LayeredScene : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Minus)) IncrementLayer(LayerName.Extra3,1);
 
         if (Input.GetKeyDown(KeyCode.I)) ToggleDebug();
-        
-        
     }
 
 

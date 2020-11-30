@@ -7,8 +7,9 @@ public enum Command : ushort
     Skip,
     Wait,
     Increment,
-    LoadScript,
-    Set
+    Script,
+    Set,
+    Phone
 };
 
 namespace Assets._Project.Scripts.DialogueData
@@ -27,7 +28,7 @@ namespace Assets._Project.Scripts.DialogueData
         public readonly List<Choice> choices; // check if length > 0 to see if we have choices
         public Command command;
         public List<LayerName> layers;
-        public int magnitude;
+        public float magnitude;
         
     }
 }
