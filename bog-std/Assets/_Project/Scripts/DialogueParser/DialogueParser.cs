@@ -159,7 +159,14 @@ using UnityEngine;
                                 dialogue.command = Command.Phone;
                                 dialogue.tag = split[0];
                                 break;
-                        
+
+                            // Set Fact
+                            case "~":
+                                dialogue.command = Command.Fact;
+                                dialogue.tag = split[0];
+                                dialogue.name = split[2]; // Scene # 
+                                dialogue.magnitude = Convert.ToUInt16(split[3]);
+                                break;
                             default:
                                 throw new Exception("Bad Token");
                         }

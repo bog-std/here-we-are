@@ -431,6 +431,10 @@ namespace Assets._Project.Scripts.DialogueManager
                 case Command.Phone:
                     OpenPhone();
                     return;
+
+                case Command.Fact:
+                    _phoneHub.SetFact((Scene) Convert.ToUInt16(dialogue.name), (SceneState) Convert.ToUInt16(dialogue.magnitude));
+                    break;
             }
             
             DisplayNext();

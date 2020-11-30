@@ -9,6 +9,24 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
+#region Enums
+
+public enum Scene : ushort
+{
+    Beach,
+    Garden,
+    Rooftop
+}
+
+public enum SceneState : ushort
+{
+    Unlocked = 0,
+    Locked = 1,
+    Visited = 2
+}
+
+#endregion
+
 public class PhoneHubController : MonoBehaviour
 {
 
@@ -134,6 +152,24 @@ public class PhoneHubController : MonoBehaviour
 
     #region Updating Phone Display
 
+    public void SetFact(Scene scene, SceneState state)
+    {
+        switch (scene)
+        {
+            case Scene.Beach:
+                BeachState = state;
+                break;
+            case Scene.Garden:
+                GardenState = state;
+                break;
+            case Scene.Rooftop:
+                RooftopState = state;
+                break;
+        }
+
+        UpdateDisplay();
+    }
+
     // Update the display according to the facts 
     public void UpdateDisplay()
     {
@@ -255,33 +291,6 @@ public class PhoneHubController : MonoBehaviour
             // Advance the image 
             _imgMessageScreen.sprite = messageImages[currMessageIndex];
         }
-    }
-
-    #endregion
-
-    #region Enums
-
-    public enum Scene
-    {
-        Beach,
-        Garden,
-        Rooftop
-    }
-
-    private enum SceneState
-    {
-        Unlocked = 0,
-        Locked = 1,
-        Visited = 2
-    }
-
-    public enum PhoneScreen
-    {
-        Messages,
-        Selection,
-        EnterBeach,
-        EnterGarden,
-        EnterRooftop,
     }
 
     #endregion
