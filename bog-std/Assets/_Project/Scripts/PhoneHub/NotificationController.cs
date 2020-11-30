@@ -5,18 +5,25 @@ using UnityEngine;
 
 public class NotificationController : MonoBehaviour
 {
+    
+    public AudioClip NotificationSound;
+
     private DialogueManager _dialogueManager;
     private PhoneHubController _phoneHub;
+
+    private AudioSource _audioSource;
 
     public void Awake()
     {
         _dialogueManager = FindObjectOfType<DialogueManager>();
         _phoneHub = FindObjectOfType<PhoneHubController>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void DisplayNotification()
     {
         gameObject.SetActive(true);
+        _audioSource.PlayOneShot(NotificationSound); 
         _dialogueManager.NotificationOrPhoneOpen = true;    
     }
 

@@ -19,6 +19,8 @@ namespace Assets._Project.Scripts.DialogueManager
     public class DialogueManager : MonoBehaviour
     {
         // Injected from Editor
+        [SerializeField] private AudioClip selectSound;
+        [SerializeField] private AudioClip dialogueSound;
         [SerializeField] private GameObject dialoguePrefab;
         [SerializeField] private GameObject optionPrefab;
         [SerializeField] private float textSpeed = 1f;
@@ -27,7 +29,10 @@ namespace Assets._Project.Scripts.DialogueManager
         
         [SerializeField] private TextAsset currentTxt;
         [SerializeField] private Stack<TextStackItem> txtStack;
-        
+
+        private AudioSource _audioSource;
+
+
         private GameObject currDialogueBox = null;
         private List<GameObject> currChoices;
         private bool readingText;
@@ -36,7 +41,7 @@ namespace Assets._Project.Scripts.DialogueManager
         private bool done = false;
         public LayeredScene scene;
 
-        private bool autocompleteToggle = false;
+        private bool autocompleteToggle = true;
 
         private Queue<Dialogue> dialogueScript;
         private int dialogueDistance = 0;
@@ -47,7 +52,6 @@ namespace Assets._Project.Scripts.DialogueManager
 
         private PhoneHubController _phoneHub; // Reference to the scenes Phone
         private NotificationController _notification;
-
 
         public bool InDialogue => currDialogueBox != null;
         
@@ -62,6 +66,8 @@ namespace Assets._Project.Scripts.DialogueManager
 
         public void Start()
         {
+            _audioSource = GetComponent<AudioSource>();
+
             scene = FindObjectOfType<LayeredScene>();
 
             _phoneHub = FindObjectOfType<PhoneHubController>();
@@ -156,11 +162,8 @@ namespace Assets._Project.Scripts.DialogueManager
         }
 
 
-        public void OpenPhone()
-        {
-            // TODO Load phone/memory interface
-        }
-        
+        public void OpenPhone() => _notification.DisplayNotification();
+
         public void DisplayTextBox()
         {
             if (dialoguePrefab == null || dialogueScript.Count == 0) return;
@@ -237,7 +240,10 @@ namespace Assets._Project.Scripts.DialogueManager
                     // If we should stop reading, complete the text
                     if (!readingText)
                     {
-                        textMesh.maxVisibleCharacters = str.Length;
+                        var cleaned = RemoveJunk(str);
+                        //textMesh.maxVisibleCharacters = str.Length;
+                        textMesh.text = cleaned;
+                        textMesh.maxVisibleCharacters = cleaned.Length;
                         break;
                     }
         
@@ -259,6 +265,9 @@ namespace Assets._Project.Scripts.DialogueManager
                         str = str.Remove(visibleChars, cmdLength + 1);
                         textMesh.SetText(str);
                     }
+
+                    if(!_audioSource.isPlaying)
+                        _audioSource.PlayOneShot(dialogueSound);
                     
                     // Display 1 more character, wait
                     textMesh.maxVisibleCharacters = ++visibleChars;
@@ -273,6 +282,20 @@ namespace Assets._Project.Scripts.DialogueManager
                 // Call back
                 FinishedReadingText();
             }
+        }
+
+        public string RemoveJunk(string str)
+        {
+            int i = str.IndexOf('[');
+            while (i >= 0)
+            {
+                int j = str.IndexOf(']');
+                str = str.Remove(i, j - i);
+
+                i = str.IndexOf('[');
+            }
+
+            return str;
         }
 
         public void FinishedReadingText()
@@ -328,7 +351,7 @@ namespace Assets._Project.Scripts.DialogueManager
                 
                 currChoices.Add(choiceObject);
 
-                ReadText(textMesh, choice.choiceOption);
+                textMesh.text = choice.choiceOption;
             }
         }
         
