@@ -290,7 +290,7 @@ namespace Assets._Project.Scripts.DialogueManager
             while (i >= 0)
             {
                 int j = str.IndexOf(']');
-                str = str.Remove(i, j - i);
+                str = str.Remove(i, j - i + 1);
 
                 i = str.IndexOf('[');
             }
