@@ -75,9 +75,21 @@ Continue:D:Jordan: Wanna grab some air?
 :D:Jordan: Surely this place didn’t escape from your memories.
 :D:Player: Maybe one of Scott’s friends spiked my drink.
 :=:J:city_jordan_facing
-:D:Jordan: I think you must have smacked your head while we were climbing up here. How can you not remember this rooftop?
+:D:Jordan: I think you must have smacked your head while we were climbing up here.
+:?:Jordan: How can you not remember this rooftop?
+	Give me a break
+	Just Kidding:Kidding
+
+:D:Player: Give me a break, it's been a while since you have dragged me up here
 :=:J:city_jordan_away
-:D:Jordan: This is still my favourite part of the building.
+:+:r:1
+:>:Continue
+
+Kidding:D:Player: I’m kidding! You know how much I love being up here..
+:+:R:1
+
+Continue:D:Jordan: This is still my favourite part of the building.
+:=:J:city_jordan_away
 :D:Jordan: I don’t think I’ve ever seen anyone else up here…Remember all the late nights we used to spend staring out into the distance?
 :D:Player: It feels so long ago. I miss those nights. 
 :?:Jordan: Do you think our memories mean anything? Like: what does it mean to live? Why are we here or, why do we remember things?
