@@ -1,6 +1,8 @@
 :=:S:garden
 :=:J:garden_neutral
 
+:~:1:2
+
 :D:Jordan: I was wondering when you’d get here.
 :D:Player: Took some time to smell the flowers on the way. Did you see the pagoda on the way in?
 :D:Jordan: I think they had that same one on the other end of the garden last year. Still pretty though.

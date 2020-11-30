@@ -1,6 +1,8 @@
 :=:S:beach
 :=:J:beach_jordan_neutral
 
+:~:0:2
+
 :D:Player: Good day to be at the beach.
 :=:J:beach_jordan_annoyed
 :?:Jordan: Totally. Love the feeling of hot sand and blistering heat.

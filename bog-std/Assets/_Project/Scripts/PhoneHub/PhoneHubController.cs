@@ -34,7 +34,6 @@ public class PhoneHubController : MonoBehaviour
 
     #region Scene Fact Variables
 
-
     private int currMessageIndex = 0;
     private Scene currFeatured = Scene.Beach;
 
