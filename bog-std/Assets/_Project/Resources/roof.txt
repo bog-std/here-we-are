@@ -1,3 +1,4 @@
+:=:3:none
 :=:S:party
 :=:1:party_scott
 :D:Player: Did you invite everyone to this party?
