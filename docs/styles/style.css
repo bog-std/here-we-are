@@ -10,14 +10,16 @@
     --whiteColor: #eeeeee;
     --accentColor: #3399ff;
     --highlightColor: #443737;
+    --hiddenColor: #2e2e2e;
     --backgroundColor: #000000;
-    --textColor: #000000;
+    --textColor: #eeeeee;
+    --floorColor: #aca295;
 }
 
 html {    
     min-height: 100%;
 
-    background-color: var(--whiteColor);
+    background-color: var(--backgroundColor);
     color: var(--textColor);
     font-family: "Open Sans", sans-serif;
 }
@@ -42,12 +44,17 @@ body {
     padding-left: 30px;
     padding-right: 30px;
     
-    margin-bottom: 125px;
+    margin-bottom: 0px;
 }
 
 a {
     text-decoration: none;
     color: var(--textColor);
+}
+
+a:hover {
+    transition: 0.2s;
+    color:var(--accentColor);
 }
 
 h1 {
@@ -56,16 +63,56 @@ h1 {
 }
 
 h2 {
+    text-transform: uppercase;
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 2;
     color: var(--textColor);
 }
 
 .content h2 {
     text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.content h2 p {
+    margin-top: 0px;
 }
 
 .content p {
     text-align: center;
 }
+
+.content br {
+    display: block;    
+    margin-bottom: 80px;
+}
+
+.section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.section.description p {
+    text-align: left;    
+}
+
+.section.screenshots {
+    margin-bottom: 0px;
+}
+
+.section.logo img {    
+    width: 150px;
+    height: auto;
+}
+
+.section.footer {
+    color: var(--hiddenColor)
+}
+
+/* --------------------------------------------------------------------------------- */
+/* VIDEO CONTAINER */
 
 .video-container {
     position: relative;
@@ -141,6 +188,7 @@ h2 {
     }
     .screenshots .thumbnails li:nth-child(odd) {
         margin-right: 0px;        
+        margin-bottom: 20px;
     }
 }
 
