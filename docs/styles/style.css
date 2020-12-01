@@ -94,6 +94,11 @@ h2 {
     margin-bottom: 25px;
 }
 
+.section img {
+    width: 100%;
+    height: auto;
+}
+
 .section.description p {
     text-align: left;    
 }
