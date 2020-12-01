@@ -10,7 +10,8 @@ public enum Command : ushort
     Script,
     Set,
     Phone,
-    Fact
+    Fact,
+    Messages
 };
 
 namespace Assets._Project.Scripts.DialogueData

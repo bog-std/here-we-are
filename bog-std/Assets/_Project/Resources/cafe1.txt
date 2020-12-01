@@ -7,6 +7,9 @@
 :=:S:none
 :=:3:mug_empty
 :=:J:jordan_neutral
+
+:#:
+
 :D:Jordan: Took you long enough.
 :D:Player: Sorry about that.
 :D:Jordan: It’s fine, it’s fine.[wait 1] I managed to grab a cup of coffee before you got here.

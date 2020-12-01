@@ -97,7 +97,7 @@ public class PhoneHubController : MonoBehaviour
 
     #endregion
 
-    void Start()
+    void Awake()
     {
         _dialogueManager = FindObjectOfType<DialogueManager>();
         _animator = GetComponent<Animator>();
@@ -200,6 +200,16 @@ public class PhoneHubController : MonoBehaviour
         _dialogueManager.NotificationOrPhoneOpen = false;
     }
 
+    public void DisplayMessages()
+    {
+        _grpMemoryEntrance.SetActive(false);
+        _grpMemorySelection.SetActive(false);
+        _grpMessageScreen.SetActive(true);
+
+        currMessageIndex = 0;
+        _imgMessageScreen.sprite = messageImages[currMessageIndex];
+    }
+
     public void DisplayMemorySelectionScreen()
     {
         _grpMemoryEntrance.SetActive(false);
@@ -226,7 +236,7 @@ public class PhoneHubController : MonoBehaviour
         Debug.Log("Home Button Clicked!");
         HidePhone();
         
-        // TODO: Tell DialogueManager to continue
+        _dialogueManager.DisplayNext();
     }
 
     public void FeaturedScene_Clicked()
@@ -272,7 +282,18 @@ public class PhoneHubController : MonoBehaviour
     {
         Debug.Log("Enter Memory clicked!");
 
-        // TODO: Start the memory sequence 
+        switch (currFeatured)
+        {
+            case Scene.Beach:
+                // TODO: Go to beach scene
+                break;
+            case Scene.Garden:
+                // TODO: Go to garden scene
+                break;
+            case Scene.Rooftop:
+                // TODO: Go to rooftop scene
+                break;
+        }
     }
 
     public void AdvanceMessage_Clicked()
@@ -282,8 +303,7 @@ public class PhoneHubController : MonoBehaviour
         if (currMessageIndex >= messageImages.Count)
         {
             HidePhone();
-
-            // TODO: Start the dialogue sequence
+            _dialogueManager.DisplayNext();
         }
         else
         {

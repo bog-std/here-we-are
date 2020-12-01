@@ -116,6 +116,8 @@ namespace Assets._Project.Scripts.DialogueManager
 
         public void DisplayNext()
         {
+            Debug.Log("Display next");
+
             if (currChoices != null && currChoices.Count > 0) return;
 
             isWaiting = false;
@@ -435,6 +437,11 @@ namespace Assets._Project.Scripts.DialogueManager
                 case Command.Fact:
                     _phoneHub.SetFact((Scene) Convert.ToUInt16(dialogue.name), (SceneState) Convert.ToUInt16(dialogue.magnitude));
                     break;
+
+                case Command.Messages:
+                    _phoneHub.DisplayMessages();
+                    _notification.DisplayMessagesNotification();
+                    return;
             }
             
             DisplayNext();
