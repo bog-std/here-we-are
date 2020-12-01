@@ -69,6 +69,7 @@ Continue:D:Jordan: Wanna grab some air?
 :D:Player: What? I can barely hear you, it's too loud in here.
 :=:J:none
 :D:Jordan: Follow me, I know a quiet place!
+:=:12:none
 :=:S:rooftop
 :D:Player: That’s better. Where are we anyways? I didn’t recognize anyone at the party.
 :=:J:city_jordan_side
@@ -356,7 +357,7 @@ Continue:D:Jordan: I know reading doesn’t solve any of my problems
 :+:RE:1
 :>:Continue
 
-NO:D:Reading wasn’t really ever my thing.
+NO:D:Player:Reading wasn’t really ever my thing.
 :+:re:1
 
 Continue:D:Jordan: Are you really that bent out of shape about purpose?
