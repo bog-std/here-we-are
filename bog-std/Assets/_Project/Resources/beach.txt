@@ -155,33 +155,38 @@ Continue:D:Player: So, you know when that fireworks show is supposed to start?
 :D:Scott: She’s cute don’t you think? I heard she turns down guys left, right and center, and that her standards are super high. That’s what Sarah tells me anyways. 
 :D:Player: (Looks to Scott) What exactly are you getting at?
 :?:Scott: I’m thinking of asking her out. 
-	You sure you want to do that?
-	I’d support you.:Support
+	Seriously?
+	Go for it.:Support
 
+:D:Player: 	You sure you want to do that?
 :D:Scott: I’m pretty sure.
 :D:Player: On a scale of 1 to 10, how sure are you? With 1 being “really unsure”, and 10 being you “know for certain”?
 :D:Scott: .[wait 1].[wait 1].
 :D:Player: Scott?
 :+:r:1
 :?:Scott: I don’t know. Probably a 7.5, or an 8?
-	Sounds pretty high. You really want to go for it?
-	That’s a big score. But I hate to break it to you, your heart’s gonna get shattered.:Shattered
-	
+	Are you sure?
+	Believe me.:Shattered
+
+:D:Player: 	Sounds pretty high. You really want to go for it?
 :D:Scott: Yeah.
 :+:r:1
 :?:Scott: “Shoot your shot” right?
-	I mean, you could.
-	Probably not the best idea.:Idea
+	Why not?
+	Umm…:Idea
 
+:D:Player: I mean, you could.
 :+:R:1
 :>:Continue
 
-Idea:D:Scott: Why not?
+Idea:D:Player: Probably not the best idea. 
+:D:Scott: Why not?
 :D:Player: Just trust me, when I say, it’s probably not the best idea.
 :+:r:1
 :>:Continue
 
-Shattered:D:Scott: … 
+Shattered:D:Player: That’s a big score. But I hate to break it to you, your heart’s gonna get shattered. 
+:D:Scott: … 
 :+:R:1
 :?:Scott: How do you know that?
 	Like you said, she’s turned down a bunch of guys already. What do you have that they don’t?
@@ -200,11 +205,13 @@ Together:D:Scott: You are? Uh, forget I said anything then.
 :>:Continue
 
 
-Support:D:Scott: What?
+Support:D:Player: I’d support you. 
+:D:Scott: What?
 :?:Scott: Really?
-	Yeah, why not? Like you said, you never know until you try, and what’s the worse she could say?
+	Might as well.
 	No! Dude, imagine me asking out Sarah. How would you feel about that?:Ask
 
+:D:Player: 	Yeah, why not? Like you said, you never know until you try, and what’s the worse she could say?
 :D:Scott: Probably ‘no’. 
 :D:Player: Probably?
 :D:Scott: Probably. 
@@ -239,9 +246,10 @@ Continue:D::(Sarah and Jordan rejoin the Player and Scott at the end of the boar
 :D:All: Oh yeah. Yeah.
 :D:Player: Times like this I forget life isn’t all about cramming for exams.
 :?:Jordan: Certainly feels like that though.
-	Only a few years left though.
-	The present is the only thing that matters:Present
+	It’s almost over
+	Agree with Scott:Present
 
+:D:Player: Only a few years left though. 
 :D:Sarah: Got a long way to go that’s for sure. But we’ll make it. 
 :D:Jordan: It just feels so daunting, know what I mean? When we’re done, that piece of paper will decide how we’ll live for the rest of our lives.
 :D:Scott: We’re young. That’s what matters. We can afford a few mistakes here and there. As long as we’re alive, that’s all that matters.
@@ -249,11 +257,15 @@ Continue:D::(Sarah and Jordan rejoin the Player and Scott at the end of the boar
 :>:Continue
 
 
-Present:D:Scott: Yeah. Just live for the moment.
+Present:D:Player: The present is the only thing that matters
+:D:Scott: Yeah. Just live for the moment.
 :D:Jordan: Isn’t that an irresponsible way to think? 
 :D:Player: Only if you want it to be. 
 :D:Jordan: You know that’s not what I’m asking.
-:D:Sarah: They’re right though Jordan. The present is always a surprise. That’s why it’s called the present. Right now, we’re four friends on a great stretch of summer vacation, having the time of our lives before the next school year happens. And until then, we should be allowed to have as much fun as we want.
+:D:Sarah: They’re right though Jordan. The present is always a surprise.
+:D:Sarah: That’s why it’s called the present.
+:D:Sarah: Right now, we’re four friends on a great stretch of summer vacation, having the time of our lives before the next school year happens.
+:D:Sarah: And until then, we should be allowed to have as much fun as we want.
 :D:Player: Amen to that. 
 :+:e:1
 

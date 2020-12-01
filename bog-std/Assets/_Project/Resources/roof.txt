@@ -1,8 +1,6 @@
 :=:S:party
 :=:1:party_scott
 
-:~:2:2
-
 :D:Player: Did you invite everyone to this party?
 :D:Scott: Just some friends.
 :D:Player: Some? 
@@ -18,8 +16,8 @@
 
 later:D:Player: I’ll find you later.
 :D:Scott: You better. We still need to shotgun a beer together.
-:=:1:none
-Continue:D:Player: (Thinking) Ugh I hate these late night parties. I should have just stayed home.
+Continue:=:1:none
+:D:Player: (Thinking) Ugh I hate these late night parties. I should have just stayed home.
 
 :=:J:party_jordan
 
@@ -125,7 +123,7 @@ Tell:D:Player: How should I know the answer to that? It’s not everyday you que
 :D:Jordan: I trust your opinion.
 :+:e:1
 
-:D:Player: But while we’re on the subject, why not talk about the fact we’re all going to die so what does it matter if we do anything?.
+Continue:D:Player: But while we’re on the subject, why not talk about the fact we’re all going to die so what does it matter if we do anything?.
 
 :=:J:city_jordan_side
 :?:Jordan: Aww, it sounds like you missed me and my quasi-philosophy!
@@ -231,7 +229,7 @@ NO:D:Player: I think I am going to pass on your French friend's ideas. I have a 
 :D:Jordan: Suit yourself.
 :+:re:1
 
-:D:Jordan: Soooo...
+Continue:D:Jordan: Soooo...
 :=:J:city_jordan_side
 :?:Jordan: What do you believe then?
 	I don’t know.
@@ -383,3 +381,5 @@ Continue:D:Jordan:Jordan: You need an attitude adjustment and you'll be fine.
 :D:Jordan: Perceptions change.
 
 :D:: *both are now staring out into the night sky in silence*
+
+:=:SJ12:none

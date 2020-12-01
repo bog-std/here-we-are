@@ -36,10 +36,11 @@ Continue:D:Jordan: It gets lonely being at a botanical garden by yourself y’kn
 
 :=:J:garden_empty
 :?:Jordan: What’s there to say? 
-	It just sounds like there’s something you’re trying to say but you won’t say it.
-	Never mind. I thought you were trying to say something else but I got what you mean.:Nevermind
+	Care to elaborate?
+	Never mind.:Nevermind
 
 :=:J:garden_neutral
+:D:Player: It just sounds like there’s something you’re trying to say but you won’t say it
 :D:Jordan: Ah, forget it. It sounds like we’re in some poorly constructed visual novel or something.
 :D:Player: You said it, not me.
 :+:r:1
@@ -49,22 +50,25 @@ Really:D:Jordan: What’re you talking about?
 :=:J:garden_neutral
 :D:Player: You asked me to come out here. Why?
 :?:Jordan: I told you why. 
-	I’m just not convinced is all. You’ve never invited someone out the day of and several hours before the meeting.
-	You know you can talk to me, right? I’m just worried you’re trying to hide something and don’t want to talk about it.:Talk
+	I’m just not convinced is all.
+	You know you can talk to me, right?:Talk
 
+:D:Player: You’ve never invited someone out the day of and several hours before the meeting.
 :D:Jordan: I can’t just jump into it suddenly. At least let me be comfortable.
 :=:J:garden_sad_smile
 :D:Player: All right. Just, talk to me, okay? 
 :+:re:1
 :>:Continue
 
-Talk:D:Jordan: Well it’s not like that. Really.
+Talk:D::Player: I’m just worried you’re trying to hide something and don’t want to talk about it.
+:D:Jordan: Well it’s not like that. Really.
 :=:J:garden_annoyed
 :D:Player: Just, remember I’m here for you. If you want to talk, just talk. 
 :+:RE:1
 :>:Continue
 
-Nevermind:D:Jordan: Thanks. I’m glad you at least know me enough to understand me.
+Nevermind:D:Player: I thought you were trying to say something else but I got what you mean.
+:D:Jordan: Thanks. I’m glad you at least know me enough to understand me.
 :=:J:garden_sad_smile
 :D:Player: I’d be a shame to not after all these years.
 :+:R:1
@@ -132,11 +136,7 @@ More:D:Player: I’m sure they’re only thinking about your safety when they sa
 :+:R:1
 :+:G:2
 
-Continue:D:Jordan: Want to go for a walk? Take in more of the scenery?
-:D:Player: Sure. 
-:D::The player and Jordan arrive on a wooden arch bridge that goes over a small manmade stream that flows underneath.
-:D::There are a lot of clouds in the sky, and waving in the breeze are assortments of different coloured flowers.
-:D:Player: Besides your dad getting sick, how’s he been doing? I know having to raise you was a tough job in and of itself.
+Continue:D:Player: Besides your dad getting sick, how’s he been doing? I know having to raise you was a tough job in and of itself.
 :=:J:garden_annoyed
 :?:Jordan: He got himself a girlfriend.
 	Sly old dog!
