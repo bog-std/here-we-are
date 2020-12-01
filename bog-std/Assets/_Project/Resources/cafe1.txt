@@ -7,6 +7,9 @@
 :=:S:none
 :=:3:mug_empty
 :=:J:jordan_neutral
+
+:#:
+
 :D:Jordan: Took you long enough.
 :D:Player: Sorry about that.
 :D:Jordan: It’s fine, it’s fine.[wait 1] I managed to grab a cup of coffee before you got here.
@@ -304,7 +307,7 @@ Glad:D:Player: I'm just glad you said no.
 Continue:D:Player: What about you? How’re your parents?
 :=:J:jordan_reminiscent
 :?:Jordan: You ever dreamed of flying?
-	Like a plan?
+	Like a plane?
 	I've thought about it.:Thought
 	Never.:Never.
 :D:Player: What like a plane?
@@ -509,7 +512,7 @@ Continue:D:Jordan: Are you sure about that?
 :=:S:hospital
 :D::(A flashback a hospital bed. Someone is in the bed, with a heart monitor slowly beeping. IV drips stand at the side of the bed, and sunlight drifts through the window. Nurses pass in and out of the memory.)
 :=:S:none
-:?:Jordan: I meant to call. I really did. (shift back to the café)
+:?:Jordan: I meant to call. I really did. 
 	But you're still here.
 	We were supposed to meet up.:Meet
 :D:Player: But you’re still here. You’re right in front of me.

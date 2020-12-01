@@ -9,8 +9,9 @@ public static class Lookup
         switch (key.ToUpper())
         {
             case "PLAYER": return Color.yellow;
-            case "JORDAN": return FuncLib.GetColour(51, 214, 255); // cyan
-            case "WAITER": return FuncLib.GetColour(204, 51, 153); // pink
+            case "JORDAN": return FuncLib.GetColour(51, 214, 255);  // cyan
+            case "SCOTT": return FuncLib.GetColour(91, 201, 92);    // green
+            case "SARAH": return FuncLib.GetColour(230, 130, 255);   // pink
             default: return Color.white;
         }
     }

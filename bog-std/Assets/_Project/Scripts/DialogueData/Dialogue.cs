@@ -9,7 +9,9 @@ public enum Command : ushort
     Increment,
     Script,
     Set,
-    Phone
+    Phone,
+    Fact,
+    Messages
 };
 
 namespace Assets._Project.Scripts.DialogueData
