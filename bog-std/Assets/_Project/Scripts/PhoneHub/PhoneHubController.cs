@@ -9,13 +9,30 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
+#region Enums
+
+public enum Scene : ushort
+{
+    Beach,
+    Garden,
+    Rooftop
+}
+
+public enum SceneState : ushort
+{
+    Unlocked = 0,
+    Locked = 1,
+    Visited = 2
+}
+
+#endregion
+
 public class PhoneHubController : MonoBehaviour
 {
 
     private DialogueManager _dialogueManager;
 
     #region Scene Fact Variables
-
 
     private int currMessageIndex = 0;
     private Scene currFeatured = Scene.Beach;
@@ -80,7 +97,7 @@ public class PhoneHubController : MonoBehaviour
 
     #endregion
 
-    void Start()
+    void Awake()
     {
         _dialogueManager = FindObjectOfType<DialogueManager>();
         _animator = GetComponent<Animator>();
@@ -134,6 +151,24 @@ public class PhoneHubController : MonoBehaviour
 
     #region Updating Phone Display
 
+    public void SetFact(Scene scene, SceneState state)
+    {
+        switch (scene)
+        {
+            case Scene.Beach:
+                BeachState = state;
+                break;
+            case Scene.Garden:
+                GardenState = state;
+                break;
+            case Scene.Rooftop:
+                RooftopState = state;
+                break;
+        }
+
+        UpdateDisplay();
+    }
+
     // Update the display according to the facts 
     public void UpdateDisplay()
     {
@@ -165,6 +200,16 @@ public class PhoneHubController : MonoBehaviour
         _dialogueManager.NotificationOrPhoneOpen = false;
     }
 
+    public void DisplayMessages()
+    {
+        _grpMemoryEntrance.SetActive(false);
+        _grpMemorySelection.SetActive(false);
+        _grpMessageScreen.SetActive(true);
+
+        currMessageIndex = 0;
+        _imgMessageScreen.sprite = messageImages[currMessageIndex];
+    }
+
     public void DisplayMemorySelectionScreen()
     {
         _grpMemoryEntrance.SetActive(false);
@@ -191,7 +236,7 @@ public class PhoneHubController : MonoBehaviour
         Debug.Log("Home Button Clicked!");
         HidePhone();
         
-        // TODO: Tell DialogueManager to continue
+        _dialogueManager.DisplayNext();
     }
 
     public void FeaturedScene_Clicked()
@@ -237,7 +282,18 @@ public class PhoneHubController : MonoBehaviour
     {
         Debug.Log("Enter Memory clicked!");
 
-        // TODO: Start the memory sequence 
+        switch (currFeatured)
+        {
+            case Scene.Beach:
+                // TODO: Go to beach scene
+                break;
+            case Scene.Garden:
+                // TODO: Go to garden scene
+                break;
+            case Scene.Rooftop:
+                // TODO: Go to rooftop scene
+                break;
+        }
     }
 
     public void AdvanceMessage_Clicked()
@@ -247,41 +303,13 @@ public class PhoneHubController : MonoBehaviour
         if (currMessageIndex >= messageImages.Count)
         {
             HidePhone();
-
-            // TODO: Start the dialogue sequence
+            _dialogueManager.DisplayNext();
         }
         else
         {
             // Advance the image 
             _imgMessageScreen.sprite = messageImages[currMessageIndex];
         }
-    }
-
-    #endregion
-
-    #region Enums
-
-    public enum Scene
-    {
-        Beach,
-        Garden,
-        Rooftop
-    }
-
-    private enum SceneState
-    {
-        Unlocked = 0,
-        Locked = 1,
-        Visited = 2
-    }
-
-    public enum PhoneScreen
-    {
-        Messages,
-        Selection,
-        EnterBeach,
-        EnterGarden,
-        EnterRooftop,
     }
 
     #endregion
