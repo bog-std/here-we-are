@@ -107,6 +107,11 @@ h2 {
     height: auto;
 }
 
+.section.team img {
+    width: 100%;
+    height: auto;
+}
+
 .section.footer {
     color: var(--hiddenColor)
 }
