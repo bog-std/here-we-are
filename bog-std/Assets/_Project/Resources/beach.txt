@@ -43,7 +43,7 @@ Cider:D:Player: Ooooh…
 	Drink Juice:Juice
 	Take Nothing:Nothing
 :D:Player: Sorry, but I couldn't resist.
-:D:Jordan: Yeah, wahtever
+:D:Jordan: Yeah, whatever.
 :+:r:3
 :>:Continue
 Juice:?:Jordan: Can you give me a juice at least? 
