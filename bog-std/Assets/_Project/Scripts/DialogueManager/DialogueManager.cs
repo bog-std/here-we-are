@@ -48,9 +48,10 @@ namespace Assets._Project.Scripts.DialogueManager
         private bool hasStarted = false;
         private bool isWaiting = false;
 
-        public bool NotificationOrPhoneOpen = false;
+        public bool IsActive = true;
 
-        private PhoneHubController _phoneHub; // Reference to the scenes Phone
+        private TitleMenuController _titleMenu;
+        private PhoneHubController _phoneHub; 
         private NotificationController _notification;
 
         public bool InDialogue => currDialogueBox != null;
@@ -70,9 +71,11 @@ namespace Assets._Project.Scripts.DialogueManager
 
             scene = FindObjectOfType<LayeredScene>();
 
+            _titleMenu = FindObjectOfType<TitleMenuController>();
             _phoneHub = FindObjectOfType<PhoneHubController>();
             _notification = FindObjectOfType<NotificationController>();
 
+            _titleMenu.Hide();
             _notification.HideNotification();
         }
 
@@ -80,7 +83,7 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             try
             {
-                if (!NotificationOrPhoneOpen && !hasStarted && !isWaiting && (Input.GetKey(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)))
+                if (IsActive && (!hasStarted && !isWaiting) && (Input.GetKey(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)))
                 {
                     if (currChoices.Count == 0)
                     {
@@ -96,7 +99,7 @@ namespace Assets._Project.Scripts.DialogueManager
                 // Quit
                 else if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    Application.Quit();
+                    // Application.Quit();
                 }
                 // Toggle fast reading 
                 else if (Input.GetKeyDown(KeyCode.T))
@@ -441,6 +444,9 @@ namespace Assets._Project.Scripts.DialogueManager
                 case Command.Messages:
                     _phoneHub.DisplayMessages();
                     _notification.DisplayMessagesNotification();
+                    return;
+                case Command.Menu:
+                    _titleMenu.Display();
                     return;
             }
             

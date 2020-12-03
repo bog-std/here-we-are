@@ -1,7 +1,9 @@
 :W:2
 :=:S:title:1
-:~:0:2
-:*:
+:M:
+
+# :~:0:2
+
 :?::Which script to test?
 	cafe
 	beach:beach

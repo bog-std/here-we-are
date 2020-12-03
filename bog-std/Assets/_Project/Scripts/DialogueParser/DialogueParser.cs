@@ -142,7 +142,7 @@ using UnityEngine;
                             case "W":
                                 dialogue.command = Command.Wait;
                                 dialogue.tag = split[0];
-                                dialogue.magnitude = Convert.ToInt32(split[2]);
+                                dialogue.magnitude = Convert.ToSingle(split[2]);
                                 if (split.Length > 3) dialogue.name = split[3];
                                 break;
                         
@@ -169,6 +169,10 @@ using UnityEngine;
                                 break;
                             case "#":
                                 dialogue.command = Command.Messages;
+                                dialogue.tag = split[0];
+                                break;
+                            case "M":
+                                dialogue.command = Command.Menu;
                                 dialogue.tag = split[0];
                                 break;
                             default:
