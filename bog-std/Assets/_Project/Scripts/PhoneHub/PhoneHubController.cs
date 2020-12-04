@@ -29,7 +29,7 @@ public enum SceneState : ushort
 public class PhoneHubController : MonoBehaviour
 {
 
-    private DialogueManager _dialogueManager;
+    [SerializeField] private DialogueManager _dialogueManager;
 
     #region Scene Fact Variables
 
@@ -98,7 +98,6 @@ public class PhoneHubController : MonoBehaviour
 
     void Awake()
     {
-        _dialogueManager = FindObjectOfType<DialogueManager>();
         _animator = GetComponent<Animator>();
 
         // Set Group References;
@@ -137,6 +136,12 @@ public class PhoneHubController : MonoBehaviour
          _grpMessageScreen.SetActive(true);
 
          UpdateDisplay();
+    }
+
+    void Start()
+    {
+        if(_dialogueManager == null)
+            _dialogueManager = FindObjectOfType<DialogueManager>();
     }
 
     void Update()
