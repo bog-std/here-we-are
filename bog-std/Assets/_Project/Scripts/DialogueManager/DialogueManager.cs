@@ -51,6 +51,7 @@ namespace Assets._Project.Scripts.DialogueManager
         public bool IsActive = true;
 
         private TitleMenuController _titleMenu;
+        private PauseMenuController _pauseMenu;
         private PhoneHubController _phoneHub; 
         private NotificationController _notification;
 
@@ -72,10 +73,12 @@ namespace Assets._Project.Scripts.DialogueManager
             scene = FindObjectOfType<LayeredScene>();
 
             _titleMenu = FindObjectOfType<TitleMenuController>();
+            _pauseMenu = FindObjectOfType<PauseMenuController>();
             _phoneHub = FindObjectOfType<PhoneHubController>();
             _notification = FindObjectOfType<NotificationController>();
 
             _titleMenu.Hide();
+            _pauseMenu.Hide();
             _notification.HideNotification();
         }
 
@@ -99,7 +102,7 @@ namespace Assets._Project.Scripts.DialogueManager
                 // Quit
                 else if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    // Application.Quit();
+                    _pauseMenu.Display();
                 }
                 // Toggle fast reading 
                 else if (Input.GetKeyDown(KeyCode.T))
