@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using _Project.Scripts.Scene;
 using Assets._Project.Scripts.DialogueData;
 using UnityEngine;
 
@@ -37,9 +38,11 @@ using UnityEngine;
     {
         public class DialogueParser : MonoBehaviour
         {
-            private static Dictionary<LayerName, List<string>> availableImages = new Dictionary<LayerName, List<string>>();
-        
-            private static Dictionary<char, LayerName> layerMap = new Dictionary<char, LayerName>()
+            private static Dictionary<LayerName, List<string>> _availableImages = new Dictionary<LayerName, List<string>>();
+
+            private static List<string> _availableAudio = new List<string>();
+            
+            private static Dictionary<char, LayerName> _layerMap = new Dictionary<char, LayerName>()
             {
                 {'\0', LayerName.None},
                 {'R', LayerName.RelationshipSelfless},
@@ -116,10 +119,10 @@ using UnityEngine;
                                 dialogue.command = Command.Set;
                                 dialogue.tag = split[0];
                                 if (split[2].Length > 0) foreach (char layer in split[2])
-                                    if (layerMap.ContainsKey(layer))
+                                    if (_layerMap.ContainsKey(layer))
                                     {
-                                        dialogue.layers.Add(layerMap[layer]);
-                                        CheckImage(layerMap[layer], split[3]);
+                                        dialogue.layers.Add(_layerMap[layer]);
+                                        CheckImage(_layerMap[layer], split[3]);
                                     } 
                                     else throw new Exception(split[2] + " is not a layer");
                                 else throw new Exception("No layers ");
@@ -132,7 +135,7 @@ using UnityEngine;
                                 dialogue.command = Command.Increment;
                                 dialogue.tag = split[0];
                                 if (split[2].Length > 0) foreach (char layer in split[2])
-                                    if (layerMap.ContainsKey(layer)) dialogue.layers.Add(layerMap[layer]);
+                                    if (_layerMap.ContainsKey(layer)) dialogue.layers.Add(_layerMap[layer]);
                                     else throw new Exception(split[2] + " is not a layer");
                                 else throw new Exception("No layers");
                                 dialogue.magnitude = Int32.Parse(split[3]);
@@ -167,14 +170,25 @@ using UnityEngine;
                                 dialogue.name = split[2]; // Scene # 
                                 dialogue.magnitude = Convert.ToUInt16(split[3]);
                                 break;
+                            
                             case "#":
                                 dialogue.command = Command.Messages;
                                 dialogue.tag = split[0];
                                 break;
+                            
                             case "M":
                                 dialogue.command = Command.Menu;
                                 dialogue.tag = split[0];
                                 break;
+                            
+                            case "A":
+                                dialogue.command = Command.Audio;
+                                dialogue.tag = split[0];
+                                dialogue.name = split[2];
+                                dialogue.magnitude = Convert.ToSingle(split[3]);
+                                CheckAudio(dialogue.name);
+                                break;
+                            
                             default:
                                 throw new Exception("Bad Token");
                         }
@@ -217,15 +231,26 @@ using UnityEngine;
                     throw new Exception("Choice parsing error in line: " + line);
                 }
             }
+
+            private static bool CheckAudio(string name)
+            {
+                // Get audio tracks from LayeredScene
+                if (_availableAudio.Count == 0) _availableAudio = FindObjectOfType<LayeredScene>().GetComponent<LayeredScene>().audioTrackNames;
+
+                // See if audio track is listed and log error if not
+                bool hasTrack = _availableAudio.Contains(name);
+                if (!hasTrack) Debug.LogError("Audio track '" + name + "' not found");
+                return hasTrack;
+            }
             
             
             private static bool CheckImage(LayerName layerName, string levelName)
             {
                 // Get image options from LayeredScene if we do not have them yet
-                if (availableImages.Count == 0) availableImages = FindObjectOfType<LayeredScene>().GetComponent<LayeredScene>().GetImageOptions();
+                if (_availableImages.Count == 0) _availableImages = FindObjectOfType<LayeredScene>().GetComponent<LayeredScene>().GetImageOptions();
             
                 // See if corresponding image exists in this layer and warn if not
-                bool hasImage = availableImages[layerName].Contains(levelName);
+                bool hasImage = _availableImages[layerName].Contains(levelName);
                 if (!hasImage) Debug.LogWarning("Layer "+ layerName + " does not contain image '" + levelName + "'.");
                 return hasImage;
             }

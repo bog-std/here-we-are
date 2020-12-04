@@ -190,13 +190,13 @@ public class PhoneHubController : MonoBehaviour
     public void DisplayPhone()
     {
         _animator.SetBool("IsOpen", true);
-        _dialogueManager.IsActive = false;
+        _dialogueManager.isActive = false;
     }
 
     public void HidePhone()
     {
         _animator.SetBool("IsOpen", false);
-        _dialogueManager.IsActive = true;
+        _dialogueManager.isActive = true;
     }
 
     public void DisplayMessages()

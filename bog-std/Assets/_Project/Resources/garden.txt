@@ -1,3 +1,5 @@
+:A:all:0
+:A:garden:1
 :=:S:garden
 :=:J:garden_neutral
 
@@ -251,3 +253,5 @@ Continue:D:Jordan: I’m glad you came out here.
 :D:: The Player and Jordan simply stare out into the garden, watching the clouds roll through and the flowers sway in the breeze for the rest of the day.
 
 :=:SJ12:none
+:A:garden:0
+:A:cafe:1

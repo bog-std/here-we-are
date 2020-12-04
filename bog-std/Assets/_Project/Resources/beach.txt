@@ -1,3 +1,5 @@
+:A:all:0
+:A:beach:1
 :=:S:beach
 :=:J:beach_jordan_neutral
 
@@ -280,3 +282,5 @@ Continue:D:Scott: Is that a boat out there?
 :+:R:1
 
 :=:SJ12:none
+:A:beach:0
+:A:cafe:1

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Project.Scripts.Scene;
 
 public enum Command : ushort
 {
@@ -12,7 +13,8 @@ public enum Command : ushort
     Phone,
     Fact,
     Messages,
-    Menu
+    Menu,
+    Audio
 };
 
 namespace Assets._Project.Scripts.DialogueData

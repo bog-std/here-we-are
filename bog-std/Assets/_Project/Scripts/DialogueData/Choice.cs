@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _Project.Scripts.Scene;
 
 namespace Assets._Project.Scripts.DialogueData
 {
