@@ -1,4 +1,5 @@
 #	Display Message Sequence
+:A:cafe:1
 :=:S:title
 :W:1
 :#:
@@ -13,6 +14,7 @@
 :W:2
 
 :D:Jordan: Took you long enough.
+
 :D:Player: Sorry about that.
 :D:Jordan: It’s fine, it’s fine.[wait 1] I managed to grab a cup of coffee before you got here.
 :?:Player: That's good.[wait 1]

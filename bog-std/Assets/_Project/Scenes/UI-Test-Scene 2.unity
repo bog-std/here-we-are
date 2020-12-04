@@ -1232,6 +1232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
+      propertyPath: audioTrackNames.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
+        type: 3}
       propertyPath: layers.Array.data[3].levels.Array.data[0].image
       value: 
       objectReference: {fileID: 21300000, guid: 98a3a6ba6cd342a4ebaa0fcde2d948f1,
@@ -3319,21 +3324,34 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
-      propertyPath: layers.Array.data[4].levels.Array.data[14]
-      value: 
-      objectReference: {fileID: 21300000, guid: 150672b0983977642b975c5c7a719b03,
-        type: 3}
-    - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
-        type: 3}
-      propertyPath: cover
-      value: 
+      propertyPath: audioTrackNames.Array.data[0]
+      value: cafe
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
-      propertyPath: layers.Array.data[4].levels.Array.data[15]
-      value: 
-      objectReference: {fileID: 21300000, guid: e987ad46953d850468dcedbc7cb0d2a9,
+      propertyPath: audioTrackNames.Array.data[1]
+      value: beach
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
+      propertyPath: audioTrackNames.Array.data[2]
+      value: party
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
+        type: 3}
+      propertyPath: audioTrackNames.Array.data[3]
+      value: garden
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
+        type: 3}
+      propertyPath: audioTrackNames.Array.data[4]
+      value: credits
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
+        type: 3}
+      propertyPath: audioTrackNames.Array.data[5]
+      value: hospital
+      objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593982, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: m_LocalPosition.x
