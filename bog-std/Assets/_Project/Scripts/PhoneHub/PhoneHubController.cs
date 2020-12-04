@@ -155,6 +155,30 @@ public class PhoneHubController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.R)) { UpdateDisplay(); }
     }
 
+    public void ResetState()
+    {
+        currMessageIndex = 0;
+        currFeatured = Scene.Beach;
+        enterMemory = Scene.None;
+
+        BeachState = SceneState.Unlocked;
+        GardenState = SceneState.Locked;
+        RooftopState = SceneState.Locked;
+
+        HidePhone();
+        UpdateDisplay();
+    }
+
+    public void UnlockAll()
+    {
+        currFeatured = Scene.Beach;
+
+        BeachState = SceneState.Unlocked;
+        GardenState = SceneState.Unlocked;
+        RooftopState = SceneState.Unlocked;
+        UpdateDisplay();
+    }
+
     #region Updating Phone Display
 
     public void SetFact(Scene scene, SceneState state)
@@ -178,6 +202,12 @@ public class PhoneHubController : MonoBehaviour
     // Update the display according to the facts 
     public void UpdateDisplay()
     {
+        // Determine currFeatued
+        if (RooftopState == SceneState.Unlocked)
+            currFeatured = Scene.Rooftop;
+        else if (GardenState == SceneState.Unlocked)
+            currFeatured = Scene.Garden;
+
         // Set featured image
         _imgFeatured.sprite = featuredImages[(int) currFeatured];
         _txtFeatured.text = "Memory from\n" + featuredText[(int) currFeatured];
