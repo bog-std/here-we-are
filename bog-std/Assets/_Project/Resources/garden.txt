@@ -11,9 +11,10 @@
 :D:Player: That we can agree on. So what happened? You okay?
 :=:J:garden_sad_smile
 :?:Jordan: Yeah, I’m fine. Just wanted to enjoy a day at the gardens with a friend. Is that not allowed?
-	It’s not the strangest thing I’ve been asked to do.
+	I don’t mind.
 	The invitation was sort of out of the blue.:invitation
 
+:D:Player: It’s not the strangest thing I’ve been asked to do.
 :D:Jordan: Well I’m glad you came out and joined me. 
 :D:Player: I didn’t even know about this garden until you told me to come out here.
 :=:J:garden_neutral
@@ -28,17 +29,19 @@ invitation:D:Jordan: It was, wasn’t it?
 :D:Jordan: You don’t need to make excuses. It’s all right. I’m just glad you’re here now.
 :+:r:1
 
-Continue:D:Jordan: It gets lonely being at a botanical garden by yourself y’know. It’s nice to have company every once in a while.
-:=:J:garden_empty
+Continue:=:J:garden_empty
+:D:Jordan: It gets lonely being at a botanical garden by yourself y’know.
+:D:Jordan: It’s nice to have company every once in a while.
 :D:Player: I bet you say that to all the guys. 
 :=:J:garden_sad_smile
-:?:Jordan: Just the ones I like. 
-	You want to go into that more?
-	What’s really going on Jordan?:Really
+:?:Jordan: Just the ones I like.
+	Huh?
+	You doing okay?:Really
 
+:D:Player:You want to go into that more?
 :=:J:garden_empty
 :?:Jordan: What’s there to say? 
-	Care to elaborate?
+	There’s more to it.
 	Never mind.:Nevermind
 
 :=:J:garden_neutral
@@ -48,12 +51,13 @@ Continue:D:Jordan: It gets lonely being at a botanical garden by yourself y’kn
 :+:r:1
 :>:Continue
 
-Really:D:Jordan: What’re you talking about?
+Really:D:Player: What’s really going on Jordan?
+:D:Jordan: What’re you talking about?
 :=:J:garden_neutral
 :D:Player: You asked me to come out here. Why?
 :?:Jordan: I told you why. 
-	I’m just not convinced is all.
-	You know you can talk to me, right?:Talk
+	I don’t believe you.
+	I won’t push you.:Talk
 
 :D:Player: You’ve never invited someone out the day of and several hours before the meeting.
 :D:Jordan: I can’t just jump into it suddenly. At least let me be comfortable.
@@ -62,7 +66,8 @@ Really:D:Jordan: What’re you talking about?
 :+:re:1
 :>:Continue
 
-Talk:D::Player: I’m just worried you’re trying to hide something and don’t want to talk about it.
+Talk:D:Player: You know you can talk to me, right?
+:D:Player: I’m just worried you’re trying to hide something and don’t want to talk about it.
 :D:Jordan: Well it’s not like that. Really.
 :=:J:garden_annoyed
 :D:Player: Just, remember I’m here for you. If you want to talk, just talk. 
@@ -70,8 +75,8 @@ Talk:D::Player: I’m just worried you’re trying to hide something and don’t
 :>:Continue
 
 Nevermind:D:Player: I thought you were trying to say something else but I got what you mean.
-:D:Jordan: Thanks. I’m glad you at least know me enough to understand me.
 :=:J:garden_sad_smile
+:D:Jordan: Thanks. I’m glad you at least know me enough to understand me.
 :D:Player: I’d be a shame to not after all these years.
 :+:R:1
 
@@ -149,9 +154,11 @@ Continue:D:Player: Besides your dad getting sick, how’s he been doing? I know 
 :+:r:1
 :+:e:2
 :?:Jordan: She’s like a leech, or a tapeworm. I keep trying to tell him, but he just doesn’t see it.
-	No one deserves to be called a parasite Jordan.
+	You can’t say that.
 	If she’s as bad as you say, she really should leave.:Leave
 
+
+:D:Player: No one deserves to be called a parasite Jordan.
 :=:J:garden_neutral
 :D:Jordan: Some people do.
 :D:Player: I don’t-
@@ -198,8 +205,8 @@ Believe:D:Player: I know you wouldn’t. It’d be a scummy thing to do.
 Continue:D:Jordan: Worst thing is, is she’s trying to prevent me from even being in contact with my dad. 
 :=:J:garden_neutral
 :D:Player: WHAT?!
-:D:Jordan: Shitty, right?
 :=:J:garden_sad_smile
+:D:Jordan: Shitty, right?
 :D:Player: How is she even getting away with that?
 :=:J:garden_anxious
 :D:Jordan: I’m not home a lot, and she’s used that as an excuse to further distance the two of us. 
