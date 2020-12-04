@@ -7,63 +7,13 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001AA41B884F8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001CFDE010028 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001AAEC38BB98
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001AAEC38BB98
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] SoundI::release                          : background_park (000001AAECDCF1E8)
-[LOG] SoundI::release                          :     background_park (000001AA38AD9F18)
-[LOG] SoundI::release                          :     background_park (000001AAEC38C258)
-[LOG] SoundI::release                          : cafe_track (000001AAECDCE618)
-[LOG] SoundI::release                          :     cafe_track (000001AA38ADC2D8)
-[LOG] SoundI::release                          :     cafe_track (000001AAEC38BB98)
-[LOG] SoundI::release                          : credit_track (000001AAECDCE7C8)
-[LOG] SoundI::release                          :     credit_track (000001AA38ADBAB8)
-[LOG] SoundI::release                          :     credit_track (000001AAEC38CE28)
-[LOG] SoundI::release                          : garden_track (000001AAECDCF548)
-[LOG] SoundI::release                          :     garden_track (000001AA38ADA258)
-[LOG] SoundI::release                          :     garden_track (000001AAEC38D4E8)
-[LOG] SoundI::release                          : hospital_track (000001AA41F0AE68)
-[LOG] SoundI::release                          :     hospital_track (000001AA38AD9A38)
-[LOG] SoundI::release                          :     hospital_track (000001AAEC38B9E8)
-[LOG] SoundI::release                          : party_track (000001AA41F0BBE8)
-[LOG] SoundI::release                          :     party_track (000001AA38ADC138)
-[LOG] SoundI::release                          :     party_track (000001AAECDCDDA8)
-[LOG] SoundI::release                          : background_party (000001AA41F0BA38)
-[LOG] SoundI::release                          :     background_party (000001AA38AD9898)
-[LOG] SoundI::release                          :     background_party (000001AAECDCE978)
-[LOG] SoundI::release                          : beach_track (000001AA41F0B6D8)
-[LOG] SoundI::release                          :     beach_track (000001AA38ADB0F8)
-[LOG] SoundI::release                          :     beach_track (000001AAECDCDBF8)
-[LOG] SoundI::release                          : Thegood.existance.purpose - Trimmed - Trimmed (000001AA41F0A448)
-[LOG] SoundI::release                          :     Thegood.existance.purpose - Trimmed - Trimmed (000001AA38ADAC18)
-[LOG] SoundI::release                          :     Thegood.existance.purpose - Trimmed - Trimmed (000001AA41F0ACB8)
-[LOG] SoundI::release                          :  (000001AA39B6DD58)
-[LOG] SoundI::release                          :     background_beach (000001AA3DCEE7C8)
-[LOG] SoundI::release                          :  (000001AA39B6C208)
-[LOG] SoundI::release                          :     restuarant_chatter (000001AA3DCEE148)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
@@ -74,6 +24,4 @@
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
-[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : Closed.

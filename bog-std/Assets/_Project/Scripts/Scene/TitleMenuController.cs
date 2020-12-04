@@ -7,7 +7,7 @@ using UnityEngine.Windows.WebCam;
 
 public class TitleMenuController : MonoBehaviour
 {
-    private DialogueManager _dialogueManager;
+    [SerializeField] private DialogueManager _dialogueManager;
 
     private GameObject _grpMenuButtons;
     private Image _imgTitle;
@@ -16,7 +16,8 @@ public class TitleMenuController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _dialogueManager = FindObjectOfType<DialogueManager>();
+        if(_dialogueManager == null)
+            _dialogueManager = FindObjectOfType<DialogueManager>();
 
         _grpMenuButtons = transform.Find("MenuButtons").gameObject;
         _imgTitle = transform.Find("TitleLogo").GetComponent<Image>();

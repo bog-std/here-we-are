@@ -10,7 +10,7 @@ public class NotificationController : MonoBehaviour
     
     public AudioClip NotificationSound;
 
-    private DialogueManager _dialogueManager;
+    [SerializeField] private DialogueManager _dialogueManager;
     private PhoneHubController _phoneHub;
 
     private AudioSource _audioSource;
@@ -20,8 +20,6 @@ public class NotificationController : MonoBehaviour
 
     public void Awake()
     {
-        _dialogueManager = FindObjectOfType<DialogueManager>();
-        _phoneHub = FindObjectOfType<PhoneHubController>();
         _audioSource = GetComponent<AudioSource>();
 
         _grpNotification = transform.Find("Default").gameObject;
@@ -29,6 +27,13 @@ public class NotificationController : MonoBehaviour
 
         _grpNotification.SetActive(true);
         _grpMessageNotification.SetActive(false);
+    }
+
+    void Start()
+    {
+        if(_dialogueManager == null)
+            _dialogueManager = FindObjectOfType<DialogueManager>();
+        _phoneHub = FindObjectOfType<PhoneHubController>();
     }
 
     public void DisplayNotification()
