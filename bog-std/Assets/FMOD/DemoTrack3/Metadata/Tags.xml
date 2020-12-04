@@ -4,5 +4,91 @@
 		<property name="name">
 			<value>Master</value>
 		</property>
+		<relationship name="items">
+			<destination>{133d88ad-0fab-4c75-a5c6-655d65d0c9ec}</destination>
+			<destination>{c4b22fff-6443-4bf5-bb2c-e7de5dc74afd}</destination>
+			<destination>{0106e67c-15ba-495f-8f7e-389da583e49a}</destination>
+			<destination>{e8647594-10ad-4b99-b70a-74fdc574ea17}</destination>
+			<destination>{a7d24b64-c525-4e1a-8c35-1a21f07584d5}</destination>
+			<destination>{ba3267bd-7356-4a8b-a549-e42643750b8a}</destination>
+			<destination>{651da727-4a89-489e-a35a-99df62002912}</destination>
+			<destination>{227255f4-3d74-4203-aebc-15a5f657f872}</destination>
+			<destination>{25d9a7f4-886e-4e1d-bfdb-0d760a1afc1c}</destination>
+			<destination>{400c4183-3db5-4779-999f-4936253152d0}</destination>
+			<destination>{0706d3cd-c288-42ce-be7b-64cbdcaac5d7}</destination>
+			<destination>{10036bbf-3d6b-4b0c-852f-a18abb8d0dd9}</destination>
+			<destination>{7ec7c9d0-70a1-479e-a614-b5858ce98e59}</destination>
+			<destination>{27793766-fa19-4d73-8017-989a574e2aff}</destination>
+		</relationship>
+	</object>
+	<object class="Tag" id="{133d88ad-0fab-4c75-a5c6-655d65d0c9ec}">
+		<property name="name">
+			<value>async</value>
+		</property>
+	</object>
+	<object class="Tag" id="{c4b22fff-6443-4bf5-bb2c-e7de5dc74afd}">
+		<property name="name">
+			<value>destination-marker</value>
+		</property>
+	</object>
+	<object class="Tag" id="{0106e67c-15ba-495f-8f7e-389da583e49a}">
+		<property name="name">
+			<value>discrete-parameter</value>
+		</property>
+	</object>
+	<object class="Tag" id="{e8647594-10ad-4b99-b70a-74fdc574ea17}">
+		<property name="name">
+			<value>loop-region</value>
+		</property>
+	</object>
+	<object class="Tag" id="{a7d24b64-c525-4e1a-8c35-1a21f07584d5}">
+		<property name="name">
+			<value>parameter</value>
+		</property>
+	</object>
+	<object class="Tag" id="{ba3267bd-7356-4a8b-a549-e42643750b8a}">
+		<property name="name">
+			<value>parameter-condition</value>
+		</property>
+	</object>
+	<object class="Tag" id="{651da727-4a89-489e-a35a-99df62002912}">
+		<property name="name">
+			<value>persistent</value>
+		</property>
+	</object>
+	<object class="Tag" id="{227255f4-3d74-4203-aebc-15a5f657f872}">
+		<property name="name">
+			<value>quantization</value>
+		</property>
+	</object>
+	<object class="Tag" id="{25d9a7f4-886e-4e1d-bfdb-0d760a1afc1c}">
+		<property name="name">
+			<value>sidechain-effect</value>
+		</property>
+	</object>
+	<object class="Tag" id="{400c4183-3db5-4779-999f-4936253152d0}">
+		<property name="name">
+			<value>single-instrument</value>
+		</property>
+	</object>
+	<object class="Tag" id="{0706d3cd-c288-42ce-be7b-64cbdcaac5d7}">
+		<property name="name">
+			<value>tempo-marker</value>
+		</property>
+	</object>
+	<object class="Tag" id="{10036bbf-3d6b-4b0c-852f-a18abb8d0dd9}">
+		<property name="name">
+			<value>track-routing</value>
+		</property>
+	</object>
+	<object class="Tag" id="{7ec7c9d0-70a1-479e-a614-b5858ce98e59}">
+		<property name="name">
+			<value>transition-region</value>
+		</property>
+	</object>
+	<object class="Tag" id="{27793766-fa19-4d73-8017-989a574e2aff}">
+		<property name="name">
+			<value>transition-timeline</value>
+		</property>
 	</object>
 </objects>

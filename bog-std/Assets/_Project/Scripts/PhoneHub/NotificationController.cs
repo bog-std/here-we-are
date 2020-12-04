@@ -39,7 +39,7 @@ public class NotificationController : MonoBehaviour
         _grpMessageNotification.SetActive(false);
 
         _audioSource.PlayOneShot(NotificationSound); 
-        _dialogueManager.IsActive = false;    
+        _dialogueManager.isActive = false;    
     }
 
     public void DisplayMessagesNotification()
@@ -50,13 +50,13 @@ public class NotificationController : MonoBehaviour
         _grpMessageNotification.SetActive(true);
 
         _audioSource.PlayOneShot(NotificationSound); 
-        _dialogueManager.IsActive = false;    
+        _dialogueManager.isActive = false;    
     }
 
     public void HideNotification()
     {
         gameObject.SetActive(false);
-        _dialogueManager.IsActive = true;
+        _dialogueManager.isActive = true;
     }
 
     public void ViewPhone_OnClick()

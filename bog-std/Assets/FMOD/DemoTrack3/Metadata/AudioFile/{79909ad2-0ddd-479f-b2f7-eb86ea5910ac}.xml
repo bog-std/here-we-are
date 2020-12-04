@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{79909ad2-0ddd-479f-b2f7-eb86ea5910ac}">
+		<property name="assetPath">
+			<value>HereWeAre/Track/garden_track.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>21.603265306122449</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b728c8ca-d207-44c5-b023-c21addcd3b1e}</destination>
+		</relationship>
+	</object>
+</objects>

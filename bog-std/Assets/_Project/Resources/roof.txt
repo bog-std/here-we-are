@@ -1,3 +1,5 @@
+:A:all:0
+:A:party:1
 :=:S:party
 :=:1:party_scott
 
@@ -384,3 +386,5 @@ Continue:D:Jordan:Jordan: You need an attitude adjustment and you'll be fine.
 :D:: *both are now staring out into the night sky in silence*
 
 :=:SJ12:none
+:A:party:0
+:A:cafe:1

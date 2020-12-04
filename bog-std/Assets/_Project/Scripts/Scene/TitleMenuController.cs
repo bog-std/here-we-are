@@ -25,13 +25,13 @@ public class TitleMenuController : MonoBehaviour
     public void Display()
     {
         gameObject.SetActive(true);
-        _dialogueManager.IsActive = false;
+        _dialogueManager.isActive = false;
     }
 
     public void Hide()
     {
         gameObject.SetActive(false);
-        _dialogueManager.IsActive = true;
+        _dialogueManager.isActive = true;
     }
 
     public void Start_Clicked()
