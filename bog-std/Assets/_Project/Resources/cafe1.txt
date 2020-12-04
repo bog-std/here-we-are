@@ -1,16 +1,23 @@
-:=:S:none
-#:=:S:logo:2
-#:=:S:title:2
-#:?:: Here We Are
-#	Start
+#	Display Message Sequence
+:A:all:0
+:A:cafe:1
+:=:S:title
+:W:1
+:#:
+:W:0.5
 
+#	Change to inside the cafe
 :=:S:none
+:A:cafe:1.5
+
+
 :=:3:mug_empty
 :=:J:jordan_neutral
 
-:#:
+:W:2
 
 :D:Jordan: Took you long enough.
+
 :D:Player: Sorry about that.
 :D:Jordan: It’s fine, it’s fine.[wait 1] I managed to grab a cup of coffee before you got here.
 :?:Player: That's good.[wait 1]

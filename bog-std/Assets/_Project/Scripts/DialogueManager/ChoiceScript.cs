@@ -20,7 +20,8 @@ public class ChoiceScript : MonoBehaviour
 
     void OnClick()
     {
-        dialogueManager.ProcessChoice(choice);
+        if(dialogueManager.IsActive)
+            dialogueManager.ProcessChoice(choice);
     }
     
 }

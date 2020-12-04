@@ -94,6 +94,11 @@ h2 {
     margin-bottom: 25px;
 }
 
+.section img {
+    width: 100%;
+    height: auto;
+}
+
 .section.description p {
     text-align: left;    
 }
@@ -104,6 +109,11 @@ h2 {
 
 .section.logo img {    
     width: 150px;
+    height: auto;
+}
+
+.section.team img {
+    width: 100%;
     height: auto;
 }
 

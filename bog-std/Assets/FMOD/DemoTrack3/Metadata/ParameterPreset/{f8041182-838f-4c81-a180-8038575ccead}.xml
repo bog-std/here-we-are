@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{f8041182-838f-4c81-a180-8038575ccead}">
+		<property name="name">
+			<value>cafe</value>
+		</property>
+		<relationship name="folder">
+			<destination>{34450b88-601a-4bf3-90e6-4a774a2c6a85}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{02a1f552-504b-46e2-a3c3-794e9cbb541a}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{02a1f552-504b-46e2-a3c3-794e9cbb541a}">
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

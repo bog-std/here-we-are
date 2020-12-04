@@ -190,13 +190,13 @@ public class PhoneHubController : MonoBehaviour
     public void DisplayPhone()
     {
         _animator.SetBool("IsOpen", true);
-        _dialogueManager.NotificationOrPhoneOpen = true;
+        _dialogueManager.IsActive = false;
     }
 
     public void HidePhone()
     {
         _animator.SetBool("IsOpen", false);
-        _dialogueManager.NotificationOrPhoneOpen = false;
+        _dialogueManager.IsActive = true;
     }
 
     public void DisplayMessages()
@@ -204,6 +204,8 @@ public class PhoneHubController : MonoBehaviour
         _grpMemoryEntrance.SetActive(false);
         _grpMemorySelection.SetActive(false);
         _grpMessageScreen.SetActive(true);
+
+        SetHomeButtonActive(false);
 
         currMessageIndex = 0;
         _imgMessageScreen.sprite = messageImages[currMessageIndex];
@@ -214,6 +216,8 @@ public class PhoneHubController : MonoBehaviour
         _grpMemoryEntrance.SetActive(false);
         _grpMessageScreen.SetActive(false);
         _grpMemorySelection.SetActive(true);
+
+        SetHomeButtonActive(true);
     }
 
     public void DisplayEnterMemoryScene(Scene memory)
@@ -222,8 +226,12 @@ public class PhoneHubController : MonoBehaviour
         _grpMessageScreen.SetActive(false);
         _grpMemoryEntrance.SetActive(true);
 
+        SetHomeButtonActive(true);
+
         _imgMemoryDisplay.sprite = sceneImages[(int) memory];
     }
+
+    public void SetHomeButtonActive(bool active) => _btnHome.enabled = active;
 
     #endregion
 

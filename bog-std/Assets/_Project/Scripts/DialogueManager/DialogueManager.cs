@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using _Project.Scripts.DialogueParser;
+using _Project.Scripts.Scene;
 using Assets._Project.Scripts.DialogueData;
 using FMOD;
 using TMPro;
@@ -27,39 +28,41 @@ namespace Assets._Project.Scripts.DialogueManager
         [SerializeField] private bool useParser = false;
         [SerializeField] private List<TextAsset> txtFiles;
         
-        [SerializeField] private TextAsset currentTxt;
-        [SerializeField] private Stack<TextStackItem> txtStack;
+        [SerializeField] private TextAsset _currentTxt;
+        [SerializeField] private Stack<TextStackItem> _txtStack;
 
         private AudioSource _audioSource;
 
 
-        private GameObject currDialogueBox = null;
-        private List<GameObject> currChoices;
-        private bool readingText;
-        private bool finished;
-        private int lineIndex = 0;
-        private bool done = false;
+        private GameObject _currDialogueBox = null;
+        private List<GameObject> _currChoices;
+        private bool _readingText;
+        private bool _finished;
+        // private int _lineIndex = 0;
+        // private bool _done = false;
         public LayeredScene scene;
 
-        private bool autocompleteToggle = true;
+        private bool _autocompleteToggle = true;
 
-        private Queue<Dialogue> dialogueScript;
-        private int dialogueDistance = 0;
-        private bool hasStarted = false;
-        private bool isWaiting = false;
+        private Queue<Dialogue> _dialogueScript;
+        private int _dialogueDistance = 0;
+        private bool _hasStarted = false;
+        private bool _isWaiting = false;
 
-        public bool NotificationOrPhoneOpen = false;
+        public bool IsActive = true;
 
-        private PhoneHubController _phoneHub; // Reference to the scenes Phone
+        private TitleMenuController _titleMenu;
+        private PauseMenuController _pauseMenu;
+        private PhoneHubController _phoneHub; 
         private NotificationController _notification;
 
-        public bool InDialogue => currDialogueBox != null;
+        public bool InDialogue => _currDialogueBox != null;
         
         public void Awake()
         {
-            dialogueScript = new Queue<Dialogue>();
-            txtStack = new Stack<TextStackItem>();
-            currChoices = new List<GameObject>();
+            _dialogueScript = new Queue<Dialogue>();
+            _txtStack = new Stack<TextStackItem>();
+            _currChoices = new List<GameObject>();
 
             DisplayNext();
         }
@@ -70,9 +73,13 @@ namespace Assets._Project.Scripts.DialogueManager
 
             scene = FindObjectOfType<LayeredScene>();
 
+            _titleMenu = FindObjectOfType<TitleMenuController>();
+            _pauseMenu = FindObjectOfType<PauseMenuController>();
             _phoneHub = FindObjectOfType<PhoneHubController>();
             _notification = FindObjectOfType<NotificationController>();
 
+            _titleMenu.Hide();
+            _pauseMenu.Hide();
             _notification.HideNotification();
         }
 
@@ -80,12 +87,12 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             try
             {
-                if (!NotificationOrPhoneOpen && !hasStarted && !isWaiting && (Input.GetKey(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)))
+                if (IsActive && (!_hasStarted && !_isWaiting) && (Input.GetKey(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)))
                 {
-                    if (currChoices.Count == 0)
+                    if (_currChoices.Count == 0)
                     {
                         DisplayNext();
-                        hasStarted = true;
+                        _hasStarted = true;
                     }
                 }
                 // Toggle Fullscreen
@@ -96,12 +103,12 @@ namespace Assets._Project.Scripts.DialogueManager
                 // Quit
                 else if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    Application.Quit();
+                    _pauseMenu.Display();
                 }
                 // Toggle fast reading 
                 else if (Input.GetKeyDown(KeyCode.T))
                 {
-                    autocompleteToggle = !autocompleteToggle;
+                    _autocompleteToggle = !_autocompleteToggle;
                 }
                 
                 
@@ -113,48 +120,47 @@ namespace Assets._Project.Scripts.DialogueManager
         }
         
         
-
         public void DisplayNext()
         {
             Debug.Log("Display next");
 
-            if (currChoices != null && currChoices.Count > 0) return;
+            if (_currChoices != null && _currChoices.Count > 0) return;
 
-            isWaiting = false;
+            _isWaiting = false;
 
-            if (autocompleteToggle && readingText)
+            if (_autocompleteToggle && _readingText)
             {
-                readingText = false;
+                _readingText = false;
             }
-            else if (!readingText)
+            else if (!_readingText)
             {
                 // Otherwise try and display the next DialogueBox
 
                 // If one is already being display, destroy it 
-                if (currDialogueBox != null)
-                    Destroy(currDialogueBox);
+                if (_currDialogueBox != null)
+                    Destroy(_currDialogueBox);
 
                 // Initialize first script in txtFiles
-                if (txtStack.Count == 0) PushDialogue(txtFiles[0]);
+                if (_txtStack.Count == 0) PushDialogue(txtFiles[0]);
                 
                 // If at end of current script
-                if (dialogueScript.Count == 0)
+                if (_dialogueScript.Count == 0)
                 {
                     
                     Debug.Log("End of script");
                     
-                    if (txtStack.Count > 1)
+                    if (_txtStack.Count > 1)
                     {
                         // Pop and load previous script
                         PopDialogue();
                     }
-                    else if (txtStack.Count == 1)
+                    else if (_txtStack.Count == 1)
                     {
                         OpenPhone();
                         
                         // Placeholder behavior - reload script
                         Debug.Log("RequestingDialogue");
-                        RequestDialogue(txtStack.Peek().textAsset);
+                        RequestDialogue(_txtStack.Peek().textAsset);
                     }
                         
                 }
@@ -162,13 +168,12 @@ namespace Assets._Project.Scripts.DialogueManager
                 DisplayTextBox();
             }
         }
-
-
+        
         public void OpenPhone() => _notification.DisplayNotification();
 
         public void DisplayTextBox()
         {
-            if (dialoguePrefab == null || dialogueScript.Count == 0) return;
+            if (dialoguePrefab == null || _dialogueScript.Count == 0) return;
             
             try
             {
@@ -187,7 +192,7 @@ namespace Assets._Project.Scripts.DialogueManager
 
                 // Get the UI Canvas and instantiate it in the scene 
                 var canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<RectTransform>();
-                currDialogueBox = Instantiate(
+                _currDialogueBox = Instantiate(
                     boxToDisplay, 
                     new Vector3(
                         (0f * 10f) / (canvas.rect.width), 
@@ -196,7 +201,7 @@ namespace Assets._Project.Scripts.DialogueManager
                     canvas);
 
                 // Get the TextMeshPro Components and start the read text coroutine
-                var textMeshes = currDialogueBox.GetComponentsInChildren<TextMeshProUGUI>();
+                var textMeshes = _currDialogueBox.GetComponentsInChildren<TextMeshProUGUI>();
                 var mainTextMesh = textMeshes[0];
                 var nameTextMesh = textMeshes[1];
 
@@ -235,12 +240,12 @@ namespace Assets._Project.Scripts.DialogueManager
             StartCoroutine(Read());
             IEnumerator Read()
             {
-                readingText = true;
+                _readingText = true;
         
                 while (visibleChars < str.Length)
                 {
                     // If we should stop reading, complete the text
-                    if (!readingText)
+                    if (!_readingText)
                     {
                         var cleaned = RemoveJunk(str);
                         //textMesh.maxVisibleCharacters = str.Length;
@@ -278,7 +283,7 @@ namespace Assets._Project.Scripts.DialogueManager
                 }
 
                 // Do post-dialogue operations
-                readingText = false;
+                _readingText = false;
                 if (choices.Count > 0) ShowChoices(choices);
 
                 // Call back
@@ -303,7 +308,7 @@ namespace Assets._Project.Scripts.DialogueManager
         public void FinishedReadingText()
         {
             // Make the chevron visible 
-            var chevron = currDialogueBox.GetComponentsInChildren<Image>();
+            var chevron = _currDialogueBox.GetComponentsInChildren<Image>();
             chevron[2].enabled = true;
         }
 
@@ -317,9 +322,9 @@ namespace Assets._Project.Scripts.DialogueManager
 
 
             float yChoiceStart = 70.0f;
-            if (currDialogueBox != null)
+            if (_currDialogueBox != null)
             {
-                var rects = currDialogueBox.GetComponentsInChildren<RectTransform>();
+                var rects = _currDialogueBox.GetComponentsInChildren<RectTransform>();
 
                 Debug.Log(rects.Length);
 
@@ -351,20 +356,46 @@ namespace Assets._Project.Scripts.DialogueManager
                 choiceScript.dialogueManager = this;
                 choiceScript.choice = choice;
                 
-                currChoices.Add(choiceObject);
+                _currChoices.Add(choiceObject);
 
                 textMesh.text = choice.choiceOption;
             }
         }
-        
+
+        public void RollCredits()
+        {
+            var dialogue = new Dialogue()
+            {
+                command = Command.Script,
+                name = "credits"
+            };
+            ProcessCommand(dialogue);
+        }
+
+        public void ReturnToMenu()
+        {
+            // Clear & Reset Scene
+            _isWaiting = false;
+            _readingText = false;
+            StopAllCoroutines();
+            scene.ResetLayers();
+            Destroy(_currDialogueBox);
+            _phoneHub.HidePhone();
+            _notification.HideNotification();
+            _titleMenu.Hide();
+            ClearChoices();
+
+            // Eradicate the script stack
+            _txtStack.Clear();
+            DisplayNext();
+        } 
 
         private void RequestDialogue(TextAsset script)
         {
-            currentTxt = script;
+            _currentTxt = script;
             EnqueueAll(DialogueParser.GetDialogue(script));
         }
-
-
+        
         private Vector3 GetTextBoxTarget()
         {
             // TODO: Find the location in world space with respect to a target
@@ -374,7 +405,7 @@ namespace Assets._Project.Scripts.DialogueManager
         private void CalculateUI()
         {
             // Calculate name box's y position
-            var rectTransforms = currDialogueBox.GetComponentsInChildren<RectTransform>();
+            var rectTransforms = _currDialogueBox.GetComponentsInChildren<RectTransform>();
             var mainBox = rectTransforms[1];
             var mainTextBox = rectTransforms[2];
             var nameBox = rectTransforms[3];
@@ -396,7 +427,7 @@ namespace Assets._Project.Scripts.DialogueManager
             foreach (var item in list)
             {
                 //Debug.Log(item.line);
-                dialogueScript.Enqueue(item);
+                _dialogueScript.Enqueue(item);
             }
         }
         private Queue<T> ConvertListToQueue<T>(IEnumerable<T> list) => new Queue<T>(list);
@@ -427,7 +458,7 @@ namespace Assets._Project.Scripts.DialogueManager
                     Debug.Log("Wait " + dialogue.magnitude);
                     
                     Invoke("DisplayNext", dialogue.magnitude);
-                    isWaiting = true;
+                    _isWaiting = true;
                     return;
                 
                 case Command.Phone:
@@ -442,6 +473,14 @@ namespace Assets._Project.Scripts.DialogueManager
                     _phoneHub.DisplayMessages();
                     _notification.DisplayMessagesNotification();
                     return;
+                case Command.Menu:
+                    _titleMenu.Display();
+                    return;
+                
+                case Command.Audio:
+                    SetAudio(dialogue.name, dialogue.magnitude);
+                    break;
+                    
             }
             
             DisplayNext();
@@ -449,35 +488,33 @@ namespace Assets._Project.Scripts.DialogueManager
         
         private Dialogue DequeueScript()
         {
-            dialogueDistance++;
-            return dialogueScript.Dequeue();
+            _dialogueDistance++;
+            return _dialogueScript.Dequeue();
         }
         
         private void PopDialogue()
         {
-            if (txtStack.Count == 0)
+            if (_txtStack.Count == 0)
             {
                 Debug.LogError("Tried popping empty stack.");
                 return;
             }
             
-            dialogueScript.Clear();
-            TextStackItem item = txtStack.Pop();
-            RequestDialogue(txtStack.Peek().textAsset);
-            dialogueDistance = 0;
+            _dialogueScript.Clear();
+            TextStackItem item = _txtStack.Pop();
+            RequestDialogue(_txtStack.Peek().textAsset);
+            _dialogueDistance = 0;
             Forward(item.returnOffset);
         }
         
-        
         public void PushDialogue(TextAsset script, int returnOffset = -1)
         {
-            dialogueScript.Clear();
+            _dialogueScript.Clear();
             RequestDialogue(script);
-            txtStack.Push(new TextStackItem(returnOffset >= 0 ? returnOffset : dialogueDistance, script));
-            dialogueDistance = 0;
+            _txtStack.Push(new TextStackItem(returnOffset >= 0 ? returnOffset : _dialogueDistance, script));
+            _dialogueDistance = 0;
         }
-
-
+        
         public void ProcessChoice(Choice choice)
         {
             IncrementLayers(choice.layers, choice.magnitude);
@@ -485,14 +522,12 @@ namespace Assets._Project.Scripts.DialogueManager
             ClearChoices();
             DisplayNext();
         }
-
         
         private void IncrementLayers(List<LayerName> layers, int magnitude)
         {
             foreach(var layer in layers)
                 scene.IncrementLayer(layer, magnitude);
         }
-        
         
         private void SetLayers(List<LayerName> layers, string layerTag)
         {
@@ -510,34 +545,35 @@ namespace Assets._Project.Scripts.DialogueManager
             }
         }
 
+        private void SetAudio(string name, float magnitude)
+        {
+            scene.SetAudio(name, magnitude);
+        }
         
         private void ClearChoices()
         {
-            foreach (var option in currChoices)
+            foreach (var option in _currChoices)
                 Destroy(option);
             
-            currChoices.Clear();
+            _currChoices.Clear();
         }
-
         
         private void Seek(string target, int offset = 0)
         {
-            if (target != string.Empty && dialogueScript.Count > 1)
+            if (target != string.Empty && _dialogueScript.Count > 1)
             {
-                while (dialogueScript.Count > 0 && dialogueScript.Peek().tag != target)
+                while (_dialogueScript.Count > 0 && _dialogueScript.Peek().tag != target)
                     DequeueScript();
                 
                 Forward(offset);
             }
         }
-
         
         private void Forward(int offset)
         {
-            if (dialogueScript.Count > 1) while (offset-- > 0)
+            if (_dialogueScript.Count > 1) while (offset-- > 0)
                 DequeueScript();
         }
-        
         
     }
 }
