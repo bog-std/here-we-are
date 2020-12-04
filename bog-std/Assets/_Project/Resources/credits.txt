@@ -1,5 +1,8 @@
 :=:3:black
 
+:A:all:0
+:A:credits:1
+
 :=:S:black:1
 :=:S:credits-writing:5
 :=:S:black:1
