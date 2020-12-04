@@ -1,11 +1,13 @@
 :A:all:0
 :A:party:2
-:=:S:party
+:=:S:shadow_party
 :=:1:party_scott
+
+:>:TEST
 
 :D:Player: Did you invite everyone to this party?
 :D:Scott: Just some friends.
-:D:Player: Some? 
+:D:Player: Some?
 :D:Scott: All right, maybe a few more than I intended, but they’re all good people.
 :D:Scott:There are drinks in the kitchen, and any food in the fridge without a label is off limits.
 :?:Scott:If you need me, you know where to find me.
@@ -19,7 +21,7 @@
 later:D:Player: I’ll find you later.
 :D:Scott: You better. We still need to shotgun a beer together.
 Continue:=:1:none
-:D:Player: (Thinking) Ugh I hate these late night parties. I should have just stayed home.
+:D:Player: Ugh I hate these late night parties. I should have just stayed home.
 
 :=:J:party_jordan
 
@@ -54,7 +56,9 @@ Continue:D:Jordan: I was hoping you’d come since I know you don’t really car
 :>:Continue
 
 Lost:D:Jordan: Aw you’re no fun.
-:D:Jordan:Note to self: Peach juice, vodka, and whatever the hell else is in here, does not mix well together. 
+:D:Jordan:.[wait 1].[wait 1].
+:D:Jordan: Note to self...
+:D:Jordan: Peach juice, vodka, and whatever the hell else is in here, does not mix well together. 
 :+:r:1
 :>:Continue
 
@@ -90,7 +94,7 @@ Continue:D:Jordan: Wanna grab some air?
 :+:r:1
 :>:Continue
 
-Kidding:D:Player: I’m kidding! You know how much I love being up here..
+Kidding:D:Player: I’m kidding! You know how much I love being up here.
 :+:R:1
 
 Continue:D:Jordan: This is still my favourite part of the building.
@@ -148,7 +152,7 @@ Continue:D:Jordan: Did you have something on your mind?
 :D:Player: I just find myself confused. I barely recognized anyone inside. These last few years have just flashed by. I feel like I don’t know where I am. I feel like I don't have a purpose... 
 :=:J:city_jordan_side
 :D:Jordan: Maybe you should do something about it…
-:D:Player: like what? It seems like everything I do ends in failure.
+:D:Player: Like what? It seems like everything I do ends in failure.
 :=:J:city_jordan_facing
 :D:Jordan: Oh boo hoo. Stop being so dramatic. You need to realize you have the power to make your life what you want it to be. I don’t have everything I want, but I control what I can.
 :D:Player: Hmmm. I do have an attitude problem now that you mention it.
@@ -255,7 +259,7 @@ World:D:Player:I don’t believe in anything. Everything bad that happened in my
 :+:g:3
 #:-:E:1
 
-Continue:D:Jordan: I think everyone needs something to believe in
+Continue:D:Jordan: I think everyone needs something to believe in.
 :=:J:city_jordan_away
 :?:Jordan: I think we’re all alone, but I find it comforting.
 	I don't understand
@@ -291,12 +295,12 @@ Agree:D:Player: Maybe you’re right. I could’ve avoided so much pain if I jus
 :+:R:2
 :+:E:1
 
-Continue:D:Jordan: I didn’t mean to be harsh
+Continue:D:Jordan: I didn’t mean to be harsh,
 :=:J:city_jordan_side
 :D:Jordan: I was just trying to get my point across
 :D:Player:  So what do you think I should do? 
 :=:J:city_jordan_away
-:?:Jordan: Descartes said, “ Conquer yourself rather than the world.” 
+:?:Jordan: Descartes said, “Conquer yourself rather than the world.” 
 	I disagree
 	I agree:Agreed
 
@@ -311,17 +315,17 @@ Agreed:D:Player: It looks like someone’s been reading!
 :D:Jordan: It’s cute that you noticed.
 :+:RE:1
 
-Continue:D:Jordan: I have been trying to read a little bit more
-:=:J:city_jordan_facing
-:?:Jordan: since I have had so much free time.
+Continue:=:J:city_jordan_facing
+:?:Jordan: I have been trying to read a little bit more since I have had so much free time.
 	Really?
-	Oh, really?:OH
+	Oh, really?:OHHH
 
 :D:Player: You have free time? You never answer me when I try and get a hold of you. I was starting to get worried!
 :+:R:1
 :>:Continue
 
-OH:D:Player: [I thought all you had was free time? What do you do all day besides ignore my messages?
+OHHH:D:Player: I thought all you had was free time?
+:D:Player: What do you do all day besides ignore my messages?
 :+:r:1
 
 Continue:D:Jordan: Sorry, I was super busy… 
@@ -373,7 +377,7 @@ Continue:D:Jordan: Are you really that bent out of shape about purpose?
 
 Anymore:D:Player: I just learned to roll with the punches. There’s not a lot I can do at this point.
 
-Continue:D:Jordan:Jordan: You need an attitude adjustment and you'll be fine.
+Continue:D:Jordan: You need an attitude adjustment and you'll be fine.
 :=:J:city_jordan_facing
 :D:Player: I’m just confused as to how you are so calm about everything. Last time I talked to you it seemed like your head was about to explode from stress and anxiety. 
 
@@ -382,9 +386,13 @@ Continue:D:Jordan:Jordan: You need an attitude adjustment and you'll be fine.
 :=:J:city_jordan_side
 :D:Jordan: People change.
 :=:J:city_jordan_away
-:D:Jordan: Perceptions change.
+TEST:D:Jordan: Perceptions change.
 
-:D:: *both are now staring out into the night sky in silence*
+:=:J12:none
+
+:=:S:black
+
+:D::.[wait 3]
 
 :=:SJ12:none
 :A:party:0

@@ -53,13 +53,14 @@ Cider:D:Player: Ooooh…
 Juice:?:Jordan: Can you give me a juice at least? 
 	Yes
 	No:No
-:D:Player: There you go
-:D:Jordan: Thanks
+:D:Player: Here you go. 
+:D:Jordan: Thank you.
 :=:J:beach_jordan_neutral
 :+:R:1
 :>:Continue
-No:D:Player: Oops. Sorry, I forgot to grab you one.
+No:D:Player: You are fully capable of grabbing your own juice.
 :=:J:beach_jordan_annoyed
+:D:Jordan: Right.
 :+:r:1
 :>:Continue
 Nothing:D:: You return to your previous spot, sad that you didn’t find any ice cream. sad
@@ -156,7 +157,7 @@ Continue:D:Player: So, you know when that fireworks show is supposed to start?
 :D:Scott: What do you think about Jordan?
 :D:Player: What do you mean by that?
 :D:Scott: She’s cute don’t you think? I heard she turns down guys left, right and center, and that her standards are super high. That’s what Sarah tells me anyways. 
-:D:Player: (Looks to Scott) What exactly are you getting at?
+:D:Player: What exactly are you getting at?
 :?:Scott: I’m thinking of asking her out. 
 	Seriously?
 	Go for it.:Support
@@ -192,9 +193,10 @@ Shattered:D:Player: That’s a big score. But I hate to break it to you, your he
 :D:Scott: … 
 :+:R:1
 :?:Scott: How do you know that?
-	Like you said, she’s turned down a bunch of guys already. What do you have that they don’t?
-	Because she and I are already together.:Together
+	What makes you so special?	
+	She’s mine.:Together
 
+:D:Player: Like you said, she’s turned down a bunch of guys already. What do you have that they don’t?
 :D:Scott: I-
 :D:Player: It ain’t money. It certainly isn’t charisma.
 :D:Scott: I can make her laugh though.
@@ -203,7 +205,8 @@ Shattered:D:Player: That’s a big score. But I hate to break it to you, your he
 :+:R:1
 :>:Continue
 
-Together:D:Scott: You are? Uh, forget I said anything then.
+Together:D:Player: Because she and I are already together. 
+:D:Scott: You are? Uh, forget I said anything then.
 :+:r:3
 :>:Continue
 
