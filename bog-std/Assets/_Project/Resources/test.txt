@@ -9,6 +9,7 @@
 	beach:beach
 	roof:roof
 	garden:garden
+	credits:credits
 :@:cafe1:0
 beach:+:E:0
 :@:beach:0
@@ -16,3 +17,5 @@ roof:+:E:0
 :@:roof:0
 garden:+:E:0
 :@:garden:0
+credits:+:E:0
+:@:credits:0

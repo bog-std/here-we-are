@@ -1,0 +1,15 @@
+:=:3:black
+
+:=:S:black:1
+:=:S:credits-writing:5
+:=:S:black:1
+:=:S:credits-art-audio:5
+:=:S:black:1
+:=:S:credits-programming:5
+:=:S:black:1
+:=:S:credits-special-thanks:5
+:=:S:black:1
+:=:S:credits-attributes:3
+:=:S:black:1
+
+:=:3:none

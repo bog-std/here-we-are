@@ -359,7 +359,16 @@ namespace Assets._Project.Scripts.DialogueManager
                 textMesh.text = choice.choiceOption;
             }
         }
-        
+
+        public void RollCredits()
+        {
+            var dialogue = new Dialogue()
+            {
+                command = Command.Script,
+                name = "credits"
+            };
+            ProcessCommand(dialogue);
+        }
 
         private void RequestDialogue(TextAsset script)
         {

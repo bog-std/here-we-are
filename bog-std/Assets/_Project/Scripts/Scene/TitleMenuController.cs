@@ -43,5 +43,12 @@ public class TitleMenuController : MonoBehaviour
         _dialogueManager.DisplayNext();
     }
 
+    public void Credits_Clicked()
+    {
+        gameObject.SetActive(false);
+        _dialogueManager.RollCredits();
+    }
+    
+
     public void Quit_Clicked() => Application.Quit();
 }
