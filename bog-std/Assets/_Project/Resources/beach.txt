@@ -1,5 +1,5 @@
 :A:all:0
-:A:beach:1
+:A:beach:1.2
 :=:S:beach
 :=:J:beach_jordan_neutral
 
@@ -118,6 +118,7 @@ Continue:D:Scott: We sure picked a hell of a time to come to the beach, didn’t
 
 :=:J12:none
 :=:S:Sunset
+:A:beach:1.8
 
 :D:Player: What’s with the salad?
 :D:Sarah: Gotta watch my figure. A body like this takes work.

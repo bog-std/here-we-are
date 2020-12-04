@@ -1,5 +1,5 @@
 :A:all:0
-:A:party:1
+:A:party:2
 :=:S:party
 :=:1:party_scott
 
@@ -70,6 +70,7 @@ Continue:D:Jordan: Wanna grab some air?
 :=:J:none
 :D:Jordan: Follow me, I know a quiet place!
 :=:12:none
+:A:party:1
 :=:S:rooftop
 :D:Player: That’s better. Where are we anyways? I didn’t recognize anyone at the party.
 :=:J:city_jordan_side
