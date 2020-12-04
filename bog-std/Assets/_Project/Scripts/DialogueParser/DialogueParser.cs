@@ -60,6 +60,7 @@ using UnityEngine;
             };
         
             
+            
             public static IEnumerable<Dialogue> GetDialogue(TextAsset script)
             {
                 var dialogue = ReadString(script);
@@ -112,6 +113,11 @@ using UnityEngine;
                             case ">":
                                 dialogue.command = Command.Skip;
                                 dialogue.tag = split[2];
+                                if (split.Length > 3)
+                                {
+                                    dialogue.name = split[3];
+                                    dialogue.magnitude = Convert.ToInt32(split[4]);
+                                }
                                 break;
 
                             // Set layer to image

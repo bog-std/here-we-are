@@ -33,6 +33,7 @@ namespace Assets._Project.Scripts.DialogueManager
 
         private AudioSource _audioSource;
 
+        private Dictionary<string, SceneState> _facts;
 
         private GameObject _currDialogueBox = null;
         private List<GameObject> _currChoices;
@@ -62,7 +63,16 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             _dialogueScript = new Queue<Dialogue>();
             _txtStack = new Stack<TextStackItem>();
-            _currChoices = new List<GameObject>();            
+            _currChoices = new List<GameObject>();
+            
+            _facts = new Dictionary<string, SceneState>()
+            {
+                {"phone", SceneState.Locked},
+                {"beach", SceneState.Locked},
+                {"party", SceneState.Locked},
+                {"garden", SceneState.Locked},
+            };
+            
         }
 
         public void Start()
@@ -437,7 +447,14 @@ namespace Assets._Project.Scripts.DialogueManager
             switch (dialogue.command)
             {
                 case Command.Skip:
-                    Seek(dialogue.tag);
+                    if (dialogue.name == String.Empty)
+                    {
+                        Seek(dialogue.tag);
+                    } else 
+                    {
+                        // if ()
+                        
+                    }
                     break;
                 
                 case Command.Increment:
@@ -466,6 +483,7 @@ namespace Assets._Project.Scripts.DialogueManager
                     return;
 
                 case Command.Fact:
+                    
                     _phoneHub.SetFact((Scene) Convert.ToUInt16(dialogue.name), (SceneState) Convert.ToUInt16(dialogue.magnitude));
                     break;
 
@@ -473,6 +491,7 @@ namespace Assets._Project.Scripts.DialogueManager
                     _phoneHub.DisplayMessages();
                     _notification.DisplayMessagesNotification();
                     return;
+                
                 case Command.Menu:
                     _titleMenu.Display();
                     return;

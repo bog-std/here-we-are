@@ -3,7 +3,6 @@
 :=:S:shadow_party
 :=:1:party_scott
 
-:>:TEST
 
 :D:Player: Did you invite everyone to this party?
 :D:Scott: Just some friends.
@@ -316,7 +315,7 @@ Agreed:D:Player: It looks like someone’s been reading!
 :+:RE:1
 
 Continue:=:J:city_jordan_facing
-TEST:?:Jordan: I have been trying to read a little bit more since I have had so much free time.
+:?:Jordan: I have been trying to read a little bit more since I have had so much free time.
 	Really?
 	Oh, really?:OHHH
 
