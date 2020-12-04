@@ -46,10 +46,10 @@ Continue:D:Jordan: I was hoping you’d come since I know you don’t really car
 
 :+:r:1
 :?:Jordan: Please? 
-	All right fine.
+	Fine.
 	Drink it yourself. You’re the one who lost.:Lost
 
-:D:Jordan: Thank you. (She smiles in gratitude. Somehow, it feels like she’s using the player to test the drink for poison.) 
+:D:Jordan: Thank you. (She smiles in gratitude. Somehow, it feels like she’s using you to test the drink for poison.) 
 :D:Player: (thinking) Oh god. This is bad. Like, really bad. 
 :D:Jordan: (Winks) You’re the best.
 :+:R:1
@@ -316,7 +316,7 @@ Agreed:D:Player: It looks like someone’s been reading!
 :+:RE:1
 
 Continue:=:J:city_jordan_facing
-:?:Jordan: I have been trying to read a little bit more since I have had so much free time.
+TEST:?:Jordan: I have been trying to read a little bit more since I have had so much free time.
 	Really?
 	Oh, really?:OHHH
 
@@ -377,8 +377,8 @@ Continue:D:Jordan: Are you really that bent out of shape about purpose?
 
 Anymore:D:Player: I just learned to roll with the punches. There’s not a lot I can do at this point.
 
-Continue:D:Jordan: You need an attitude adjustment and you'll be fine.
-:=:J:city_jordan_facing
+Continue:=:J:city_jordan_facing
+:D:Jordan: You need an attitude adjustment and you'll be fine.
 :D:Player: I’m just confused as to how you are so calm about everything. Last time I talked to you it seemed like your head was about to explode from stress and anxiety. 
 
 :=:J:city_jordan_facing
@@ -386,7 +386,7 @@ Continue:D:Jordan: You need an attitude adjustment and you'll be fine.
 :=:J:city_jordan_side
 :D:Jordan: People change.
 :=:J:city_jordan_away
-TEST:D:Jordan: Perceptions change.
+:D:Jordan: Perceptions change.
 
 :=:J12:none
 
