@@ -14,7 +14,8 @@ public enum Scene : ushort
 {
     Beach,
     Garden,
-    Rooftop
+    Rooftop,
+    None
 }
 
 public enum SceneState : ushort
@@ -35,6 +36,7 @@ public class PhoneHubController : MonoBehaviour
 
     private int currMessageIndex = 0;
     private Scene currFeatured = Scene.Beach;
+    private Scene enterMemory = Scene.None;
 
     private SceneState BeachState = SceneState.Unlocked;
     private SceneState GardenState = SceneState.Locked;
@@ -231,6 +233,8 @@ public class PhoneHubController : MonoBehaviour
         _grpMessageScreen.SetActive(false);
         _grpMemoryEntrance.SetActive(true);
 
+        enterMemory = memory;
+
         SetHomeButtonActive(true);
 
         _imgMemoryDisplay.sprite = sceneImages[(int) memory];
@@ -294,18 +298,23 @@ public class PhoneHubController : MonoBehaviour
     {
         Debug.Log("Enter Memory clicked!");
 
-        switch (currFeatured)
+        switch (enterMemory)
         {
             case Scene.Beach:
-                // TODO: Go to beach scene
-                break;
-            case Scene.Garden:
-                // TODO: Go to garden scene
+                _dialogueManager.PushDialogue(_dialogueManager.GetScript("beach"));
                 break;
             case Scene.Rooftop:
-                // TODO: Go to rooftop scene
+                _dialogueManager.PushDialogue(_dialogueManager.GetScript("roof"));
                 break;
+            case Scene.Garden:
+                _dialogueManager.PushDialogue(_dialogueManager.GetScript("garden"));
+                break;
+            case Scene.None:
+                return;
         }
+
+        HidePhone();
+        _dialogueManager.DisplayNext();
     }
 
     public void AdvanceMessage_Clicked()
