@@ -1,5 +1,4 @@
 #	Display Message Sequence
-:A:cafe:1
 :=:S:title
 :W:1
 :#:
@@ -7,6 +6,8 @@
 
 #	Change to inside the cafe
 :=:S:none
+
+:A:cafe:1
 
 :=:3:mug_empty
 :=:J:jordan_neutral

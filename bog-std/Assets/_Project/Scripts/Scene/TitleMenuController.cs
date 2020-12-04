@@ -25,23 +25,30 @@ public class TitleMenuController : MonoBehaviour
     public void Display()
     {
         gameObject.SetActive(true);
-        _dialogueManager.isActive = false;
+        _dialogueManager.IsActive = false;
     }
 
     public void Hide()
     {
         gameObject.SetActive(false);
-        _dialogueManager.isActive = true;
+        _dialogueManager.IsActive = true;
     }
 
     public void Start_Clicked()
     {
         // Fade out title and buttons
-        gameObject.SetActive(false);
+        Hide();
 
         // Trigger the script
         _dialogueManager.DisplayNext();
     }
+
+    public void Credits_Clicked()
+    {
+        Hide();
+        _dialogueManager.RollCredits();
+    }
+    
 
     public void Quit_Clicked() => Application.Quit();
 }

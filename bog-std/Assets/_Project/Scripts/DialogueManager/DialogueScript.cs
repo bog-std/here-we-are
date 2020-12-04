@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class DialogueScript : MonoBehaviour
 {
-    public DialogueManager dialogueManager;
+    private DialogueManager _dialogueManager;
 
     void Start()
     {
-        dialogueManager = FindObjectOfType<DialogueManager>();
+        _dialogueManager = FindObjectOfType<DialogueManager>();
 
         Button button = GetComponent<Button>();
         button.onClick.AddListener(OnClick);
@@ -18,6 +18,7 @@ public class DialogueScript : MonoBehaviour
 
     void OnClick()
     {
-        dialogueManager.DisplayNext();
+        if(_dialogueManager.IsActive) 
+            _dialogueManager.DisplayNext();
     }
 }

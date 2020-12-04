@@ -49,9 +49,10 @@ namespace Assets._Project.Scripts.DialogueManager
         private bool _hasStarted = false;
         private bool _isWaiting = false;
 
-        public bool isActive = true;
+        public bool IsActive = true;
 
         private TitleMenuController _titleMenu;
+        private PauseMenuController _pauseMenu;
         private PhoneHubController _phoneHub; 
         private NotificationController _notification;
 
@@ -73,10 +74,12 @@ namespace Assets._Project.Scripts.DialogueManager
             scene = FindObjectOfType<LayeredScene>();
 
             _titleMenu = FindObjectOfType<TitleMenuController>();
+            _pauseMenu = FindObjectOfType<PauseMenuController>();
             _phoneHub = FindObjectOfType<PhoneHubController>();
             _notification = FindObjectOfType<NotificationController>();
 
             _titleMenu.Hide();
+            _pauseMenu.Hide();
             _notification.HideNotification();
         }
 
@@ -84,7 +87,7 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             try
             {
-                if (isActive && (!_hasStarted && !_isWaiting) && (Input.GetKey(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)))
+                if (IsActive && (!_hasStarted && !_isWaiting) && (Input.GetKey(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)))
                 {
                     if (_currChoices.Count == 0)
                     {
@@ -100,7 +103,7 @@ namespace Assets._Project.Scripts.DialogueManager
                 // Quit
                 else if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    Application.Quit();
+                    _pauseMenu.Display();
                 }
                 // Toggle fast reading 
                 else if (Input.GetKeyDown(KeyCode.T))
@@ -358,7 +361,35 @@ namespace Assets._Project.Scripts.DialogueManager
                 textMesh.text = choice.choiceOption;
             }
         }
-        
+
+        public void RollCredits()
+        {
+            var dialogue = new Dialogue()
+            {
+                command = Command.Script,
+                name = "credits"
+            };
+            ProcessCommand(dialogue);
+        }
+
+        public void ReturnToMenu()
+        {
+            // Clear & Reset Scene
+            _isWaiting = false;
+            _readingText = false;
+            StopAllCoroutines();
+            scene.ResetLayers();
+            Destroy(_currDialogueBox);
+            _phoneHub.HidePhone();
+            _notification.HideNotification();
+            _titleMenu.Hide();
+            ClearChoices();
+
+            // Eradicate the script stack
+            _txtStack.Clear();
+            DisplayNext();
+        } 
+
         private void RequestDialogue(TextAsset script)
         {
             _currentTxt = script;
