@@ -155,6 +155,30 @@ public class PhoneHubController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.R)) { UpdateDisplay(); }
     }
 
+    public void ResetState()
+    {
+        currMessageIndex = 0;
+        currFeatured = Scene.Beach;
+        enterMemory = Scene.None;
+
+        BeachState = SceneState.Unlocked;
+        GardenState = SceneState.Locked;
+        RooftopState = SceneState.Locked;
+
+        HidePhone();
+        UpdateDisplay();
+    }
+
+    public void UnlockAll()
+    {
+        currFeatured = Scene.Beach;
+
+        BeachState = SceneState.Unlocked;
+        GardenState = SceneState.Unlocked;
+        RooftopState = SceneState.Unlocked;
+        UpdateDisplay();
+    }
+
     #region Updating Phone Display
 
     public void SetFact(Scene scene, SceneState state)
