@@ -21,16 +21,16 @@
 :D:Player: Sorry about that.
 :D:Jordan: It’s fine, it’s fine.[wait 1] I managed to grab a cup of coffee before you got here.
 :?:Player: That's good.[wait 1]
-	Mind if I order?
-	Need another cup?:Another
+	Can I order?
+	*Offer Jordan a refill*:Another
 :D:Player: You mind if I order something?
 :>:Continue
 Another:D:Player: Need another cup? I was thinking about ordering something.
 :+:R:1
 Continue:D:Jordan: By all means.
 :?:Waiter: What can I get for you today?
-	A cup of coffee.
-	Coffee and a refill.:Refill
+	One Coffee.
+	Two Coffees please.:Refill
 :D:Player: Just a cup of coffee thanks.
 :D:Jordan: And a refill for me please.
 :D:Waiter: Sure thing, I'll be back with a pot.
@@ -145,12 +145,14 @@ Continue:D:Jordan: We should’ve chatted more. Or hung out or something.
 :D:Player: I will, once everything gets better.
 :+:Er:1
 :>:Continue
+
 Vacation:D:Player: Y’know, a vacation would be really nice.
 :D:Jordan: Right? I’d love to go to the mountains this time. Find a nice camping spot and watch the stars.
 :D:Player: I’d just love to go for a drive. Put on Scott’s mixtape and just hit the road.
 :D:Jordan: Scott makes mixtapes? Huh. Wild.
 :+:er:1
 :>:Continue
+
 Beach:D:Player: What you mean like the time we went to the beach?
 :D:Jordan: Yeah! Exactly like that.
 
@@ -166,7 +168,6 @@ asfdds:@:beach
 #:D:Jordan: Maybe so, but the fireworks off the beach were fantastic.
 #:D:Player: Yes, they were. Yes, they were.
 
-
 Continue:D:Jordan: I wish we could go back to the good ol’ days.
 
 # Audio Change
@@ -176,19 +177,23 @@ Continue:D:Jordan: I wish we could go back to the good ol’ days.
 :D:Player: The days when our problems revolved around test scores and not unemployment.
 
 :?:Jordan: Would you go back to those days?
-	Yes.
-	Probably not.:ProbablyNot
+	In a heartbeat.
+	I doubt it.:ProbablyNot
 :D:Player: Of course I would. God, I had so much less fear back then. Stress I had plenty of, but not fear.
+:=:J:jordan_certain
 :D:Jordan: They call that ‘anxiety’ my friend.
 :D:Player: I know what it’s called Jo. I just never thought I’d be in this situation.
+:=:J:jordan_neutral
 :D:Jordan: I don’t think anyone did.
 :+:e:1
 :>:Continue
 ProbablyNot:D: Player: I don’t know. I don’t think so. Probably not.
+:=:J:jordan_doubt
 :D:Jordan: Really?
 :D:Player: Feels kind of immature to ignore my problems.
 :D:Jordan: Not even for a day?
 :D:Player: Maybe a few hours at a time, but I have responsibilities I can’t just leave alone.
+:=:J:jordan_neutral
 :D:Jordan: Fair.
 :+:E:1
 
@@ -239,7 +244,7 @@ Happy:D:Player: I just want to be happy in life.
 :>:Continue
 LastTime:D:Player: They were all right last time I checked.
 :=:J:jordan_doubt
-:D:Jordan: What? You haven't called them?
+:D:Jordan: What? You haven’t called them?
 :D:Player: Not since last year.
 :+:r:1
 :?:Jordan: Why not? They’re your parents. You should call them every once in a while, no?
@@ -314,19 +319,21 @@ Glad:D:Player: I'm just glad you said no.
 Continue:D:Player: What about you? How’re your parents?
 :=:J:jordan_reminiscent
 :?:Jordan: You ever dreamed of flying?
-	Like a plane?
-	I've thought about it.:Thought
+	Pardon?
+	Perhaps.:Thought
 	Never.:Never.
 :D:Player: What like a plane?
 :D:Jordan: Like Superman. Fly faster than a speeding bullet.
 :D:Player: Or fast enough to turn back time?
 :D:Jordan: That would also be an amazing super power.
 :>:Continue
+
 Thought:D:Player: I’ve thought about it once or twice.
 :D:Jordan: Just so you could fly away from all your problems?
 :D:Player: Something like that. 
 :+:e:1
 :>:Continue
+
 Never:D:Player: Never in a million years. Can’t help but look down.
 :=:J:jordan_snicker
 :D:Jordan: You’re still scared of heights?
@@ -354,8 +361,8 @@ Drank:D:Player: Just how much I drank.
 :D:Jordan: You didn't get blackout drunk by the end, did you?
 :D:Player: No, but I definitely drank enough to barely remember it.
 :+:r:3
-Continue:D:Player: You never answered my question.
-:=:J:jordan_neutral
+Continue:=:J:jordan_neutral
+:D:Player: You never answered my question.
 :D:Jordan: What question?
 :D:Player: About your parents. How are they?
 :?:Jordan: Oh. My dad’s fine now. He’s been in and out of the hospital for a couple years, but he’s all right. 
@@ -391,7 +398,7 @@ Continue:D:Player: I’m sorry if I pinched a nerve there.
 :D:Player: Yeah but I don’t believe you. There’s no way you’re okay. After all we’ve been through, there’s no way you’re okay even in the slightest.
 :+:RG:1
 :=:J:jordan_whistle
-:?:Jordan: (sadly chuckles.) Well I don’t want to unload my bullshit on you.
+:?:Jordan: (Whistles) Well I don’t want to unload my bullshit on you.
 	You don't trust me?
 	I'm not going anywhere.:NotGoing
 :D:Player: We’ve been friends for so long, and you still don’t trust me to give advice?
@@ -402,7 +409,7 @@ Continue:D:Player: I’m sorry if I pinched a nerve there.
 :+:re:1
 :>:Continue
 NotGoing:D:Player: I’m here aren't I? I’m not going anywhere.
-:=:J:jordan_hesitate
+:=:J:jordan_hesitate 
 :D:Jordan: I mean I’ve been the other side, listening to people rant. It sucks. I'll just say it. It sucks listening to people rant all the time. 
 :D:Player: Maybe. But I’d be willing to listen. 
 :D:Jordan: Seriously?
