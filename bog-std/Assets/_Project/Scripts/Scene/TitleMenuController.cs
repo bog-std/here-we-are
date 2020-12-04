@@ -8,6 +8,7 @@ using UnityEngine.Windows.WebCam;
 public class TitleMenuController : MonoBehaviour
 {
     [SerializeField] private DialogueManager _dialogueManager;
+    [SerializeField] private PhoneHubController _phoneHub;   
 
     private GameObject _grpMenuButtons;
     private Image _imgTitle;
@@ -18,6 +19,9 @@ public class TitleMenuController : MonoBehaviour
     {
         if(_dialogueManager == null)
             _dialogueManager = FindObjectOfType<DialogueManager>();
+
+        if (_phoneHub == null)
+            _phoneHub = FindObjectOfType<PhoneHubController>();
 
         _grpMenuButtons = transform.Find("MenuButtons").gameObject;
         _imgTitle = transform.Find("TitleLogo").GetComponent<Image>();
@@ -37,11 +41,22 @@ public class TitleMenuController : MonoBehaviour
 
     public void Start_Clicked()
     {
+        _phoneHub.ResetState();
+
         // Fade out title and buttons
         Hide();
 
         // Trigger the script
         _dialogueManager.DisplayNext();
+    }
+
+    public void SceneSelect_Clicked()
+    {
+        Hide();
+
+        _phoneHub.UnlockAll();
+        _phoneHub.DisplayMemorySelectionScreen();
+        _phoneHub.DisplayPhone();
     }
 
     public void Credits_Clicked()
