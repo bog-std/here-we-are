@@ -235,7 +235,11 @@ using UnityEngine;
             private static bool CheckAudio(string name)
             {
                 // Get audio tracks from LayeredScene
-                if (_availableAudio.Count == 0) _availableAudio = FindObjectOfType<LayeredScene>().GetComponent<LayeredScene>().audioTrackNames;
+                if (_availableAudio.Count == 0)
+                {
+                    _availableAudio = FindObjectOfType<LayeredScene>().GetComponent<LayeredScene>().audioTrackNames;
+                    _availableAudio.Add("all");
+                }
 
                 // See if audio track is listed and log error if not
                 bool hasTrack = _availableAudio.Contains(name);
