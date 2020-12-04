@@ -204,12 +204,11 @@ Together:D:Scott: You are? Uh, forget I said anything then.
 :+:r:3
 :>:Continue
 
-
 Support:D:Player: I’d support you. 
 :D:Scott: What?
 :?:Scott: Really?
 	Might as well.
-	No! Dude, imagine me asking out Sarah. How would you feel about that?:Ask
+	Bruh!:Ask
 
 :D:Player: 	Yeah, why not? Like you said, you never know until you try, and what’s the worse she could say?
 :D:Scott: Probably ‘no’. 
@@ -218,8 +217,8 @@ Support:D:Player: I’d support you.
 :+:R:2
 :>:Continue
 
-
-Ask:D:Scott: I mean I’d be fine with it.
+Ask:D:Player: No! Dude, imagine me asking out Sarah. How would you feel about that?
+:D:Scott: I mean I’d be fine with it.
 :D:Player: Okay, sure. But then what if you break up? What if something stupid happens and your relationship just falls apart?
 :D:Player: I know I’m not supposed to be saying this to you, but if I don’t now, then you’ll be asking yourself later. Or worse, Jordan asks you. 
 :D:Scott: .[wait 1].[wait 1].
@@ -239,9 +238,11 @@ Continue:D::(Sarah and Jordan rejoin the Player and Scott at the end of the boar
 :D:Jordan: You’d think a rock could be pretty if it talked to you first.
 :D:Scott: Damn, that’s cold.
 :D:Player: Forget roasting him Jo. You just immolated him.
-:D:Scott: Naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah, it’s fine. It’s like when you have to melt the sugar on crème brulee. Just better in every way. 
+:D:Scott: Naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah.
+:D:Scott: it’s fine.
+:D:Scott: It’s like when you have to melt the sugar on crème brulee. Just better in every way. 
 :D:Jordan: You know I’m not a big fan of sweets Scotty boy. 
-:D::For a little while, the four just watch the sunset together. Despite the events that happened in the morning, the four are still great friends, and the true acknowledgement to that friendship is the ability to stare at the setting sun together.
+:D:: .[wait 1].[Wait 1].
 :D:Player: This is nice, isn’t it?
 :D:All: Oh yeah. Yeah.
 :D:Player: Times like this I forget life isn’t all about cramming for exams.
@@ -256,7 +257,6 @@ Continue:D::(Sarah and Jordan rejoin the Player and Scott at the end of the boar
 :+:E:1
 :>:Continue
 
-
 Present:D:Player: The present is the only thing that matters
 :D:Scott: Yeah. Just live for the moment.
 :D:Jordan: Isn’t that an irresponsible way to think? 
@@ -270,8 +270,6 @@ Present:D:Player: The present is the only thing that matters
 :+:e:1
 
 Continue:D:Scott: Is that a boat out there?
-:D::During the friends’ discussion, a steamboat paddled out into the water and parked itself gently amidst the calm tide.
-:D::Without warning, a streak of light rockets from the highest deck, and explodes into a shower of blue sparks.
 :D::Before long, dozens of fireworks are bursting in the air, and there are even fireworks being launched from the beach on either side of the boardwalk.
 
 :D:Jordan: No matter what happens, we’ll stay friends right?
