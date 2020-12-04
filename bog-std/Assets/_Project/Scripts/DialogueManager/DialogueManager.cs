@@ -22,6 +22,7 @@ namespace Assets._Project.Scripts.DialogueManager
         // Injected from Editor
         [SerializeField] private AudioClip selectSound;
         [SerializeField] private AudioClip dialogueSound;
+        [SerializeField] private AudioClip carCrashSound;
         [SerializeField] private GameObject dialoguePrefab;
         [SerializeField] private GameObject optionPrefab;
         [SerializeField] private float textSpeed = 1f;
@@ -479,6 +480,14 @@ namespace Assets._Project.Scripts.DialogueManager
                 
                 case Command.Audio:
                     SetAudio(dialogue.name, dialogue.magnitude);
+                    break;
+
+                case Command.Notification:
+                    _audioSource.PlayOneShot(_notification.NotificationSound);
+                    break;
+
+                case Command.CarCrash:
+                    _audioSource.PlayOneShot(carCrashSound);
                     break;
                     
             }

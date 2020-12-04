@@ -188,7 +188,17 @@ using UnityEngine;
                                 dialogue.magnitude = Convert.ToSingle(split[3]);
                                 CheckAudio(dialogue.name);
                                 break;
-                            
+
+                            case "!":
+                                dialogue.command = Command.Notification;
+                                dialogue.tag = split[0];
+                                break;
+
+                            case "$":
+                                dialogue.command = Command.CarCrash;
+                                dialogue.tag = split[0];
+                                break;
+
                             default:
                                 throw new Exception("Bad Token");
                         }
