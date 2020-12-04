@@ -373,6 +373,24 @@ namespace Assets._Project.Scripts.DialogueManager
             ProcessCommand(dialogue);
         }
 
+        public void ReturnToMenu()
+        {
+            // Clear & Reset Scene
+            isWaiting = false;
+            readingText = false;
+            StopAllCoroutines();
+            scene.ResetLayers();
+            Destroy(currDialogueBox);
+            _phoneHub.HidePhone();
+            _notification.HideNotification();
+            _titleMenu.Hide();
+            ClearChoices();
+
+            // Eradicate the script stack
+            txtStack.Clear();
+            DisplayNext();
+        } 
+
         private void RequestDialogue(TextAsset script)
         {
             currentTxt = script;

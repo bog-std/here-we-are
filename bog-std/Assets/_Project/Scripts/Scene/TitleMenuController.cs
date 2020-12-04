@@ -37,7 +37,7 @@ public class TitleMenuController : MonoBehaviour
     public void Start_Clicked()
     {
         // Fade out title and buttons
-        gameObject.SetActive(false);
+        Hide();
 
         // Trigger the script
         _dialogueManager.DisplayNext();
@@ -45,7 +45,7 @@ public class TitleMenuController : MonoBehaviour
 
     public void Credits_Clicked()
     {
-        gameObject.SetActive(false);
+        Hide();
         _dialogueManager.RollCredits();
     }
     

@@ -35,7 +35,8 @@ public class PauseMenuController : MonoBehaviour
 
     public void ReturnToMenu_Clicked()
     {
-        // Return to Menu
+        Hide();
+        _dialogueManager.ReturnToMenu();
     }
 
     public void QuitToDesktop_Clicked()
