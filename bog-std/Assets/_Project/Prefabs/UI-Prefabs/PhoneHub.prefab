@@ -1433,6 +1433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7fadecb491fab469588600c3bf35e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dialogueManager: {fileID: 0}
   featuredImages:
   - {fileID: 21300000, guid: 27a41c7417cfc59428db14fc06413fe6, type: 3}
   - {fileID: 21300000, guid: 491d87e3430f3d64bb7e1115228bd04e, type: 3}
@@ -1440,7 +1441,7 @@ MonoBehaviour:
   featuredText:
   - Last Summer
   - Last Fall
-  - Idk when this happened
+  - Last Summer
   beachImages:
   - {fileID: 21300000, guid: 1714016f7b1698a438d05ef88507702e, type: 3}
   - {fileID: 0}

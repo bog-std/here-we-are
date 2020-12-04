@@ -646,4 +646,4 @@ Continue:D:Jordan: (checks her phone.)
 
 # (The waiter disappears, leaving the Player sitting alone in Café Honey Bear.)
 
-End:D:: The End.
+End:@:credits:0

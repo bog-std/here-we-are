@@ -22,6 +22,7 @@ namespace Assets._Project.Scripts.DialogueManager
         // Injected from Editor
         [SerializeField] private AudioClip selectSound;
         [SerializeField] private AudioClip dialogueSound;
+        [SerializeField] private AudioClip carCrashSound;
         [SerializeField] private GameObject dialoguePrefab;
         [SerializeField] private GameObject optionPrefab;
         [SerializeField] private float textSpeed = 1f;
@@ -33,6 +34,7 @@ namespace Assets._Project.Scripts.DialogueManager
 
         private AudioSource _audioSource;
 
+        private Dictionary<string, SceneState> _facts;
 
         private GameObject _currDialogueBox = null;
         private List<GameObject> _currChoices;
@@ -48,7 +50,8 @@ namespace Assets._Project.Scripts.DialogueManager
         private int _dialogueDistance = 0;
         private bool _hasStarted = false;
         private bool _isWaiting = false;
-
+        
+        public bool ThroughPhone = false;
         public bool IsActive = true;
 
         private TitleMenuController _titleMenu;
@@ -62,7 +65,8 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             _dialogueScript = new Queue<Dialogue>();
             _txtStack = new Stack<TextStackItem>();
-            _currChoices = new List<GameObject>();            
+            _currChoices = new List<GameObject>();
+            
         }
 
         public void Start()
@@ -437,7 +441,10 @@ namespace Assets._Project.Scripts.DialogueManager
             switch (dialogue.command)
             {
                 case Command.Skip:
-                    Seek(dialogue.tag);
+                    if (dialogue.name == String.Empty)
+                        Seek(dialogue.tag);
+                    else if (dialogue.name == "phone" && ThroughPhone == ((int) dialogue.magnitude == 1))
+                        Seek(dialogue.tag);
                     break;
                 
                 case Command.Increment:
@@ -451,7 +458,7 @@ namespace Assets._Project.Scripts.DialogueManager
                 
                 case Command.Script:
                     if (dialogue.name == "pop") PopDialogue();
-                    else PushDialogue(txtFiles.Find(a => a.name == dialogue.name), (int) dialogue.magnitude);
+                    else PushDialogue(GetScript(dialogue.name), (int) dialogue.magnitude);
                     break;
                 
                 case Command.Wait:
@@ -466,19 +473,31 @@ namespace Assets._Project.Scripts.DialogueManager
                     return;
 
                 case Command.Fact:
-                    _phoneHub.SetFact((Scene) Convert.ToUInt16(dialogue.name), (SceneState) Convert.ToUInt16(dialogue.magnitude));
+                    if (dialogue.name == "phone")
+                        ThroughPhone = (int) dialogue.magnitude > 0;
+                    else 
+                        _phoneHub.SetFact((Scene) Convert.ToUInt16(dialogue.name), (SceneState) Convert.ToUInt16(dialogue.magnitude));
                     break;
 
                 case Command.Messages:
                     _phoneHub.DisplayMessages();
                     _notification.DisplayMessagesNotification();
                     return;
+                
                 case Command.Menu:
                     _titleMenu.Display();
                     return;
                 
                 case Command.Audio:
                     SetAudio(dialogue.name, dialogue.magnitude);
+                    break;
+
+                case Command.Notification:
+                    _audioSource.PlayOneShot(_notification.NotificationSound);
+                    break;
+
+                case Command.CarCrash:
+                    _audioSource.PlayOneShot(carCrashSound);
                     break;
                     
             }
@@ -513,6 +532,11 @@ namespace Assets._Project.Scripts.DialogueManager
             RequestDialogue(script);
             _txtStack.Push(new TextStackItem(returnOffset >= 0 ? returnOffset : _dialogueDistance, script));
             _dialogueDistance = 0;
+        }
+
+        public TextAsset GetScript(string name)
+        {
+            return txtFiles.Find(a => a.name == name);
         }
         
         public void ProcessChoice(Choice choice)

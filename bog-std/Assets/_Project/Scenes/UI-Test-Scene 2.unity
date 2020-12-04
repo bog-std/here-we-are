@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -267,11 +267,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectSound: {fileID: 8300000, guid: 8e462d0bf44d6a8458b866925e9c1fc5, type: 3}
   dialogueSound: {fileID: 8300000, guid: f55f5991f45875f419bb96af7691deee, type: 3}
+  carCrashSound: {fileID: 8300000, guid: 9c4adff8abffab44e803e1972667e899, type: 3}
   dialoguePrefab: {fileID: 1550641668321752481, guid: 661931f7aec4d524490abf6c34eb2220,
     type: 3}
   optionPrefab: {fileID: 1550641668321752481, guid: 39b9ea5e6a6365140985ac0762af5c4a,
     type: 3}
-  textSpeed: 48
+  textSpeed: 64
   useParser: 1
   txtFiles:
   - {fileID: 4900000, guid: 539b797a1f0968e418dfda33ec1d9a37, type: 3}
@@ -4009,6 +4010,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -1836
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939457661723585618, guid: cb64486c514d12e46be0e65192bd3306,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939457661723585618, guid: cb64486c514d12e46be0e65192bd3306,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939457661723585618, guid: cb64486c514d12e46be0e65192bd3306,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8939457661723585618, guid: cb64486c514d12e46be0e65192bd3306,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb64486c514d12e46be0e65192bd3306, type: 3}

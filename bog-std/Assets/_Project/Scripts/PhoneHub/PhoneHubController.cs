@@ -14,7 +14,8 @@ public enum Scene : ushort
 {
     Beach,
     Garden,
-    Rooftop
+    Rooftop,
+    None
 }
 
 public enum SceneState : ushort
@@ -35,6 +36,7 @@ public class PhoneHubController : MonoBehaviour
 
     private int currMessageIndex = 0;
     private Scene currFeatured = Scene.Beach;
+    private Scene enterMemory = Scene.None;
 
     private SceneState BeachState = SceneState.Unlocked;
     private SceneState GardenState = SceneState.Locked;
@@ -153,6 +155,30 @@ public class PhoneHubController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.R)) { UpdateDisplay(); }
     }
 
+    public void ResetState()
+    {
+        currMessageIndex = 0;
+        currFeatured = Scene.Beach;
+        enterMemory = Scene.None;
+
+        BeachState = SceneState.Unlocked;
+        GardenState = SceneState.Locked;
+        RooftopState = SceneState.Locked;
+
+        HidePhone();
+        UpdateDisplay();
+    }
+
+    public void UnlockAll()
+    {
+        currFeatured = Scene.Beach;
+
+        BeachState = SceneState.Unlocked;
+        GardenState = SceneState.Unlocked;
+        RooftopState = SceneState.Unlocked;
+        UpdateDisplay();
+    }
+
     #region Updating Phone Display
 
     public void SetFact(Scene scene, SceneState state)
@@ -176,6 +202,12 @@ public class PhoneHubController : MonoBehaviour
     // Update the display according to the facts 
     public void UpdateDisplay()
     {
+        // Determine currFeatued
+        if (RooftopState == SceneState.Unlocked)
+            currFeatured = Scene.Rooftop;
+        else if (GardenState == SceneState.Unlocked)
+            currFeatured = Scene.Garden;
+
         // Set featured image
         _imgFeatured.sprite = featuredImages[(int) currFeatured];
         _txtFeatured.text = "Memory from\n" + featuredText[(int) currFeatured];
@@ -230,6 +262,8 @@ public class PhoneHubController : MonoBehaviour
         _grpMemorySelection.SetActive(false);
         _grpMessageScreen.SetActive(false);
         _grpMemoryEntrance.SetActive(true);
+
+        enterMemory = memory;
 
         SetHomeButtonActive(true);
 
@@ -294,18 +328,23 @@ public class PhoneHubController : MonoBehaviour
     {
         Debug.Log("Enter Memory clicked!");
 
-        switch (currFeatured)
+        switch (enterMemory)
         {
             case Scene.Beach:
-                // TODO: Go to beach scene
-                break;
-            case Scene.Garden:
-                // TODO: Go to garden scene
+                _dialogueManager.PushDialogue(_dialogueManager.GetScript("beach"));
                 break;
             case Scene.Rooftop:
-                // TODO: Go to rooftop scene
+                _dialogueManager.PushDialogue(_dialogueManager.GetScript("roof"));
                 break;
+            case Scene.Garden:
+                _dialogueManager.PushDialogue(_dialogueManager.GetScript("garden"));
+                break;
+            case Scene.None:
+                return;
         }
+
+        HidePhone();
+        _dialogueManager.DisplayNext();
     }
 
     public void AdvanceMessage_Clicked()
