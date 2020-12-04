@@ -298,7 +298,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 81ca4f08089da6f40aa5dc653e0fe4b5, type: 3}
   - {fileID: 4900000, guid: 836bbecde096b3d44bc5fd9b3ddd6278, type: 3}
   - {fileID: 4900000, guid: 948eab4c6865fa74394b724a7c3a660e, type: 3}
-  currentTxt: {fileID: 0}
+  _currentTxt: {fileID: 0}
   scene: {fileID: 0}
   IsActive: 1
 --- !u!4 &420815192
@@ -3352,6 +3352,18 @@ PrefabInstance:
       propertyPath: audioTrackNames.Array.data[5]
       value: hospital
       objectReference: {fileID: 0}
+    - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
+        type: 3}
+      propertyPath: layers.Array.data[4].levels.Array.data[14]
+      value: 
+      objectReference: {fileID: 21300000, guid: 150672b0983977642b975c5c7a719b03,
+        type: 3}
+    - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
+        type: 3}
+      propertyPath: layers.Array.data[4].levels.Array.data[15]
+      value: 
+      objectReference: {fileID: 21300000, guid: e987ad46953d850468dcedbc7cb0d2a9,
+        type: 3}
     - target: {fileID: 5538911950561593982, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: m_LocalPosition.x

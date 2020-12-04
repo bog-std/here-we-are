@@ -1245,6 +1245,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-3970218173099212933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ProgressDemo/credits
+  m_EditorClassIdentifier: 
+  Name: credits
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-3704463052346797938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1347,6 +1364,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &-2953856246878310042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ProgressDemo/cafe
+  m_EditorClassIdentifier: 
+  Name: cafe
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-2863906009233181674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,6 +1504,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &-2403606609523258975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DemoTrack/Piano
+  m_EditorClassIdentifier: 
+  Name: Piano
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-2295164027128839811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1658,17 +1709,17 @@ MonoBehaviour:
   Path: event:/ProgressDemo
   guid: 471e69f0883268468c26590869d2708c
   Banks:
-  - {fileID: -6349350118233674331}
+  - {fileID: 3959125555995786973}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 2755342364186499897}
-  - {fileID: 7554738785437214721}
-  - {fileID: -4876344721003764392}
-  - {fileID: 8615338691661942115}
-  - {fileID: -5925747529299174435}
-  - {fileID: 7786016122294354102}
+  - {fileID: -449252820149261878}
+  - {fileID: -2953856246878310042}
+  - {fileID: -3970218173099212933}
+  - {fileID: 9084084908113542445}
+  - {fileID: 2386279323054917874}
+  - {fileID: 2427456225559852855}
   MinDistance: 0
   MaxDistance: 0
   Length: 79229
@@ -1835,6 +1886,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-449252820149261878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ProgressDemo/hospital
+  m_EditorClassIdentifier: 
+  Name: hospital
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-300966181439957215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1852,14 +1920,14 @@ MonoBehaviour:
   Banks:
   - {fileID: -1770053229873723830}
   - {fileID: -265952715653211125}
-  - {fileID: -6349350118233674331}
+  - {fileID: 3959125555995786973}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -807824659546763027}
-  - {fileID: 745799686458556440}
-  - {fileID: 7485793052882857873}
+  - {fileID: -2403606609523258975}
+  - {fileID: 4433629946073986415}
+  - {fileID: 4736302391919010356}
   MinDistance: 0
   MaxDistance: 0
   Length: 4800
@@ -1946,16 +2014,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 2120641358334568182}
-  - {fileID: -6349350118233674331}
+  - {fileID: 3959125555995786973}
   EditorEvents:
   - {fileID: -300966181439957215}
   - {fileID: -1490183995114340305}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -6349350118233674331}
+  - {fileID: 3959125555995786973}
   StringsBanks:
   - {fileID: 2120641358334568182}
-  stringsBankWriteTime: 637426313131155441
+  stringsBankWriteTime: 637426400984033590
   cacheVersion: 3
 --- !u!114 &61774544305161360
 MonoBehaviour:
@@ -2302,7 +2370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMOD/DemoTrack3/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637426313131155441
+  lastModified: 637426400984033590
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -2361,6 +2429,58 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &2386279323054917874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ProgressDemo/party
+  m_EditorClassIdentifier: 
+  Name: party
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &2425761251997647145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/DemoTrack3/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637402161206122738
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &2427456225559852855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ProgressDemo/beach
+  m_EditorClassIdentifier: 
+  Name: beach
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &2440480981043553092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2624,6 +2744,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &3959125555995786973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/DemoTrack3/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637426400983958645
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &3960605748948289185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2677,6 +2815,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &4433629946073986415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DemoTrack/Synth
+  m_EditorClassIdentifier: 
+  Name: Synth
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &4511991872821570952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2711,6 +2866,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &4736302391919010356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DemoTrack/Drums
+  m_EditorClassIdentifier: 
+  Name: Drums
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &4768161412070641980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3016,6 +3188,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &6261082482721515242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DemoTrack/Piano
+  m_EditorClassIdentifier: 
+  Name: Piano
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &6341077662385952245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3067,6 +3256,23 @@ MonoBehaviour:
   lastModified: 637402127101749961
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &6504822047967626540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DemoTrack/Synth
+  m_EditorClassIdentifier: 
+  Name: Synth
+  Min: 0
+  Max: 2
+  Default: 0
   Exists: 0
 --- !u!114 &6544445986231898420
 MonoBehaviour:
@@ -3189,6 +3395,23 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &7217627188448022162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DemoTrack/Drums
+  m_EditorClassIdentifier: 
+  Name: Drums
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &7387023324116012231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3405,6 +3628,40 @@ MonoBehaviour:
   m_Name: parameter:/DemoTrack/Synth
   m_EditorClassIdentifier: 
   Name: Synth
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &9084084908113542445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ProgressDemo/garden
+  m_EditorClassIdentifier: 
+  Name: garden
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &9158549303170029502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ProgressDemo/Track
+  m_EditorClassIdentifier: 
+  Name: Track
   Min: 0
   Max: 2
   Default: 0
