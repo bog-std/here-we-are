@@ -14,7 +14,9 @@ public enum Command : ushort
     Fact,
     Messages,
     Menu,
-    Audio
+    Audio,
+    Notification,
+    CarCrash
 };
 
 namespace Assets._Project.Scripts.DialogueData
