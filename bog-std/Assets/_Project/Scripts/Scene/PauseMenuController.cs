@@ -6,13 +6,15 @@ using UnityEngine;
 public class PauseMenuController : MonoBehaviour
 {
 
-    private DialogueManager _dialogueManager;
+    [SerializeField] private DialogueManager _dialogueManager;
+
     private TitleMenuController _titleMenu;
 
     // Start is called before the first frame update
     void Start()
     {
-        _dialogueManager = FindObjectOfType<DialogueManager>();
+        if(_dialogueManager == null)
+            _dialogueManager = FindObjectOfType<DialogueManager>();
         _titleMenu = FindObjectOfType<TitleMenuController>();
     }
 

@@ -62,9 +62,7 @@ namespace Assets._Project.Scripts.DialogueManager
         {
             _dialogueScript = new Queue<Dialogue>();
             _txtStack = new Stack<TextStackItem>();
-            _currChoices = new List<GameObject>();
-
-            DisplayNext();
+            _currChoices = new List<GameObject>();            
         }
 
         public void Start()
@@ -81,6 +79,8 @@ namespace Assets._Project.Scripts.DialogueManager
             _titleMenu.Hide();
             _pauseMenu.Hide();
             _notification.HideNotification();
+
+            DisplayNext();
         }
 
         public void Update()
