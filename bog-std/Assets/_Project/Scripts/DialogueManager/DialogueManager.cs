@@ -469,7 +469,7 @@ namespace Assets._Project.Scripts.DialogueManager
                 
                 case Command.Script:
                     if (dialogue.name == "pop") PopDialogue();
-                    else PushDialogue(txtFiles.Find(a => a.name == dialogue.name), (int) dialogue.magnitude);
+                    else PushDialogue(GetScript(dialogue.name), (int) dialogue.magnitude);
                     break;
                 
                 case Command.Wait:
@@ -541,6 +541,11 @@ namespace Assets._Project.Scripts.DialogueManager
             RequestDialogue(script);
             _txtStack.Push(new TextStackItem(returnOffset >= 0 ? returnOffset : _dialogueDistance, script));
             _dialogueDistance = 0;
+        }
+
+        public TextAsset GetScript(string name)
+        {
+            return txtFiles.Find(a => a.name == name);
         }
         
         public void ProcessChoice(Choice choice)
