@@ -50,7 +50,8 @@ namespace Assets._Project.Scripts.DialogueManager
         private int _dialogueDistance = 0;
         private bool _hasStarted = false;
         private bool _isWaiting = false;
-
+        
+        public bool ThroughPhone = false;
         public bool IsActive = true;
 
         private TitleMenuController _titleMenu;
@@ -65,14 +66,6 @@ namespace Assets._Project.Scripts.DialogueManager
             _dialogueScript = new Queue<Dialogue>();
             _txtStack = new Stack<TextStackItem>();
             _currChoices = new List<GameObject>();
-            
-            _facts = new Dictionary<string, SceneState>()
-            {
-                {"phone", SceneState.Locked},
-                {"beach", SceneState.Locked},
-                {"party", SceneState.Locked},
-                {"garden", SceneState.Locked},
-            };
             
         }
 
@@ -449,13 +442,9 @@ namespace Assets._Project.Scripts.DialogueManager
             {
                 case Command.Skip:
                     if (dialogue.name == String.Empty)
-                    {
                         Seek(dialogue.tag);
-                    } else 
-                    {
-                        // if ()
-                        
-                    }
+                    else if (dialogue.name == "phone" && ThroughPhone == ((int) dialogue.magnitude == 1))
+                        Seek(dialogue.tag);
                     break;
                 
                 case Command.Increment:
@@ -484,8 +473,10 @@ namespace Assets._Project.Scripts.DialogueManager
                     return;
 
                 case Command.Fact:
-                    
-                    _phoneHub.SetFact((Scene) Convert.ToUInt16(dialogue.name), (SceneState) Convert.ToUInt16(dialogue.magnitude));
+                    if (dialogue.name == "phone")
+                        ThroughPhone = (int) dialogue.magnitude > 0;
+                    else 
+                        _phoneHub.SetFact((Scene) Convert.ToUInt16(dialogue.name), (SceneState) Convert.ToUInt16(dialogue.magnitude));
                     break;
 
                 case Command.Messages:

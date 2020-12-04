@@ -47,7 +47,8 @@ public class PhoneHubController : MonoBehaviour
     [SerializeField] public Sprite[] rooftopImages;
     [SerializeField] public List<Sprite> sceneImages;
     [SerializeField] public List<Sprite> messageImages;
-
+    [SerializeField] private GameObject dialogueManager;
+    
     #endregion
 
     private Animator _animator;
@@ -293,6 +294,8 @@ public class PhoneHubController : MonoBehaviour
     public void EnterMemory_Clicked()
     {
         Debug.Log("Enter Memory clicked!");
+
+        dialogueManager.GetComponent<DialogueManager>().ThroughPhone = true;
 
         switch (currFeatured)
         {
