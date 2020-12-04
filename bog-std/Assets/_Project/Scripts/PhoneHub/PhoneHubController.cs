@@ -202,6 +202,12 @@ public class PhoneHubController : MonoBehaviour
     // Update the display according to the facts 
     public void UpdateDisplay()
     {
+        // Determine currFeatued
+        if (RooftopState == SceneState.Unlocked)
+            currFeatured = Scene.Rooftop;
+        else if (GardenState == SceneState.Unlocked)
+            currFeatured = Scene.Garden;
+
         // Set featured image
         _imgFeatured.sprite = featuredImages[(int) currFeatured];
         _txtFeatured.text = "Memory from\n" + featuredText[(int) currFeatured];
