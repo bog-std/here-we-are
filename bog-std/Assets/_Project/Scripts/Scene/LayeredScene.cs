@@ -164,8 +164,6 @@ namespace _Project.Scripts.Scene
             {
                 _audioStates[name].target = magnitude;
             }
-            
-        
             else Debug.LogError("Audio track" + name + "does not exist.");
         }
 
