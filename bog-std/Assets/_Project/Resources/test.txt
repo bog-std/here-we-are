@@ -1,5 +1,7 @@
+:A:title:1
 :W:3
 :=:S:title
 :M:
 
+:A:title:0
 :@:cafe1:0
