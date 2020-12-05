@@ -68,9 +68,8 @@ Nothing:D:: You return to your previous spot, sad that you didn’t find any ice
 
 Continue:D:Scott: Told you we’d find them here.
 :=:1:icecream_scott_neutral
-:D:Sarah: You guys picked a great spot. 
 :=:2:icecream_sarah_giggle
-:?:Player: Did you buy us some ice cream?
+:?:Sarah: You guys picked a great spot. 
 	Notice cones in hand.
 :D:Player:Did you buy us some ice cream?
 :D:Scott: Sure did. Two vanilla cones with extra sprinkles for you two.
