@@ -376,7 +376,6 @@ Continue:D:Player: Haven’t we talked about this before?
 :D:Player: I remember quite a bit of it.
 
 # TEST
-:~:2:0
 sfdbh:@:roof
 :=:J:jordan_neutral
 :>:Continue
@@ -388,6 +387,7 @@ Drank:D:Player: Just how much I drank.
 :!:
 :D:Jordan: You wanna take that?
 :D:Player: Just give me a moment.
+:~:2:0
 :*:
 :+:r:3
 
@@ -498,7 +498,6 @@ You:D:Player: If I were you, I’d do everything I could do to see him.
 
 Worse:D:Player: Is it worse than when you first told me?
 :D:Jordan: Better, but not by much.
-:~:2:0
 hjgfk:@:garden
 :=:J:jordan_neutral
 :>:Continue
@@ -507,6 +506,7 @@ GARDEN:!:
 :D:Jordan: Who’s been calling you?
 :D:Player: Just give me a moment.
 
+:~:1:0
 :*:
 :=:J:jordan_neutral
 :D:Jordan: You have been getting a lot of those... Notifications?
