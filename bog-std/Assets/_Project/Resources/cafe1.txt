@@ -161,12 +161,12 @@ asfdds:@:beach
 BEACH:=:J:jordan_reminiscent
 :D:Jordan: I wish we could go back to the beach.
 :D:Player: The one we went to during the summer of our college years? That brings me back. 
-:J:jordan_certain
+:=:J:jordan_certain
 :D:Jordan: Right? It was so hot, but that day was so much fun.
 :D:Player: If I recall correctly, you hated every second of that day. 
 :D:Jordan: Maybe so, but the fireworks off the beach were fantastic.
 :D:Player: Yes, they were. Yes, they were.
-:J:jordan_neutral
+:=:J:jordan_neutral
 :D:Jordan: Hey, do you mind if I go to the washroom real quick? 
 :D:Player: Sure thing.
 :=:J:none
