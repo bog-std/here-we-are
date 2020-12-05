@@ -2,6 +2,8 @@
 :A:party:2
 :=:S:shadow_party
 
+:~:2:2
+
 :W:5
 
 :D:Player: Who are all these people?
