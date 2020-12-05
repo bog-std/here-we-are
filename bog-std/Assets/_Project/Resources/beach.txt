@@ -2,7 +2,8 @@
 :A:beach:1.2
 :=:S:beach
 :=:J:beach_jordan_neutral
-
+scotts_moment_alone
+boardwalk_looking_up
 :~:0:2
 
 :D:Player: Good day to be at the beach.
@@ -151,9 +152,13 @@ Continue:D:Player: So, you know when that fireworks show is supposed to start?
 :D:Jordan: I knew there was a reason I loved you the most between you and Scott.
 :D:Sarah: Oh, I love you too girl. 
 :D:Scott: What about us?
-:D:Jordan: Well I love you both too. Just love Sarah more. 
-:D:: The crew finishes dinner and stroll down the boardwalk to the end.
-:D:: Sarah manages to nab Jordan and they start snapping photos for Instagram or whatever against the sunset sky. Mostly it’s Jordan taking pictures of Sarah.
+:D:Jordan: Well I love you both too. Just love Sarah more.
+:D:Sarah: Help me take some pictures Jordan!
+:D:Jordan: So you can brag to your Instagram followers?
+:D:Sarah: What else?
+
+:=:S:scott_moment_alone
+
 :D:Scott: What do you think about Jordan?
 :D:Player: What do you mean by that?
 :D:Scott: She’s cute don’t you think? I heard she turns down guys left, right and center, and that her standards are super high. That’s what Sarah tells me anyways. 
@@ -234,7 +239,7 @@ Ask:D:Player: No! Dude, imagine me asking out Sarah. How would you feel about th
 :+:r:3
 :>:Continue
 
-Continue:D::(Sarah and Jordan rejoin the Player and Scott at the end of the boardwalk.)
+Continue:=:S:Sunset
 :D:Sarah: It’s beautiful isn’t it?
 :D:Player: Beautiful enough to put on Instagram four hundred times? 
 :D:Sarah: Better than that. Not as pretty as you though.
@@ -275,6 +280,8 @@ Present:D:Player: The present is the only thing that matters
 :D:Player: Amen to that. 
 :+:e:1
 
+:=:S:boardwalk_looking_up
+
 Continue:D:Scott: Is that a boat out there?
 :D::Before long, dozens of fireworks are bursting in the air, and there are even fireworks being launched from the beach on either side of the boardwalk.
 
@@ -283,7 +290,6 @@ Continue:D:Scott: Is that a boat out there?
 :=:3:f3:1
 :=:3:f4:1
 :=:3:f5:1
-:=:3:f6:1
 :=:3:none
 :D:Jordan: No matter what happens, we’ll stay friends right?
 

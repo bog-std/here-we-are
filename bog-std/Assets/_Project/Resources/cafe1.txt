@@ -22,7 +22,7 @@
 :D:Jordan: It’s fine, it’s fine.[wait 1] I managed to grab a cup of coffee before you got here.
 :?:Player: That's good.[wait 1]
 	Can I order?
-	*Offer Jordan a refill*:Another
+	Offer Jordan a refill:Another
 :D:Player: You mind if I order something?
 :>:Continue
 Another:D:Player: Need another cup? I was thinking about ordering something.
@@ -38,7 +38,7 @@ Continue:D:Jordan: By all means.
 :>:Continue
 Refill:D:Player: A cup of coffee for me, and a refill for her if you would be so kind.
 :+:R:1
-:?:Waiter: Sure thing, is there anything else I can get for you at the moment?
+:?:Waiter: Sure thing. is there anything else I can get for you at the moment?
 	No thanks.
 	What's on special?:Special
 :D:Player: No that should be it.
@@ -311,12 +311,12 @@ Continue:=:J:jordan_shy
 HeSay:D:Player: What did he say when he asked you out?
 :?:Jordan: Oh, let me see.[wait 1] Something along the lines of “I find you really pretty, so would you go on a date with me?”
 	That's it?
-	I'm glad you said no.:Glad
+	Dodged a bullet!:Glad
 :D:Player: That's it?
 :D:Jordan: Yup. Didn’t even open with a smooth or tacky pick-up line. Just went straight for it.
 :D:Player: But could you really expect him to do anything else?
 :D:Jordan: Not at all. (chuckles to herself and takes a sip of coffee.)
-Glad:D:Player: I'm just glad you said no.
+Glad:D:Player: I’m just glad you said no.
 :D:Jordan: What do you mean by that?
 :D:Player: You saw how Sarah and I turned out. Scott and I are barely hanging on to our friendship as is. 
 :D:Jordan: Ah.
@@ -621,7 +621,7 @@ NotOkay:D:Player: You’re not going to be okay, are you?
 Continue:D:Player: Don’t leave me.
 :?:Jordan: We don’t have a choice.
 	Please...
-	We really don't, do we?:Dont
+	Agree with Jordan:Dont
 :D:Player: We always have a choice.
 :+:e:1
 :=:J:jordan_neutral
@@ -648,28 +648,27 @@ Continue:D:Player: Is this what it feels like?
 :D:Player: The end. 
 :?:Jordan: Sure feels that way doesn't it? 
 	Yeah.
-	What do I do?:What
+	Now what?:What
 :D:Player: It does.
 :+:R:1
 :+:E:2
 :>:Continue
 What:D:Player: What do I do?
 :+:rg:2
-Continue:D:Jordan: (checks her phone.)
-:D:Jordan: I gotta take this. If you need me, I’ll be right outside. 
-:D:Jordan: (She stands to leave, leaving the player alone at the table and the scene they have created for themselves.)
-:D:Jordan: (Somewhere along the line, Café Honey Bear has changed, though it’s impossible to tell what it once was.)
+
+Continue:=:J:jordan_neutral
+:_:
+:D:Jordan: I gotta take this. If you need me, I’ll be right outside.
+:=:J:none
 :?:Player:...
 	Go after Jordan.
 	Order more coffee.:Coffee
 
-# player leaves the cafe
+:D:Player: Hey, wait! Don’t leave me here!
 :+:GER:3
 :>:End
 
-# (The waiter from earlier approaches the table.)
-
-:D:Waiter: Anything else I can get you?
+Coffee:D:Waiter: Anything else I can get you?
 :D:Player: Another cup of coffee please. And, if you could, add some milk and sugar to it.
 :D:Waiter: Of course. 
 :+:ger:3
