@@ -120,13 +120,14 @@ Continue:D:Player: What about you? How’ve you been?
 :D:Player: Aww did you miss me that much?
 
 :?:Jordan: Y’know, I kinda did.
-	Only a little bit?:Kinda
+	Kinda?
 	I'm sorry...:Sorry
 :D:Player: Only a little bit?
 :+:r:1
 :D:Jordan: Yes, only kinda. It’s what you get for barely calling or texting.
 :D:Player: I guess birthday messages have gone out of style, haven’t they?
 :D:Jordan: They did. Ten years ago.
+:+:r:1
 :>:Continue
 
 Sorry:D:Player: I'm sorry I haven't been in touch as of late. Things have just been a rollercoaster.
