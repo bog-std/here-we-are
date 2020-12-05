@@ -631,8 +631,8 @@ Continue:D:Player: Don’t leave me.
 
 :D:Player: .[wait 1].[wait 1].
 :D:Player: Not this one.
-:+:EG:1
 :D:Jordan: (smiles quietly.)
+:+:EG:1
 
 :>:Continue
 WhyNot:D:Player: Why not? There's always a choice!
