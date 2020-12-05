@@ -156,9 +156,10 @@ namespace _Project.Scripts.Scene
 
         public void SetAudio(string name, float magnitude)
         {
-            if (name == "all") foreach (var track in _audioStates)
+            if (name == "all") 
             {
-                track.Value.target = magnitude;
+                foreach (var track in _audioStates)
+                    track.Value.target = magnitude;
             }
             else if (_audioStates.ContainsKey(name))
             {

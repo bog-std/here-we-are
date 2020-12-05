@@ -18,4 +18,5 @@
 :=:S:here-we-are-title-inverted:5
 :=:S:black:1
 
+:A:credits:0
 :=:3:none

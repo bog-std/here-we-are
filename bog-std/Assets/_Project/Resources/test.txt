@@ -1,10 +1,11 @@
 
 :=:1:white
+:A:all:0
+:A:title:1
 :=:S:team-logo:3
 :=:1:none
 :=:S:logo:3
 
-:A:title:1
 :=:S:title
 :M:
 
