@@ -1,9 +1,7 @@
 #	Display Message Sequence
 :A:all:0
 :A:cafe:1
-:=:3:black
 :=:S:title
-:=:3:none
 :W:1
 :#:
 :W:0.5
