@@ -1,6 +1,8 @@
 :A:all:0
 :A:beach:1.2
+:=:3:black
 :=:S:beach
+:=:3:none
 :=:J:beach_jordan_neutral
 
 :~:0:2
@@ -118,6 +120,7 @@ Continue:=:1:icecream_scott_meh
 
 :=:J12:none
 :=:S:Sunset
+:=:3:none
 :A:beach:1.8
 
 :W:2
@@ -156,7 +159,9 @@ Continue:D:Player: So, you know when that fireworks show is supposed to start?
 :D:Jordan: So you can brag to your Instagram followers?
 :D:Sarah: What else?
 
+:=:3:black
 :=:S:scotts_moment_alone
+:=:3:none
 
 :W:2
 :D:Scott: What do you think about Jordan?
@@ -239,7 +244,9 @@ Ask:D:Player: No! Dude, imagine me asking out Sarah. How would you feel about th
 :+:r:3
 :>:Continue
 
+:=:3:black
 Continue:=:S:Sunset
+:=:3:none
 
 :W:1
 :D:Sarah: It’s beautiful isn’t it?
@@ -282,7 +289,9 @@ Present:D:Player: The present is the only thing that matters
 :D:Player: Amen to that. 
 :+:e:1
 
+:=:3:black
 :=:S:boardwalk_looking_up
+:=:3:none
 
 Continue:D:Scott: Is that a boat out there?
 :D::Before long, dozens of fireworks are bursting in the air, and there are even fireworks being launched from the beach on either side of the boardwalk.
