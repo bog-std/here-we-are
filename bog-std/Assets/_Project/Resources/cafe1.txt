@@ -329,7 +329,7 @@ Continue:D:Player: What about you? How’re your parents?
 :?:Jordan: You ever dreamed of flying?
 	Pardon?
 	Perhaps.:Thought
-	Never.:Never.
+	Never.:Never
 :D:Player: What like a plane?
 :D:Jordan: Like Superman. Fly faster than a speeding bullet.
 :D:Player: Or fast enough to turn back time?
@@ -631,14 +631,15 @@ Continue:D:Player: Don’t leave me.
 
 :D:Player: .[wait 1].[wait 1].
 :D:Player: Not this one.
-:D:Jordan: (smiles quietly.)
+:=:J:jordan_sad_smile
 :+:EG:1
 
 :>:Continue
 WhyNot:D:Player: Why not? There's always a choice!
+:=:J:jordan_sad_smile
 :+:eg:1
-:D:: (Jordan shakes her head, and smiles quietly.)
 :>:Continue
+
 Dont:D:Player: We really don’t, do we?
 :D:Jordan: No, we really don’t.
 :+:EG:2

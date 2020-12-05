@@ -1,8 +1,12 @@
 :A:all:0
 :A:party:2
 :=:S:shadow_party
-:=:1:party_scott
 
+:W:5
+
+:D:Player: Who are all these people?
+
+:=:1:party_scott
 
 :D:Player: Did you invite everyone to this party?
 :D:Scott: Just some friends.
