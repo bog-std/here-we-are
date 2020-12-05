@@ -156,14 +156,15 @@ namespace _Project.Scripts.Scene
 
         public void SetAudio(string name, float magnitude)
         {
-            if (_audioStates.ContainsKey(name))
-            {
-                _audioStates[name].target = magnitude;
-            }
-            else if (name == "all") foreach (var track in _audioStates)
+            if (name == "all") foreach (var track in _audioStates)
             {
                 track.Value.target = magnitude;
             }
+            else if (_audioStates.ContainsKey(name))
+            {
+                _audioStates[name].target = magnitude;
+            }
+            
         
             else Debug.LogError("Audio track" + name + "does not exist.");
         }
