@@ -122,6 +122,7 @@ Continue:D:Scott: We sure picked a hell of a time to come to the beach, didn’t
 :=:S:Sunset
 :A:beach:1.8
 
+:W:2
 :D:Player: What’s with the salad?
 :D:Sarah: Gotta watch my figure. A body like this takes work.
 :?:Scott: That’s not what you said when you ate a pint of ice cream all by yourself.
@@ -157,8 +158,9 @@ Continue:D:Player: So, you know when that fireworks show is supposed to start?
 :D:Jordan: So you can brag to your Instagram followers?
 :D:Sarah: What else?
 
-:=:S:scott_moment_alone
+:=:S:scotts_moment_alone
 
+:W:2
 :D:Scott: What do you think about Jordan?
 :D:Player: What do you mean by that?
 :D:Scott: She’s cute don’t you think? I heard she turns down guys left, right and center, and that her standards are super high. That’s what Sarah tells me anyways. 
@@ -239,7 +241,9 @@ Ask:D:Player: No! Dude, imagine me asking out Sarah. How would you feel about th
 :+:r:3
 :>:Continue
 
-Continue:=:S:Sunset
+Continue:=:S:sunset
+
+:W:1
 :D:Sarah: It’s beautiful isn’t it?
 :D:Player: Beautiful enough to put on Instagram four hundred times? 
 :D:Sarah: Better than that. Not as pretty as you though.
