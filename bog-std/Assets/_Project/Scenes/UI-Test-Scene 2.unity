@@ -1423,7 +1423,7 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: audioTrackNames.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -3635,6 +3635,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: f48248f77b5c1234daf70210bf123087,
         type: 3}
+    - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
+        type: 3}
+      propertyPath: audioTrackNames.Array.data[6]
+      value: title
+      objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593982, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: m_LocalPosition.x
