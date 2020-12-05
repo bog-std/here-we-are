@@ -124,7 +124,7 @@ Continue:D:Player: What about you? How’ve you been?
 	I'm sorry...:Sorry
 :D:Player: Only a little bit?
 :+:r:1
-:D:Jordan: Yes, only kinda. It’s what you get for barely calling or texting.
+Kinda:D:Jordan: Yes, only kinda. It’s what you get for barely calling or texting.
 :D:Player: I guess birthday messages have gone out of style, haven’t they?
 :D:Jordan: They did. Ten years ago.
 :+:r:1
@@ -175,6 +175,7 @@ BEACH:=:J:jordan_reminiscent
 :D:Jordan: Hey, do you mind if I go to the washroom real quick? 
 :D:Player: Sure thing.
 :=:J:none
+:W:2
 :*:
 :W:1
 :=:J:jordan_neutral
