@@ -239,7 +239,7 @@ Ask:D:Player: No! Dude, imagine me asking out Sarah. How would you feel about th
 :+:r:3
 :>:Continue
 
-Continue:=:S:Sunset
+Continue:=:S:sunset
 :D:Sarah: It’s beautiful isn’t it?
 :D:Player: Beautiful enough to put on Instagram four hundred times? 
 :D:Sarah: Better than that. Not as pretty as you though.
