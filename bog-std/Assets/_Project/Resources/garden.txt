@@ -265,8 +265,8 @@ Continue:D:Jordan: I’m glad you came out here.
 
 :>:skipend:phone:0
 :~:phone:0
-Jordan: Where do you keep going? 
-Player: Hm?
-Jordan: You just sort of, drift. 
-Player: The botanical garden you called me out to.
-Jordan: Ah. 
+:D:Jordan: Where do you keep going? 
+:D:Player: Hm?
+:D:Jordan: You just sort of, drift. 
+:D:Player: The botanical garden you called me out to.
+:D:Jordan: Ah. 

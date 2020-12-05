@@ -2,8 +2,8 @@
 :A:beach:1.2
 :=:S:beach
 :=:J:beach_jordan_neutral
-scotts_moment_alone
-boardwalk_looking_up
+#scotts_moment_alone
+#boardwalk_looking_up
 :~:0:2
 
 :D:Player: Good day to be at the beach.
