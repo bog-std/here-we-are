@@ -94,8 +94,8 @@ Demand:D:Player: Would you just hand them over? Else it’ll melt in your hands.
 :=:1:icecream_scott_neutral
 :+:R:2
 
-Continue:D:Scott: We sure picked a hell of a time to come to the beach, didn’t we?
-:=:1:icecream_scott_meh
+Continue:=:1:icecream_scott_meh
+:D:Scott: We sure picked a hell of a time to come to the beach, didn’t we?
 :D:Player: I’m just glad we got here before the afternoon. Place started crowding up as soon as we put up the umbrella. 
 :D:Jordan: You should’ve stuck around to see it. A near empty beach, and then BAM! Filled up in the blink of an eye. 
 :=:J:icecream_jordan_neutral
