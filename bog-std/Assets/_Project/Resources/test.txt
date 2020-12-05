@@ -1,7 +1,7 @@
+
 :=:1:white
-:=:1:white
-:=:S:white:3
-:W:3
+:=:S:team-logo:3
+:=:1:none
 :=:S:logo:3
 
 :A:title:1
