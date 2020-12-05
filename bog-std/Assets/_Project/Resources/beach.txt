@@ -241,7 +241,7 @@ Ask:D:Player: No! Dude, imagine me asking out Sarah. How would you feel about th
 :+:r:3
 :>:Continue
 
-Continue:=:S:sunset
+Continue:=:S:Sunset
 
 :W:1
 :D:Sarah: It’s beautiful isn’t it?
