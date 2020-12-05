@@ -268,6 +268,7 @@ MonoBehaviour:
   selectSound: {fileID: 8300000, guid: 8e462d0bf44d6a8458b866925e9c1fc5, type: 3}
   dialogueSound: {fileID: 8300000, guid: f55f5991f45875f419bb96af7691deee, type: 3}
   carCrashSound: {fileID: 8300000, guid: 9c4adff8abffab44e803e1972667e899, type: 3}
+  flatLineSound: {fileID: 8300000, guid: a9075e30e87392f49a87e3b778755ba9, type: 3}
   dialoguePrefab: {fileID: 1550641668321752481, guid: 661931f7aec4d524490abf6c34eb2220,
     type: 3}
   optionPrefab: {fileID: 1550641668321752481, guid: 39b9ea5e6a6365140985ac0762af5c4a,
