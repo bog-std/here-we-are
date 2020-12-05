@@ -71,7 +71,7 @@ Continue:D:Scott: Told you we’d find them here.
 :D:Sarah: You guys picked a great spot. 
 :=:2:icecream_sarah_giggle
 :?:Player: Did you buy us some ice cream?
-	notice cones in hand.
+	Notice cones in hand.
 :D:Player:Did you buy us some ice cream?
 :D:Scott: Sure did. Two vanilla cones with extra sprinkles for you two.
 :D:Sarah: Although we can always eat everything on our own if you don’t ask nicely.
