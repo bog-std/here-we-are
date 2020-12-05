@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -275,12 +275,11 @@ MonoBehaviour:
   textSpeed: 64
   useParser: 1
   txtFiles:
-  - {fileID: 4900000, guid: 539b797a1f0968e418dfda33ec1d9a37, type: 3}
   - {fileID: 4900000, guid: 9a8d1285f70f87746bdc75a62a7a5d9b, type: 3}
   - {fileID: 4900000, guid: e8ac8a9705684df488f67ee721357862, type: 3}
   - {fileID: 4900000, guid: 81ca4f08089da6f40aa5dc653e0fe4b5, type: 3}
-  - {fileID: 4900000, guid: 836bbecde096b3d44bc5fd9b3ddd6278, type: 3}
   - {fileID: 4900000, guid: 948eab4c6865fa74394b724a7c3a660e, type: 3}
+  - {fileID: 4900000, guid: 836bbecde096b3d44bc5fd9b3ddd6278, type: 3}
   _currentTxt: {fileID: 0}
   scene: {fileID: 0}
   ThroughPhone: 0
