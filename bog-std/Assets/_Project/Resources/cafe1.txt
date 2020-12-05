@@ -169,6 +169,7 @@ Vacation:D:Player: Y’know, a vacation would be really nice.
 Beach:D:Player: What you mean like the time we went to the beach?
 :D:Jordan: Yeah! Exactly like that.
 asfdds:@:beach
+:=:J:jordan_neutral
 :>:Continue
 
 BEACH:=:J:jordan_reminiscent
@@ -373,7 +374,6 @@ Continue:D:Player: Haven’t we talked about this before?
 
 # TEST
 sfdbh:@:roof
-
 :=:J:jordan_neutral
 :>:Continue
 
@@ -502,6 +502,7 @@ GARDEN:!:
 :D:Jordan: Who’s been calling you?
 :D:Player: Just give me a moment.
 :*:
+:=:J:jordan_neutral
 :D:Jordan: You have been getting a lot of those... Notifications?
 :D:Player: It’s not important. 
 :D:Jordan: Sure.
