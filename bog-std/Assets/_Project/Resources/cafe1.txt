@@ -109,6 +109,7 @@ Continue2:?:Jordan: So how’ve you been lately?[wait 1] Feels like it’s been 
 Better:D:Player: I'm all right, I guess, I wish things were better.
 :D:Jordan: What’s going on?
 :D:Player: I’m behind on my rent this month and I haven’t had the time to properly form my resumes.
+:=:J:jordan_worried
 :D:Jordan: Doesn’t sound like you’re all right.
 :D:Player: Like I said, I wish things were better.
 :+:e:1
@@ -119,18 +120,15 @@ Continue:D:Player: What about you? How’ve you been?
 :D:Player: Aww did you miss me that much?
 
 :?:Jordan: Y’know, I kinda did.
-	Only a little bit?
-	Kinda?:Kinda
+	Only a little bit?:Kinda
 	I'm sorry...:Sorry
 :D:Player: Only a little bit?
 :+:r:1
-:>:Skip
-Kinda:D:Player: Kinda?
-:+:r:1
-Skip:D:Jordan: (slightly giggles to herself.) Yes, only kinda. It’s what you get for barely calling or texting.
+:D:Jordan: (slightly giggles to herself.) Yes, only kinda. It’s what you get for barely calling or texting.
 :D:Player: I guess birthday messages have gone out of style, haven’t they?
 :D:Jordan: They did. Ten years ago.
 :>:Continue
+
 Sorry:D:Player: I'm sorry I haven't been in touch as of late. Things have just been a rollercoaster.
 :D:Jordan: Hey, don’t apologize. Life’s a complete shitstorm, so don’t worry too much about it.
 :D:Player: I mean there were times I wanted to call or text, but it never felt like the right time.
@@ -145,7 +143,7 @@ Continue:D:Jordan: We should’ve chatted more. Or hung out or something.
 	Like the beach?:Beach
 :D:Player: I feel you on that one. But we can’t stop now can we?
 :=:J:jordan_neutral
-:D:Jordan: We should though. At least, you ought to.
+:D:Jordan: We should though. At least, <i>you</i> ought to.
 :D:Player: Need to get the ducks in a row before that happens now though. I can’t just up and leave my responsibilities when I’m still looking for work.
 :D:Jordan: You’re right. That does sound kind of rash. Just promise me you’ll get some rest?
 :D:Player: I will, once everything gets better.
@@ -281,14 +279,14 @@ Around:D:Player: I just haven’t gotten around to it.
 Continue:D:Jordan: You seen Scott in a while?
 :D:Player: Not since the year after we graduated. Why?
 :?:Jordan: Apparently, he’s got his own business now.
-	That's awesome!
+	Whoa, seriously?
 	Good for him.:Good
 :D:Player: Shut up! That’s awesome!
-:D:Jordan: (Nods her head) Made himself a cozy web design business. Told me last week he’s got clients from the other side of the world.
+:D:Jordan: (Nods her head) Yup, Made himself a cozy web design business. Told me last week he’s got clients from the other side of the world.
 :+:RE:1
 :?:Player: He always did want to fry big fish. 
-	I'm proud of him.
-	I am jealous.:Jelly
+	He’s done so well.
+	I’m jealous:Jelly
 :D:Player: I’m proud of him.
 :+:R:1
 :>:Continue
