@@ -1,6 +1,6 @@
 
 :=:1:white
-:=:S:logo:3
+:=:S:team-logo:3
 :=:1:none
 :=:S:logo:3
 
