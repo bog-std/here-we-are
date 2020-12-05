@@ -20,76 +20,11 @@
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000197C775F218
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000197C775F218
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] SoundI::release                          : background_park (000001987CE8B828)
-[LOG] SoundI::release                          :     background_park (00000197CD4F8788)
-[LOG] SoundI::release                          :     background_park (0000019873CC1958)
-[LOG] SoundI::release                          : cafe_track (000001987CE8B9D8)
-[LOG] SoundI::release                          :     cafe_track (00000197CD4F6F28)
-[LOG] SoundI::release                          :     cafe_track (00000197C775FC38)
-[LOG] SoundI::release                          : credit_track (000001987CE8CFC8)
-[LOG] SoundI::release                          :     credit_track (00000197CD4F6568)
-[LOG] SoundI::release                          :     credit_track (00000197C775F218)
-[LOG] SoundI::release                          : garden_track (000001987CE8D328)
-[LOG] SoundI::release                          :     garden_track (00000197CD4F82A8)
-[LOG] SoundI::release                          :     garden_track (00000197C775F068)
-[LOG] SoundI::release                          : hospital_track (000001987319C5C8)
-[LOG] SoundI::release                          :     hospital_track (00000197CD4F6228)
-[LOG] SoundI::release                          :     hospital_track (00000197C775FA88)
-[LOG] SoundI::release                          : party_track (000001987319C418)
-[LOG] SoundI::release                          :     party_track (00000197CD4F9628)
-[LOG] SoundI::release                          :     party_track (00000197C7760658)
-[LOG] SoundI::release                          : background_party (000001987319D6A8)
-[LOG] SoundI::release                          :     background_party (00000197CD4F85E8)
-[LOG] SoundI::release                          :     background_party (000001987CE8C908)
-[LOG] SoundI::release                          : beach_track (000001987319CAD8)
-[LOG] SoundI::release                          :     beach_track (00000197CD4F9FE8)
-[LOG] SoundI::release                          :     beach_track (000001987CE8BB88)
-[LOG] SoundI::release                          : Thegood.existance.purpose - Trimmed - Trimmed (000001987319CFE8)
-[LOG] SoundI::release                          :     Thegood.existance.purpose - Trimmed - Trimmed (00000197CD4F7C28)
-[LOG] SoundI::release                          :     Thegood.existance.purpose - Trimmed - Trimmed (000001987319CE38)
-[LOG] SoundI::release                          :  (000001987CFB6DB8)
-[LOG] SoundI::release                          :     background_beach (00000197CD4F9148)
-[LOG] SoundI::release                          :  (000001987CFB6C48)
-[LOG] SoundI::release                          :     restuarant_chatter (00000197CD4FC888)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
-[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : Closed.

@@ -2,27 +2,4 @@
 :=:S:title
 :M:
 
-
-:~:phone:0
-
-:>:TEST:phone:1
-:D:Player:Without Skip
-TEST:D:Player:Should go here
-
-# :~:0:2
-
-:?::Which script to test?
-	cafe
-	beach:beach
-	roof:roof
-	garden:garden
-	credits:credits
-:@:cafe1:0
-beach:+:E:0
-:@:beach:0
-roof:+:E:0
-:@:roof:0
-garden:+:E:0
-:@:garden:0
-credits:+:E:0
-:@:credits:0
+:@:cafe1
