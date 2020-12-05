@@ -284,5 +284,13 @@ Continue:D:Scott: Is that a boat out there?
 :+:R:1
 
 :=:SJ12:none
+
 :A:beach:0
 :A:cafe:1
+
+:>:skipend:phone:0
+:~:phone:0
+:D:Jordan: You doing all right?
+:D:Player: Yeah. Just thought of the beach again.
+:D:Jordan: That was such a great trip, wasn’t it?
+:D:Player: It sure was.

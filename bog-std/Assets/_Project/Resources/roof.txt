@@ -396,3 +396,10 @@ Continue:=:J:city_jordan_facing
 :=:SJ12:none
 :A:party:0
 :A:cafe:1
+
+:>:skipend:phone:0
+:~:phone:0
+:D:Jordan: This is Houston. Is there a problem?
+:D:Player: Problem? Uh, no. It’s nothing.
+:D:Jordan: All right.
+:=:J:jordan_doubt

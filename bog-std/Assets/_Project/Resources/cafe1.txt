@@ -144,29 +144,37 @@ Continue:D:Jordan: We should’ve chatted more. Or hung out or something.
 :D:Jordan: You’re right. That does sound kind of rash. Just promise me you’ll get some rest?
 :D:Player: I will, once everything gets better.
 :+:Er:1
-:>:Continue
+:>:BEACH
 
 Vacation:D:Player: Y’know, a vacation would be really nice.
 :D:Jordan: Right? I’d love to go to the mountains this time. Find a nice camping spot and watch the stars.
 :D:Player: I’d just love to go for a drive. Put on Scott’s mixtape and just hit the road.
 :D:Jordan: Scott makes mixtapes? Huh. Wild.
 :+:er:1
-:>:Continue
+:>:BEACH
 
 Beach:D:Player: What you mean like the time we went to the beach?
 :D:Jordan: Yeah! Exactly like that.
-
-# TEST
-:D::Should go to beach scene after this line (let us know if it doesnt)
 asfdds:@:beach
+:>:Continue
 
+BEACH:=:J:jordan_reminiscent
+:D:Jordan: I wish we could go back to the beach.
+:D:Player: The one we went to during the summer of our college years? That brings me back. 
+:J:jordan_certain
+:D:Jordan: Right? It was so hot, but that day was so much fun.
+:D:Player: If I recall correctly, you hated every second of that day. 
+:D:Jordan: Maybe so, but the fireworks off the beach were fantastic.
+:D:Player: Yes, they were. Yes, they were.
+:J:jordan_neutral
+:D:Jordan: Hey, do you mind if I go to the washroom real quick? 
+:D:Player: Sure thing.
+:=:J:none
+:*:
+:W:1
 :=:J:jordan_neutral
-#:D:Jordan: I wish we could go back to the beach.
-#:D:Player: The one we went to during the summer of our college years? That brings me back.
-#:D:Jordan: Right? It was so hot, but that day was so much fun.
-#:D:Player: If I recall correctly, you hated every second of that day.
-#:D:Jordan: Maybe so, but the fireworks off the beach were fantastic.
-#:D:Player: Yes, they were. Yes, they were.
+:D:Jordan: Sorry that took so long.
+:D:Player: No worries. So what else is on your mind?
 
 Continue:D:Jordan: I wish we could go back to the good ol’ days.
 
@@ -346,7 +354,7 @@ Continue:D:Player: Haven’t we talked about this before?
 :D:Player: The graduation party?
 :?:Jordan: Yeah. Don’t you remember anything about it?
 	Quite a bit.
-	Just how much I drank.:Drank
+	Only the liquor.:Drank
 :D:Player: I remember quite a bit of it.
 
 # TEST
@@ -360,7 +368,12 @@ Drank:D:Player: Just how much I drank.
 :=:J:jordan_reminiscent
 :D:Jordan: You didn't get blackout drunk by the end, did you?
 :D:Player: No, but I definitely drank enough to barely remember it.
+:!:
+:D:Jordan: You wanna take that?
+:D:Player: Just give me a moment.
+:*:
 :+:r:3
+
 Continue:=:J:jordan_neutral
 :D:Player: You never answered my question.
 :D:Jordan: What question?
@@ -445,43 +458,54 @@ Continue:=:J:jordan_angry
 :D:Player: But you’re his family!
 
 :?:Jordan: Doctor doesn't want anyone else to see him, or else his condition will worsen.
-	That's bullshit.
-	If I were you.:You
-	Is it worse?:Worse
+	Unbelievable.
+	There has to be a way.:You
+	How bad is he?:Worse
+
 :D:Player: That’s bullshit!
 :D:Jordan: I know.
 :D:Player: And there’s nothing you can do?
 :=:J:jordan_worried
 :D:Jordan: Seems that way.
-:>:Continue
+:>:GARDEN
+
 You:D:Player: If I were you, I’d do everything I could do to see him.
 :D:Jordan: Yeah. 
 :D:Player: I mean you’re his freakin’ kid! Who’s to say you’re not allowed to see your own father in the hospital?
+:=:J:jordan_sarcasm
 :D:Jordan: You can stop now.
 :D:Player: Uh, right. Sorry.
 :+:r:3
 :+:g:1
-:>:Continue
+:>:GARDEN
+
 Worse:D:Player: Is it worse than when you first told me?
 :D:Jordan: Better, but not by much.
-
-# TEST
-:D::Should go to garden scene after this line (let us know if it doesnt)
 hjgfk:@:garden
-
 :=:J:jordan_neutral
-:D:Jordan: You know, there are times I think that God just hates me. Maybe it’s because I’m not religious or whatever. 
+:>:Continue
+
+GARDEN:!:
+:D:Jordan: Who’s been calling you?
+:D:Player: Just give me a moment.
+:*:
+:D:Jordan: You have been getting a lot of those... Notifications?
+:D:Player: It’s not important. 
+:D:Jordan: Sure.
+:=:J:jordan_doubt
+
+Continue:D:Jordan: You know, there are times I think that God just hates me. Maybe it’s because I’m not religious or whatever. 
 :D:Player: How do you mean?
 :=:J:jordan_worried
 :D:Jordan: Like I know bad things happen to people, and I really shouldn’t be complaining, but I wish things were better.
 :?:Player: You’re right you know.
-	They happen to everyone.
-	You just gotta deal with it.:Deal
+	It’s part of the human experience.
+	Could be worse.:Deal
 :D:Player: Bad things happen to everyone. Some have it really bad, and others don’t.
 :D:Player: You can’t be responsible for things that happen to you. 
 :+:R:1
 :?:Jordan: But it’s unfair.
-	I wish.
+	It’s above us.
 	So what?:What
 :D:Player: I wish things were fair for everyone. But that’s not up to us.
 :=:J:jordan_hesitate
@@ -501,7 +525,6 @@ Deal:D:Player: You really shouldn’t be complaining. Yeah things should be bett
 :D:Player: Maybe not. But at least you made your voice heard. 
 :+:r:1
 
-
 Continue:D:Jordan: Look things aren't easy right now okay?
 
 # Audio Change
@@ -519,20 +542,24 @@ Continue:D:Jordan: Look things aren't easy right now okay?
 :>:Continue
 Here:D:Player: Are we really here?
 :D:Jordan: That’s what I’m asking you.  
-:D:Player: Oh, I didn't think you meant it seriously. I can clearly see you. You’re right there.
+:D:Player: Oh, I didn’t think you meant it seriously. I can clearly see you. You’re right there.
 :+:er:1
 :+:g:2
 Continue:D:Jordan: Are you sure about that?
+
+:=:S:black
+:A:hospital:2
+:W:5:
+
 :=:S:hospital
-:D::(A flashback a hospital bed. Someone is in the bed, with a heart monitor slowly beeping. IV drips stand at the side of the bed, and sunlight drifts through the window. Nurses pass in and out of the memory.)
 :=:S:none
 :?:Jordan: I meant to call. I really did. 
-	But you're still here.
+	You’re right there!
 	We were supposed to meet up.:Meet
 :D:Player: But you’re still here. You’re right in front of me.
 :+:eg:2
 :?:Jordan: I am, aren't I?
-	You're not a dream.
+	This is real.
 	Are you here?:Here
 :D:Player: You’re not a dream.
 :D:Jordan: Am I?
@@ -547,64 +574,66 @@ Meet:D:Player: We were supposed to meet up.
 :D:Jordan: We were. 
 :D:Player: I was waiting for you.
 
-Continue:D:: (The sound of screeching tires echoes)
-
+Continue:$:
 :=:S:hospital
+:D:Doctor: It’s not looking good.
+:D:Nurse: TA with failing organs. Were they a donor?
+:D:Doctor: Doesn’t matter. Almost nothing is usable. Except maybe the heart. 
 
-:D:Voice 1: It’s not looking good.
-:D:Voice 2: TA with failing organs. Were they a donor?
-:D:Voice 1: Doesn’t matter. Almost nothing is useable. Except maybe the heart. 
-
-# (A nurse approaches the player(camera))
-
-:?:Voice 1: I’m sorry. But it’s not looking good.
-	Are there organ donors?
-	Bullshit. You can save her.:Save
+:?:Doctor: I’m sorry. But it’s not looking good.
+	Donors?
+	Furious response.:Save
 :D:Player: Aren’t there organ donors who can save her?
-:?:Voice 1: I need to be honest with you. Your friend doesn’t have a lot of time left. Does she have family close by?
+:?:Doctor: I need to be honest with you. Your friend doesn’t have a lot of time left. Does she have family close by?
 	Her dad.
-	I'm all she has.:AllSheHas
+	Offer to fill out paperwork.:AllSheHas
 :D:Player: Her dad. You can try calling him, but I don’t know if he’ll be able to come.
-:D:Voice 1: We still need a guardian to fill out paper work. 
+:D:Doctor: We still need a guardian to fill out paper work. 
 :+:RG:2
 :>:Continue
 AllSheHas:D:Player: No. I think I’m all she has.
-:D:Voice 1: Well, I have forms you’ll need to fill out. Treasure what life she has left with her. I’ll be back soon.
+:D:Doctor: Well, I have forms you’ll need to fill out. Treasure what life she has left with her. I’ll be back soon.
 :+:rg:3
 :>:Continue
 Save:D:Player: That’s a pile of bullshit and you know it. You can save her with surgery, and organ donors.
-:D:Voice 1: I understand your anger. But you need to understand our position. If we put her in surgery, she may die sooner. 
+:D:Doctor: I understand your anger. But you need to understand our position. If we put her in surgery, she may die sooner. 
 :D:Player: JUST HELP HER!
-:D:Voice 1: (takes a deep breath) We will do everything we can. I can promise you that.
+:D:Doctor: (takes a deep breath) We will do everything we can. I can promise you that.
 :+:Rg:3
 
-:=:S:none
-
-:?:Jordan: I’m so sorry. (tears form at the corners of Jordan’s eyes.)
-	No. No, no, no..
-	You're not going to be okay..:NotOkay
+Continue:=:S:none
+:=:J:jordan_cry
+:?:Jordan: I’m so sorry.
+	No. No, no, no.
+	It doesn't look good.:NotOkay
 :D:Player: I don't want to believe it.
 :D:Jordan: There was nothing you could’ve done. Nothing you can do.
 :D:Player: No that’s not fair!
 :D:Jordan: We've talked about this. It's not supposed to be.
 :+:rge:1
 :>:Continue
+
 NotOkay:D:Player: You’re not going to be okay, are you?
 :D:Jordan: You heard the doctors and nurses talking. 
 :D:Player: Just the heart huh?
 :D:Jordan: Just the heart.
+
 Continue:D:Player: Don’t leave me.
 :?:Jordan: We don’t have a choice.
-	We always have a choice.
+	Please...
 	We really don't, do we?:Dont
 :D:Player: We always have a choice.
 :+:e:1
 :=:J:jordan_neutral
 :?:Jordan: Not this one.
-	Not this one.
-	Why not?:WhyNot
+	Wait
+	You’re wrong!:WhyNot
+
+:D:Player: .[wait 1].[wait 1].
+:D:Player: Not this one.
 :+:EG:1
 :D:Jordan: (smiles quietly.)
+
 :>:Continue
 WhyNot:D:Player: Why not? There's always a choice!
 :+:eg:1
