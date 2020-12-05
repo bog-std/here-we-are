@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1313,7 +1313,7 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[8].levels.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1408,7 +1408,7 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[18].levels.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1774,13 +1774,13 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[8].levels.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 7dd90c034db620640b09aff7679d0f20,
+      objectReference: {fileID: 21300000, guid: 210dc7702c2edaf4485607e419e60f0e,
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[8].levels.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 5f607aa93172eeb46ad34623762d778f,
+      objectReference: {fileID: 21300000, guid: 7dd90c034db620640b09aff7679d0f20,
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1804,13 +1804,13 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[10].levels.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: c5da0b0abfd6a2545ae71da443a2a96e,
+      objectReference: {fileID: 21300000, guid: 147e22a1731dceb44b072e9278977f30,
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[11].levels.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: b4ad4a3f5e841354986d545d8ff470a7,
+      objectReference: {fileID: 21300000, guid: 48df1e8d344b75f47a1aa8b0e0914246,
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1828,7 +1828,7 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[11].levels.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 4f3b21c60b4192e4c829e060c4cac984,
+      objectReference: {fileID: 21300000, guid: 51fe2fafb64a29e4a942880f73570780,
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -1994,7 +1994,7 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[8].levels.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: b0d074106cb626b4f806f5f5ee350d2e,
+      objectReference: {fileID: 21300000, guid: 5f607aa93172eeb46ad34623762d778f,
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -2055,7 +2055,7 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[11].levels.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: 58f2939f9167ee24faf816986449e044,
+      objectReference: {fileID: 21300000, guid: 6802292142fde634e9b38c40b6fcd444,
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -2995,7 +2995,7 @@ PrefabInstance:
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[18].name
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -3011,19 +3011,19 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[18].levels.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 03967d3d05308e64d979ad13f34f7b60,
+      objectReference: {fileID: 21300000, guid: 09d01c70bbcd64b4b8825909aeeb2775,
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[18].levels.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 15e5ecf45cbb87f448acf51006f7e9a1,
+      objectReference: {fileID: 21300000, guid: 09d01c70bbcd64b4b8825909aeeb2775,
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
       propertyPath: layers.Array.data[18].levels.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: b4701b9a73cbcd44db841b91fc8ef412,
+      objectReference: {fileID: 21300000, guid: cea42666005e5b94a9d14b770c667ff1,
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -3272,7 +3272,7 @@ PrefabInstance:
         type: 3}
       propertyPath: layers.Array.data[8].levels.Array.data[3]
       value: 
-      objectReference: {fileID: 21300000, guid: 69cfc362091297a4bb0252046b54bed1,
+      objectReference: {fileID: 21300000, guid: 76ae5e2c21577b94e9870d2454b428ea,
         type: 3}
     - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}
@@ -3583,6 +3583,12 @@ PrefabInstance:
       propertyPath: layers.Array.data[7].levels.Array.data[16]
       value: 
       objectReference: {fileID: 21300000, guid: 7b7c0e46a9602f8408209a14ef9ae4e0,
+        type: 3}
+    - target: {fileID: 5538911950561593981, guid: fff24d14152ce8f41911c1399a6db47f,
+        type: 3}
+      propertyPath: layers.Array.data[18].levels.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: f48248f77b5c1234daf70210bf123087,
         type: 3}
     - target: {fileID: 5538911950561593982, guid: fff24d14152ce8f41911c1399a6db47f,
         type: 3}

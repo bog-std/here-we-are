@@ -622,7 +622,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7686605179866751830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1195,7 +1195,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5976931875013540035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1418,7 +1418,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5009245150406431549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1861,6 +1861,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-3297871083680982610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ProgressDemo/beach
+  m_EditorClassIdentifier: 
+  Name: beach
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-3243350414842900019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2345,6 +2362,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &-1516649569684837398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DemoTrack/Synth
+  m_EditorClassIdentifier: 
+  Name: Synth
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-1490183995114340305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2360,20 +2394,21 @@ MonoBehaviour:
   Path: event:/ProgressDemo
   guid: 471e69f0883268468c26590869d2708c
   Banks:
-  - {fileID: 2465481949450371714}
+  - {fileID: -1191300239538411050}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -1472672092417660838}
-  - {fileID: -210712317591905488}
-  - {fileID: 2703834553464793169}
-  - {fileID: 94495057432762153}
-  - {fileID: -5998890726819579731}
-  - {fileID: -5123898025761005361}
+  - {fileID: 5636441426823636805}
+  - {fileID: 8263438638169425393}
+  - {fileID: 7187526400301495903}
+  - {fileID: 1083878108279945772}
+  - {fileID: 5938912862448319432}
+  - {fileID: -1124270545973152384}
+  - {fileID: -3297871083680982610}
   MinDistance: 0
   MaxDistance: 0
-  Length: 79229
+  Length: 8145
 --- !u!114 &-1472672092417660838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2390,7 +2425,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1359091392862358201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2459,6 +2494,24 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-1191300239538411050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/DemoTrack3/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637426890050166266
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-1165243004191887695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2476,6 +2529,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-1124270545973152384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ProgressDemo/party
+  m_EditorClassIdentifier: 
+  Name: party
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-1040538731486951592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2638,7 +2708,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-531392038906241748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2724,14 +2794,14 @@ MonoBehaviour:
   Banks:
   - {fileID: -1770053229873723830}
   - {fileID: -265952715653211125}
-  - {fileID: 2465481949450371714}
+  - {fileID: -1191300239538411050}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -7723265755030538190}
-  - {fileID: -573605383474797671}
-  - {fileID: 6922041013346090134}
+  - {fileID: 4944699536289079239}
+  - {fileID: -1516649569684837398}
+  - {fileID: 1935277822729681344}
   MinDistance: 0
   MaxDistance: 0
   Length: 4800
@@ -2803,7 +2873,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-164424442946172262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2853,16 +2923,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 2120641358334568182}
-  - {fileID: 2465481949450371714}
+  - {fileID: -1191300239538411050}
   EditorEvents:
   - {fileID: -300966181439957215}
   - {fileID: -1490183995114340305}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 2465481949450371714}
+  - {fileID: -1191300239538411050}
   StringsBanks:
   - {fileID: 2120641358334568182}
-  stringsBankWriteTime: 637426400984033590
+  stringsBankWriteTime: 637426890050256208
   cacheVersion: 3
 --- !u!114 &61774544305161360
 MonoBehaviour:
@@ -2898,7 +2968,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &217032389182443693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3159,6 +3229,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &1083878108279945772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ProgressDemo/garden
+  m_EditorClassIdentifier: 
+  Name: garden
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &1097213123787541093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3331,6 +3418,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &1935277822729681344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DemoTrack/Drums
+  m_EditorClassIdentifier: 
+  Name: Drums
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &1975059777981427969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3380,11 +3484,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMOD/DemoTrack3/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637426400984033590
+  lastModified: 637426890050256208
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1260
+    Value: 1296
   Exists: 1
 --- !u!114 &2126218828700688093
 MonoBehaviour:
@@ -3559,7 +3663,7 @@ MonoBehaviour:
   lastModified: 637426400983958645
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &2473592166694449237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3645,7 +3749,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &2748893295060296879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4271,6 +4375,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &4944699536289079239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DemoTrack/Piano
+  m_EditorClassIdentifier: 
+  Name: Piano
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &4967051836222728428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4391,6 +4512,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &5636441426823636805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ProgressDemo/hospital
+  m_EditorClassIdentifier: 
+  Name: hospital
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &5659464032702225924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4488,6 +4626,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &5938912862448319432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ProgressDemo/title
+  m_EditorClassIdentifier: 
+  Name: title
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &5946732767682951908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4864,7 +5019,7 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &7079751147999368023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4916,6 +5071,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &7187526400301495903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ProgressDemo/credits
+  m_EditorClassIdentifier: 
+  Name: credits
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &7217627188448022162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5223,6 +5395,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &8263438638169425393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ProgressDemo/cafe
+  m_EditorClassIdentifier: 
+  Name: cafe
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &8358690061238663979
 MonoBehaviour:
   m_ObjectHideFlags: 0
