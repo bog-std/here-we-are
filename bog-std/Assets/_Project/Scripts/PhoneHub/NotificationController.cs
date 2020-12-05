@@ -85,6 +85,7 @@ public class NotificationController : MonoBehaviour
         HideNotification();
 
         // Continue with the narrative
+        _dialogueManager.DisplayNext();
     }
 
 }
