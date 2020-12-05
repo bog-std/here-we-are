@@ -16,7 +16,8 @@ public enum Command : ushort
     Menu,
     Audio,
     Notification,
-    CarCrash
+    CarCrash,
+    RipJordan
 };
 
 namespace Assets._Project.Scripts.DialogueData

@@ -205,6 +205,11 @@ using UnityEngine;
                                 dialogue.tag = split[0];
                                 break;
 
+                            case "_":
+                                dialogue.command = Command.RipJordan;
+                                dialogue.tag = split[0];
+                                break;
+
                             default:
                                 throw new Exception("Bad Token");
                         }

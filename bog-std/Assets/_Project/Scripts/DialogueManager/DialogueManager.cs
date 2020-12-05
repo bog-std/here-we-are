@@ -23,6 +23,7 @@ namespace Assets._Project.Scripts.DialogueManager
         [SerializeField] private AudioClip selectSound;
         [SerializeField] private AudioClip dialogueSound;
         [SerializeField] private AudioClip carCrashSound;
+        [SerializeField] private AudioClip flatLineSound;
         [SerializeField] private GameObject dialoguePrefab;
         [SerializeField] private GameObject optionPrefab;
         [SerializeField] private float textSpeed = 1f;
@@ -499,7 +500,10 @@ namespace Assets._Project.Scripts.DialogueManager
                 case Command.CarCrash:
                     _audioSource.PlayOneShot(carCrashSound);
                     break;
-                    
+
+                case Command.RipJordan:
+                    _audioSource.PlayOneShot(flatLineSound);
+                    break;
             }
             
             DisplayNext();
