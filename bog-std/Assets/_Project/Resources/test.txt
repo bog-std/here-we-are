@@ -1,4 +1,9 @@
+:=:1:white
+:=:1:white
+:=:S:white:3
 :W:3
+:=:S:logo:3
+
 :A:title:1
 :=:S:title
 :M:
