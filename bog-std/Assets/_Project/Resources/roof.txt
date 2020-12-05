@@ -104,10 +104,10 @@ Kidding:D:Player: I’m kidding! You know how much I love being up here.
 
 Continue:D:Jordan: This is still my favourite part of the building.
 :=:J:city_jordan_away
-:D:Jordan: I don’t think I’ve ever seen anyone else up here…Remember all the late nights we used to spend staring out into the distance?
+:D:Jordan: I don’t think I’ve ever seen anyone else up here... Remember all the late nights we used to spend staring out into the distance?
 :D:Player: It feels so long ago. I miss those nights. 
 :D:Jordan: Do you think our memories mean anything?
-:?:Like... what does it mean to live? Why are we here or, why do we remember things?
+:?:Jordan: Like... what does it mean to live? Why are we here or, why do we remember things?
 	What’re you talking about?
 	You tell me.:Tell
 
@@ -409,4 +409,4 @@ Continue:=:J:city_jordan_facing
 :D:Jordan: This is Houston. Is there a problem?
 :D:Player: Problem? Uh, no. It’s nothing.
 :D:Jordan: All right.
-:=:J:jordan_doubt
+skipend:=:J:jordan_doubt

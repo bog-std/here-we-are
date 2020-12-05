@@ -1,4 +1,6 @@
 
+
+:=:S:team-logo
 :=:1:white
 :A:all:0
 :A:title:1
