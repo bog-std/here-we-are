@@ -68,16 +68,14 @@ Nothing:D:: You return to your previous spot, sad that you didn’t find any ice
 
 Continue:D:Scott: Told you we’d find them here.
 :=:1:icecream_scott_neutral
-:D:Sarah: You guys picked a great spot. 
 :=:2:icecream_sarah_giggle
-:?:Player: Did you buy us some ice cream?
+:?:Sarah: You guys picked a great spot. 
 	Notice cones in hand.
 :D:Player:Did you buy us some ice cream?
 :D:Scott: Sure did. Two vanilla cones with extra sprinkles for you two.
 :D:Sarah: Although we can always eat everything on our own if you don’t ask nicely.
 :=:2:icecream_sarah_neutral
-:D:Jordan: Hey
-:?:Jordan: Please ask nicely.[wait 1] For me?
+:?:Jordan: Ask nicely.[wait 1] For me?
 	Ask Nicely
 	Demand :Demand
 :D:Player: Would you kindly bestow unto us the iced creams?
@@ -96,8 +94,8 @@ Demand:D:Player: Would you just hand them over? Else it’ll melt in your hands.
 :=:1:icecream_scott_neutral
 :+:R:2
 
-Continue:D:Scott: We sure picked a hell of a time to come to the beach, didn’t we?
-:=:1:icecream_scott_meh
+Continue:=:1:icecream_scott_meh
+:D:Scott: We sure picked a hell of a time to come to the beach, didn’t we?
 :D:Player: I’m just glad we got here before the afternoon. Place started crowding up as soon as we put up the umbrella. 
 :D:Jordan: You should’ve stuck around to see it. A near empty beach, and then BAM! Filled up in the blink of an eye. 
 :=:J:icecream_jordan_neutral
@@ -263,7 +261,7 @@ Continue:=:S:Sunset
 :D:Player: Times like this I forget life isn’t all about cramming for exams.
 :?:Jordan: Certainly feels like that though.
 	It’s almost over
-	Agree with Scott:Present
+	That’s tomorrow’s problem:Present
 
 :D:Player: Only a few years left though. 
 :D:Sarah: Got a long way to go that’s for sure. But we’ll make it. 
