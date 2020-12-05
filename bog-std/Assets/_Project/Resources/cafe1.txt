@@ -185,6 +185,7 @@ BEACH:=:J:jordan_reminiscent
 :D:Player: Sure thing.
 :=:J:none
 :W:2
+:~:0:0
 :*:
 :W:1
 :=:J:jordan_neutral
@@ -373,7 +374,7 @@ Continue:D:Player: Haven’t we talked about this before?
 :D:Player: I remember quite a bit of it.
 
 # TEST
-:~:1:0
+:~:2:0
 sfdbh:@:roof
 :=:J:jordan_neutral
 :>:Continue
