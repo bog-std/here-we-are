@@ -60,7 +60,7 @@ Special:D:Player: What's on special for today?
 :D:Jordan: Hmurph hefdf.  
 :D:Player: what?
 :=:J:jordan_blush
-:D::(Jordan swallows)
+:D::*swallows*
 :D:Jordan: I thought we were friends.
 :D:Player: Of course we are.
 
@@ -121,7 +121,7 @@ Continue:D:Player: What about you? How’ve you been?
 :>:Skip
 Kinda:D:Player: Kinda?
 :+:r:1
-Skip:D:Jordan: (slightly giggles to herself.) Yes, only kinda. It’s what you get for barely calling or texting.
+Skip:D:Jordan: Yes, only kinda. It’s what you get for barely calling or texting.
 :D:Player: I guess birthday messages have gone out of style, haven’t they?
 :D:Jordan: They did. Ten years ago.
 :>:Continue
@@ -248,7 +248,7 @@ Famous:D:Player: I'd like to try and be famous.
 :+:e:1
 :>:Continue
 Happy:D:Player: I just want to be happy in life.
-:D:Jordan: (Chuckles, takes a sip of coffee.) Don’t we all.
+:D:Jordan: Don’t we all.
 :>:Continue
 LastTime:D:Player: They were all right last time I checked.
 :=:J:jordan_doubt
@@ -278,7 +278,7 @@ Continue:D:Jordan: You seen Scott in a while?
 	That's awesome!
 	Good for him.:Good
 :D:Player: Shut up! That’s awesome!
-:D:Jordan: (Nods her head) Made himself a cozy web design business. Told me last week he’s got clients from the other side of the world.
+:D:Jordan: Made himself a cozy web design business. Told me last week he’s got clients from the other side of the world.
 :+:RE:1
 :?:Player: He always did want to fry big fish. 
 	I'm proud of him.
@@ -315,7 +315,7 @@ HeSay:D:Player: What did he say when he asked you out?
 :D:Player: That's it?
 :D:Jordan: Yup. Didn’t even open with a smooth or tacky pick-up line. Just went straight for it.
 :D:Player: But could you really expect him to do anything else?
-:D:Jordan: Not at all. (chuckles to herself and takes a sip of coffee.)
+:D:Jordan: Not at all. 
 Glad:D:Player: I’m just glad you said no.
 :D:Jordan: What do you mean by that?
 :D:Player: You saw how Sarah and I turned out. Scott and I are barely hanging on to our friendship as is. 
@@ -358,7 +358,6 @@ Continue:D:Player: Haven’t we talked about this before?
 :D:Player: I remember quite a bit of it.
 
 # TEST
-:D:: Should go to roof scene after this line (let us know if it doesnt)
 sfdbh:@:roof
 
 :=:J:jordan_neutral
@@ -411,7 +410,7 @@ Continue:D:Player: I’m sorry if I pinched a nerve there.
 :D:Player: Yeah but I don’t believe you. There’s no way you’re okay. After all we’ve been through, there’s no way you’re okay even in the slightest.
 :+:RG:1
 :=:J:jordan_whistle
-:?:Jordan: (Whistles) Well I don’t want to unload my bullshit on you.
+:?:Jordan: Well I don’t want to unload my bullshit on you.
 	You don't trust me?
 	I'm not going anywhere.:NotGoing
 :D:Player: We’ve been friends for so long, and you still don’t trust me to give advice?
@@ -598,7 +597,7 @@ AllSheHas:D:Player: No. I think I’m all she has.
 Save:D:Player: That’s a pile of bullshit and you know it. You can save her with surgery, and organ donors.
 :D:Doctor: I understand your anger. But you need to understand our position. If we put her in surgery, she may die sooner. 
 :D:Player: JUST HELP HER!
-:D:Doctor: (takes a deep breath) We will do everything we can. I can promise you that.
+:D:Doctor: We will do everything we can. I can promise you that.
 :+:Rg:3
 
 Continue:=:S:none

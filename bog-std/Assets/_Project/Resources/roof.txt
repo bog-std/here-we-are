@@ -52,9 +52,9 @@ Continue:D:Jordan: I was hoping you’d come since I know you don’t really car
 	Fine.
 	Drink it yourself. You’re the one who lost.:Lost
 
-:D:Jordan: Thank you. (She smiles in gratitude. Somehow, it feels like she’s using you to test the drink for poison.) 
-:D:Player: (thinking) Oh god. This is bad. Like, really bad. 
-:D:Jordan: (Winks) You’re the best.
+:D:Jordan: Thank you.
+:D:Player: Oh god. This is bad. Like, really bad. 
+:D:Jordan: You’re the best.
 :+:R:1
 :>:Continue
 
