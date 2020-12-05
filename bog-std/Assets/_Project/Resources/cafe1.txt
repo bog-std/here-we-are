@@ -59,7 +59,7 @@ Special:D:Player: What's on special for today?
 :=:J:jordan_certain
 :D:Jordan: Feeling peckish, are we?
 :D:Player: Always.
-:D:Waiter: Here’s your order. If you need anything, just call me over.
+:D:Waiter: Here's your order. If you need anything, just call me over.
 :+:g:3
 :=:3:mug_filled
 :D:Jordan: Oh man, that smells so good! Let me have some!
@@ -86,11 +86,11 @@ TakeIt:D:Player: You know what, take it.
 :D:Jordan: Well I’m glad you noticed. But if you want a couple bites or so, take it. You’re paying for this after all.
 :D:Player: I know.
 :+:R:1
-:>:Continue2
+:>:Continue
 
 Croissants:D:Player: If it’s not too much trouble, I’d like a couple croissants with the coffee.
 :D:Waiter: No trouble at all. I’ll be right back with your coffee and croissants.
-:>:Continue
+:>:SKIP
 
 Coffee:D:Player: On second thought, I'll just take the coffee.
 :D:Waiter: Sure thing. Just let me know if you change your mind.
@@ -98,11 +98,13 @@ Coffee:D:Player: On second thought, I'll just take the coffee.
 :=:J:jordan_snicker
 :D:Jordan: Not hungry?
 :D:Player: Just didn't want to bother them is all.
-Continue:D:Waiter: Here’s your order. If you need anything, just call me over.
+:>:SKIP
+
+SKIP:D:Waiter: Here's your order. If you need anything, just call me over.
 :+:g:3
 :=:3:mug_filled
 
-Continue2:?:Jordan: So how’ve you been lately?[wait 1] Feels like it’s been forever since I last saw you.
+Continue:?:Jordan: So how’ve you been lately?[wait 1] Feels like it’s been forever since I last saw you.
 	Pretty good.
 	I'm all right.:Better
 :D:Player: I'm doing pretty good, all things considered. I sent out resumes and I'm hoping for a response pretty soon.
@@ -112,8 +114,8 @@ Continue2:?:Jordan: So how’ve you been lately?[wait 1] Feels like it’s been 
 :D:Jordan: No, of course not. It’s a good thing to get a job. It’s normal, y’know?
 :D:Player: Yeah. Normal.
 :+:E:1
-
 :>:Continue
+
 Better:D:Player: I'm all right, I guess, I wish things were better.
 :D:Jordan: What’s going on?
 :D:Player: I’m behind on my rent this month and I haven’t had the time to properly form my resumes.
