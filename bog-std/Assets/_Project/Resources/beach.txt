@@ -75,8 +75,7 @@ Continue:D:Scott: Told you we’d find them here.
 :D:Scott: Sure did. Two vanilla cones with extra sprinkles for you two.
 :D:Sarah: Although we can always eat everything on our own if you don’t ask nicely.
 :=:2:icecream_sarah_neutral
-:D:Jordan: Hey
-:?:Jordan: Please ask nicely.[wait 1] For me?
+:?:Jordan: Ask nicely.[wait 1] For me?
 	Ask Nicely
 	Demand :Demand
 :D:Player: Would you kindly bestow unto us the iced creams?
