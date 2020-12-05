@@ -569,9 +569,8 @@ Continue:D:Jordan: Are you sure about that?
 
 :=:S:black
 :A:hospital:2
-:W:5:
-
 :=:S:hospital
+:W:2
 :=:S:none
 :?:Jordan: I meant to call. I really did. 
 	You’re right there!
