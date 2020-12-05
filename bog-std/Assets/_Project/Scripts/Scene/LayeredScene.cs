@@ -164,8 +164,6 @@ namespace _Project.Scripts.Scene
             {
                 _audioStates[name].target = magnitude;
             }
-            
-        
             else Debug.LogError("Audio track" + name + "does not exist.");
         }
 
@@ -312,7 +310,7 @@ namespace _Project.Scripts.Scene
 
         public void SetLevel(int level)
         {
-            level %= levels.Count * levelScale;
+            level = Math.Min(level, levels.Count * levelScale - 1);
             currentLevel = level;
 
             if (fadeMode == FadeMode.None)

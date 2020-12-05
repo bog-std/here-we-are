@@ -60,7 +60,7 @@ Special:D:Player: What's on special for today?
 :D:Jordan: Feeling peckish, are we?
 :D:Player: Always.
 :D:Waiter: Here’s your order. If you need anything, just call me over.
-:+:g:1
+:+:g:3
 :=:3:mug_filled
 :D:Jordan: Oh man, that smells so good! Let me have some!
 :D:Player: You know I was going to eat that.
@@ -99,7 +99,7 @@ Coffee:D:Player: On second thought, I'll just take the coffee.
 :D:Jordan: Not hungry?
 :D:Player: Just didn't want to bother them is all.
 Continue:D:Waiter: Here’s your order. If you need anything, just call me over.
-:+:g:1
+:+:g:3
 :=:3:mug_filled
 
 Continue2:?:Jordan: So how’ve you been lately?[wait 1] Feels like it’s been forever since I last saw you.
